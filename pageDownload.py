@@ -28,7 +28,9 @@ def removeFloor(soup):
 def downloadPage(pageUrl):
   print ("Connecting to server")
   cssutils.log.setLevel(logging.CRITICAL)
-  directory = ''
+  directory = './downloads/'
+  if( not os.path.isdir(directory)):
+    os.makedirs(directory)
   opener = urllib.request.build_opener()
   #defining headers as some servers mandiate it
   opener.addheaders = [('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'),
@@ -36,11 +38,12 @@ def downloadPage(pageUrl):
                           ('Connection', 'keep-alive')
                       ]
   urllib.request.install_opener(opener)
-  html_doc = urllib.request.urlopen(pageurl).read()
+  html_doc = urllib.request.urlopen(pageUrl).read()
   print ("Connection Success!")
   try :
           soup = BeautifulSoup(html_doc, 'html.parser')
-          f = open( 'index.html', 'w' )
+          fName = soup.title.text
+          f = open( directory + fName + '.html', 'w' )
           soup = removeSidepods(soup)
           soup = removeFloor(soup)
           text = removeRearWing(str(soup))
@@ -50,3 +53,4 @@ def downloadPage(pageUrl):
   except Exception as e:
       print ("Exception occurred = ",e)
 
+downloadPage('https://medium.com/basecs/bits-bytes-building-with-binary-13cb4289aafa')

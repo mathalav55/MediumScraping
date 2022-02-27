@@ -57,4 +57,3 @@ def scrape(baseUrl):
           print ('Script Executed successfully!')
   except Exception as e:
       print ("Exception occurred = ",e)
-
