@@ -49,8 +49,7 @@ def downloadPage(pageUrl):
           text = removeRearWing(str(soup))
           f.write(text)
           f.close()
-          print ('Script Executed successfully!')
+          print ('Page Downloaded successfully!')
   except Exception as e:
       print ("Exception occurred = ",e)
 
-downloadPage('https://medium.com/basecs/bits-bytes-building-with-binary-13cb4289aafa')
