@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>SQL joins and how to use them</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":0,"applicationTime":144,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Different joins available in SQL are explained -- inner, left, right, and cross joins. Aliasing can be of great use when working with JOINs, and it is covered here. A brief comparison to subqueries is also given." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="2ZAKtlEg7nPAJXUqN4mCoz09ZrmUzhbNh69fh/TohNVYeBYdE3RX80nTZEKiLzU+5BdORmHJZUTqHnyqvRsi2A==" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-de180ae34fc81cc7f3f0d1e426533a524d80537b2a7bec20c5524dd981c0a978.css" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" media="screen" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" media="screen" rel="stylesheet"/>
+
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-b709b49ff81df80f3be5078f691802bb8fdda9025e8f5015d9cef4830ccc60ce.js"></script>
+
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="hide-for-large-up top-bar" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-abef2efb9c6721246db3db0a8f3ae66c64d8cf64a041a0dbca339d22acecfd9f.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=SQL+joins+and+how+to+use+them&amp;url=https://launchschool.com/books/sql/read/joins&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/joins" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=SQL+joins+and+how+to+use+them&amp;url=https://launchschool.com/books/sql/read/joins&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/joins" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>SQL Joins</h1>
+<p>When our data was all in a single table, we could easily retrieve a particular row from that table in order to get all the pertinent data we needed for a particular query. For example, looking at our unnormalized table below, if we wanted information on the books that 'John Smith' has checked out, we could use a simple <code>SELECT</code> query such as <code>SELECT * WHERE full_name = 'John Smith'</code>. This would return us the first two rows from that table, containing information such as the book title and author, and checkout and return dates.</p>
+<p><img alt="Unormalized Users Table" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/unnormalized-users.png"/></p>
+<p>Now that this data is split across three tables, <code>users</code>, <code>books</code>, and <code>checkouts</code>, we first have to <strong>join</strong> those tables together before we can select the data that we need.</p>
+<h2>What is a SQL Join?</h2>
+<p>SQL handles queries across more than one table through the use of JOINs. JOINs are clauses in SQL statements that link two tables together, usually based on the keys that define the relationship between those two tables. There are several types of JOINs: INNER, LEFT OUTER, RIGHT OUTER, FULL OUTER and CROSS; they all do slightly different things, but the basic theory behind them all is the same. We'll take a look at each type of <code>JOIN</code> in turn, but first lets go over the general syntax that JOIN statements share.</p>
+<h2><a href="#joinsyntax" name="joinsyntax">Join Syntax</a></h2>
+<p>The general syntax of a <code>JOIN</code> statement is as follows:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT table_nameN.column_name, ...
+       FROM table_name1
+       join_type JOIN table_name2
+                 ON join_condition;
+</code></pre>
+<div class="alert-box info">
+<p>The ellipsis (<code>...</code>) in the above command format indicates that we can provide any number of columns with the <code>table_nameN.column_name</code> format.</p>
+</div>
+<p>The first part of this:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT table_nameN.column_name...
+</code></pre>
+<p>is essentially the <code>SELECT column_list</code> form that you've already seen in previous <code>SELECT</code> queries, with the slight difference that column names are prepended by table names in the column list.</p>
+<p>Let's first focus on the second part of the statement, the part that joins the tables:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">FROM table_name1
+join_type JOIN table_name2
+          ON join_condition
+</code></pre>
+<p>To join one table to another, PostgreSQL needs to know several pieces of information:</p>
+<ul>
+<li>  The name of the first table to join
+</li>
+<li>  The type of join to use
+</li>
+<li>  The name of the second table to join
+</li>
+<li>  The join condition.
+</li>
+</ul>
+<p>These pieces of information are combined together using the <code>JOIN</code> and <code>ON</code> keywords. The part of the statement that comes after the <code>ON</code> keyword is the <em>join condition</em>; this defines the logic by which a row in one table is joined to a row in another table. In most cases this join condition is created using the primary key of one table and the foreign key of the table we want to join it with.</p>
+<p>Remember our <code>colors</code> and <code>shapes</code> example from the previous chapter? The <code>color_id</code> column of the <code>shapes</code> table is a Foreign Key which references the <code>id</code> column of the <code>colors</code> table.</p>
+<p><img alt="Shapes and Colors, separate tables" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/joins-explanation-separate-tables.png"/></p>
+<p>If we wanted a list of shapes and their colors, we could use a query like this:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT colors.color, shapes.shape
+       FROM colors
+       JOIN shapes
+            ON colors.id = shapes.color_id;
+</code></pre>
+<p>Within the second part of this query, <code>colors JOIN shapes ON colors.id = shapes.color_id</code>, the join condition will look at each <code>id</code> value in the <code>colors</code> table and attempt to match it with a <code>color_id</code> value in the <code>shapes</code> table. If there is a match then those two rows are joined together to form a new row in a virtual table known as a <em>join table</em>. Since the <code>id</code> <code>1</code> for the color <code>Red</code> appears twice in the <code>color_id</code> column of our <code>shapes</code> table, this row of the <code>colors</code> table appears twice in our virtual join table, joined to both <code>Square</code> and <code>Star</code>. Since the <code>id</code> <code>3</code> for the color <code>Orange</code> does not appear at all in the <code>color_id</code> column of our <code>shapes</code> table, this row of the <code>colors</code> table is omitted completely from our virtual join table.</p>
+<p><img alt="Shapes and Colors, virtual join table" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/joins-explanation-virtual-join-table.png"/></p>
+<p>With this virtual <em>join table</em> created, the <code>SELECT column_list FROM</code> part of our statement can then be executed to select columns from this virtual table. Those columns could originally be from the first table or the second table; to avoid confusion, we therefore need to specify both the table name and column name in our column list, in the form <code>table_name.column_name1</code>. Looking at our example, selecting columns from our virtual join table is effectively the same as saying:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT colors.color, shapes.shape
+       FROM shapes_colors_join_table;
+</code></pre>
+<p>The resulting data would look like this:</p>
+<p><img alt="Shapes and Colors, resulting data" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/joins-explanation-query-result.png"/></p>
+<p>Now that we understand the basic principle behind how joins work, let's take a look at some specific examples of different types of joins.</p>
+<h2><a href="#typesofjoins" name="typesofjoins">Types of Joins</a></h2>
+<p>As mentioned earlier, a <code>JOIN</code> statement can come in various forms. To specify which type of join to use, you can add either <code>INNER</code>, <code>LEFT</code>, <code>RIGHT</code>, <code>FULL</code> or <code>CROSS</code> just before the keyword <code>JOIN</code>. We'll look at an example of each of those types of join using the tables in our <code>sql_book</code> database.</p>
+<h3>INNER JOIN</h3>
+<p>An <code>INNER JOIN</code> returns a result set that contains the common elements of the tables, i.e the intersection where they match on the joined condition. INNER JOINs are the most frequently used JOINs; in fact if you don't specify a join type and simply use the <code>JOIN</code> keyword, then PostgreSQL will assume you want an inner join. Our <code>shapes</code> and <code>colors</code> example from earlier used an <code>INNER JOIN</code> in this way.</p>
+<p>In the query below, the line <code>INNER JOIN (addresses) ON (users.id = addresses.user_id)</code> creates the intersection between the two tables, which means that the join table contains only rows where there is a definite match between the values in the two columns used in the condition.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT users.*, addresses.*
+       FROM users
+       INNER JOIN addresses
+             ON users.id = addresses.user_id;
+</code></pre>
+<p>The data in our unjoined tables looks like this:</p>
+<p><img alt="Users and Addresses" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/users-and-addresses.png"/></p>
+<p>The result of our <code>SELECT</code> query using an <code>INNER JOIN</code> would look like this:</p>
+<p><img alt="Inner Join" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/inner-join.png"/></p>
+<p>The value in the <code>id</code> column of the <code>users</code> table for the user <code>Jane Smith</code> is <code>5</code>; since this value does not appear in the <code>user_id</code> column of the addresses table, she is omitted entirely from the join table and so only 3 records are returned by the query.</p>
+<p>If we did want to include Jane Smith in our results despite her not having an address, we would have to use a different type of join, an outer join.</p>
+<h3>LEFT JOIN</h3>
+<p>A LEFT JOIN or a LEFT OUTER JOIN takes all the rows from one table, defined as the <code>LEFT</code> table, and joins it with a second table. The <code>JOIN</code> is based on the conditions supplied in the <code>ON</code> clause. A <code>LEFT JOIN</code> will always include the rows from the <code>LEFT</code> table, even if there are no matching rows in the table it is JOINed with. When there is no match, the corresponding rows will use <code>NULL</code> to represent the missing values from the second table.</p>
+<p>Let's try and use the same JOIN query as before, but this time we'll use a left join:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT users.*, addresses.*
+       FROM users
+       LEFT JOIN addresses
+            ON users.id = addresses.user_id;
+</code></pre>
+<p>Here, the <code>Jane Smith</code> row from the <code>users</code> table is included in the join table, since she doesn't have any matching rows in the <code>addresses</code> table, the join table has <code>NULL</code> values in her row for the columns of that table.</p>
+<p><img alt="Left Join" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/left-join.png"/></p>
+<p>Note that using either <code>LEFT JOIN</code> or <code>LEFT OUTER JOIN</code> does exactly the same thing, and the <code>OUTER</code> part is often omitted. Even so, it is still common to refer to this type of join as an 'outer' join in order to differentiate it from an 'inner' join. Another type of outer join is a <code>RIGHT JOIN</code>, which we'll look at next.</p>
+<h3>RIGHT JOIN</h3>
+<p>A <code>RIGHT JOIN</code> is similar to a <code>LEFT JOIN</code> except that the roles between the two tables are reversed, and all the rows on the second table are included along with any matching rows from the first table. In the last chapter we mentioned that in our <code>sql_book</code> database we have books, and also reviews for those books. Not all of our books have reviews, however. Let's make a <code>RIGHT JOIN</code> or <code>RIGHT OUTER JOIN</code> that displays all reviews and their associated books, along with any books that don't have a review. When there is no match, the corresponding rows will use <code>NULL</code> to represent the missing values from the first table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT reviews.book_id, reviews.content,
+       reviews.rating, reviews.published_date,
+       books.id, books.title, books.author
+    FROM reviews
+    RIGHT JOIN books
+          ON reviews.book_id = books.id;
+</code></pre>
+<p>The data in our unjoined tables looks like this:</p>
+<p><img alt="Reviews and Books" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/reviews-and-books.png"/></p>
+<p>The result of our <code>SELECT</code> query using an <code>RIGHT JOIN</code> would look like this:</p>
+<p><img alt="Right Join" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/right-join.png"/></p>
+<p>As you can see, <code>My Third SQL Book</code> doesn't yet have a review, and so all the columns from the review table have <code>NULL</code> values for that row in the join table.</p>
+<h3>FULL JOIN</h3>
+<p>A <code>FULL JOIN</code> or <code>FULL OUTER JOIN</code> is essentially a combination of <code>LEFT JOIN</code> and <code>RIGHT JOIN</code>. This type of join contains all of the rows from both of the tables. Where the join condition is met, the rows of the two tables are joined, just as in the previous examples we've seen. For any rows on either side of the join where the join condition is not met, the columns for the <em>other</em> table have <code>NULL</code> values for that row. When there is no match, the corresponding rows will use <code>NULL</code> to represent the missing values.</p>
+<p>A <code>FULL JOIN</code> is a little less common than the other ones we've looked at so far and so we won't show an example for this.</p>
+<p>Another uncommon type of join is a <code>CROSS JOIN</code>; let's take a look.</p>
+<h3>CROSS JOIN</h3>
+<p>A <code>CROSS JOIN</code>, also known as a Cartesian JOIN, returns all rows from one table crossed with every row from the second table. In other words, the join table of a cross join contains every possible combination of rows from the tables that have been joined. Since it returns all combinations, a <code>CROSS JOIN</code> does not need to match rows using a join condition, therefore it does not have an <code>ON</code> clause.</p>
+<p>The way this join works is sometimes a little difficult to envisage, so it's worth looking at an example in this case. This SQL query has the similar syntax to other <code>JOIN</code>s, but without the <code>ON</code> clause:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM users CROSS JOIN addresses;
+</code></pre>
+<p>The query above returns the <code>addresses</code> and <code>users</code> tables, cross joined. The result set consists of every record in <code>users</code> mapped to every record in <code>addresses</code>. For 4 users and 3 addresses, we get a total of <code>4x3=12</code> records. In mathematical terms, this is the <em>cross product</em> of a set.</p>
+<p><img alt="CROSS Join" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/cross-join.png"/></p>
+<p>In an application, it's very unlikely that you would use a <code>CROSS JOIN</code>. Most of the time, it's more important to match rows together through a join condition in order to return a meaningful result. It's still important to be aware of <code>CROSS JOIN</code>s however, since you may occasionally encounter them.</p>
+<p>Now that we've covered the basics of joins, let's explore a couple of other useful techniques for working with multiple tables.</p>
+<h2><a href="#multiplejoins" name="multiplejoins">Multiple Joins</a></h2>
+<p>It is possible, and indeed common, to join more than just two tables together. This is done by adding additional <code>JOIN</code> clauses to your <code>SELECT</code> statement. To join multiple tables in this way, there must be a logical relationship between the tables involved. One example would be joining our <code>users</code>, <code>checkouts</code>, and <code>books</code> tables.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT users.full_name, books.title,
+       checkouts.checkout_date
+    FROM users
+    INNER JOIN checkouts
+          ON users.id = checkouts.user_id
+    INNER JOIN books
+          ON books.id = checkouts.book_id;
+</code></pre>
+<p>Here we are using two <code>INNER JOIN</code>s. One between <code>users</code> and <code>checkouts</code> and one between <code>checkouts</code> and <code>books</code>. In both cases the <code>JOIN</code> is implemented by using the Primary Key of one table (either <code>users</code> or <code>books</code>) and the Foreign Key for that table in the <code>checkouts</code> table.</p>
+<p>To understand what's happening here, we have to dive a little deeper into how joins work. We won't go into too much depth, though - just enough to clarify how the above command works.</p>
+<p>When you perform a <code>JOIN</code> between two tables, PostgreSQL creates a <strong>virtual table</strong> (we can also call it a <strong>transient table</strong>) that contains data from both the original table and the table identified by the <code>JOIN</code>. It's convenient to think of this virtual table as containing all columns from the records in the <code>FROM</code> table as well as all columns from the <code>JOIN</code> table. Before PostgreSQL displays the results, it picks out just the columns that you've mentioned in the <code>SELECT</code> statement.</p>
+<p>If you add a second <code>JOIN</code>, like we did above, PostgreSQL creates yet another virtual table that contains all of the columns from the previous virtual table as well as all of the columns from the matching rows in the second <code>JOIN</code> table. Note that we're not referring back to the <code>FROM</code> table here -- we're only working with a virtual table and a <code>JOIN</code> table, so we don't need to reference the <code>FROM</code> table at all.</p>
+<p>A third and fourth <code>JOIN</code> acts in the same way -- each works with the previous virtual table and adds data from matching rows in the <code>JOIN</code> tables.</p>
+<p>In the command shown above, the first <code>JOIN</code> combines data from <code>users</code> and <code>checkouts</code> into a virtual table that contains <code>users.full_name</code> and <code>checkouts.checkout_date</code>. The second <code>JOIN</code> combines the data from this virtual table with the <code>title</code> column from the <code>books</code> table. Together, the command creates a virtual table that contains the 3 columns we're displaying.</p>
+<h2><a href="#aliasing" name="aliasing">Aliasing</a></h2>
+<p>You may have noticed that some of the queries we list above can get a bit long. We can cut back on the length of these queries by using aliasing. Aliasing allows us to specify another name for a column or table and then use that name in later parts of a query to allow for more concise syntax. Let's use our three table join from above as an example. Using aliasing, the query would look like this:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT u.full_name, b.title, c.checkout_date
+       FROM users AS u
+       INNER JOIN checkouts AS c
+           ON u.id = c.user_id
+       INNER JOIN books AS b
+           ON b.id = c.book_id;
+</code></pre>
+<p>Here we specify single letter aliases for our tables, and use those aliases instead of our table names in order to prepend the columns from those tables in the column list and in the join conditions. This is commonly referred to as 'table aliasing'.</p>
+<p>We can even use a shorthand for aliasing by leaving out the <code>AS</code> keyword entirely. <code>FROM users u</code> and <code>FROM users AS u</code> are equivalent SQL clauses.</p>
+<h3>Column Aliasing</h3>
+<p>Aliasing isn't just useful for shortening SQL queries. We can also use it to display more meaningful information in our result table. For instance, if we want to display the number of checkouts from the library we could write something like:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT count(id) AS "Number of Books Checked Out"
+       FROM checkouts;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">Number of Books Checked Out
+-----------------------------
+                          4
+(1 row)
+</code></pre>
+<p>If we hadn't used aliasing above then we lose context about what was counted.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT count(id) FROM checkouts;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> count
+-------
+     4
+(1 row)
+</code></pre>
+<p>If you're a user just trying to access information, then most likely you wouldn't know about the exact tables being queried; being explicit about what information we're displaying can be important in a case like that.</p>
+<h2><a href="#subqueries" name="subqueries">Subqueries</a></h2>
+<p>Thus far in this chapter, we've looked at using <code>JOIN</code>s to work with more than one table. Although joining tables together is probably the most common way of working with multiple tables, you can often achieve the same results through use of a subquery. Before we compare subqueries and joins, let's examine what a subquery is.</p>
+<p>Imagine executing a <code>SELECT</code> query, and then using the results of that SELECT query as a condition in <em>another</em> <code>SELECT</code> query. This is called nesting, and the query that is nested is referred to as a <strong>subquery</strong>.</p>
+<p>For example, suppose we need to select users that have no books checked out. We could do this by finding <code>users</code> whose <code>user_id</code> is not in the <code>checkouts</code> table. If no relation is found, that would mean that the user has not checked out any books.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT u.full_name FROM users u
+       WHERE u.id NOT IN (
+           SELECT c.user_id FROM checkouts c
+       );
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  full_name
+-------------
+ Harry Potter
+(1 row)
+</code></pre>
+<p>In the code above, the <code>NOT IN</code> clause compares the current <code>user_id</code> to all of the rows in the result of the subquery. If that <code>id</code> number isn't part of the subquery results, then the <code>full_name</code> for current row is added to the result set.</p>
+<p>This might seem a bit confusing, so let's break it down. Our initial <code>checkouts</code> table looks like this:</p>
+<p><img alt="Checkouts table" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/checkouts.png"/></p>
+<p>The nested query <code>SELECT c.user_id FROM checkouts c</code> returns the following results:</p>
+<p><img alt="Nested Query Results" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/nested-query.png"/></p>
+<p>This virtual table can then effectively be used by our <code>NOT IN</code> clause as a list of values against which to check the values in the <code>id</code> column of our <code>users</code> table.</p>
+<p><img alt="NOT IN example" src="//d186loudes4jlv.cloudfront.net/sql/images/joins/not-in-subquery.png"/></p>
+<p>The only value in that column that is <strong>not in</strong> the results of the nested query is the <code>id</code> for 'Harry Potter': <code>3</code>.</p>
+<div class="alert-box info">
+<p><strong>Subquery Expressions</strong></p>
+<p>PostgreSQL provides a number of expressions that can be used specifically with sub-queries, such as <code>IN</code>, <code>NOT IN</code>, <code>ANY</code>, <code>SOME</code>, and <code>ALL</code>. These all work slightly differently, but essentially they all compare values to the results of a subquery.</p>
+</div>
+<p>We won't go into too much detail about subqueries here as you'll get to work with them some more later in course LS180. One thing it is useful to know though is that in some situations a subquery can be used as an alternative to a join.</p>
+<h3>Subqueries vs Joins</h3>
+<p>As you write more queries, you may find that there is more than one way to write a query and achieve the same results. The most common choices are between subqueries and JOINs.</p>
+<p>For instance, we can get the same result table as in our previous example by using a <code>JOIN</code> clause instead of a subquery.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT u.full_name
+       FROM users u
+       LEFT JOIN checkouts c ON u.id = c.user_id
+       WHERE c.user_id IS NULL;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  full_name
+--------------
+ Harry Potter
+(1 row)
+</code></pre>
+<p>When creating queries that return the same result, a differentiator between them may be their performance when compared to each other. As a general rule, JOINs are faster to run than subqueries. This may be something to bear in mind if working with large datasets.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>We've covered a lot of content in this chapter, from exploring how joins work at a conceptual level, through working with different types of joins, and finally to useful techniques such as aliasing and subqueries.</p>
+<p>One of the most important things to remember about <strong>how joins work</strong> is that we set a condition that compares a value from the first table (usually a primary key), with one from the second table (usually a foreign key). If the condition that uses these two values evaluates to true, then the row that holds the first value is joined with the row that holds the second value.</p>
+<p>Let's quickly recap on some of the different <strong>types of join</strong> we can use:</p>
+<table>
+<thead>
+<tr>
+<th>Join Type</th>
+<th style="text-align: center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INNER</td>
+<td style="text-align: center">Combines rows from two tables whenever the join condition is met.</td>
+</tr>
+<tr>
+<td>LEFT</td>
+<td style="text-align: center">Same as an inner join, except rows from the first table are added to the join table, regardless of the evaluation of the join condition.</td>
+</tr>
+<tr>
+<td>RIGHT</td>
+<td style="text-align: center">Same as an inner join, except rows from the second table are added to the join table, regardless of the evaluation of the join condition.</td>
+</tr>
+<tr>
+<td>FULL</td>
+<td style="text-align: center">A combination of left join and right join.</td>
+</tr>
+<tr>
+<td>CROSS</td>
+<td style="text-align: center">Doesn't use a join condition. The join table is the result of matching every row from the first table with the second table, the cross product of all rows across both tables.</td>
+</tr>
+</tbody>
+</table>
+<p>When using joins, sometimes our queries can get unwieldy, especially when we're dealing with 2 or more <code>JOIN</code>s. To better manage this we can <strong>alias</strong> table and column names to shorten our query. We can also use aliasing to give more context about the query results.</p>
+<p>Finally, the result from a join query can sometimes be obtained using different methods. <strong>Subqueries</strong> offer another method for us to query the database and retrieve the same results of similar results, as if we had used a JOIN clause.</p>
+<p>We're almost finished with our Introduction to SQL. In the next and final chapter we'll sum up everything we've learned so far and point you towards some next steps and resources to continue your learning!</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Connect to the <code>encyclopedia</code> database. Write a query to return all of the country names along with their appropriate continent names.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT countries.name, continents.continent_name
+FROM countries JOIN continents
+ON countries.continent_id = continents.id;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name   | continent_name
+---------+----------------
+ Brazil  | South America
+ Egypt   | Africa
+ France  | Europe
+ Germany | Europe
+ Japan   | Asia
+ USA     | North America
+(6 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return all of the names and capitals of the European countries.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_32ff35e6bb28" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_32ff35e6bb28">
+<p>Add the <code>WHERE</code> clause as the final clause of the query.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT countries.name, countries.capital
+FROM countries JOIN continents
+ON countries.continent_id = continents.id
+WHERE continents.continent_name = 'Europe';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name   | capital
+---------+---------
+ France  | Paris
+ Germany | Berlin
+(2 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the first name of any singer who had an album released under the Warner Bros label.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT DISTINCT singers.first_name
+FROM singers JOIN albums
+ON singers.id = albums.singer_id
+WHERE albums.label LIKE '%Warner Bros%';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name
+------------
+ Prince
+ Madonna
+(2 rows)
+</code></pre>
+<p>The use of <code>DISTINCT</code> here ensures that the names aren't repeated in our results.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the first name and last name of any singer who released an album in the 80s and who is still living, along with the names of the album that was released and the release date. Order the results by the singer's age (youngest first).</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>Here we need to group our <code>WHERE</code> conditions together using the <code>AND</code> operator.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT singers.first_name, singers.last_name, albums.album_name, albums.released
+FROM singers JOIN albums
+ON singers.id = albums.singer_id
+WHERE albums.released &gt;= '1980-01-01'
+AND albums.released &lt; '1990-01-01'
+AND singers.deceased = false
+ORDER BY singers.date_of_birth DESC;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name |  last_name  |   album_name    |  released
+------------+-------------+-----------------+------------
+ Madonna    |             | Madonna         | 1983-07-27
+ Madonna    |             | True Blue       | 1986-06-30
+ Bruce      | Springsteen | Born in the USA | 1984-06-04
+(3 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the first name and last name of any singer without an associated album entry.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT singers.first_name, singers.last_name
+FROM singers LEFT JOIN albums
+ON singers.id = albums.singer_id
+WHERE albums.id IS NULL;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name | last_name
+------------+-----------
+ Frank      | Sinatra
+(1 row)
+</code></pre>
+<p>Here we use a combination of a <code>LEFT JOIN</code> and <code>IS NULL</code>. The <code>LEFT JOIN</code> will create a join table using every row in the <code>singers</code> table and any matching rows in <code>albums</code> table. Since Frank Sinatra doesn't have any matching rows in the <code>albums</code> table, the value for the <code>albums.id</code> column for his row in the join table will be <code>NULL</code>; this allows us to use <code>IS NULL</code> as part of a <code>WHERE</code> clause to return only this row.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Rewrite the query for the last question as a sub-query.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT first_name, last_name
+FROM singers
+WHERE id NOT IN (SELECT singer_id FROM albums);
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name | last_name
+------------+-----------
+ Frank      | Sinatra
+(1 row)
+</code></pre>
+<p>Here, the sub-query returns a list of id values from the <code>singer_id</code> column of the <code>albums</code> table. We can then query the <code>singers</code> table for any row where the <code>id</code> is not in that list.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Connect to the <code>ls_burger</code> database. Return a list of all orders and their associated product items.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT orders.*, products.*
+FROM orders JOIN order_items
+ON orders.id = order_items.order_id
+JOIN products
+ON order_items.product_id = products.id;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> id | customer_id | order_status | id |      product_name       | product_cost | product_type | product_loyalty_points
+----+-------------+--------------+----+-------------------------+--------------+--------------+------------------------
+  1 |           1 | In Progress  |  3 | LS Chicken Burger       |         4.50 | Burger       |                     20
+  1 |           1 | In Progress  |  5 | Fries                   |         1.20 | Side         |                      3
+  1 |           1 | In Progress  |  6 | Onion Rings             |         1.50 | Side         |                      5
+  1 |           1 | In Progress  |  8 | Lemonade                |         1.50 | Drink        |                      5
+  2 |           2 | Placed       |  2 | LS Cheeseburger         |         3.50 | Burger       |                     15
+  2 |           2 | Placed       |  5 | Fries                   |         1.20 | Side         |                      3
+  2 |           2 | Placed       |  7 | Cola                    |         1.50 | Drink        |                      5
+  3 |           2 | Complete     |  4 | LS Double Deluxe Burger |         6.00 | Burger       |                     30
+  3 |           2 | Complete     |  2 | LS Cheeseburger         |         3.50 | Burger       |                     15
+  3 |           2 | Complete     |  5 | Fries                   |         1.20 | Side         |                      3
+  3 |           2 | Complete     |  5 | Fries                   |         1.20 | Side         |                      3
+  3 |           2 | Complete     |  6 | Onion Rings             |         1.50 | Side         |                      5
+  3 |           2 | Complete     | 10 | Chocolate Shake         |         2.00 | Drink        |                      7
+  3 |           2 | Complete     |  9 | Vanilla Shake           |         2.00 | Drink        |                      7
+  4 |           3 | Placed       |  1 | LS Burger               |         3.00 | Burger       |                     10
+  4 |           3 | Placed       |  5 | Fries                   |         1.20 | Side         |                      3
+(16 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Return the id of any order that includes Fries. Use table aliasing in your query.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT o.id
+FROM orders AS o JOIN order_items AS oi
+ON o.id = oi.order_id
+JOIN products AS p
+ON oi.product_id = p.id
+WHERE p.product_name = 'Fries';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> id
+----
+  1
+  2
+  3
+  3
+  4
+(5 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Build on the query from the previous question to return the name of any customer who ordered fries. Return this in a column called 'Customers who like Fries'. Don't repeat the same customer name more than once in the results.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT DISTINCT c.customer_name AS "Customers who like Fries"
+FROM customers AS c JOIN orders as o
+ON c.id = o.customer_id
+JOIN order_items AS oi
+ON o.id = oi.order_id
+JOIN products AS p
+ON oi.product_id = p.id
+WHERE p.product_name = 'Fries';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> Customers who like Fries
+--------------------------
+ Natasha O'Shea
+ Aaron Muller
+ James Bergman
+(3 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the total cost of Natasha O'Shea's orders.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT sum(p.product_cost)
+FROM customers AS c JOIN orders as o
+ON c.id = o.customer_id
+JOIN order_items AS oi
+ON o.id = oi.order_id
+JOIN products AS p
+ON oi.product_id = p.id
+WHERE c.customer_name = 'Natasha O''Shea';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  sum
+-------
+ 23.60
+(1 row)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the name of every product included in an order alongside the number of times it has been ordered. Sort the results by product name, ascending.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT p.product_name, COUNT(oi.id)
+FROM products AS p JOIN order_items AS oi
+ON p.id = oi.product_id
+GROUP BY p.product_name
+ORDER BY p.product_name ASC;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">      product_name       | count
+-------------------------+-------
+ Chocolate Shake         |     1
+ Cola                    |     1
+ Fries                   |     5
+ LS Burger               |     1
+ LS Cheeseburger         |     2
+ LS Chicken Burger       |     1
+ LS Double Deluxe Burger |     1
+ Lemonade                |     1
+ Onion Rings             |     2
+ Vanilla Shake           |     1
+(10 rows)
+</code></pre>
+<p>Here we use the <code>count()</code> function along with a <code>GROUP BY</code> clause to count the order rows in each product name grouping.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="/books/sql/read/resources">Next:  Summary and Additional Resources
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

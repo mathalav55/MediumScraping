@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Basic Matching</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":0,"applicationTime":109,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Single character matches, Concatenation, Alternation, Case Insensitivity" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="nCmWT0BNSZM4oz5B9AZ0FgIpCG0sAuwMwNIhX9QoeEhtk4BOjBnE206k3BDH+8NeQa7qcE1l2b2C5dIJj4iDmw==" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-de180ae34fc81cc7f3f0d1e426533a524d80537b2a7bec20c5524dd981c0a978.css" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" media="screen" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" media="screen" rel="stylesheet"/>
+
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-b709b49ff81df80f3be5078f691802bb8fdda9025e8f5015d9cef4830ccc60ce.js"></script>
+
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="hide-for-large-up top-bar" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-abef2efb9c6721246db3db0a8f3ae66c64d8cf64a041a0dbca339d22acecfd9f.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/regex">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/regex/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/regex/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/regex/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/introduction#definition"><span>What Are Regular Expressions?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#uses"><span>What Are Regex Used For?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#examples"><span>A First Taste</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#why"><span>Do I Have to Know About Regex?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#frequency"><span>How Often Will I Use Regex?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/preparations#prerequisites"><span>What Do I Need To Know?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/preparations#resources"><span>Useful Learning Resources</span>
+</a></li>
+<li>
+<a href="/books/regex/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Regular Expressions</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/regex/read/basic_matching"><span class="chapter_title">Basic Matching</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/regex/read/basic_matching#alpha-numeric"><span>Alphanumerics</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#special"><span>Special Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#concatenation"><span>Concatenation</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#alternation"><span>Alternation</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#control"><span>Control Character Escapes</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#case"><span>Ignoring Case</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/character_classes"><span class="chapter_title">Character Classes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/character_classes#charset"><span>Set of Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#range"><span>Range of Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#negated"><span>Negated Classes</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/class_shortcuts"><span class="chapter_title">Character Class Shortcuts</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/class_shortcuts#dot"><span>Any Character</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#whitespace"><span>Whitespace</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#digits"><span>Digits and Hex Digits</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#words"><span>Word Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/anchors"><span class="chapter_title">Anchors</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/anchors#line-anchors"><span>Start/End of Line</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#lines-vs-strings"><span>Lines vs Strings</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#string-anchors"><span>Start/End of String</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#word-bounds"><span>Word Boundaries</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/quantifiers"><span class="chapter_title">Quantifiers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/quantifiers#zero-or-more"><span>Zero or More</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#one-or-more"><span>One or More</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#zero-or-one"><span>Zero or One</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#ranges"><span>Ranges</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#greediness"><span>Greediness</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Using Regular Expressions</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/using"><span class="chapter_title">Using Regular Expressions in Ruby and JavaScript</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/using#match"><span>Matching Strings</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#split"><span>Splitting Strings</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#captures"><span>Capture Groups: A Diversion</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#trans-ruby"><span>Transformations in Ruby</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#trans-js"><span>Transformations in JavaScript</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/conclusion#overview"><span>Overview</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#cheat-sheet"><span>Cheat Sheet</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#variants"><span>Variants</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#resources"><span>Resources</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#where-to-now"><span>Where To Go From Here</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Basic+Matching&amp;url=https://launchschool.com/books/regex/read/basic_matching&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/regex/read/basic_matching" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/regex">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/regex/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/regex/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/regex/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/introduction#definition"><span>What Are Regular Expressions?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#uses"><span>What Are Regex Used For?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#examples"><span>A First Taste</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#why"><span>Do I Have to Know About Regex?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/introduction#frequency"><span>How Often Will I Use Regex?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/preparations#prerequisites"><span>What Do I Need To Know?</span>
+</a></li>
+<li>
+<a href="/books/regex/read/preparations#resources"><span>Useful Learning Resources</span>
+</a></li>
+<li>
+<a href="/books/regex/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Regular Expressions</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/regex/read/basic_matching"><span class="chapter_title">Basic Matching</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/regex/read/basic_matching#alpha-numeric"><span>Alphanumerics</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#special"><span>Special Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#concatenation"><span>Concatenation</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#alternation"><span>Alternation</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#control"><span>Control Character Escapes</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#case"><span>Ignoring Case</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/basic_matching#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/character_classes"><span class="chapter_title">Character Classes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/character_classes#charset"><span>Set of Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#range"><span>Range of Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#negated"><span>Negated Classes</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/character_classes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/class_shortcuts"><span class="chapter_title">Character Class Shortcuts</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/class_shortcuts#dot"><span>Any Character</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#whitespace"><span>Whitespace</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#digits"><span>Digits and Hex Digits</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#words"><span>Word Characters</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/class_shortcuts#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/anchors"><span class="chapter_title">Anchors</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/anchors#line-anchors"><span>Start/End of Line</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#lines-vs-strings"><span>Lines vs Strings</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#string-anchors"><span>Start/End of String</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#word-bounds"><span>Word Boundaries</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/anchors#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/quantifiers"><span class="chapter_title">Quantifiers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/quantifiers#zero-or-more"><span>Zero or More</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#one-or-more"><span>One or More</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#zero-or-one"><span>Zero or One</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#ranges"><span>Ranges</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#greediness"><span>Greediness</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/quantifiers#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Using Regular Expressions</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/using"><span class="chapter_title">Using Regular Expressions in Ruby and JavaScript</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/using#match"><span>Matching Strings</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#split"><span>Splitting Strings</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#captures"><span>Capture Groups: A Diversion</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#trans-ruby"><span>Transformations in Ruby</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#trans-js"><span>Transformations in JavaScript</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/regex/read/using#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/regex/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/regex/read/conclusion#overview"><span>Overview</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#cheat-sheet"><span>Cheat Sheet</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#variants"><span>Variants</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#resources"><span>Resources</span>
+</a></li>
+<li>
+<a href="/books/regex/read/conclusion#where-to-now"><span>Where To Go From Here</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Basic+Matching&amp;url=https://launchschool.com/books/regex/read/basic_matching&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/regex/read/basic_matching" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Basic Matching</h1>
+<p>In this section, we'll get our feet wet in the calmer waters of the regex ocean with a quick introduction to regex patterns, namely those that match substrings. We'll also touch on some more intricate patterns, namely those that can match one of two or more subpatterns.</p>
+<p>We will run most of our examples through <a href="http://Rubular.com">Rubular</a>, so please go ahead and open it now. You can enter each pattern, and see what happens when you attempt to match them against a variety of different strings. Watch for how Rubular highlights matched characters; it shows you what your regex matches. Note that you can enter multiple lines in the test strings area.</p>
+<div class="alert-box warning">
+<p>JavaScript programmers can use <a href="http://Scriptular.com">Scriptular</a> instead of Rubular to test regex. However, there are some differences in behavior from Rubular. Our narrative uses Rubular's behavior; avoid confusion and use it for this book even if you're learning regex for JavaScript.</p>
+</div>
+<p>Note that Rubular provides the <code>/</code> characters that delimit regex. You shouldn't enter the <code>/</code> characters yourself when entering them in Rubular. However, remember that you need them in your programs.</p>
+<h2><a href="#alpha-numeric" name="alpha-numeric">Alphanumerics</a></h2>
+<p>The most basic regex of all is one that matches a specific alphanumeric character. You can construct such a regex by placing the letter or number of interest between two slashes (<code>/</code>).</p>
+<p>For example, <code>/s/</code> matches the letter <code>s</code> anywhere it appears inside a string. It matches <code>s</code>, <code>sand</code>, <code>cats</code>, <code>cast</code>, and even <code>Mississippi</code>. In this last example, <code>/s/</code> matches four times, at each of the occurrences of <code>s</code> in the string.</p>
+<div class="alert-box warning">
+<p>When we say that <code>/s/</code> matches four times, we refer specifically to how regex work in Rubular. By default, in most languages, a regex matches each string once or not at all; that is, regex matching is a boolean operation. We won't mention this again until near the end of the book.</p>
+</div>
+<p>Note, however, that <code>/s/</code> does not match <code>S</code> or <code>KANSAS</code>. Regex are case sensitive by default, so if you want to match a capital S, you need to specify <code>/S/</code>.</p>
+<p>Go ahead and give this a try in Rubular: enter the regex <code>/s/</code>, then enter the following strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">s
+sand
+cats
+cast
+Mississippi
+S
+KANSAS
+</code></pre>
+<p>Rubular should highlight all the <code>s</code> characters in the "Match result" box, thus showing where the regex matches. However, the regex doesn't highlight the uppercase <code>S</code> characters; it doesn't match the last two strings. If you change the regex to <code>/S/</code>, Rubular should light up all the <code>S</code> characters, but not the <code>s</code>-es.</p>
+<p>Great. This discussion is interesting, but how do you put it to use in a real program? Regex usage in a program is language dependent, and also dependent upon what you need to do. As a starter, though, we can use the <code>match</code> method from the Ruby and JavaScript String classes.</p>
+<p><strong>Ruby</strong></p>
+<pre class="language-ruby" data-numbers="off"><code class="language-ruby">str = 'cast'
+print "matched 's'" if str.match(/s/)
+print "matched 'x'" if str.match(/x/)
+</code></pre>
+<p><strong>JavaScript</strong></p>
+<pre class="language-javascript" data-numbers="off"><code class="language-javascript">let str = 'cast';
+if (str.match(/s/)) {
+  console.log("matched 's'");
+}
+
+if (str.match(/x/)) {
+  console.log("matched 'x'");
+}
+</code></pre>
+<p>Both of these print <code>matched 's"</code> since <code>str</code> contains the letter <code>'s'</code>, and neither prints <code>matched 'x'</code> since <code>str</code> does not contain the letter <code>'x'</code>.</p>
+<p>If you aren't acquainted with <code>match</code>, you can learn enough with a few minutes of skimming the documentation. We won't use anything more complex than the basic form of <code>match</code> that takes a single regex argument and a String caller. You can ignore the rest of the documentation for now.</p>
+<h2><a href="#special" name="special">Special Characters</a></h2>
+<p>Regex can also match non-alphanumeric characters. However, some of those have special meaning in a pattern and require specialized treatment. Others have no additional interpretation and need no special treatment.</p>
+<p>The following special characters have special meaning in a Ruby or JavaScript regex:</p>
+<p><code>$ ^ * + ? . ( ) [ ] { } | \ /</code></p>
+<p>We call such characters <em>meta-characters</em>. If you want to match a literal meta-character, you must <em>escape</em> it with a leading backslash (<code>\</code>). To match a question mark, for instance, use the regex <code>/\?/</code>. Go ahead and try <code>/\?/</code> now with these strings (and some of your own if you aren't sure what will happen):</p>
+<p>Inside square brackets, the rules for meta-characters change. We'll talk about meta-characters in "character classes" a little later.</p>
+<div class="alert-box info">
+<p>Some variants of regex have different meta-characters, and some reverse the sense of escaped characters. In <code>vim</code>, for example, <code>\(</code> and <code>\)</code> are meta-characters, while <code>(</code> and <code>)</code> match literal parentheses. This reversal can be confusing, but you must be aware of it.</p>
+<p>In recent years, programs that use regex have begun to support multiple regex styles. <code>vim</code>, for instance now has what it calls <em>extended syntax</em> which provides enhanced regex, and also lets you swap the way escaped characters work. You can choose to use <code>(</code> and <code>)</code> for grouping like most other programs, and use <code>\(</code> and <code>\)</code> for literal parentheses. Check your documentation to see whether your software supports different syntaxes.</p>
+</div>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">?
+What's up, doc?
+Silence!
+"What's that?"
+</code></pre>
+<p>You should find that <code>/\?/</code> matches all of the question marks in these strings. Try the same strings using <code>/?/</code> - you should see an error message instead.</p>
+<p>The remaining characters aren't meta-characters; they have no extraordinary meaning inside a regex. Both colons (<code>':'</code>) and spaces (<code>' '</code>) fall into this category. You can use these characters without an escape since they have no special meaning inside a pattern. For example, try <code>/:/</code> against these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">chris:x:300
+A thought; no, forget it.
+::::
+</code></pre>
+<p>Try changing the regex to <code>/ /</code>.</p>
+<div class="alert-box warning">
+<p>As of this writing, Rubular does not detect a single space as a regex. Try <code>/[ ]/</code> instead - this is equivalent to <code>/ /</code>, but it works in Rubular.</p>
+</div>
+<p>Now change the regex to <code>/./</code> (that's a period between the <code>/</code> characters). Whoa! What happened here? Oh, right, <code>.</code> is a meta-character; you must escape it. Change the regex to <code>/\./</code> instead. That's better now? (We'll return to <code>/./</code> and why everything lit up in a later chapter.)</p>
+<div class="alert-box info">
+<p>You don't need to memorize the list of meta-characters. You can escape all non-alphanumerics even when you don't need to. However, it's good to get a feel for which are meta-characters; unnecessary escapes make your regex harder to read. Keep the list of meta-characters handy until you have them fully loaded into your brain.</p>
+</div>
+<h2><a href="#concatenation" name="concatenation">Concatenation</a></h2>
+<p>You can <em>concatenate</em> two or more patterns into a new pattern that matches each of the originals in sequence. The regex <code>/cat/</code>, for instance, consists of the concatenation of the <code>c</code>, <code>a</code>, and <code>t</code> patterns, and matches any string that contains a <code>c</code> followed by an <code>a</code> followed by a <code>t</code>.</p>
+<p>Give <code>/cat/</code> a try using the following strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">cat
+catalog
+copycat
+scatter
+the lazy cat.
+CAT
+cast
+</code></pre>
+<p>If all went well, the first five strings matched the regex, but the last two did not. <code>CAT</code> didn't match since it is uppercase, and <code>cast</code> didn't match because <code>s</code> isn't part of the pattern.</p>
+<p>The fact that we use a fancy name like concatenation should give you a hint that more is going on here than meets the eye. The patterns we concatenated are simple; they each match a single, specific character. We aren't limited to these simple patterns though; in fact, you can concatenate any pattern to another to produce a larger regex. There are no practical limits to the number of concatenations you perform other than the physical limitations of your hardware.</p>
+<p>This fundamental idea is one of the more important concepts behind regex; patterns are the building blocks of regex, not characters or strings. You can construct complex regex by concatenating a series of patterns, and you can analyze a complex regex by breaking it down into its component patterns.</p>
+<p>In theory, your computer's capacity to handle large regex places some limitations on the size and complexity of your regex. In practice, though, your ability to understand and maintain your code places more severe restrictions on it. Your head will reach the breaking point long before your computer does. You'll sometimes hear regex called <em>write-only expressions</em> or <em>line noise</em> because it's easy to write an unreadable and unmaintainable mess. Use regex not because you can; use them because your code demands them. Often, a bit of refactoring will eliminate the need for a complex regex.</p>
+<h2><a href="#alternation" name="alternation">Alternation</a></h2>
+<p>In this section, we introduce alternation, a simple way to construct a regex that matches one of several sub-patterns. In its most basic form, you write two or more patterns separated by pipe (<code>|</code>) characters, and then surround the entire expression in parentheses. For example, try the regex <code>/(cat|dog|rabbit)/</code> with the following strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">The lazy cat.
+The dog barks.
+Down the rabbit hole.
+The lazy cat, chased by the barking dog,
+dives down the rabbit hole.
+catalog
+The Yellow Dog
+My bearded dragon's name is Darwin
+</code></pre>
+<p>As with other patterns, case matters, so the <code>Dog</code> in <code>The Yellow Dog</code> is not matched.</p>
+<p>As with concatenation, there are no built-in restrictions on alternation.</p>
+<p>Even though parentheses and pipes are meta-characters that require escaping, we don't do that here. We aren't performing a literal match, but are instead using the "meta" meaning of those characters.</p>
+<p>To see the difference, give the regex <code>/\(cat\|dog\)/</code> a try with the following strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">(cat|dog)
+bird(cat|dog)zebra
+cat
+dog
+</code></pre>
+<p>You'll notice this time that we don't match either <code>cat</code> or <code>dog</code>; since we escaped everything, the regex matcher looks for literal instances of those characters and doesn't treat them as an alternation operation.</p>
+<h2><a href="#control" name="control">Control Character Escapes</a></h2>
+<p>Most modern computing languages use control character escapes in strings to represent characters that don't have a visual representation. For example, <code>\n</code>, <code>\r</code>, and <code>\t</code> are nearly universal ways to represent line feeds, carriage returns, and tabs, respectively. Both Ruby and JavaScript support these escapes, as do all regex engines. For example:</p>
+<p><strong>Ruby</strong></p>
+<pre class="language-ruby" data-numbers="off"><code class="language-ruby">puts "has tab" if text.match(/\t/)
+</code></pre>
+<p><strong>JavaScript</strong></p>
+<pre class="language-javascript" data-numbers="off"><code class="language-javascript">if (text.match(/\t/)) {
+  console.log("has tab");
+}
+</code></pre>
+<p>both print <code>has tab</code> if <code>text</code> contains a tab character.</p>
+<div class="alert-box info">
+<p>Note that not everything that looks like a control character escape is a genuine control character escape. For instance:</p>
+<ul>
+<li> <code>\s</code> and <code>\d</code> are special character classes (we'll cover these later)
+</li>
+<li> <code>\A</code> and <code>\z</code> are anchors (we'll cover these as well)
+</li>
+<li> <code>\x</code> and <code>\u</code> are special character code markers (we won't cover these)
+</li>
+<li> <code>\y</code> and <code>\q</code> have no special meaning at all
+</li>
+</ul>
+</div>
+<h2><a href="#case" name="case">Ignoring Case</a></h2>
+<p>As we've seen, regex are case sensitive by default. If you want to match a lowercase <code>s</code>, you need to use a lowercase <code>s</code> in your regex. If you want to match an uppercase <code>S</code>, you must use an <code>S</code> in your regex.</p>
+<p>You can change this default behavior by appending an <code>i</code> to the close <code>/</code> of a regex, which makes the entire regex ignore case. For example, try the pattern <code>/launch/</code> against these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">I love Launch School!
+LAUNCH SCHOOL! Gotta love it!
+launchschool.com
+</code></pre>
+<p>You should see one match -- <code>launch</code> in the domain name. Now add an <code>i</code> option to the regex, i.e., <code>/launch/i</code> and try again. This time, Rubular will highlight all three instances of <code>launch</code> without regard to their case. Nifty!</p>
+<p>There are other useful options like <code>/i</code>, but the options are language specific. We don't have a dedicated section to discuss any other options, some of which we'll meet later. See the documentation for your language of choice for complete list of available options.</p>
+<div class="alert-box info">
+<p>The documentation calls these options <strong>flags</strong> or <strong>modifiers</strong>, but we can use all three terms interchangeably.</p>
+</div>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>The discussion so far is straight-forward. You've learned the basic regex syntax, seen an example of using regex, and played around with a few basic regex. You've also learned about one of the fundamental concepts behind regex: concatenation of patterns. In the next chapter, we'll explore a little further and examine regex that can match any set of characters.</p>
+<p>But, before you proceed, take a little while to work the exercises below. In these exercises, use Rubular to write and test your regex. You don't need to write any code.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Write a regex that matches an uppercase <code>K</code>. Test it with these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">Kx
+BlacK
+kelly
+</code></pre>
+<p>There should be two matches.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby" data-numbers="off"><code class="language-ruby">/K/
+</code></pre><p>The correct matches are <code>K</code> at the beginning of line 1, and <code>K</code> at the end of line 2.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a regex that matches an uppercase or lowercase <code>H</code>. Test it with these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">Henry
+perch
+golf
+</code></pre>
+<p>There should be two matches.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby" data-numbers="off"><code class="language-ruby">/h/i
+</code></pre><p>An alternative solution is to use alternation:</p>
+<pre class="language-ruby" data-numbers="off"><code class="language-ruby">/(h|H)/
+</code></pre>
+<p>The correct matches are <code>H</code> at the beginning of line 1, and <code>h</code> at the end of line 2.</p>
+<p>Can you think of a situation where you might want to use alternation instead of the <code>i</code> option?</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a regex that matches the string <code>dragon</code>. Test it with these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">snapdragon
+bearded dragon
+dragoon
+</code></pre>
+<p>There should be two matches.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby" data-numbers="off"><code class="language-ruby">/dragon/
+</code></pre><p>The regex should match the word <code>dragon</code> at the end of lines 1 and 2.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a regex that matches any of the following fruits: banana, orange, apple, strawberry. The fruits may appear in other words. Test it with these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">banana
+orange
+pineapples
+strawberry
+raspberry
+grappler
+</code></pre>
+<p>There should be five matches.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby" data-numbers="off"><code class="language-ruby">/(banana|orange|apple|strawberry)/
+</code></pre><p>Note that our regex matches <code>apple</code> in the words <code>pineapples</code> and <code>grappler</code>. You'll learn how to prevent this later on.</p>
+<p>The solution matches everything except <code>raspberry</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a regex that matches a comma or space. Test your regex with these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">This line has spaces
+This,line,has,commas,
+No-spaces-or-commas
+</code></pre>
+<p>There should be seven matches.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby" data-numbers="off"><code class="language-ruby">/( |,)/
+</code></pre><p>The expression should match three spaces on line 1 and four commas on line 2.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Challenge: Write a regex that matches <code>blueberry</code> or <code>blackberry</code>, but write <code>berry</code> precisely once. Test it with these strings:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">blueberry
+blackberry
+black berry
+strawberry
+</code></pre>
+<p>There should be two matches.</p>
+<p>Hint: you need both concatenation and alternation.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby" data-numbers="off"><code class="language-ruby">/(blue|black)berry/
+</code></pre><p>The key to this challenge is that concatenation works with <em>patterns</em>, not characters. Thus, we can concatenate <code>(blue|black)</code> with <code>berry</code> to produce the final result.</p>
+<p>The expression matches the first two lines.</p>
+<p>How come the regex doesn't match <code>black berry</code>?</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="/books/regex/read/character_classes">Next:  Character Classes
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

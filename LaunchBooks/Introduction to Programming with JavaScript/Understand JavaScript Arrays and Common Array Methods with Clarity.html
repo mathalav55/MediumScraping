@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Understand JavaScript Arrays and Common Array Methods with Clarity</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":152,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="We talk about what the JavaScript Array is, nested arrays and array comparison, common Array operations, how array methods could return an new array or mutate the caller." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="1eL38lzGgdu6MnaQLdlnrfUbKHjhxB3J938CpR8SzpPefQjbRxDvuMwzrNXLG+AF3uu5L5O1FpUip3fOzI+gQw==" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-de180ae34fc81cc7f3f0d1e426533a524d80537b2a7bec20c5524dd981c0a978.css" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" media="screen" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" media="screen" rel="stylesheet"/>
+
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-b709b49ff81df80f3be5078f691802bb8fdda9025e8f5015d9cef4830ccc60ce.js"></script>
+
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="hide-for-large-up top-bar" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-abef2efb9c6721246db3db0a8f3ae66c64d8cf64a041a0dbca339d22acecfd9f.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>MDN Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Understand+JavaScript+Arrays+and+Common+Array+Methods+with+Clarity&amp;url=https://launchschool.com/books/javascript/read/arrays&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/arrays" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>MDN Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Understand+JavaScript+Arrays+and+Common+Array+Methods+with+Clarity&amp;url=https://launchschool.com/books/javascript/read/arrays&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/arrays" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Arrays</h1>
+<p>We've touched on arrays a few times in the previous chapters. It's time to explore them in more depth.</p>
+<h2><a href="#whatisanarray" name="whatisanarray">What is an Array?</a></h2>
+<p>An array is an ordered list of <strong>elements</strong>; each element has a value of any type. You can define an array by placing a list of values between brackets (<code>[]</code>):</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let myArray = [2, 'Pete', 2.99, 'another string']
+</code></pre>
+<p>This example demonstrates that arrays are <strong>heterogenous</strong>; <code>myArray</code> has both number and string values. Arrays can have anything in them, including objects and even other arrays.</p>
+<p>Each element in an array has a unique index number that gives the position of the element in the array. Thus, we can say that arrays are <strong>indexed lists</strong> as well as ordered lists.</p>
+<p>You can refer to any element of an array by its index number. The syntax puts the index number between brackets (<code>[]</code>) after the array's name or value. For instance, we can get the first element of <code>myArray</code> this way:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; myArray[0]
+= 2
+</code></pre>
+<p>The first element of an array is always at index <code>0</code>. Thus, the second element is at index <code>1</code>, the third at index <code>2</code>, and so on. To access the third element of an array, we can  write:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; myArray[2]
+= 2.99
+</code></pre>
+<p>If you know that <code>myArray</code> has 4 elements, it's easy to see that <code>myArray[3]</code> returns the last element. Suppose you don't know how many elements the array contains. How can you access the last element? It's not hard, but it is a bit tricky. The array's <code>length</code> property does the job:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; myArray[myArray.length - 1]
+= 'another string'
+</code></pre>
+<p>Note that we must use the array's name twice, and, since we must account for the element at index <code>0</code>, we must subtract 1 from the length to get the last element's index. Zero-based indexing seems strange at first, and it makes the arithmetic a little tricky, but, once you get used to it—it takes practice—it soon becomes second nature.</p>
+<h2><a href="#modifyingarrays" name="modifyingarrays">Modifying Arrays</a></h2>
+<p>Arrays wouldn't be practical if we couldn't modify them. We need the ability to add, remove, and replace elements. The <code>[]</code> operator and some array methods help us accomplish these tasks.</p>
+<h3>Replacing and Adding Elements With <code>[]</code>
+</h3>
+<p>To replace an element of an array, use brackets (<code>[]</code>) with the assignment operator:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let array = [1, 2, 3]
+&gt; array[1] = 4
+= 4
+
+&gt; array
+= [ 1, 4, 3 ]
+</code></pre>
+<p>You can also use <code>[]</code> to add new elements to an array:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; array[array.length] = 10
+= 10
+
+&gt; array
+= [ 1, 4, 3, 10 ]
+</code></pre>
+<p>Note that <code>array[array.length] = value</code> adds a new value to the end of <code>array</code> since the previous ending element was at <code>array[array.length - 1]</code>.</p>
+<p>Note that variables declared with <code>const</code> and initialized to an array are a little strange; while you can't change what array the variable refers to, you can modify the array's contents:</p>
+<pre class="language-node"><code class="language-node">&gt; const MyArray = [1, 2, 3]
+&gt; MyArray[1] = 5
+&gt; MyArray
+= [1, 5, 3]
+
+&gt; MyArray = [4, 5, 6] // Uncaught TypeError: Assignment to constant variable.
+</code></pre>
+<p>This type of behavior can be confusing. It stems from the "variables as pointers" concept that we discuss a little later. Essentially, a <code>const</code> declaration prohibits changing what thing the <code>const</code> points to, but it does not prohibit changing the content of that thing. Thus, we can change an element in a <code>const</code> array, but we can't change which array the <code>const</code> points to.</p>
+<p>If you want the elements of the array to also be <code>const</code>, you can use the <code>Object.freeze</code> method:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; const MyArray = Object.freeze([1, 2, 3])
+&gt; MyArray[1] = 5
+&gt; MyArray
+= [1, 2, 3]
+</code></pre>
+<p>Notice how the assignment on line 2 had no effect on the content of the array.</p>
+<p>It's important to realize that <code>Object.freeze</code> only works one level deep in the array. If your array contains nested arrays or other objects, the values inside them can still be changed unless they are also frozen:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; const MyArray = Object.freeze([1, 2, 3, [4, 5, 6]])
+&gt; MyArray[3][1] = 0
+&gt; MyArray
+= [1, 2, 3, [4, 0, 6]]
+</code></pre>
+<p>If you want the sub-array to be constant as well, you have to freeze it:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; const MyArray = Object.freeze([1, 2, 3, Object.freeze([4, 5, 6])])
+&gt; MyArray[3][1] = 0
+&gt; MyArray
+= [1, 2, 3, [4, 5, 6]]
+</code></pre>
+<h3>Adding Elements With <code>push</code>
+</h3>
+<p>The <code>push</code> method adds one or more elements to the end of an array:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; array.push('a')
+= 5               // the new length of the array
+
+&gt; array
+= [ 1, 4, 3, 10, 'a' ]
+
+&gt; array.push(null, 'xyz')
+= 7
+
+&gt; array
+= [ 1, 4, 3, 10, 'a', null, 'xyz' ]
+</code></pre>
+<p>The <code>push</code> method appends its arguments to the caller (the array), which mutates the caller. It then returns the array's new length. Don't forget that methods and functions perform actions and return values. You must be careful to distinguish between these two things. <code>push</code> appends elements to the end of the caller array, but it returns the array's updated length. Note that it does not return the modified array! New JavaScript programmers often get confused over this difference and spend hours puzzling over why a function isn't returning the value they expect. Check the documentation if you have any doubt.</p>
+<h3>Adding Elements With <code>concat</code>
+</h3>
+<p>The <code>concat</code> method is similar to <code>push</code>, but it doesn't mutate the caller. It concatenates two arrays and returns a brand new array that contains all the elements from the original array followed by all of the arguments passed to it:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; array.concat(42, 'abc')
+= [ 1, 4, 3, 10, 'a', null, 'xyz', 42, 'abc' ]
+
+&gt; array
+= [ 1, 4, 3, 10, 'a', null, 'xyz' ]
+</code></pre>
+<div class="alert-box info">
+<p>How do you know which methods mutate the caller and which ones don't? Most of the time, the documentation has this information; documentation for non-mutating methods may mention that they return a new array. However, don't count on it. The way to be sure is to use the method and examine the results.</p>
+</div>
+<h3>Removing Elements With <code>pop</code>
+</h3>
+<p>The inverse of <code>push</code> is <code>pop</code>. While <code>push</code> adds an element to the end of the array, <code>pop</code> removes and returns the last element of the array:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; array.pop()
+= 'xyz'            // removed element value
+
+&gt; array
+= [ 1, 4, 3, 10, 'a', null ]
+</code></pre>
+<p><code>pop</code> mutates the caller.</p>
+<h3>Removing Elements With <code>splice</code>
+</h3>
+<p>The <code>splice</code> method lets you remove one or more elements from an array, even those that aren't at the end of the array:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; array.splice(3, 2)
+[ 10, 'a' ]
+
+&gt; array
+= [ 1, 4, 3, null ]
+</code></pre>
+<p>In this example, we delete 2 elements starting at index position 3. <code>splice</code> mutates the original array and returns a new array that contains the deleted elements.</p>
+<p><code>splice</code> can also add and insert elements, but we'll leave that for our JavaScript courses.</p>
+<h2><a href="#iterationmethods" name="iterationmethods">Iteration Methods</a></h2>
+<h3>Iterating With <code>forEach</code>
+</h3>
+<p>JavaScript has a variety of built-in methods that iterate over the contents of an array. In the <em>Loops and Iterating</em> chapter, we introduced the <code>forEach</code> method. It provides a simple way to iterate over arrays; style guides often recommend it in favor of a <code>for</code> loop.</p>
+<p>To use <code>forEach</code>, you need a <strong>callback</strong> function that you pass to <code>forEach</code> as an argument. A callback function is a function that you pass to another function as an argument. The called function invokes the callback function when it runs. The <code>forEach</code> method invokes its callback once for each element, passing it the element's value as an argument. <code>forEach</code> always returns undefined.</p>
+<div class="alert-box info">
+<p>A callback is a function that you pass to another function as an argument. The called function subsequently invokes the callback function at certain times while it runs.</p>
+</div>
+<pre class="language-js" data-numbers="off"><code class="language-js">let array = [1, 2, 3];
+array.forEach(function(num) {
+  console.log(num); // on first iteration  =&gt; 1
+                    // on second iteration =&gt; 2
+                    // on third iteration  =&gt; 3
+}); // returns `undefined`
+</code></pre>
+<p>This code invokes the callback function once for each element in the array. <code>forEach</code>, during each iteration, invokes the callback with the element's value as an argument. The callback then logs it to the console. In the end, <code>forEach</code> returns <code>undefined</code>.</p>
+<p>We can also use an arrow function instead of a function expression, which makes our code compact and, when you're familiar with the syntax, more readable.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let array = [1, 2, 3];
+array.forEach(num =&gt; console.log(num));
+</code></pre>
+<p>We can also perform more complex operations:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let array = [1, 2, 3];
+array.forEach(num =&gt; console.log(num + 2)); // on first iteration  =&gt; 3
+                                            // on second iteration =&gt; 4
+                                            // on third iteration  =&gt; 5
+</code></pre>
+<h3>Transforming Arrays With <code>map</code>
+</h3>
+<p><code>forEach</code> works well when you want to use the values of an array's elements. Suppose, though, that you want to create a new array whose values depend on the original contents of the array. For instance, suppose you want to create a new array that contains the squares of all the numbers in the calling array. With <code>forEach</code>, you might end up with something like this:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let numbers = [1, 2, 3, 4]
+&gt; let squares = [];
+&gt; numbers.forEach(num =&gt; squares.push(num * num));
+&gt; squares
+= [ 1, 4, 9, 16 ]
+
+&gt; numbers
+= [ 1, 2, 3, 4 ]
+</code></pre>
+<p>That works well enough, but the callback now has a side effect: it modifies the <code>squares</code> variable, which isn't part of the callback function. Side effects sometimes lead to trouble. Consider what happens if you ran the <code>forEach</code> call again after running the above code:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; numbers.forEach(num =&gt; squares.push(num * num));
+&gt; squares
+= [ 1, 4, 9, 16, 1, 4, 9, 16 ]
+</code></pre>
+<p>We now have two copies of the squares since we forgot to reset <code>squares</code> to an empty array.</p>
+<p>The <code>map</code> method handles this situation more cleanly:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let numbers = [1, 2, 3, 4]
+&gt; let squares = numbers.map(num =&gt; num * num);
+&gt; squares
+= [ 1, 4, 9, 16 ]
+
+&gt; squares = numbers.map(num =&gt; num * num);
+= [ 1, 4, 9, 16 ]
+</code></pre>
+<p>The first 4 lines of this code have the same result as the previous example using <code>forEach</code>. However, <code>map</code> returns a new array that contains one element for each element in <code>numbers</code>, with each element set to the return value of the callback: the squares of the numbers in this case. This code is more compact than the <code>forEach</code> code, and, better yet, it has no side effects; the callback doesn't update <code>squares</code> (the return value of <code>map</code> does that), and we don't have to reset the variable if we rerun the same code.</p>
+<p><code>forEach</code> and <code>map</code> are important methods, but they can confuse beginners. The main thing to remember is that <code>forEach</code> performs simple iteration and returns <code>undefined</code>, while <code>map</code> transforms an array's elements and returns a new array with the transformed values.</p>
+<h3>Filtering Arrays with <code>filter</code>
+</h3>
+<p>The <code>filter</code> method is another array iteration method. It returns a new array that includes all elements from the calling array for which the callback returns a truthy value. That's a mouthful. Some code should help clarify what <code>filter</code> does:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2]
+&gt; numbers.filter(num =&gt; num &gt; 4)
+= [ 5, 6, 7, 8, 9, 10 ]
+
+&gt; numbers
+= [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2 ]
+</code></pre>
+<p><code>filter</code> iterates over the elements of the array. During each iteration, it invokes the callback function, using the value of the current element as an argument. If the callback returns a truthy value, <code>filter</code> appends the element's value to a new array. Otherwise, it ignores the element's value and does nothing. When <code>filter</code> finishes iterating, it returns the array of <em>selected</em> elements: the elements for which the callback returned a truthy value. In our example, <code>filter</code> selects all of the elements with a value greater than 4.</p>
+<p><code>filter</code> doesn't mutate the caller.</p>
+<h3>Building New Values from Arrays with <code>reduce</code>
+</h3>
+<p>The <code>reduce</code> method effectively reduces the contents of an array to a single value. It is, perhaps, one of the hardest array iteration methods to understand, but it is also one of the most fundamental. You can build <code>forEach</code>, <code>map</code>, and <code>filter</code> with <code>reduce</code>, as well as a number of other iterative methods defined for Arrays.</p>
+<p><code>reduce</code> takes two arguments: a callback function and a value that initializes something called the <strong>accumulator</strong>. In its simplest form, the callback function takes two arguments: the current value of the accumulator and an element from the array. It returns a value that will be used as the accumulator in the next invocation of the callback. That sounds more complicated than it is, so let's take a look at two simple uses of <code>reduce</code>:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let arr = [2, 3, 5, 7]
+&gt; arr.reduce((accumulator, element) =&gt; accumulator + element, 0)
+= 17
+
+&gt; arr.reduce((accumulator, element) =&gt; accumulator * element, 1)
+= 210
+</code></pre>
+<p>The first invocation computes the sum of all the values in the array, e.g., <code>2 + 3 + 5 + 7</code>. To get us started, we initialize the accumulator to 0. Thus, on the first invocation of the callback function, <code>accumulator</code> is <code>0</code> and <code>element</code> is <code>2</code>. The callback returns <code>2</code>, which becomes the new <code>accumulator</code> value when we invoke the callback again, this time with the element <code>3</code>. That invocation, in turn, returns <code>5</code>. This process continues until the final return value is <code>17</code>.</p>
+<p>The second invocation of <code>reduce</code> computes the product of the numbers in the array (<code>2 * 3 * 5 * 7</code>), starting out with <code>1</code> as the accumulator. (If we started with <code>0</code> as the accumulator, the final return value would be <code>0</code> since <code>0</code> times anything is <code>0</code>.)</p>
+<p>The <code>reduce</code> function isn't limited to computing numbers: you can also use it to compute strings, objects, arrays: anything. Here's an example with strings:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let strings = ['a', 'b', 'c', 'd']
+&gt; strings.reduce((accumulator, element) =&gt; {
+...   return accumulator + element.toUpperCase()
+... }, '');
+= 'ABCD'
+</code></pre>
+<p><code>reduce</code> does not mutate the caller. (It is possible that the callback might mutate the caller, but that's inadvisable, and not <code>reduce</code>'s fault.)</p>
+<h2><a href="#arrayscanbeodd" name="arrayscanbeodd">Arrays Can Be Odd</a></h2>
+<p>JavaScript arrays have some odd properties that might catch you by surprise. If you've worked with arrays in other languages, the oddities may be especially surprising.</p>
+<ul>
+<li>
+<p>You've already met one oddity: indexes start at <code>0</code>. Most programming languages use zero-based indexes, so it's not too odd. However, learners often stumble on this aspect of using arrays.</p>
+</li>
+<li>
+<p>The <code>length</code> property always returns a number that is one greater than the greatest used index position of the array. For instance, if an element exists at index position <code>124</code> and there are no other elements with greater index values, then the array's <code>length</code> is 125.</p>
+</li>
+<li>
+<p><strong>Arrays are objects</strong>, which we'll meet in the next chapter. One side effect of this is that the <code>typeof</code> operator doesn't return <code>'array'</code> when applied to an array:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let arr = [1, 2, 3]
+&gt; typeof arr
+= 'object'
+</code></pre>
+<p>If you really need to detect whether a variable references an array, you need to use <code>Array.isArray</code> instead:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let arr = [1, 2, 3]
+&gt; Array.isArray(arr)
+= true
+</code></pre>
+</li>
+<li>
+<p>If you change an array's <code>length</code> property to a new, smaller value, the array gets truncated; JavaScript removes all elements beyond the new final element.</p>
+</li>
+<li>
+<p>If you change an array's <code>length</code> property to a new, larger value, the array expands to the new size. The new elements <strong>do not get initialized</strong>, which leads to some strange behavior:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let arr = []
+&gt; arr.length = 3
+&gt; arr
+= [ &lt;3 empty items&gt; ]
+
+&gt; arr[0]
+= undefined
+
+&gt; arr.filter(element =&gt; element === undefined)
+= []
+
+&gt; arr.forEach(element =&gt; console.log(element)) // no output
+= undefined
+
+&gt; arr[1] = 3
+&gt; arr
+= [ &lt;1 empty item&gt;, 3, &lt;1 empty item&gt; ]
+
+&gt; arr.length
+= 3
+
+&gt; arr.forEach(element =&gt; console.log(element))
+= undefined
+
+&gt; Object.keys(arr)
+= ['1']
+</code></pre>
+<p>In general, JavaScript treats unset array elements as missing, but the <code>length</code> property includes the unset elements.</p>
+</li>
+<li>
+<p>You can create array "elements" with indexes that use negative or non-integer values, or even non-numeric values:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; arr = [1, 2, 3]
+= [ 1, 2, 3 ]
+
+&gt; arr[-3] = 4
+= 4
+
+&gt; arr
+= [ 1, 2, 3, '-3': 4 ]
+
+&gt; arr[3.1415] = 'pi'
+= 'pi'
+
+&gt; arr["cat"] = 'Fluffy'
+= 'Fluffy'
+
+&gt; arr
+= [ 1, 2, 3, '-3': 4, '3.1415': 'pi', cat: 'Fluffy' ]
+</code></pre>
+<p>These "elements" aren't true elements; they are properties on the array object, which we'll discuss later. Only index values (0, 1, 2, 3, and so on) count toward the length of the array.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; arr.length
+= 3
+</code></pre>
+</li>
+<li>
+<p>Since arrays are objects, you can use the <code>Object.keys</code> method to return an array's keys -- its index values -- as an array of strings. Even negative, non-integer, and non-numeric indexes are included.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; arr = [1, 2, 3]
+&gt; arr[-3] = 4
+&gt; arr[3.1415] = 'pi'
+&gt; arr["cat"] = 'Fluffy'
+&gt; arr
+= [ 1, 2, 3, '-3': 4, '3.1415': 'pi', cat: 'Fluffy' ]
+
+&gt; Object.keys(arr)
+= [ '0', '1', '2', '-3', '3.1415', 'cat' ]
+</code></pre>
+<p>One quirk of this method is that it treats unset values in arrays differently from those that merely have a value of <code>undefined</code>. Unset values are created when there are "gaps" in the array; they show up as empty items until you try to use their value:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let a = new Array(3);
+&gt; a
+= [ &lt;3 empty items&gt; ]
+
+&gt; a[0] === undefined;
+= true
+
+&gt; let b = [];
+&gt; b.length = 3;
+&gt; b
+= [ &lt;3 empty items&gt; ]
+
+&gt; b[0] === undefined;
+= true
+
+&gt; let c = [undefined, undefined, undefined]
+&gt; c
+= [ undefined, undefined, undefined ]
+
+&gt; c[0] === undefined;
+= true
+</code></pre>
+<p>While the <code>length</code> property of Array includes unset values in the count, <code>Object.keys</code> only counts those values that have been set to some value:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let aKeys = Object.keys(a)
+&gt; a.length
+= 3
+&gt; aKeys.length;
+= 0
+
+&gt; let bKeys = Object.keys(b)
+&gt; b.length
+= 3
+&gt; bKeys.length;
+= 0
+
+&gt; let cKeys = Object.keys(c)
+&gt; c.length
+= 3
+&gt; cKeys.length;
+= 3
+</code></pre>
+</li>
+</ul>
+<p>It's worth spending some time and effort to memorize these behaviors.</p>
+<h2><a href="#nestedarrays" name="nestedarrays">Nested Arrays</a></h2>
+<p>Array elements can contain anything, including other arrays. You can create arrays with arrays inside them and even arrays inside those inner arrays. Suppose you want to track all of the teams playing in a mixed doubles tennis tournament. You might create an array like this.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let teams = [['Joe', 'Jennifer'], ['Frank', 'Molly'], ['Dan', 'Sarah']]
+</code></pre>
+<p>You can now find the teams by index.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; teams[2]
+= [ 'Dan', 'Sarah' ]
+</code></pre>
+<p>If you want to retrieve the second element of <code>teams[2]</code>, you can append <code>[1]</code> to the expression:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; teams[2][1]
+= 'Sarah'
+</code></pre>
+<h2><a href="#arrayequality" name="arrayequality">Array Equality</a></h2>
+<p>What do you think the following expression returns?</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; [1, 2, 3] === [1, 2, 3]
+</code></pre>
+<p>A reasonable answer is that it returns <code>true</code>. After all, the arrays look identical. JavaScript, however, isn't reasonable in this case: the expression returns <code>false</code>.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; [1, 2, 3] === [1, 2, 3]
+= false
+</code></pre>
+<p>How about the following comparison?</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let a = [1, 2, 3]
+&gt; let b = a
+&gt; a === b
+</code></pre>
+<p>Curiously, this comparison evaluates as true. What's happening here?</p>
+<p>JavaScript treats two arrays as equal only when they are the same array: they must occupy the same spot in memory. This rule holds for JavaScript objects in general; objects must be the same object. For this reason, the second example returns <code>true</code> while the first one returns <code>false</code>. Assigning <code>a</code> to <code>b</code> makes <code>b</code> refer to the same array as <code>a</code>; it doesn't create a new array.</p>
+<div class="alert-box info">
+<p>If that last paragraph confused you, come back to this section after you've read <em>Variables as Pointers</em> in the <em>More Stuff</em> chapter. If you want, you can even read it now.</p>
+<p>It's important to realize that the previous discussion concerns arrays (and other JavaScript objects). The situation with primitive values is different and less surprising.</p>
+</div>
+<p>At first glance, you might say that the arrays in the first example are also "the same array," but they're not. They're two different arrays that happen to have the same values. However, they occupy distinct positions in memory, so they aren't the same array, and thus aren't equal.</p>
+<p>Given this behavior, how do you check whether two arrays have the same elements? One option is to create a function that compares the elements of one array with the corresponding elements in the other:</p>
+<pre class="language-js" data-file="array_equality.js" data-numbers="off"><code class="language-js">function arraysEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+
+  for (let i = 0; i &lt; arr1.length; i += 1) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(arraysEqual([1, 2, 3], [1, 2, 3]));    // =&gt; true
+console.log(arraysEqual([1, 2, 3], [4, 5, 6]));    // =&gt; false
+console.log(arraysEqual([1, 2, 3], [1, 2, 3, 4])); // =&gt; false
+</code></pre>
+<p><code>arraysEqual</code> takes two arrays and returns <code>false</code> when an element in one array doesn't equal the corresponding element in the other. Otherwise, it returns <code>true</code>. It returns <code>false</code> right away if the arrays have different lengths; taking care of this case first simplifies the rest of the function.</p>
+<p><code>arraysEqual</code> works best when all elements in both arrays are primitive values. If any pair of elements has a non-primitive value (an array or object), <code>arraysEqual</code> might not return the result you expect:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; arraysEqual([1, 2, [3, 4], 5], [1, 2, [3, 4], 5])
+= false
+</code></pre>
+<h2><a href="#otherarraymethods" name="otherarraymethods">Other Array Methods</a></h2>
+<p>This section introduces some additional built-in methods that JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a> provide. You should bookmark that page: you will use it often.</p>
+<h3>includes</h3>
+<p>The <code>includes</code> method determines whether an array includes a given element:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let a = [1, 2, 3, 4, 5]
+&gt; a.includes(2)
+= true
+
+&gt; a.includes(10)
+= false
+</code></pre>
+<div class="alert-box info">
+<p>Internally, <code>includes</code> uses <code>===</code> to compare elements of the array with the argument. That means we can't use <code>includes</code> to check for the existence of a nested array or an object unless we have the same object or array we're looking for:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let inner = [3, 4];
+&gt; let a = [1, 2, inner, 5]
+
+&gt; a.includes([3, 4])
+= false
+
+&gt; a.includes(inner)
+= true
+</code></pre>
+</div>
+<h3>sort</h3>
+<p>The <code>sort</code> method is a handy way to rearrange the elements of an array in sequence. It returns a sorted array.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let a = ["e", "c", "h", "b", "d", "a"]
+&gt; a.sort()
+= [ 'a', 'b', 'c', 'd', 'e', 'h' ]
+</code></pre>
+<p>Use <code>node</code> or the console to test whether <code>sort</code> is destructive, i.e., does it mutate the caller? (It does, but check for yourself.)</p>
+<p>We'll learn more about <code>sort</code> and how it works in a later course.</p>
+<h3>slice</h3>
+<p>The <code>slice</code> method—not the <code>splice</code> method you met earlier—extracts and returns a portion of the array. It takes two optional arguments. The first is the index at which extraction begins, while the second is where extraction ends:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let fruits = ['mango', 'orange', 'banana', 'pear', 'apple']
+&gt; fruits.slice(1, 3)
+= [ 'orange', 'banana' ]
+
+&gt; fruits.slice(2) // second argument defaults to rest of array
+= [ 'banana', 'pear', 'apple' ]
+
+&gt; fruits.slice() // no arguments duplicates the array
+= [ 'mango', 'orange', 'banana', 'pear', 'apple' ]
+</code></pre>
+<p>If you omit the second argument, <code>slice</code> returns the rest of the array starting with the index given by the first argument. With the second argument, it returns the elements up to but excluding that index. (Contrast this detail with how <code>splice</code> treats its second argument.) If you don't provide any arguments at all, <code>slice</code> returns a copy of the entire array: that is, it returns a new array with the same elements as the original. That's useful when you need to use a destructive method on an array that you don't want to modify.</p>
+<h3>reverse</h3>
+<p>The <code>reverse</code> method reverses the order of an array.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let numbers = [1, 2, 3, 4]
+&gt; numbers.reverse()
+= [ 4, 3, 2, 1 ]
+
+&gt; numbers
+= [ 4, 3, 2, 1 ]
+</code></pre>
+<p><code>reverse</code> is destructive: it mutates the array. As mentioned in the previous section, you can use <code>slice</code> with no arguments if you don't want to mutate the original array:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let numbers = [1, 2, 3, 4]
+&gt; let copyOfNumbers = numbers.slice();
+&gt; let reversedNumbers = copyOfNumbers.reverse()
+&gt; reversedNumbers
+= [ 4, 3, 2, 1 ]
+
+&gt; numbers
+= [ 1, 2, 3, 4 ]
+</code></pre>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>Arrays are a valuable data structure. You'll see them all the time in real-world programs; nearly every useful program uses arrays at some point. JavaScript's array type has plenty of built-in methods that can perform the basic operations that programmers need every day.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>In the following code, what are the final <code>length</code> values for <code>array1</code>, <code>array2</code>, <code>array3</code>, <code>array4</code>, and <code>array5</code>?</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let array1 = [1, 2, undefined, 4];
+
+let array2 = [1];
+array2.length = 5;
+
+let array3 = [];
+array3[-1] = [1];
+
+let array4 = [1, 2, 3, 4, 5];
+array4.length = 3;
+
+let array5 = [];
+array5[100] = 3;
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><ul>
+<li>
+<p>The length of <code>array1</code> is <code>4</code>. The length is the highest index position that has a value, plus <code>1</code>. In this case, the highest index position that has a value is <code>3</code>; add <code>1</code> to that, and we get the length value of <code>4</code>.</p>
+</li>
+<li>
+<p>The length of <code>array2</code> is <code>5</code>. You can set the length of an array. Even if the highest index position that has a value assigned is <code>0</code>, assigning a new length of <code>5</code> overrides that length. For now, you can think of the resulting array as having 5 elements of which the last 4 have a value of <code>undefined</code>. In actuality, the array still has only one element, but has 4 gaps at the end -- the gaps aren't real elements and take up very little memory. We'll learn more about this in the Core Curriculum.</p>
+</li>
+<li>
+<p>The length of <code>array3</code> is <code>0</code>. Index positions must be non-negative integers starting from <code>0</code>. Negative and non-integer indexes don't get taken into account when determining an array's length.</p>
+</li>
+<li>
+<p>The length of <code>array4</code> is <code>3</code>. Contrast this with <code>array2</code>. When you set an array to a length that is shorter than its current length, the array gets truncated to the new length. In this example, JavaScript truncates the array by removing the last two elements, leaving a total of 3 elements.</p>
+</li>
+<li>
+<p>The length of <code>array5</code> is <code>101</code>. As already noted, the length is the highest index position that has a value, plus <code>1</code>. In this case, the highest index position that has a value is <code>100</code>, so the length is <code>101</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Log all of the even values from <code>myArray</code> to the console.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let myArray = [1, 3, 6, 11, 4, 2,
+               4, 9, 17, 16, 0];
+</code></pre>
+<p><strong>Expected Output</strong></p>
+<pre class="language-plaintext"><code class="language-plaintext">6
+4
+2
+4
+16
+0
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">for (let i = 0; i &lt; myArray.length; i += 1) {
+  let value = myArray[i];
+  if (value % 2 === 0) {
+    console.log(value);
+  }
+}
+</code></pre><p>Our approach is straightforward: we iterate over all the elements in the array and check whether each element is even. You can also use <code>forEach</code> and let JavaScript take care of the indexing:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">myArray.forEach(function(value) {
+  if (value % 2 === 0) {
+    console.log(value);
+  }
+});
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Let's make the problem a little harder. In this problem, we're again interested in even numbers, but this time the numbers are in nested arrays in a single outer array.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let myArray = [
+  [1, 3, 6, 11],
+  [4, 2, 4],
+  [9, 17, 16, 0],
+];
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">for (let i = 0; i &lt; myArray.length; i += 1) {
+  for (let j = 0; j &lt; myArray[i].length; j += 1) {
+    let value = myArray[i][j];
+    if (value % 2 === 0) {
+      console.log(value);
+    }
+  }
+}
+</code></pre><p>Our approach is again straightforward, but it's a bit verbose. However, the chained brackets in <code>myArray[i][j]</code> make it visually explicit that we're dealing with a two-dimensional nested array.</p>
+<p>As before, we can also use <code>forEach</code> to abstract away the messy details of indexes and stopping conditions:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">myArray.forEach(function(nestedArray) {
+  nestedArray.forEach(function(value) {
+    if (value % 2 === 0) {
+      console.log(value);
+    }
+  });
+});
+</code></pre>
+<p>That's a bit complicated at this stage in your development, but have a go at trying to figure out how it works.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Let's try another variation on the even-numbers theme.</p>
+<p>We'll return to the simpler one-dimensional array. In this problem, we want to use the <code>map</code> function to create a new array that contains one element for each element in the original array. If the element is an even value, then the corresponding element in the new array should contain the string <code>'even'</code>; otherwise, the element in the new array should contain <code>'odd'</code>.</p>
+<p><strong>Example</strong></p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let myArray = [
+  1, 3, 6, 11,
+  4, 2, 4, 9,
+  17, 16, 0,
+];
+</code></pre>
+<p><strong>Expected Output</strong></p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">[
+  'odd', 'odd', 'even', 'odd',
+  'even', 'even', 'even', 'odd',
+  'odd', 'even', 'even',
+]
+</code></pre>
+<p>If you have trouble using <code>map</code> to accomplish this, try it using a regular for loop instead.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">let newArray = myArray.map(function(value) {
+  if (value % 2 === 0) {
+    return 'even';
+  } else {
+    return 'odd';
+  }
+});
+</code></pre><p><strong>With a For Loop</strong></p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let newArray = [];
+for (let i = 0; i &lt; myArray.length; i += 1) {
+  let value = myArray[i];
+  if (value % 2 === 0) {
+    newArray.push('even');
+  } else {
+    newArray.push('odd');
+  }
+}
+</code></pre>
+<p>Our approach is again straightforward: we iterate over all the elements in the array and check whether each element is even. If it's even, we either return <code>'even'</code> from the function we passed to <code>map</code>, or push <code>'even'</code> onto the <code>newArray</code>. Otherwise, we return or push a value of <code>'odd'</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a <code>findIntegers</code> function that takes an array argument and returns an array that contains only the integers from the input array. Use the <code>filter</code> method in your function.</p>
+<p><strong>Example</strong></p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let things = [1, 'a', '1', 3, NaN, 3.1415, -4, null, false];
+let integers = findIntegers(things);
+console.log(integers); // =&gt; [1, 3, -4]
+ </code></pre>
+<div class="alert-box info">
+<p>You can use <code>Number.isInteger(value)</code> to determine whether a numeric <code>value</code> is an integer. It returns <code>true</code> if the value is an integer, <code>false</code> otherwise.</p>
+</div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function findIntegers(array) {
+  return array.filter(function(element) {
+    return Number.isInteger(element);
+  });
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Use <code>map</code> and <code>filter</code> to first determine the lengths of all the elements in an array of string values, then discard the even values (keep the odd values).</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let arr = ['a', 'abcd', 'abcde', 'abc', 'ab'];
+console.log(oddLengths(arr)); // =&gt; [1, 5, 3]
+</code></pre>
+<div class="alert-box info">
+<p>Note that it is possible to solve this problem without using <code>map</code>. However, our intent is to show how you can combine multiple functions to achieve a desired result.</p>
+</div>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_b4449d7e21fb" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_b4449d7e21fb">
+<p>Your first step should be to create an array of the lengths, e.g., <code>[1, 4, 5, 3, 2]</code>.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function oddLengths(strings) {
+  let lengths = strings.map((letters) =&gt; letters.length);
+  let oddLengths = lengths.filter((number) =&gt; number % 2 === 1);
+  return oddLengths;
+}
+
+let arr = ['a', 'abcd', 'abcde', 'abc', 'ab'];
+console.log(oddLengths(arr));
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Use <code>reduce</code> to compute the sum of the squares of all of the numbers in an array:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let array = [3, 5, 7];
+console.log(sumOfSquares(array)); // =&gt; 83
+</code></pre>
+<p>Note that <code>83</code> is <code>3*3 + 5*5 + 7*7</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function sumOfSquares(numbers) {
+  return numbers.reduce((accumulator, number) =&gt; {
+    return accumulator + number * number;
+  }, 0);
+}
+
+let array = [3, 5, 7];
+console.log(sumOfSquares(array)); // =&gt; 83
+</code></pre><p>What happens if you forget to provide an initial value of 0 for the accumulator? Take a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">MDN Documentation for <code>reduce</code></a> and see if you can determine what <code>sumOfSquares</code> would return if you omitted the initial accumulator value.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p><strong>This problem is more challenging than most in this book.</strong> Don't worry if you can't solve it on your own.</p>
+<p>Write a function similar to the <code>oddLengths</code> function from Exercise 6, but don't use <code>map</code> or <code>filter</code>. Instead, try to use the <code>reduce</code> method.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let arr = ['a', 'abcd', 'abcde', 'abc', 'ab'];
+console.log(oddLengths(arr)); // =&gt; [1, 5, 3]
+</code></pre>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_822004650937" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_822004650937">
+<p>Use an array as the accumulator. Ideally, you should be able to use the return value of <code>reduce</code> as the return value of the function.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function oddLengths(strings) {
+  return strings.reduce((filteredNumbersArray, letters) =&gt; {
+    let length = letters.length;
+    if (length % 2 === 1) {
+      filteredNumbersArray.push(length);
+    }
+
+    return filteredNumbersArray;
+  }, []);
+}
+
+let arr = ['a', 'abcd', 'abcde', 'abc', 'ab'];
+console.log(oddLengths(arr));
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Without using a <code>for</code>, <code>while</code>, or <code>do/while</code> loop, write some code that checks whether the number <code>3</code> appears inside these arrays:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let numbers1 = [1, 3, 5, 7, 9, 11];
+&gt; let numbers2 = [];
+&gt; let numbers3 = [2, 4, 6, 8];
+</code></pre>
+<p>Return <code>true</code> or <code>false</code> depending on each result.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-node" data-numbers="off"><code class="language-node">&gt; numbers1.includes(3);
+= true
+
+&gt; numbers2.includes(3);
+= false
+
+&gt; numbers3.includes(3);
+= false
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write some code to replace the value <code>6</code> in the following array with <code>606</code>:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let arr = [
+  ["hello", "world"],
+  ["example", "mem", null, 6, 88],
+  [4, 8, 12]
+];
+</code></pre>
+<p>You don't have to search the array. Just write an assignment that replaces the <code>6</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-node" data-numbers="off"><code class="language-node">&gt; arr[1][3] = 606;
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="/books/javascript/read/objects">Next:  Objects
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

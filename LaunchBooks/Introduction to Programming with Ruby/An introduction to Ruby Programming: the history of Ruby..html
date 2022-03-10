@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>An introduction to Ruby Programming: the history of Ruby.</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":104,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="An introduction to Ruby Programming - part of the free online book to learn the Ruby Programming language. Aimed at the inexperienced or completely new programmer." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="YNxl+53kHCidaxdM59Y3YWBHfzw6xdZlaFhjzFNqiM5rgEMvB4ptVwa+O6YlMmFBUgcF5Ni2Db6IqFPOr9HYFA==" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-de180ae34fc81cc7f3f0d1e426533a524d80537b2a7bec20c5524dd981c0a978.css" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" media="screen" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" media="screen" rel="stylesheet"/>
+
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-b709b49ff81df80f3be5078f691802bb8fdda9025e8f5015d9cef4830ccc60ce.js"></script>
+
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="hide-for-large-up top-bar" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-abef2efb9c6721246db3db0a8f3ae66c64d8cf64a041a0dbca339d22acecfd9f.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/ruby/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/ruby/read/introduction#briefhistory"><span>A Brief History of Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#computerscienceandlayersofabstraction"><span>Computer Science and Layers of Abstraction</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/preparations#installingruby"><span>Installing Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#stylishruby"><span>Stylish Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#readingdocumentation"><span>Reading Documentation</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingcommandlineandirb"><span>Using the Command Line and irb</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#whatarerubygems"><span>What Are Ruby "Gems"?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#debuggingrubycodewithpry"><span>Debugging Ruby Code with Pry</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Intro to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/basics#literals"><span>Literals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#strings"><span>Strings</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#symbols"><span>Symbols</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#numbers"><span>Numbers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#nil"><span>nil</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#typeconversion"><span>Type Conversion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#basicdatastructures"><span>Basic Data Structures</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#expressionsandreturn"><span>Expressions and Return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#putsvsreturn"><span>puts vs return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/variables#whatisavariable"><span>What is a Variable?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#assigningvaluetovariables"><span>Assigning Value to Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#gettingdatafromauser"><span>Getting Data from a User</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#typesofvariables"><span>Types of Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/methods"><span class="chapter_title">Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/methods#whataremethodsandwhydoweneedthem"><span>What Are Methods and Why Do We Need Them?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#objmethodormethodobj"><span>obj.method or method(obj)</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#putsvsreturnthesequel"><span>puts vs return: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#chainingmethods"><span>Chaining Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#methodcallsasarguments"><span>Method Calls as Arguments</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#combiningexpressions"><span>Combining Expressions</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#ternaryoperator"><span>Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#casestatement"><span>Case Statement</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#trueandfalse"><span>True and False</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/loops_iterators"><span class="chapter_title">Loops &amp; Iterators</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/loops_iterators#simpleloop"><span>A Simple Loop</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#controllloop"><span>Controlling Loop Execution</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#whileloops"><span>While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#untilloops"><span>Until Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#dowhileloops"><span>Do/While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#forloops"><span>For Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#conditionalswithinloops"><span>Conditionals Within Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#iterators"><span>Iterators</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#iteratingoveranarray"><span>Iterating Over an Array</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#bang_suffix"><span>Methods With a !</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#mutatingthecallerthesequel"><span>Mutating the Caller: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#comparingarrays"><span>Comparing Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#to_s"><span>to_s</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#commonarraymethods"><span>Common Array Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#eachvsmap"><span>each vs map</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/hashes"><span class="chapter_title">Hashes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/hashes#whatisahash"><span>What is a Hash?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#iteratingoverhashes"><span>Iterating Over Hashes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesasoptionalparameters"><span>Hashes as Optional Parameters</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesvsarrays"><span>Hashes vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashkeys"><span>A Note on Hash Keys</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#commonhashmethods"><span>Common Hash Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashorder"><span>A Note on Hash Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#rubystandardclasses"><span>Ruby Standard Classes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#variables_as_pointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#blocksandprocs"><span>Blocks and Procs</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exceptionhandling"><span>Exception Handling</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#readingstacktraces"><span>Exceptions &amp; Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#methoddefinitionorder"><span>Method Definition Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/ruby/read/intro_exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/next_steps"><span class="chapter_title">Conclusion &amp; Next Steps</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/next_steps#congratulations"><span>Congratulations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/next_steps#oop"><span>Object Oriented Programming</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=An+introduction+to+Ruby+Programming%3A+the+history+of+Ruby.&amp;url=https://launchschool.com/books/ruby/read/introduction&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/ruby/read/introduction" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/ruby/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/ruby/read/introduction#briefhistory"><span>A Brief History of Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#computerscienceandlayersofabstraction"><span>Computer Science and Layers of Abstraction</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/preparations#installingruby"><span>Installing Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#stylishruby"><span>Stylish Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#readingdocumentation"><span>Reading Documentation</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingcommandlineandirb"><span>Using the Command Line and irb</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#whatarerubygems"><span>What Are Ruby "Gems"?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#debuggingrubycodewithpry"><span>Debugging Ruby Code with Pry</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Intro to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/basics#literals"><span>Literals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#strings"><span>Strings</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#symbols"><span>Symbols</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#numbers"><span>Numbers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#nil"><span>nil</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#typeconversion"><span>Type Conversion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#basicdatastructures"><span>Basic Data Structures</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#expressionsandreturn"><span>Expressions and Return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#putsvsreturn"><span>puts vs return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/variables#whatisavariable"><span>What is a Variable?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#assigningvaluetovariables"><span>Assigning Value to Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#gettingdatafromauser"><span>Getting Data from a User</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#typesofvariables"><span>Types of Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/methods"><span class="chapter_title">Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/methods#whataremethodsandwhydoweneedthem"><span>What Are Methods and Why Do We Need Them?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#objmethodormethodobj"><span>obj.method or method(obj)</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#putsvsreturnthesequel"><span>puts vs return: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#chainingmethods"><span>Chaining Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#methodcallsasarguments"><span>Method Calls as Arguments</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#combiningexpressions"><span>Combining Expressions</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#ternaryoperator"><span>Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#casestatement"><span>Case Statement</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#trueandfalse"><span>True and False</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/loops_iterators"><span class="chapter_title">Loops &amp; Iterators</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/loops_iterators#simpleloop"><span>A Simple Loop</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#controllloop"><span>Controlling Loop Execution</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#whileloops"><span>While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#untilloops"><span>Until Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#dowhileloops"><span>Do/While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#forloops"><span>For Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#conditionalswithinloops"><span>Conditionals Within Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#iterators"><span>Iterators</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#iteratingoveranarray"><span>Iterating Over an Array</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#bang_suffix"><span>Methods With a !</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#mutatingthecallerthesequel"><span>Mutating the Caller: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#comparingarrays"><span>Comparing Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#to_s"><span>to_s</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#commonarraymethods"><span>Common Array Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#eachvsmap"><span>each vs map</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/hashes"><span class="chapter_title">Hashes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/hashes#whatisahash"><span>What is a Hash?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#iteratingoverhashes"><span>Iterating Over Hashes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesasoptionalparameters"><span>Hashes as Optional Parameters</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesvsarrays"><span>Hashes vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashkeys"><span>A Note on Hash Keys</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#commonhashmethods"><span>Common Hash Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashorder"><span>A Note on Hash Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#rubystandardclasses"><span>Ruby Standard Classes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#variables_as_pointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#blocksandprocs"><span>Blocks and Procs</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exceptionhandling"><span>Exception Handling</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#readingstacktraces"><span>Exceptions &amp; Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#methoddefinitionorder"><span>Method Definition Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/ruby/read/intro_exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/next_steps"><span class="chapter_title">Conclusion &amp; Next Steps</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/next_steps#congratulations"><span>Congratulations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/next_steps#oop"><span>Object Oriented Programming</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=An+introduction+to+Ruby+Programming%3A+the+history+of+Ruby.&amp;url=https://launchschool.com/books/ruby/read/introduction&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/ruby/read/introduction" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Introduction</h1>
+<h2><a href="#briefhistory" name="briefhistory">A Brief History of Ruby</a></h2>
+<p>Ruby was created by Yukihiro Matsumoto, or "Matz", in Japan in the mid 1990's. It was designed for programmer productivity with the idea that programming should be fun for programmers.  It emphasizes the necessity for software to be understood by humans first and computers second.</p>
+<p>Ruby continues to gain popularity for its use in web application development. The Ruby on Rails framework, built with the Ruby language by David Heinemeier Hansson, introduced many people to the joys of programming in Ruby. Ruby has a vibrant community that is supportive for beginners and enthusiastic about producing high-quality code.</p>
+<h2><a href="#computerscienceandlayersofabstraction" name="computerscienceandlayersofabstraction">Computer Science and Layers of Abstraction</a></h2>
+<p>In programming and computer science in general, there is a concept called <strong>abstraction</strong>. Abstraction ensures that as users, we're far removed from what's happening "under the hood". A simple example will help illustrate this concept.</p>
+<p>Think about the mobile phone you use everyday to communicate with your friends and loved ones. Basically, you want to make and receive calls, send/receive text messages, check your facebook/twitter and maybe take some pictures. As a user, you only care about the basic functionalities the phone makes available to communicate. Stated differently, you're dealing with an <strong>interface</strong> provided by the manufacturer of the phone.</p>
+<p>The phone technician, on the other hand, must repair the phone and is faced with a different level of abstraction. She's well-versed in how the different components interact with the various sub-systems of the phone. Further down, the software engineer is concerned with the Operating System and deals with yet another layer of abstraction.</p>
+<p>The above analysis is similar to what happens with computers. The user or client uses computers to listen to music, send emails, play games and more. They interact with the applications that make these tasks possible without any knowledge of the low level details. Programmers are also offered a level of abstraction by making use of a programming language like Ruby, which is written in C, which translates to Assembly language, which translates to machine language to translate 0s and 1s into something the computer understands. That means, every programming language is based on other lower level layers of code that make it easy to use. Another level of abstraction is how Ruby programmers use the Ruby programming language to design and build higher level languages called <a href="http://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Languages</a> or DSL's like Rails and Rspec. We do not necessarily need to know how these DSL's are implemented, but we know they exist and know how to use them.</p>
+<p>As a beginner, you'll have to be aware of these abstractions particularly in programming and computer science and how they simplify programming and make computers easy to use. It's often confusing, for example, to read Rails or Rspec code without understanding Ruby because Rails and Rspec are DSLs operating at a higher level of abstraction. The goal of this book is to show you Ruby, so that when you come across higher level abstractions and DSLs, you can recognize it as just Ruby code.</p>
+<h2><a href="#whothisbookisfor" name="whothisbookisfor">Who This Book is For</a></h2>
+<p>This book is written for the inexperienced or completely new programmer.  If you apply the principles and techniques described in this book, you will build a strong basic knowledge of programming in Ruby. You may then use this knowledge to continue to learn more advanced concepts. This book will guide you through the common pitfalls and time-sinks that a beginner may experience. It will give you plenty of practice to commit basic Ruby syntax to long-term memory so you can focus on solving real-world problems and building real-world applications.</p>
+<p>Being a programmer is often perceived as a difficult task.  It is not.  It does, however, require a certain temperament.  When this temperament is understood and adopted, the work that a programmer does becomes less frustrating, more fun, and quite rewarding.  Perception of the difficulty of a given task is usually inversely proportional to the amount of patience the person attempting the task possesses.  If you are patient with yourself and are willing to take the time to work through the exercises and apply the concepts, you will find yourself writing programs and solving problems with code very soon.  There is a shift in thinking that will take place and you will develop the ability to think deeply and clearly about a given problem.  This process is often referred to as "flow" and can be very satisfying and engaging.  It's one of the perks of programming!</p>
+<p>This is the first book of a two-book series on programming in Ruby. The second book will focus on Object Oriented Programming, while this book will guide you through the basics of programming fundamentals. Both of the books are meant to supplement the courses at <a href="https://launchschool.com">Launch School</a>.</p>
+<h2><a href="#howtoreadthisbook" name="howtoreadthisbook">How to Read This Book</a></h2>
+<p>Reading about programming and the act of programming are very different things. If you read this entire book without ever writing one piece of code, it is very likely that you will "understand" intellectually how to code, without being able to actually <strong>DO IT</strong>. Then, the next time you are in front of your editor with a blank screen and someone asks you to solve a problem with a computer program, you won't be able to complete the task.</p>
+<p>There is a muscle memory aspect to computer programming that can often be overlooked.  Because of the large amount of information that must be remembered by a computer programmer, practicing certain skills until they become automatic is very helpful for beginners.  This is not something that requires a lot of effort per se.  It is something that happens naturally through repetition. You can learn with your fingers.</p>
+<p>Therefore, it is very important that you do <strong>EVERY</strong> exercise in this book. Give yourself a real shot at learning how to code. If you wanted to learn a musical instrument, you would have to <strong>PLAY</strong> that instrument to develop proficiency.  Programming is the same way.  Think of completing exercises as if you were a musician practicing musical scales.  Practicing will cement the basics into your fingers and performing certain operations will become second nature and subconscious, allowing your brain to focus on higher level abstractions.</p>
+<p>This book is written for the beginner.  In the world of computer programming, there is an infinite amount of information to learn.  It is impossible to learn it all. This book knows that. It intentionally avoids certain topics that are not beneficial to the beginner.  Trust this fact and you will progress at a much faster rate.  It is easy to get lost in the rabbit hole of information available today.</p>
+<p>That about covers it.  Get ready to build the skills that will transform you into a computer programmer.  Don't worry, we'll be there to coach you along the way.  Buckle up and enjoy the ride!</p>
+</div>
+<div class="next_chapter">
+<a href="/books/ruby/read/preparations">Next:  Preparations
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

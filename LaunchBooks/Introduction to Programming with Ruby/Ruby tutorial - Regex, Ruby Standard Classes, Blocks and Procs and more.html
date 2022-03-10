@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Ruby tutorial - Regex, Ruby Standard Classes, Blocks and Procs and more</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":197,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Useful additional information for learning Ruby - Regex, Ruby Standard Classes, Blocks and Procs, Exception Handling, Reading Stack Traces and more. Better to have some exposure and familiarity now than spend hours in confusion later on." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="ThCgl+F2FghZaMEroPrMyogwGlvaGaUzgUb/BrVr+B3P+ScQC/E1/U/zuRcpijd9YEpYRpiVp2//eystSnQoMQ==" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-de180ae34fc81cc7f3f0d1e426533a524d80537b2a7bec20c5524dd981c0a978.css" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" media="screen" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" media="screen" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" media="screen" rel="stylesheet"/>
+
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-b709b49ff81df80f3be5078f691802bb8fdda9025e8f5015d9cef4830ccc60ce.js"></script>
+
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="hide-for-large-up top-bar" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-abef2efb9c6721246db3db0a8f3ae66c64d8cf64a041a0dbca339d22acecfd9f.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/introduction#briefhistory"><span>A Brief History of Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#computerscienceandlayersofabstraction"><span>Computer Science and Layers of Abstraction</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/preparations#installingruby"><span>Installing Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#stylishruby"><span>Stylish Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#readingdocumentation"><span>Reading Documentation</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingcommandlineandirb"><span>Using the Command Line and irb</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#whatarerubygems"><span>What Are Ruby "Gems"?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#debuggingrubycodewithpry"><span>Debugging Ruby Code with Pry</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Intro to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/basics#literals"><span>Literals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#strings"><span>Strings</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#symbols"><span>Symbols</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#numbers"><span>Numbers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#nil"><span>nil</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#typeconversion"><span>Type Conversion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#basicdatastructures"><span>Basic Data Structures</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#expressionsandreturn"><span>Expressions and Return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#putsvsreturn"><span>puts vs return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/variables#whatisavariable"><span>What is a Variable?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#assigningvaluetovariables"><span>Assigning Value to Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#gettingdatafromauser"><span>Getting Data from a User</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#typesofvariables"><span>Types of Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/methods"><span class="chapter_title">Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/methods#whataremethodsandwhydoweneedthem"><span>What Are Methods and Why Do We Need Them?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#objmethodormethodobj"><span>obj.method or method(obj)</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#putsvsreturnthesequel"><span>puts vs return: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#chainingmethods"><span>Chaining Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#methodcallsasarguments"><span>Method Calls as Arguments</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#combiningexpressions"><span>Combining Expressions</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#ternaryoperator"><span>Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#casestatement"><span>Case Statement</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#trueandfalse"><span>True and False</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/loops_iterators"><span class="chapter_title">Loops &amp; Iterators</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/loops_iterators#simpleloop"><span>A Simple Loop</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#controllloop"><span>Controlling Loop Execution</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#whileloops"><span>While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#untilloops"><span>Until Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#dowhileloops"><span>Do/While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#forloops"><span>For Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#conditionalswithinloops"><span>Conditionals Within Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#iterators"><span>Iterators</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#iteratingoveranarray"><span>Iterating Over an Array</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#bang_suffix"><span>Methods With a !</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#mutatingthecallerthesequel"><span>Mutating the Caller: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#comparingarrays"><span>Comparing Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#to_s"><span>to_s</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#commonarraymethods"><span>Common Array Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#eachvsmap"><span>each vs map</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/hashes"><span class="chapter_title">Hashes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/hashes#whatisahash"><span>What is a Hash?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#iteratingoverhashes"><span>Iterating Over Hashes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesasoptionalparameters"><span>Hashes as Optional Parameters</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesvsarrays"><span>Hashes vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashkeys"><span>A Note on Hash Keys</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#commonhashmethods"><span>Common Hash Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashorder"><span>A Note on Hash Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/ruby/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/ruby/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#rubystandardclasses"><span>Ruby Standard Classes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#variables_as_pointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#blocksandprocs"><span>Blocks and Procs</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exceptionhandling"><span>Exception Handling</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#readingstacktraces"><span>Exceptions &amp; Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#methoddefinitionorder"><span>Method Definition Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/ruby/read/intro_exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/next_steps"><span class="chapter_title">Conclusion &amp; Next Steps</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/next_steps#congratulations"><span>Congratulations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/next_steps#oop"><span>Object Oriented Programming</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Ruby+tutorial+-+Regex%2C+Ruby+Standard+Classes%2C+Blocks+and+Procs+and+more&amp;url=https://launchschool.com/books/ruby/read/more_stuff&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/ruby/read/more_stuff" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/introduction#briefhistory"><span>A Brief History of Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#computerscienceandlayersofabstraction"><span>Computer Science and Layers of Abstraction</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/preparations#installingruby"><span>Installing Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#stylishruby"><span>Stylish Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#readingdocumentation"><span>Reading Documentation</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingcommandlineandirb"><span>Using the Command Line and irb</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#whatarerubygems"><span>What Are Ruby "Gems"?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#debuggingrubycodewithpry"><span>Debugging Ruby Code with Pry</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Intro to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/basics#literals"><span>Literals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#strings"><span>Strings</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#symbols"><span>Symbols</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#numbers"><span>Numbers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#nil"><span>nil</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#typeconversion"><span>Type Conversion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#basicdatastructures"><span>Basic Data Structures</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#expressionsandreturn"><span>Expressions and Return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#putsvsreturn"><span>puts vs return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/variables#whatisavariable"><span>What is a Variable?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#assigningvaluetovariables"><span>Assigning Value to Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#gettingdatafromauser"><span>Getting Data from a User</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#typesofvariables"><span>Types of Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/methods"><span class="chapter_title">Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/methods#whataremethodsandwhydoweneedthem"><span>What Are Methods and Why Do We Need Them?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#objmethodormethodobj"><span>obj.method or method(obj)</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#putsvsreturnthesequel"><span>puts vs return: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#chainingmethods"><span>Chaining Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#methodcallsasarguments"><span>Method Calls as Arguments</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#combiningexpressions"><span>Combining Expressions</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#ternaryoperator"><span>Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#casestatement"><span>Case Statement</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#trueandfalse"><span>True and False</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/loops_iterators"><span class="chapter_title">Loops &amp; Iterators</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/loops_iterators#simpleloop"><span>A Simple Loop</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#controllloop"><span>Controlling Loop Execution</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#whileloops"><span>While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#untilloops"><span>Until Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#dowhileloops"><span>Do/While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#forloops"><span>For Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#conditionalswithinloops"><span>Conditionals Within Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#iterators"><span>Iterators</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#iteratingoveranarray"><span>Iterating Over an Array</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#bang_suffix"><span>Methods With a !</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#mutatingthecallerthesequel"><span>Mutating the Caller: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#comparingarrays"><span>Comparing Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#to_s"><span>to_s</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#commonarraymethods"><span>Common Array Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#eachvsmap"><span>each vs map</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/hashes"><span class="chapter_title">Hashes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/hashes#whatisahash"><span>What is a Hash?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#iteratingoverhashes"><span>Iterating Over Hashes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesasoptionalparameters"><span>Hashes as Optional Parameters</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesvsarrays"><span>Hashes vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashkeys"><span>A Note on Hash Keys</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#commonhashmethods"><span>Common Hash Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashorder"><span>A Note on Hash Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/ruby/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/ruby/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#rubystandardclasses"><span>Ruby Standard Classes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#variables_as_pointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#blocksandprocs"><span>Blocks and Procs</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exceptionhandling"><span>Exception Handling</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#readingstacktraces"><span>Exceptions &amp; Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#methoddefinitionorder"><span>Method Definition Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/ruby/read/intro_exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/next_steps"><span class="chapter_title">Conclusion &amp; Next Steps</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/next_steps#congratulations"><span>Congratulations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/next_steps#oop"><span>Object Oriented Programming</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Ruby+tutorial+-+Regex%2C+Ruby+Standard+Classes%2C+Blocks+and+Procs+and+more&amp;url=https://launchschool.com/books/ruby/read/more_stuff&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/ruby/read/more_stuff" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>More Stuff!</h1>
+<p>We're going to turn our attention now to a collection of topics that are important to know, but you don't have to master just yet. You'll run into these topics as you read more Ruby code, so we want to give you a heads up and make sure you're prepared for anything that is thrown at you. Each of these topics has enough depth to be its own book, so we're only going to cover the basics and give you a quick introduction.</p>
+<ul>
+<li>If you're reading this book as part of the Launch School curriculum, don't worry too much about these topics for now, use this section more for awareness than understanding. We cover most of them in <em>much more depth</em> later in the curriculum.
+</li>
+<li>If you're reading the book independently of the curriculum, you may want to use this section as a starting point for exploring some, or all, of these topics.
+</li>
+</ul>
+<h2><a href="#regex" name="regex">Regex</a></h2>
+<p><strong>Regex</strong> stands for <strong>regular expression</strong>. A regular expression is a sequence of characters that form pattern matching rules, and is then applied to a string to look for matches. Regular expressions have many uses, some examples:</p>
+<ol>
+<li>Check if the pattern "ss" appears in the string "Mississippi".
+</li>
+<li>Print out the 3rd word of each sentence from a list of sentences.
+</li>
+<li>Find and replace all instances of "Mrs" with "Ms" in a sentence.
+</li>
+<li>Does a string start with "St"?
+</li>
+<li>Does a string end with "art"?
+</li>
+<li>Does a string have non-alphanumeric characters in it?
+</li>
+<li>Are there any whitespace characters in the string?
+</li>
+<li>Find and replace all non-alphanumeric characters in a string with "-".
+</li>
+</ol>
+<p>This is just a small sample of what regexes can do. Below, we are going to focus solely on the first example because it's the most commonly used.</p>
+<p>Creating regular expressions starts with the forward slash character (<code>/</code>). Inside two forward slashes you can place any characters you would like to match with the string.</p>
+<p>We can use the <code>=~</code> operator to see if we have a match in our regular expression. Let's say we are looking for the letter "b" in a string "powerball". Here's how we'd implement this using the <code>=~</code> operator</p>
+<pre class="language-irb"><code class="language-irb">irb :001 &gt; "powerball" =~ /b/
+=&gt; 5
+</code></pre>
+<p>The expression returned a <code>5</code>. This means that the first match that took place was at the fifth index of the string. Remember indices start counting from zero. Since <code>5</code> is a truthy value (i.e., in Ruby, <code>5</code> evaluates as true), we can use it as a boolean to check for matches.</p>
+<pre class="language-none"><code class="language-none"># boolean_regex.rb
+
+def has_a_b?(string)
+  if string =~ /b/
+    puts "We have a match!"
+  else
+    puts "No match here."
+  end
+end
+
+has_a_b?("basketball")
+has_a_b?("football")
+has_a_b?("hockey")
+has_a_b?("golf")
+</code></pre>
+<p>This works! The print out is...</p>
+<pre class="language-irb"><code class="language-irb">We have a match!
+We have a match!
+No match here.
+No match here.
+</code></pre>
+<p>On top of the <code>=~</code> operator, we can use the <code>match</code> method to perform regex comparisons as well. This method returns a <code>MatchData</code> object that describes the match or <code>nil</code> if there is no match.</p>
+<pre class="language-irb"><code class="language-irb">irb :001 &gt; /b/.match("powerball")
+=&gt; #&lt;MatchData "b"&gt;
+</code></pre>
+<p>You can use a <code>MatchData</code> object to act as a boolean value in your program. Try this out:</p>
+<pre class="language-none"><code class="language-none"># boolean_matchdata.rb
+
+def has_a_b?(string)
+  if /b/.match(string)
+    puts "We have a match!"
+  else
+    puts "No match here."
+  end
+end
+
+has_a_b?("basketball")
+has_a_b?("football")
+has_a_b?("hockey")
+has_a_b?("golf")
+</code></pre>
+<p>We get the same print out as before!</p>
+<p>Beginning programs rarely need to use regular expressions, but certain problems are a perfect fit for them. Solving some programs without regex may require monumental effort. However, with a regex, you may be able to solve the problem with a single line of code. If you encounter a string pattern matching problem, remember to look into using regex.</p>
+<p>If you want to dive deeper into regex, our <a href="/books/regex">Introduction to Regular Expressions</a> book is a great place to start. It's important to note, though, that if you're currently enrolled in our program it's best to not start the book until after course 130. We'll let you know exactly when to start later in the curriculum. The summary provided here covers enough regex to get you through the fundamental courses.</p>
+<h2><a href="#rubystandardclasses" name="rubystandardclasses">Ruby Standard Classes</a></h2>
+<p>Often you'll want to perform a specific operation when writing a program in Ruby. Your first instinct may be to look up the algorithm or try to implement the operation on your own.  Depending on the complexity of the operation, we'd like to encourage you otherwise.</p>
+<p>When you have a specific action that you need to perform, look for it first among Ruby's standard classes. Using libraries like the <code>Math</code> module can help you solve problems more efficiently.</p>
+<p>Let's say you wanted to find a way to calculate the square root of a number. Ruby's <code>Math</code> module has a method called <code>sqrt</code> that you can use right away.</p>
+<pre class="language-irb"><code class="language-irb">irb :001 &gt; Math.sqrt(400)
+=&gt; 20.0
+</code></pre>
+<p>Or maybe you need to use PI for something. The <code>PI</code> below is a "constant" that comes with the <code>Math</code> module. It's alright that you don't know exactly what constants are yet and you don't know the syntax. Just understand the concept for now. We are using Ruby's built-in libraries to solve our problems, rather than building our own solutions from scratch every time.</p>
+<pre class="language-irb"><code class="language-irb">irb :002 &gt; Math::PI
+=&gt; 3.141592653589793
+</code></pre>
+<p>What if you wanted to calculate what specific day July 4th occurred in 2008? You can use Ruby's built-in <code>Time</code> class.</p>
+<pre class="language-irb"><code class="language-irb">irb :003 &gt; t = Time.new(2008, 7, 4)
+=&gt; 2008-07-04 00:00:00 -0400
+irb :004 &gt; t.monday?
+=&gt; false
+irb :005 &gt; t.friday?
+=&gt; true
+</code></pre>
+<p>You can see the power of using Ruby's standard classes. There is no use reinventing the wheel when you have a rich resource to accomplish the tasks and solve the problems that many have solved before.</p>
+<p><em>Note: why is it <code>Math.sqrt</code> and not <code>math.sqrt</code>? This is because <code>sqrt</code> is a "class method", and not an "instance method". So far, we've been dealing mostly with instance methods, and this is one of the few times where we use a class method. For now, just use the syntax we introduced. We'll talk about the differences between class and instance methods when we cover Object Oriented Programming in the Core Curriculum.</em></p>
+<h2><a href="#variables_as_pointers" name="variables_as_pointers">Variables as Pointers</a></h2>
+<p>We'll take a deeper look at variables in this section, and specifically how they act as pointers to an <strong>address space</strong> in memory. That is, the variable doesn't actually contain the value. Instead, it contains a pointer to a specific area in memory that contains the value. This is a concept that confuses a lot of new programmers, and it's also one of the most important concepts to understand. The easiest way to understand variables as pointers is to look at some examples.</p>
+<pre class="language-none"><code class="language-none">a = "hi there"
+b = a
+a = "not here"
+</code></pre>
+<p>What is <code>b</code> in the above code? Think about it for a second. What about the code below?</p>
+<pre class="language-none"><code class="language-none">a = "hi there"
+b = a
+a &lt;&lt; ", Bob"
+</code></pre>
+<p>What is <code>b</code> in this example? If you tried both code snippets in <code>irb</code> (if you didn't, you should before continuing), you'll see that <code>b</code> doesn't reflect the value of <code>a</code> in the former example, but does so in the second example. Why is this?</p>
+<p>To understand the difference in the above two code snippets, you need to understand that <strong>variables are pointers to physical space in memory</strong>. In other words, variables are essentially labels we create to refer to some physical memory address in your computer. In the first example, this is what happened:</p>
+<p><img alt="Variables as Pointers 1" src="//d2aw5xe2jldque.cloudfront.net/books/ruby/images/variables_pointers1.jpg" style="width: 600px;"/></p>
+<p>From the above diagram, we can see that the code <code>a = "not here"</code> reassigned the variable <code>a</code> to a completely different address in memory; it's now pointing to an entirely new string. This is what the <code>=</code> operator does. It's important to understand that different memory space can in fact hold the same value, but they are still different places in memory. For example, if our last line of code was <code>a = "hi there"</code>, the result would still be the same: <code>a</code> and <code>b</code> in that case would still point to <em>different</em> addresses in memory; they would just happen to have the same value.</p>
+<p>Now let's see what the second snippet of code did.</p>
+<p><img alt="Variables as Pointers 2" src="//d2aw5xe2jldque.cloudfront.net/books/ruby/images/variables_pointers2.jpg" style="width: 600px;"/></p>
+<p>Interesting! The line of code <code>a &lt;&lt; ", Bob"</code> did <strong>not</strong> result in reassigning <code>a</code> to a new string. Rather, it <em>mutated the caller</em> and modified the existing string, which is also pointed to by the variable <code>b</code>. This explains why in this code, <code>b</code> reflects the changes to <code>a</code> - they're both pointing to the same thing.</p>
+<p>This is the major point of this section: some operations mutate the address space, while others simply make the variable point to a different address space.</p>
+<p>This also applies to variables that point to arrays, hashes, or any data structure that has methods that mutate the caller. If you call a method that <em>mutates the caller</em>, it will change the value in that object's address space, and any other variables that also point to that object will be affected. Therefore, always pay attention to whether your variables are pointing to the same object (address space) or if they are dealing with copies that occupy different address spaces.</p>
+<p>Play around with some examples in <code>irb</code>. Some examples you can try are:</p>
+<pre class="language-none"><code class="language-none">a = [1, 2, 3, 3]
+b = a
+c = a.uniq
+</code></pre>
+<p>What are <code>a</code>, <code>b</code> and <code>c</code>? What if the last line was <code>c = a.uniq!</code>?</p>
+<pre class="language-none"><code class="language-none">def test(b)
+  b.map {|letter| "I like the letter: #{letter}"}
+end
+
+a = ['a', 'b', 'c']
+test(a)
+</code></pre>
+<p>What is <code>a</code> after the <code>test</code> method returns? Did the method modify the value of <code>a</code>? Suppose we called <code>map!</code> instead of <code>map</code> from within <code>test</code>. Would that have any affect on the value of <code>a</code>?</p>
+<p>When we use variables to pass arguments to a method, we're essentially assigning the value of the original variable (<code>a</code> in this case) to a variable inside the method (<code>b</code>). This is equivalent to executing <code>b = a</code>. Inside the method, the operations we perform on the <code>b</code> variable determine whether the value of <code>a</code> will change. Some operations, like <code>map</code>, will have no affect on <code>a</code>. Others, like <code>map!</code> will mutate the value assigned to <code>a</code>.</p>
+<p>This is all you need to know for now. It's almost guaranteed that you'll run into bugs in the future related to this topic, so the important thing here isn't to memorize the rules, but to understand the concept and be able to jump into <code>irb</code> to refresh your memory.</p>
+<h2><a href="#blocksandprocs" name="blocksandprocs">Blocks and Procs</a></h2>
+<p>We talked about blocks earlier in this book but we're going to go a little deeper and show you some of the power of blocks. Blocks, like parameters, can be passed into a method just like normal variables. This isn't incredibly hard, and it's very powerful. Let's look at how we accomplish this.</p>
+<pre class="language-none"><code class="language-none"># passing_block.rb
+
+def take_block(&amp;block)
+  block.call
+end
+
+take_block do
+  puts "Block being called in the method!"
+end
+</code></pre>
+<p>This is a pretty simple example. The ampersand (<code>&amp;</code>) in the method definition tells us that the argument is a block. You could name it anything you wanted. The block must always be the last parameter in the method definition. When we're ready to use the method, we call it like any other method: <code>take_block</code>. The only difference is that because this method can accept a block, we can pass in a block of code using <code>do/end</code>. As you can see, we've been using blocks all along, but this is the first time we've defined our own method that takes a block as an argument.</p>
+<p>Let's make this more complex.  Say we wanted to pass an argument to the method as well.</p>
+<pre class="language-none"><code class="language-none"># passing_block.rb
+
+def take_block(number, &amp;block)
+  block.call(number)
+end
+
+number = 42
+take_block(number) do |num|
+  puts "Block being called in the method! #{num}"
+end
+</code></pre>
+<p>Here we are passing the <code>number</code>into the <code>take_block</code> method and using it in our <code>block.call</code>. You can see the amount of flexibility and the myriad possibilities that come into play when using blocks.</p>
+<p><strong>Procs</strong> are blocks that are wrapped in a proc object (we'll cover objects in our <a href="/books/oo_ruby">object oriented programming book</a>) and stored in a variable to be passed around. This is how you define a proc.</p>
+<pre class="language-none"><code class="language-none"># proc_example.rb
+
+talk = Proc.new do
+  puts "I am talking."
+end
+
+talk.call
+</code></pre>
+<p>Procs can also take arguments if specified.</p>
+<pre class="language-none"><code class="language-none"># proc_example.rb
+
+talk = Proc.new do |name|
+  puts "I am talking to #{name}"
+end
+
+talk.call "Bob"
+</code></pre>
+<p>Procs can be passed into methods. Let's take our previous <code>passing_block.rb</code> code and modify the method to take a proc instead. We'll add some more functionality too.</p>
+<pre class="language-none"><code class="language-none">#passing_proc.rb
+
+def take_proc(proc)
+  [1, 2, 3, 4, 5].each do |number|
+    proc.call number
+  end
+end
+
+proc = Proc.new do |number|
+  puts "#{number}. Proc being called in the method!"
+end
+
+take_proc(proc)
+</code></pre>
+<p>Using procs gives us the added flexibility to be able to reuse blocks in more than one place without having to type them out every time.</p>
+<p>It's not critical that you understand blocks and procs well enough to write methods with them yet. The goal of this section is to give you a general idea of what they are, in case you come across these concepts while reading Ruby code.</p>
+<h2><a href="#exceptionhandling" name="exceptionhandling">Exception Handling</a></h2>
+<p><strong>Exception handling</strong> is a specific process that deals with errors in a manageable and predictable way. The main thing we want to make you aware of at this point, is how exception handling works and what it looks like. The reserved word <code>rescue</code> will show up a lot in your Ruby career so it's better to know what it is sooner than later.</p>
+<p>When your programs are interacting with the real world, there is a large amount of unpredictability. If a user enters bad information or a file-manipulating process gets corrupted, your program needs to know what to do when it runs into these exceptional conditions.</p>
+<p>Ruby has an <code>Exception</code> class that makes handling these errors much easier. It also has a syntactic structure using the reserved words <code>begin</code>, <code>rescue</code>, and <code>end</code> to signify exception handling. The basic structure looks like this.</p>
+<pre class="language-none"><code class="language-none"># exception_example.rb
+
+begin
+  # perform some dangerous operation
+rescue
+  # do this if operation fails
+  # for example, log the error
+end
+</code></pre>
+<p>Often, it is necessary to use exception handling when your program is interacting with the outside world, or anything that can behave in an unpredictable manner. One common occurrence of this is when a <code>nil</code> value makes its way into our program. We have to be prepared for this reality. Look at the following code and run it to test it out.</p>
+<pre class="language-none"><code class="language-none"># exception_example.rb
+
+names = ['bob', 'joe', 'steve', nil, 'frank']
+
+names.each do |name|
+  begin
+    puts "#{name}'s name has #{name.length} letters in it."
+  rescue
+    puts "Something went wrong!"
+  end
+end
+</code></pre>
+<p>We've used a <code>begin/rescue/end</code> block to handle any exceptions that may happen within our block. In this example, we have a <code>nil</code> value in our array. Therefore, when we go to call <code>.length</code> on <code>nil</code> we get an error. When an exception, or error, is raised, the <code>rescue</code> block will execute and then the program will continue to run as it normally would. If we didn't have the <code>rescue</code> block there, our program would stop once it hit the exception and we would lose the rest of our print-out.</p>
+<p>You can also use the <code>rescue</code> reserved word in-line like so:</p>
+<pre class="language-none"><code class="language-none"># inline_exception_example.rb
+
+zero = 0
+puts "Before each call"
+zero.each { |element| puts element } rescue puts "Can't do that!"
+puts "After each call"
+</code></pre>
+<p>This code prints the following output:</p>
+<pre class="language-irb"><code class="language-irb">Before each call
+Can't do that!
+After each call
+</code></pre>
+<p>It does so because it isn't possible to call the <code>each</code> method on an Integer which is the value of the <code>zero</code> variable. If we remove the <code>rescue</code> block, the second <code>puts</code> method will not execute because the program will exit when it runs into the error. You can see why the word "rescue" is relevant here. We are effectively rescuing our program from coming to a grinding halt. If we give this same code the proper variable, our <code>rescue</code> block never gets executed.</p>
+<p>We can also rescue pre-existing errors when we are writing our code. Let's look at doing something like that with a <code>divide</code> method.</p>
+<pre class="language-none"><code class="language-none"># divide.rb
+
+def divide(number, divisor)
+  begin
+    answer = number / divisor
+  rescue ZeroDivisionError =&gt; e
+    puts e.message
+  end
+end
+
+puts divide(16, 4)
+puts divide(4, 0)
+puts divide(14, 7)
+</code></pre>
+<p>Here we are rescuing the <code>ZeroDivisionError</code> and saving it into a variable <code>e</code>. We then have access to the <code>message</code> method that the <code>ZeroDivisionError</code> object has available.</p>
+<p>If this is confusing at this point, don't worry. As you learn more about classes and objects in the coming chapters, you can revisit this section, and it will be much clearer. For now, you need to understand that as you write Ruby programs you can anticipate errors that you may run into and handle them properly so that your whole program isn't broken by one error.</p>
+<h2><a href="#readingstacktraces" name="readingstacktraces">Exceptions &amp; Stack Traces</a></h2>
+<p>For the purposes of this section an <strong>exception</strong> can be viewed as synonymous with an error. During the course of program execution, many things can go wrong for a variety of reasons, and when something does go wrong, usually we say "an exception is raised". This is a common technical phrase that just means your code encountered some sort of error condition. When an exception is raised, it is usually accompanied by a large output of text of what looks like gibberish. It's in this gibberish that you'll find the clues to the source of the problem, and it's important to start developing an eye for scanning and parsing this gibberish output. This skill will end up being one of the most important things to develop over time, because if you're like most programmers, your code will generate a lot of exceptions.</p>
+<p>Let's take a look at a simple example of an error condition:</p>
+<pre class="language-none"><code class="language-none">irb :001 &gt; '1' + 1
+TypeError: no implicit conversion of Integer into String
+</code></pre>
+<p>In the example above, we see a <code>TypeError</code> because the two types don't match - one is a <code>String</code>, one is a <code>Integer</code> - and Ruby doesn't know how to add them together. In Ruby terms, an exception is raised, which will halt execution unless there is code in place to rescue the exception. Ruby has a set of built-in exceptions that also come with an attached message. In the above example, the exception is a <code>TypeError</code> and tells us it can't add the two together without explicitly converting one to a compatible type. Some other common built-in error types you may encounter are:</p>
+<pre class="language-none"><code class="language-none">StandardError
+TypeError
+ArgumentError
+NoMethodError
+RuntimeError
+SystemCallError
+ZeroDivisionError
+RegexpError
+IOError
+EOFError
+ThreadError
+ScriptError
+SyntaxError
+LoadError
+NotImplementedError
+SecurityError
+</code></pre>
+<p>This isn't a complete list and you don't need to memorize the above, but it gives a good idea of the kind of situations that might cause an exception. The <code>TypeError</code> in the above code example shows the first line of the error message provided by the exception, but in real exceptions, you'll often see line after line of text, and it looks like a wall of gibberish. What does the rest of the text mean? To illustrate, let's look at another example, and we'll walk through diagnosing the cause of the error using the message output from the exception.</p>
+<p>Create a file with the following and name it <code>greeting.rb</code> and run it with <code>ruby greeting.rb</code>.</p>
+<pre class="language-none"><code class="language-none">def greet(person)
+  puts "Hello, " + person
+end
+
+greet("John")
+greet(1)
+</code></pre>
+<p>The purpose/functionality of this code is simple, but maybe a quick walkthrough might still be helpful. First we define a method <code>greet</code>, which expects one parameter. The idea is that we can write a line of code that says:</p>
+<pre class="language-none"><code class="language-none">greet("Jack")
+</code></pre>
+<p>And it should output:</p>
+<pre class="language-irb"><code class="language-irb">Hello, Jack
+</code></pre>
+<p>When we run the script <code>greeting.rb</code>, we get one correct greeting, and one error as output - don't panic! We're going to take the error output line by line and understand what it means.</p>
+<pre class="language-irb"><code class="language-irb">$ ruby greeting.rb
+Hello, John
+greeting.rb:2:in `+': no implicit conversion of Integer into String (TypeError) from greeting.rb:2:in `greet'
+from greeting.rb:6:in `&lt;main&gt;'
+</code></pre>
+<p>The first use of the <code>greet</code> method supplies a <code>String</code> as the parameter, and so the output is what you'd expect it to be. But when we pass <code>1</code> as the argument into the <code>greet</code> method, we get a <code>TypeError</code> exception. We already mentioned the first line: it's the error type and the error message. But what do the other lines mean?</p>
+<p>Part of this involves understanding how execution works within Ruby, involving the 'stack'. When Ruby invokes a method, the method is added to Ruby's 'stack'. In the simple example above when we called <code>greet("John")</code>, program execution would look like this:</p>
+<pre class="language-irb"><code class="language-irb">main -&gt; greet -&gt; puts -&gt; exit and return to main
+</code></pre>
+<p>Now we can make a little more sense of the output from the error, as it provides a detailed trace (known as a stack trace) that shows the flow of execution and where the error occurred. Such traces rely on Ruby's call stack, which we discussed in <a href="/books/ruby/read/methods#callstack">the Methods chapter</a>.</p>
+<p>In the second method invocation, <code>greet(1)</code>, an error occurs and the program execution flow didn't exit back to <code>main</code>, and stayed in the <code>greet</code> method. The program execution looks like this:</p>
+<pre class="language-irb"><code class="language-irb">main -&gt; greet -&gt; puts
+</code></pre>
+<p>Now, let's revisit the error:</p>
+<pre class="language-irb"><code class="language-irb">greeting.rb:2:in `+': no implicit conversion of Integer into String (TypeError) from greeting.rb:2:in `greet'
+from greeting.rb:6:in `&lt;main&gt;'
+</code></pre>
+<p>The stack trace first tells us where the error occurred and why: line 2 of greeting.rb, and the error was because the types don't match. The error occured due to the call made in the 'main' context on line 6, which contains the line that called the method with incorrect arguments, line 2.</p>
+<p>This is a shorter error stack trace than most. Let's take a look at a slightly more complex example. Note: try not to worry about anything you don't understand in the code yet, just pay attention to the stack trace and how it allows you to see what called which method, and provides a trail of calls.</p>
+<pre class="language-none"><code class="language-none">def space_out_letters(person)
+  return person.split("").join(" ")
+end
+
+def greet(person)
+  return "H e l l o, " + space_out_letters(person)
+end
+
+def decorate_greeting(person)
+  puts "" + greet(person) + ""
+end
+
+decorate_greeting("John")
+decorate_greeting(1)
+</code></pre>
+<p>Save this to <code>greeting.rb</code> and run it, and you should see the following output:</p>
+<pre class="language-irb"><code class="language-irb">H e l l o, J o h n
+greeting.rb:2:in `space_out_letters': undefined method `split' for 1:Integer (NoMethodError)
+from greeting.rb:6:in `greet' from greeting.rb:10:in `decorate_greeting'
+from greeting.rb:14:in `&lt;main&gt;'
+</code></pre>
+<p>The first example works as expected, the latter causes an exception. Ordinarily this should pass the execution flow through as following:</p>
+<pre class="language-irb"><code class="language-irb">main -&gt; decorate_greeting -&gt; greet -&gt; space_out_letters (passes result back) -&gt; greet -&gt; decorate_greeting -&gt; main
+</code></pre>
+<p>Looking at the stack trace, you can see this happening: on line 14 (the beginning of the chain where the error originated) the <code>decorate_greeting</code> method is called. It then identifies line 10, where the <code>greet</code> method is called by <code>decorate_greeting</code>, and then line 6 where <code>greet</code> calls <code>space_out_letters</code>. Because the function 'split' expects a string, we get an error, along with a trace of the calls that lead up to that error. In a small script this is less useful, but in a larger codebase, being able to trace the execution flow is a very useful way to drill down to the source of the error.</p>
+<h2><a href="#methoddefinitionorder" name="methoddefinitionorder">Method Definition Order</a></h2>
+<p>Take a look at this code:</p>
+<pre class="language-ruby"><code class="language-ruby">def top
+  bottom
+end
+
+def bottom
+  puts "Reached the bottom"
+end
+
+top
+</code></pre>
+<p>Note that <code>top</code> is trying to call the <code>bottom</code> method, but <code>bottom</code> isn't yet defined on line 2. Will this code work? Think about it for a moment and try to figure out what will happen and why. Once you've got your answer, go ahead and run the code.</p>
+<p>What happened? The code ran just fine! It printed <code>Reached the bottom</code>. How does that work?</p>
+<p>The answer lies in how Ruby executes <code>def</code> statements. When Ruby encounters a <code>def</code> statement, it merely reads the function definition into memory and saves it away to be executed later. The body of the method isn't executed until we actually call the method. In this code, that happens twice -- when the definition of <code>top</code> is encountered and again when the definition of <code>bottom</code> is encountered. By the time we try to invoke <code>top</code> on line 9, Ruby knows precisely what <code>top</code> and <code>bottom</code> are (methods), and what code they contain. Thus, when <code>top</code> tries to invoke <code>bottom</code>, all Ruby has to do is look up the definition of <code>bottom</code>, then invoke it if found. That means the code runs correctly even though <code>bottom</code> was defined after <code>top</code> was.</p>
+<p>What do you think will happen if we call <code>top</code> before defining the method?</p>
+<pre class="language-ruby"><code class="language-ruby">top
+
+def top
+  bottom
+end
+
+def bottom
+  puts "Reached the bottom"
+end
+</code></pre>
+<p>Oops. That doesn't work. It fails with an <code>undefined local variable or method</code> error. The reason it doesn't work is that we're actually trying to invoke <code>top</code> on line 1, not just loading some code into memory. Since Ruby hasn't loaded the <code>top</code> and <code>bottom</code> methods into memory yet, it has no idea what <code>top</code> is, so it gives up.</p>
+<p>These kinds of issues arise when you start writing slightly longer programs with multiple methods. A lot of new developers stress over the order in which they define their methods, worried that the Ruby won't be able to find them when the program runs. In practice, you don't have to worry about it. The only rule of thumb is that you should define all your methods before you try to invoke the first one. This is why Rubyists almost always put the main program code at the bottom of the program after all methods have been declared.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>The information in this chapter is not on the critical path to learning Ruby, but you will definitely run into these issues and it's better to have some exposure and familiarity now than to spend hours in confusion later on. Experiment with these exercises and watch your understanding deepen.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Write a program that checks if the sequence of characters "lab" exists in the following strings. If it does exist, print out the word.</p>
+<ul>
+<li>"laboratory"
+</li>
+<li>"experiment"
+</li>
+<li>"Pans Labyrinth"
+</li>
+<li>"elaborate"
+</li>
+<li>"polar bear"
+</li>
+</ul>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-none"><code class="language-none">def check_in(word)
+  if /lab/ =~ word
+    puts word
+  else
+    puts "No match"
+  end
+end
+
+
+check_in("laboratory")
+check_in("experiment")
+check_in("Pans Labyrinth")
+check_in("elaborate")
+check_in("polar bear")
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<div class="markup-video"><video class="video-js vjs-launch-school-skin vjs-16-9" controls="" id="video_959fc6ed66f8" poster="/assets/tealeaf_markup/video_poster.jpg" preload="none"><source label="HD" res="720" src="//d1b1wr57ag5rdp.cloudfront.net/videos/output/more_stuff_1_914452_s280/more_stuff_1_914452_s280.mp4" type="video/mp4"/><track kind="captions" label="English" src="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_1_914452_s280.vtt" srclang="en"/><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video><div class="video-meta clearfix"><p class="download-video-links">Download: <a download="" href="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_1_914452_s280.sbv" rel="download-video-transcript">Transcript</a></p><p class="video-length">Duration: <strong>4:40</strong></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What will the following program print to the screen? What will it return?</p>
+<pre class="language-none"><code class="language-none">def execute(&amp;block)
+  block
+end
+
+execute { puts "Hello from inside the execute method!" }
+</code></pre></div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>Nothing is printed to the screen because the block is never activated with the <code>.call</code> method.  The method returns a Proc object.</p>
+<p><strong>Video Walkthrough</strong></p>
+<div class="markup-video"><video class="video-js vjs-launch-school-skin vjs-16-9" controls="" id="video_4f542f049651" poster="/assets/tealeaf_markup/video_poster.jpg" preload="none"><source label="HD" res="720" src="//d1b1wr57ag5rdp.cloudfront.net/videos/output/more_stuff_2_7f9782_s56/more_stuff_2_7f9782_s56.mp4" type="video/mp4"/><track kind="captions" label="English" src="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_2_7f9782_s56.vtt" srclang="en"/><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video><div class="video-meta clearfix"><p class="download-video-links">Download: <a download="" href="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_2_7f9782_s56.sbv" rel="download-video-transcript">Transcript</a></p><p class="video-length">Duration: <strong>0:56</strong></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What is exception handling and what problem does it solve?</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>Exception handling is a structure used to handle the possibility of an error occurring in a program. It is a way of handling the error by changing the flow of control without exiting the program entirely.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Modify the code in exercise 2 to make the block execute properly.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-none"><code class="language-none">def execute(&amp;block)
+  block.call
+end
+
+execute { puts "Hello from inside the execute method!" }
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<div class="markup-video"><video class="video-js vjs-launch-school-skin vjs-16-9" controls="" id="video_aed0896eefa1" poster="/assets/tealeaf_markup/video_poster.jpg" preload="none"><source label="HD" res="720" src="//d1b1wr57ag5rdp.cloudfront.net/videos/output/more_stuff_4_9e096c_s62/more_stuff_4_9e096c_s62.mp4" type="video/mp4"/><track kind="captions" label="English" src="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_4_9e096c_s62.vtt" srclang="en"/><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video><div class="video-meta clearfix"><p class="download-video-links">Download: <a download="" href="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_4_9e096c_s62.sbv" rel="download-video-transcript">Transcript</a></p><p class="video-length">Duration: <strong>1:02</strong></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Why does the following code...</p>
+<pre class="language-none"><code class="language-none">def execute(block)
+  block.call
+end
+
+execute { puts "Hello from inside the execute method!" }
+</code></pre>
+<p>Give us the following error when we run it?</p>
+<pre class="language-irb"><code class="language-irb">block.rb1:in `execute': wrong number of arguments (0 for 1) (ArgumentError)
+from test.rb:5:in `&lt;main&gt;'
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The method parameter <code>block</code> is missing the ampersand sign <code>&amp;</code> that allows a block to be passed as a parameter.</p>
+<p><strong>Video Walkthrough</strong></p>
+<div class="markup-video"><video class="video-js vjs-launch-school-skin vjs-16-9" controls="" id="video_be6b787022b2" poster="/assets/tealeaf_markup/video_poster.jpg" preload="none"><source label="HD" res="720" src="//d1b1wr57ag5rdp.cloudfront.net/videos/output/more_stuff_5_467248_s80/more_stuff_5_467248_s80.mp4" type="video/mp4"/><track kind="captions" label="English" src="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_5_467248_s80.vtt" srclang="en"/><p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video><div class="video-meta clearfix"><p class="download-video-links">Download: <a download="" href="//d1b1wr57ag5rdp.cloudfront.net/videos/transcripts/books/ruby/more_stuff_5_467248_s80.sbv" rel="download-video-transcript">Transcript</a></p><p class="video-length">Duration: <strong>1:20</strong></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="/books/ruby/read/intro_exercises">Next:  Exercises
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

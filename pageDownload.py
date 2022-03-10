@@ -8,7 +8,10 @@ import cssutils
 import logging
 import re
 
-
+headers = [('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'),
+                          ('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
+                          ('Connection', 'keep-alive')
+                      ]
 #function to remove JS
 def removeRearWing(fileContent):
   temp = re.sub("<script src=\".*\"></script>", "", fileContent)
@@ -25,18 +28,15 @@ def removeFloor(soup):
   return soup
 
 #function to download web page
-def downloadPage(pageUrl):
+def downloadPage(pageUrl,folder):
   print ("Connecting to server")
   cssutils.log.setLevel(logging.CRITICAL)
-  directory = './downloads/'
+  directory = folder + '/'
   if( not os.path.isdir(directory)):
     os.makedirs(directory)
   opener = urllib.request.build_opener()
   #defining headers as some servers mandiate it
-  opener.addheaders = [('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'),
-                          ('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
-                          ('Connection', 'keep-alive')
-                      ]
+  opener.addheaders = headers
   urllib.request.install_opener(opener)
   html_doc = urllib.request.urlopen(pageUrl).read()
   print ("Connection Success!")
@@ -49,7 +49,7 @@ def downloadPage(pageUrl):
           text = removeRearWing(str(soup))
           f.write(text)
           f.close()
-          print ('Page Downloaded successfully!')
+          print (fName + 'Downloaded successfully!')
   except Exception as e:
-      print ("Exception occurred = ",e)
+      print ("Exception occurred while downloading " + fName + "Exception= ",e)
 
