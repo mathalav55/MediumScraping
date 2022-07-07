@@ -56,7 +56,7 @@ def downloadPage(pageUrl,folder="test",title=""):
           if len(nextLinkDiv) > 0:
             nextLink = nextLinkDiv[0].find('a')
             nextLink['href'] = './' + str(int(title) + 1) + '.html'
-            nextLink['target'] = '_blank'
+            nextLink['target'] = '_self'
           #writing data to file
           #adding internal links
           innerLinks = soup.find_all('a')
