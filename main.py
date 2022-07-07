@@ -36,20 +36,22 @@ def downloadBook(bookUrl,title):
           soup = BeautifulSoup(html_doc, 'html.parser')
           div = soup.find('div',{'class' : 'next_chapter'})
           nextPage = bookUrl
-    
+          pageList = []
+          pageList.append(nextPage)
           #run until there is next page
-          while(div):
-            # download page
-            downloadPage(nextPage, directory)
+          while(div):            
             #get url for next page
             nextPage = 'https://launchschool.com' +  div.find('a')['href']
+            pageList.append(nextPage)
             #read next page
             html_doc = urllib.request.urlopen(nextPage).read()
             #make soup
             soup = BeautifulSoup(html_doc, 'html.parser')
             #get link div
             div = soup.find('div',{'class' : 'next_chapter'})
-                     
+          
+          for i in range(0,len(pageList)):
+            downloadPage(pageList[i],directory,str(i))
   except Exception as e:
       print ("Exception occurred = ",e)
 

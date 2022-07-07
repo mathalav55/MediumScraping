@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>The form_for Helper</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":3,"applicationTime":108,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Introduces form_for and create our own version to show how it works." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="UNfbB9Ioxn37E8YXQtZPBgKt14Hdnb-LDMA8XIo9nGig7nNr_aZuIe7VHB6zN2iE7AY-aB4pUtlNfbE1beGWgw" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/demystifying_rails">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/introduction#prerequisites"><span>Prerequisites</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/introduction#howtoreadthisguide"><span>How To Read This Guide</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/http_and_web_development_review"><span class="chapter_title">HTTP and Web Development Review</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/http_and_web_development_review#httpandwebapps"><span>HTTP and Web Apps</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/outlining_our_first_app"><span class="chapter_title">Outlining Our First App</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/outlining_our_first_app#setupstarterapp"><span>Set Up Starter App</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/outlining_our_first_app#outliningourfirstapp"><span>Outlining Our First App</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>No Magic Rails</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/sending_requests_and_responses"><span class="chapter_title">Sending Requests and Responses</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/sending_requests_and_responses#definingaroute"><span>Defining A Route</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/sending_requests_and_responses#defininganaction"><span>Defining An Action</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/rendering_html_with_views"><span class="chapter_title">Rendering HTML With Views</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/rendering_html_with_views#renderinghtml"><span>Rendering HTML</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/rendering_html_with_views#contentusingviews"><span>Content Using Views</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/making_our_app_dynamic"><span class="chapter_title">Making Our App Dynamic</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#dynamicserverresponses"><span>Dynamic Server Responses</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#dynamicdocuments"><span>Dynamic Documents With Embedded Ruby</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#responseswithqueryparameters"><span>Responses With Query Parameters</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#responseswithurlcapturepattern"><span>Responses With URL Capture Pattern</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/persisting_data_in_our_app"><span class="chapter_title">Persisting Data in Our App</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/persisting_data_in_our_app#databasebackedapplications"><span>Database Backed Applications</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/persisting_data_in_our_app#preparethedatabase"><span>Prepare The Database</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/persisting_data_in_our_app#interatctwiththedatabase"><span>Interacting With The Database</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/list_and_show_records"><span class="chapter_title">List and Show Records</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/list_and_show_records#listposts"><span>Listing Our Posts</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/list_and_show_records#showapost"><span>Show A Post To The User</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/list_and_show_records#extractsharedlogic"><span>Extract Shared Logic for DB Connection</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/create_a_record_using_a_form"><span class="chapter_title">Create a New Record Using a Form</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/create_a_record_using_a_form#displayaform"><span>Displaying A Form</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/create_a_record_using_a_form#creatingapost"><span>Creating A Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/edit_a_record"><span class="chapter_title">Edit a Record</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/edit_a_record#editupdate"><span>Editing and Updating a Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/find_and_delete_a_record"><span class="chapter_title">Find and Delete a Post</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/find_and_delete_a_record#extractfindingapost"><span>Extract Finding A Post</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/find_and_delete_a_record#deleteapost"><span>Delete a Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/controller_patterns_and_crud"><span class="chapter_title">Controller Patterns and CRUD</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/controller_patterns_and_crud#controllerpatterns"><span>Controller Patterns in a Datacentric App</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/controller_patterns_and_crud#crud"><span>CRUD</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/data_encapsulation_with_models"><span class="chapter_title">Data Encapsulation With Models</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/data_encapsulation_with_models#newpostwithmodel"><span>Creating a New Post</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/data_encapsulation_with_models#findshowpost"><span>Find and Show a Post</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/data_encapsulation_with_models#editwithmodel"><span>Edit a Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models"><span class="chapter_title">Expanded Encapsulation Through Our Models</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models#updatearecord"><span>Update a Record</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models#deleteapostmodel"><span>Delete a Post Model</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models#listposts"><span>List Posts</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/model_validations"><span class="chapter_title">Model Validations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/model_validations#writeamodelvalidation"><span>How to Write a Model Validation</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/model_validations#integratevalidationswithforms"><span>Integrate Validations With Forms</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/model_validations#displayvalidations"><span>Display Validations</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/a_second_resource"><span class="chapter_title">A Second Resource</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/a_second_resource#addingcomments"><span>Adding Comments to Our App</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/a_second_resource#displayingcomments"><span>Displaying Comments</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/a_second_resource#acommentmodel"><span>A Comment Model</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/working_with_model_associations"><span class="chapter_title">Working With Model Associations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/working_with_model_associations#associationbetweenmodels"><span>Association Between Models</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/working_with_model_associations#createathroughassociation"><span>Creation Through Association</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/cleaning_up_our_app"><span class="chapter_title">Cleaning Up Our App</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/cleaning_up_our_app#validationforcomments"><span>Validation for Creating a Comment</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/cleaning_up_our_app#deleteacomment"><span>Delete a Comment</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/cleaning_up_our_app#listcommentspage"><span>List Comments</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/a_base_model"><span class="chapter_title">A Base Model</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/a_base_model#abasemodel"><span>Inheriting From a Base Model</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Rails Core Conventions</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/rails_overview"><span>Overview</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/routes_and_resources"><span class="chapter_title">Routes and Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#routing_conventions"><span>Basic Routing Conventions</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#routingformultipleresources"><span>Routing For Multiple Resources</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#restful"><span>Restful</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#resourcenotation"><span>Resource Notation</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#nestedresources"><span>Nested Resources</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#pathhelpers"><span>Path Helpers</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#moreroutingconventions"><span>More Routing Conventions</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#routingreview"><span>Review</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/conventional_views_and_actions"><span class="chapter_title">Conventional Views and Controller Actions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/conventional_views_and_actions#restfulconventions"><span>Restful Controller Conventions</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/conventional_views_and_actions#renderwithinstancevariables"><span>Rendering Views With Instance Variables</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/conventional_views_and_actions#actionsandviews"><span>Controller Action and View File Structure</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Controller Versatility</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/filters_indifferent_access"><span class="chapter_title">Filters and Indifferent Access</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/filters_indifferent_access#filters"><span>Filters</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/filters_indifferent_access#indifferentaccess"><span>Indifferent Access</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/more_controller_options"><span class="chapter_title">More Controller Options</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/more_controller_options#statuscoderequestformats"><span>Status Codes and Request Formats</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/more_controller_options#reviewrailscontrollers"><span>Review</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Helpers and Forms</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/link_to"><span class="chapter_title">link_to Helper</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/link_to#link_to"><span>link_to</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/nonstandard_http_verbs"><span>Nonstandard HTTP Verbs</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/form_helpers"><span class="chapter_title">Form Helpers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#csrf"><span>CSRF</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#formtag"><span>form_tag</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#usingformtag"><span>Using form_tag for the Rest of Our Forms</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#namingmassassignment"><span>Parameter Naming Conventions and Mass Assignment</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Custom Forms</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/building_our_own_form_helpers"><span class="chapter_title">Building Our Own Form Helpers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/building_our_own_form_helpers#myformtag"><span>my_form_tag</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/unobtrusive_scripting"><span class="chapter_title">Unobtrusive Scripting</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/unobtrusive_scripting#dynamicform"><span>Write a Dynamic Form With link_to</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/unobtrusive_scripting#javascriptincludetag"><span>Javascript Include Tag and CSRF meta tags</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>More View Conventions</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/render_responsive_views"><span class="chapter_title">Render Responsive Views</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/render_responsive_views#layouts"><span>Layouts</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/render_responsive_views#partials"><span>Partials</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/render_responsive_views#flashmessages"><span>Flash Messages</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Active Record Models and Database Management</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/models"><span class="chapter_title">Models</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/models#models"><span>Models</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/models#validations"><span>Validations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/models#callbacks"><span>Callbacks</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/associations"><span class="chapter_title">Active Record Associations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/associations#definingassociations"><span>Defining Associations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/associations#associationscontrollers"><span>Associations in Controllers</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/strong_parameters"><span class="chapter_title">Strong Parameters</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/strong_parameters#handlingparams"><span>Handling params</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/strong_parameters#moreresources"><span>More Resources</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/querying_the_database"><span>Querying the Database</span>
+</a></li>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/form_for_helper"><span class="chapter_title">The form_for Helper</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/form_for_helper#formfor"><span>form_for</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_for_helper#ourownformfor"><span>Our Own form_for</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/active_record_migrations"><span class="chapter_title">Active Record Migrations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#migrationfundamentals"><span>Migration Fundamentals</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#runningmigrations"><span>Running Migrations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#moreonmigrations"><span> More on Active Record Migrations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#lastcommentedon"><span>Add last_commented_on to Posts</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/seeding_the_database"><span class="chapter_title">Seeding the Database</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/seeding_the_database#seedsfile"><span>seeds.rb</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/conclusion"><span>Conclusion</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=The+form_for+Helper&amp;url=https://launchschool.com/books/demystifying_rails/read/form_for_helper&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/demystifying_rails/read/form_for_helper" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/demystifying_rails">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/introduction#prerequisites"><span>Prerequisites</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/introduction#howtoreadthisguide"><span>How To Read This Guide</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/http_and_web_development_review"><span class="chapter_title">HTTP and Web Development Review</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/http_and_web_development_review#httpandwebapps"><span>HTTP and Web Apps</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/outlining_our_first_app"><span class="chapter_title">Outlining Our First App</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/outlining_our_first_app#setupstarterapp"><span>Set Up Starter App</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/outlining_our_first_app#outliningourfirstapp"><span>Outlining Our First App</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>No Magic Rails</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/sending_requests_and_responses"><span class="chapter_title">Sending Requests and Responses</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/sending_requests_and_responses#definingaroute"><span>Defining A Route</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/sending_requests_and_responses#defininganaction"><span>Defining An Action</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/rendering_html_with_views"><span class="chapter_title">Rendering HTML With Views</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/rendering_html_with_views#renderinghtml"><span>Rendering HTML</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/rendering_html_with_views#contentusingviews"><span>Content Using Views</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/making_our_app_dynamic"><span class="chapter_title">Making Our App Dynamic</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#dynamicserverresponses"><span>Dynamic Server Responses</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#dynamicdocuments"><span>Dynamic Documents With Embedded Ruby</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#responseswithqueryparameters"><span>Responses With Query Parameters</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/making_our_app_dynamic#responseswithurlcapturepattern"><span>Responses With URL Capture Pattern</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/persisting_data_in_our_app"><span class="chapter_title">Persisting Data in Our App</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/persisting_data_in_our_app#databasebackedapplications"><span>Database Backed Applications</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/persisting_data_in_our_app#preparethedatabase"><span>Prepare The Database</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/persisting_data_in_our_app#interatctwiththedatabase"><span>Interacting With The Database</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/list_and_show_records"><span class="chapter_title">List and Show Records</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/list_and_show_records#listposts"><span>Listing Our Posts</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/list_and_show_records#showapost"><span>Show A Post To The User</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/list_and_show_records#extractsharedlogic"><span>Extract Shared Logic for DB Connection</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/create_a_record_using_a_form"><span class="chapter_title">Create a New Record Using a Form</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/create_a_record_using_a_form#displayaform"><span>Displaying A Form</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/create_a_record_using_a_form#creatingapost"><span>Creating A Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/edit_a_record"><span class="chapter_title">Edit a Record</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/edit_a_record#editupdate"><span>Editing and Updating a Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/find_and_delete_a_record"><span class="chapter_title">Find and Delete a Post</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/find_and_delete_a_record#extractfindingapost"><span>Extract Finding A Post</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/find_and_delete_a_record#deleteapost"><span>Delete a Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/controller_patterns_and_crud"><span class="chapter_title">Controller Patterns and CRUD</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/controller_patterns_and_crud#controllerpatterns"><span>Controller Patterns in a Datacentric App</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/controller_patterns_and_crud#crud"><span>CRUD</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/data_encapsulation_with_models"><span class="chapter_title">Data Encapsulation With Models</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/data_encapsulation_with_models#newpostwithmodel"><span>Creating a New Post</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/data_encapsulation_with_models#findshowpost"><span>Find and Show a Post</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/data_encapsulation_with_models#editwithmodel"><span>Edit a Post</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models"><span class="chapter_title">Expanded Encapsulation Through Our Models</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models#updatearecord"><span>Update a Record</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models#deleteapostmodel"><span>Delete a Post Model</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/expanded_encapsulation_through_our_models#listposts"><span>List Posts</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/model_validations"><span class="chapter_title">Model Validations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/model_validations#writeamodelvalidation"><span>How to Write a Model Validation</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/model_validations#integratevalidationswithforms"><span>Integrate Validations With Forms</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/model_validations#displayvalidations"><span>Display Validations</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/a_second_resource"><span class="chapter_title">A Second Resource</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/a_second_resource#addingcomments"><span>Adding Comments to Our App</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/a_second_resource#displayingcomments"><span>Displaying Comments</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/a_second_resource#acommentmodel"><span>A Comment Model</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/working_with_model_associations"><span class="chapter_title">Working With Model Associations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/working_with_model_associations#associationbetweenmodels"><span>Association Between Models</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/working_with_model_associations#createathroughassociation"><span>Creation Through Association</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/cleaning_up_our_app"><span class="chapter_title">Cleaning Up Our App</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/cleaning_up_our_app#validationforcomments"><span>Validation for Creating a Comment</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/cleaning_up_our_app#deleteacomment"><span>Delete a Comment</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/cleaning_up_our_app#listcommentspage"><span>List Comments</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/a_base_model"><span class="chapter_title">A Base Model</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/a_base_model#abasemodel"><span>Inheriting From a Base Model</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Rails Core Conventions</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/rails_overview"><span>Overview</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/routes_and_resources"><span class="chapter_title">Routes and Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#routing_conventions"><span>Basic Routing Conventions</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#routingformultipleresources"><span>Routing For Multiple Resources</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#restful"><span>Restful</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#resourcenotation"><span>Resource Notation</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#nestedresources"><span>Nested Resources</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#pathhelpers"><span>Path Helpers</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#moreroutingconventions"><span>More Routing Conventions</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/routes_and_resources#routingreview"><span>Review</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/conventional_views_and_actions"><span class="chapter_title">Conventional Views and Controller Actions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/conventional_views_and_actions#restfulconventions"><span>Restful Controller Conventions</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/conventional_views_and_actions#renderwithinstancevariables"><span>Rendering Views With Instance Variables</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/conventional_views_and_actions#actionsandviews"><span>Controller Action and View File Structure</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Controller Versatility</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/filters_indifferent_access"><span class="chapter_title">Filters and Indifferent Access</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/filters_indifferent_access#filters"><span>Filters</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/filters_indifferent_access#indifferentaccess"><span>Indifferent Access</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/more_controller_options"><span class="chapter_title">More Controller Options</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/more_controller_options#statuscoderequestformats"><span>Status Codes and Request Formats</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/more_controller_options#reviewrailscontrollers"><span>Review</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Helpers and Forms</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/link_to"><span class="chapter_title">link_to Helper</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/link_to#link_to"><span>link_to</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/nonstandard_http_verbs"><span>Nonstandard HTTP Verbs</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/form_helpers"><span class="chapter_title">Form Helpers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#csrf"><span>CSRF</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#formtag"><span>form_tag</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#usingformtag"><span>Using form_tag for the Rest of Our Forms</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_helpers#namingmassassignment"><span>Parameter Naming Conventions and Mass Assignment</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Custom Forms</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/building_our_own_form_helpers"><span class="chapter_title">Building Our Own Form Helpers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/building_our_own_form_helpers#myformtag"><span>my_form_tag</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/unobtrusive_scripting"><span class="chapter_title">Unobtrusive Scripting</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/unobtrusive_scripting#dynamicform"><span>Write a Dynamic Form With link_to</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/unobtrusive_scripting#javascriptincludetag"><span>Javascript Include Tag and CSRF meta tags</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>More View Conventions</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/render_responsive_views"><span class="chapter_title">Render Responsive Views</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/render_responsive_views#layouts"><span>Layouts</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/render_responsive_views#partials"><span>Partials</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/render_responsive_views#flashmessages"><span>Flash Messages</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Active Record Models and Database Management</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/models"><span class="chapter_title">Models</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/models#models"><span>Models</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/models#validations"><span>Validations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/models#callbacks"><span>Callbacks</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/associations"><span class="chapter_title">Active Record Associations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/associations#definingassociations"><span>Defining Associations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/associations#associationscontrollers"><span>Associations in Controllers</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/strong_parameters"><span class="chapter_title">Strong Parameters</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/strong_parameters#handlingparams"><span>Handling params</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/strong_parameters#moreresources"><span>More Resources</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/querying_the_database"><span>Querying the Database</span>
+</a></li>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/form_for_helper"><span class="chapter_title">The form_for Helper</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/form_for_helper#formfor"><span>form_for</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/form_for_helper#ourownformfor"><span>Our Own form_for</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/active_record_migrations"><span class="chapter_title">Active Record Migrations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#migrationfundamentals"><span>Migration Fundamentals</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#runningmigrations"><span>Running Migrations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#moreonmigrations"><span> More on Active Record Migrations</span>
+</a></li>
+<li>
+<a href="/books/demystifying_rails/read/active_record_migrations#lastcommentedon"><span>Add last_commented_on to Posts</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/demystifying_rails/read/seeding_the_database"><span class="chapter_title">Seeding the Database</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/demystifying_rails/read/seeding_the_database#seedsfile"><span>seeds.rb</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/demystifying_rails/read/conclusion"><span>Conclusion</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=The+form_for+Helper&amp;url=https://launchschool.com/books/demystifying_rails/read/form_for_helper&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/demystifying_rails/read/form_for_helper" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>The form_for Helper</h1>
+<h2><a href="#repeatedpatterns" name="repeatedpatterns">Patterns in Forms</a></h2>
+<p>Rails forms follow very specific conventions. If we reexamine the resources that we've been working with so far, we'll see a repeated pattern.</p>
+<p>Whenever we use a form to <code>POST</code> new data to the DB, our URL is of the form <code>/resources</code>.
+That means that if we want to use a form to create a new resource, we would <code>POST</code> to a URL like:
+<code>/comments</code>.</p>
+<p>If we need to update a resource, we have to specify which type of resource we wish to update (e.g. comments or posts). And we also have to specify which item out of this collection of resources we want to update via the id number.</p>
+<p>An example of a URL for <code>PATCH</code>ing our data (updating it), would then look like: <code>/comments/1</code>. Keep this in mind while we move forward.</p>
+<p>So far we've been working with <code>form_tag</code> to dynamically create our HTML forms used in our Rails app. There is another type of form helper that can be quite useful when working with Active Record model resources in our application. This form helper is called <code>form_for</code>.</p>
+<h2><a href="#formfor" name="formfor">form_for</a></h2>
+<p>The form helper <code>form_for</code> is very similar to <code>form_tag</code>. The difference here is that the method signature doesn't require a URL. When we use <code>form_tag</code>, we need to specify which action we want to submit data to, and to do that we specify a URL string with <code>url_for</code>. <code>form_for</code> does this for us, all we need to do is pass a certain type of model, and <code>form_for</code> generates the correct URL for us by using <code>url_for</code> behind the scenes. Let's convert our new post form to use <code>form_for</code> instead of <code>form_tag</code>:</p>
+<pre class="language-markup"><code class="language-markup">&lt;!-- views/posts/new.html.erb --&gt;
+
+&lt;!-- ... --&gt;
+
+&lt;%= render 'form' %&gt;
+
+&lt;!-- ... --&gt;
+</code></pre>
+<p>There are definitely some differences in the code above when compared to what we currently have set up. We'll have to update the form fields partial to get all of this to work. Before, we only included our <code>form_fields</code> in that partial, this was because we were using <code>form_tag</code>, with <code>form_for</code> we may include the entire form. We'll be renaming our partial to <code>_form.html.erb</code>.</p>
+<pre class="language-markup"><code class="language-markup">&lt;!-- views/posts/_form.html.erb --&gt;
+
+&lt;%= form_for @post do |f| %&gt;
+
+  &lt;%= f.label 'Title' %&gt;
+  &lt;%= f.text_field :title %&gt;
+  &lt;br /&gt; &lt;br /&gt;
+
+  &lt;%= f.label 'Body' %&gt;
+  &lt;%= f.text_area :body %&gt;
+  &lt;br /&gt; &lt;br /&gt;
+
+  &lt;%= f.label 'Author' %&gt;
+  &lt;%= f.text_field :author %&gt;
+  &lt;br /&gt; &lt;br /&gt;
+
+  &lt;%= submit_tag "#{@post.new_record? ? 'Create' : 'Update'} Post" %&gt;
+
+&lt;% end %&gt;
+</code></pre>
+<p>Notice how there is now a block parameter <code>f</code>. That is a <code>FormBuilder</code> object. It allows us to specify form helpers in a more condensed manner. <code>form_for</code> knows that we are using the <code>Post</code> Active Record object stored in <code>@post</code>. All we need to do for each form helper is specify the method we wish to call on <code>@post</code>. For instance, let's consider the code, <code>&lt;%= f.text_field :title %&gt;</code>. This gets turned into the HTML code:</p>
+<pre class="language-markup"><code class="language-markup">&lt;input type="text" name="post[title]" id="post_title"&gt;
+</code></pre>
+<p>And if <code>post.title</code> does contain a value, then that will show up as well in the <code>value</code> attribute,
+the above code would become:</p>
+<pre class="language-markup"><code class="language-markup">&lt;input type="text" name="post[title]" id="post_title" value="text value here"&gt;
+</code></pre>
+<p>This feature is especially useful when certain validations fail and the page gets re-rendered.
+In that case the value will remain filled in, just as if it had been set to <code>@post.title</code> directly.</p>
+<h3>url_for and form_for</h3>
+<p>We've mentioned that <code>form_for</code> uses <code>url_for</code> behind the scenes to determine which
+action to route to. Rails can do this when supplied with an Active Record object in conjunction
+with <code>url_for</code>. Let's take a deeper look at how this really works using the rails console.</p>
+<pre class="language-ruby"><code class="language-ruby">$ bundle exec rails c
+</code></pre>
+<pre class="language-ruby"><code class="language-ruby"># include the helpers in order to have access to `url_for`
+include Rails.application.routes.url_helpers
+
+# set host in default_url_options:
+default_url_options[:host] = "localhost:3000"
+
+# A new Post record
+post = Post.new
+url_for(post)
+# =&gt; "http://localhost/posts"
+
+# An existing Post record
+post = Post.first
+url_for(post)
+# =&gt; "http://localhost/posts/1"
+
+# A new comment on an existing Post
+post = Post.first
+comment = Comment.new
+url_for([post,comment])
+# =&gt; http://localhost/posts/1/comments
+
+
+# An existing comment on a Post
+post = Post.first
+comment = post.comments.second
+url_for([post,comment])
+#=&gt; "http://localhost/posts/1/comments/2"
+</code></pre>
+<p><code>form_for</code> takes the same type of arguments as <code>url_for</code>; if we want a form related to a new <code>Post</code> or an existing one, we directly pass in a <code>Post</code> object as the first argument to <code>form_for</code>.
+That will get passed to <code>url_for</code> behind the scenes and a valid URL to the correct action will get generated for our form.</p>
+<h3>Moving pages with form_tag to form_for</h3>
+<p>Now that we've shown what <code>form_for</code> can do, the next logical step would be to update
+all our <code>form_tag</code>s to <code>form_for</code>. As long as we have an Active Record model to work with, using <code>form_for</code> makes a bit more sense than <code>form_tag</code>. It does more for us with less code. Below are the remaining forms that we can now move to <code>form_for</code>.</p>
+<pre class="language-markup"><code class="language-markup">&lt;!-- app/views/posts/show.html.erb --&gt;
+
+
+&lt;!-- form used to delete a comment --&gt;
+&lt;%= form_for [@post, comment], method: "delete" do %&gt;
+  &lt;%= submit_tag "Delete Comment" %&gt;
+&lt;% end %&gt;
+
+&lt;!-- form used to create a comment --&gt;
+&lt;%= form_for [@post, @comment] do |f| %&gt;
+  &lt;%= f.label 'Comment' %&gt;
+  &lt;%= f.text_area :body %&gt;
+  &lt;br /&gt;&lt;br /&gt;
+  &lt;%= f.label :author %&gt;
+  &lt;%= f.text_field :author %&gt;
+  &lt;br /&gt;&lt;br /&gt;
+  &lt;%= f.submit %&gt;
+&lt;% end %&gt;
+</code></pre>
+<pre class="language-markup"><code class="language-markup">&lt;!-- app/views/posts/edit.html.erb --&gt;
+
+&lt;%= render "shared/errors", obj: @post %&gt;
+
+&lt;%= render 'form' %&gt;
+
+&lt;br /&gt;
+&lt;%= my_link_to 'Back to Post', posts_path %&gt;
+</code></pre>
+<p>See how we're using the form partial now? Rails does a bit of work for us in that we may use the same partial for both new posts and existing posts. If <code>@post</code> is a new <code>Post</code> object, then the HTTP verb is set appropriately to <code>POST</code>. If <code>@post</code> is an existing object, then Rails injects a hidden input tag with a method attribute into the form, and that input tag will have a method of <code>patch</code>. That will let Rails know to set the HTTP verb to <code>PATCH</code>. Setting the HTTP verb correctly is key to sending the form data to the correct controller action.</p>
+<h2><a href="#ourownformfor" name="ourownformfor">Our Own form_for</a></h2>
+<p>Similar to how we created a <code>my_form_tag</code> method, let's now make a <code>my_form_for</code> method. Putting this together will help us understand how form helpers really work. We really only need to convert one of our forms to see how these form helpers are working. The comments creation form seems like a good choice, so let's go with that one.</p>
+<pre class="language-markup"><code class="language-markup">&lt;!-- app/views/posts/show.html.erb --&gt;
+
+&lt;%= my_form_for [@post, @comment] do |f| %&gt;
+  &lt;%= f.my_label 'Comment' %&gt;
+  &lt;%= f.my_text_area :body %&gt;
+
+  &lt;%= f.my_label 'Your Name' %&gt;
+  &lt;%= f.my_text_field :author %&gt;
+
+  &lt;%= f.my_submit %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>Here, we don't figure out a path and pass it in to the form helper, we pass the array of objects instead. Remember that when we have nested routes, we have to pass in two models. In this case, the first model object helps us identify which post we want. The second model object helps us identify which comment out of all the comments is related to that one post. The ids of each model are inserted into the URL so that we can navigate to the correct page.</p>
+<p>Next, let's create those custom form helpers we use above. This can be done by defining them in the <code>ApplicationHelper</code> file.</p>
+<pre class="language-ruby"><code class="language-ruby">### app/helpers/application_helper.rb ###
+
+module ApplicationHelper
+
+  # ...
+
+  def my_form_for(records, &amp;block)
+    # grab the record we're building the form for
+    # either the lone record OR last record of the array
+    @record = records.is_a?(Array) ? records.last : records
+    # it's critically important that this is set as an
+    # instance variable, as this is how we get at the record
+    # later for e.g. the field values
+
+    # here we use `capture` again, this time passing `self`
+    # as the context for the block to be executed in. this
+    # `self` will be the view, and is necessary so that the
+    # @record will be accessible for the later calls
+    fields = capture(self, &amp;block)
+
+    # tack on the hidden `_method` field if needed
+    unless @record.new_record?
+      fields += my_hidden_field_tag('_method', 'patch')
+    end
+
+    # build the path string, then the &lt;form&gt;
+    path  = url_for(records)
+    attrs = "method='post' action='#{path}'"
+    "&lt;form #{attrs}&gt; #{my_authenticity_token_field} #{fields} &lt;/form&gt;".html_safe
+  end
+
+  def my_label(text)
+    my_label_tag(text)
+  end
+
+  # method to build name attr values
+  # w/ format: "record_class_name[attr_name]"
+  def name_for(record, attr_name)
+    record_class_name = record.class.to_s.underscore
+    "#{record_class_name}[#{attr_name}]"
+  end
+
+  def my_text_area(attr_name)
+    # build the name string
+    name  = name_for(@record, attr_name)
+    # dynamically grab the attr value off of the @record
+    value = @record.read_attribute(attr_name)
+    # create and return the HTML string for the tag
+    # using our tag helper from before
+    my_text_area_tag(name, value)
+  end
+
+  # very similar to `my_text_area`
+  def my_text_field(attr_name)
+    name  = name_for(@record, attr_name)
+    value = @record.read_attribute(attr_name)
+    my_text_field_tag(name, value)
+  end
+
+  def my_submit
+    # decide what the submit text should be
+    text = if @record.new_record?
+            "Create #{@record.class}"
+          else
+            "Update #{@record.class}"
+          end
+
+    # build and return the tag string
+    my_submit_tag(text)
+  end
+end
+</code></pre>
+<p>Keeping track of the object we're building the form for in <code>@record</code>, we're able to push a lot of the logic to our helper methods and keep our view nice and clean.</p>
+<p>And, as you might guess, Rails provides these helper methods like these to us, just as it did with the <code>_tag</code> helpers earlier.</p>
+<p>Our own <code>my_form_for</code> form helper works very similar to Rails' built in <code>form_for</code> helper! Here is how the Rails form helper would look like:</p>
+<pre class="language-markup"><code class="language-markup">&lt;!-- app/views/posts/show.html.erb --&gt;
+
+&lt;%= form_for [@post, @comment] do |f| %&gt;
+  &lt;%= f.label :body, 'Comment:' %&gt;
+  &lt;%= f.text_area :body %&gt;
+
+  &lt;%= f.label :author, 'Your Name:' %&gt;
+  &lt;%= f.text_field :author %&gt;
+
+  &lt;%= f.submit %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>The label field implementation is a bit different. Here it takes two arguments and the first is the attribute <code>name</code> the label corresponds to and the second is the text we want displayed for the label. We want to pass the attribute name here because <code>f.label</code> will build an appropriate <code>for</code> attribute to match its field's <code>id</code>. For example, this results in author label and field HTML like this:</p>
+<pre class="language-markup"><code class="language-markup">&lt;label for="comment_author"&gt;Your Name:&lt;/label&gt;
+&lt;input id="comment_author" type="text" name="comment[author]" /&gt;
+&lt;!-- the matching `for` and `id` values --&gt;
+</code></pre>
+<p>In this chapter we've covered quite a bit. We've slowly added in more functionality to our forms with <code>form_for</code>, and we've even made our own <code>form_for</code> as <code>my_form_for</code>. Hopefully you're starting to see what's behind all the magic of our Rails form helpers.</p>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Demystifying Rails/35.html">Next:  Active Record Migrations
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

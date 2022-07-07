@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Ruby programing tutorial - class inheritance &amp; modules</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":136,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Inheritance is when a class inherits behavior from another class. The class inheriting behavior is the subclass and the class it inherits from is the superclass." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="Eapvmx_BVlycS-gt6rFRZwY5t6dI2h4K3IRXjA_vJWodfdAd8me8hCScpjksV2W0QxcRZLSy5c66roIdQLaeXQ" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/oo_ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/introduction"><span>Introduction</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Object Oriented Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/the_object_model"><span class="chapter_title">The Object Model</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#whyobjectorientedprogramming"><span>Why Object Oriented Programming?</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#whatareobjects"><span>What Are Objects?</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#classesdefineobjects"><span>Classes Define Objects</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#modules"><span>Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#methodlookup"><span>Method Lookup</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/classes_and_objects_part1"><span class="chapter_title">Classes and Objects I</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#statesandbehaviors"><span>States and Behaviors</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#initializinganewobject"><span>Initializing a New Object</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#instancevariables"><span>Instance Variables</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#instancemethods"><span>Instance Methods</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#accessormethods"><span>Accessor Methods</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/classes_and_objects_part2"><span class="chapter_title">Classes and Objects II</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#classmethods"><span>Class Methods</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#classvariables"><span>Class Variables</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#constants"><span>Constants</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#theto_smethod"><span>The to_s Method</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#moreaboutself"><span>More About self</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/inheritance"><span class="chapter_title">Inheritance</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/inheritance#classinheritance"><span>Class Inheritance</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#super"><span>super</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#mixinginmodules"><span>Mixing in Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#inheritancevsmodules"><span>Inheritance vs Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#methodlookup"><span>Method Lookup Path</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#moremodules"><span>More Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#privateprotectedandpublic"><span>Private, Protected, and Public</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#accidentalmethodoverriding"><span>Accidental Method Overriding</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/whats_next"><span>What's Next</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Ruby+programing+tutorial+-+class+inheritance+%26+modules&amp;url=https://launchschool.com/books/oo_ruby/read/inheritance&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/oo_ruby/read/inheritance" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/oo_ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/introduction"><span>Introduction</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Object Oriented Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/the_object_model"><span class="chapter_title">The Object Model</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#whyobjectorientedprogramming"><span>Why Object Oriented Programming?</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#whatareobjects"><span>What Are Objects?</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#classesdefineobjects"><span>Classes Define Objects</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#modules"><span>Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#methodlookup"><span>Method Lookup</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/the_object_model#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/classes_and_objects_part1"><span class="chapter_title">Classes and Objects I</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#statesandbehaviors"><span>States and Behaviors</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#initializinganewobject"><span>Initializing a New Object</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#instancevariables"><span>Instance Variables</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#instancemethods"><span>Instance Methods</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#accessormethods"><span>Accessor Methods</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part1#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/classes_and_objects_part2"><span class="chapter_title">Classes and Objects II</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#classmethods"><span>Class Methods</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#classvariables"><span>Class Variables</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#constants"><span>Constants</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#theto_smethod"><span>The to_s Method</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#moreaboutself"><span>More About self</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/classes_and_objects_part2#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/oo_ruby/read/inheritance"><span class="chapter_title">Inheritance</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/oo_ruby/read/inheritance#classinheritance"><span>Class Inheritance</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#super"><span>super</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#mixinginmodules"><span>Mixing in Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#inheritancevsmodules"><span>Inheritance vs Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#methodlookup"><span>Method Lookup Path</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#moremodules"><span>More Modules</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#privateprotectedandpublic"><span>Private, Protected, and Public</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#accidentalmethodoverriding"><span>Accidental Method Overriding</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/oo_ruby/read/inheritance#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/oo_ruby/read/whats_next"><span>What's Next</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Ruby+programing+tutorial+-+class+inheritance+%26+modules&amp;url=https://launchschool.com/books/oo_ruby/read/inheritance&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/oo_ruby/read/inheritance" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Inheritance</h1>
+<p>In the previous chapter  we talked briefly about inheritance.  <strong>Inheritance</strong> is when a class <strong>inherits</strong> behavior from another class. The class that is inheriting behavior is called the subclass and the class it inherits from is called the superclass.</p>
+<p>We use inheritance as a way to extract common behaviors from classes that share that behavior, and move it to a superclass. This lets us keep logic in one place. Let's take a look at an example.</p>
+<h2><a href="#classinheritance" name="classinheritance">Class Inheritance</a></h2>
+<p>Here, we're extracting the <code>speak</code> method to a superclass <code>Animal</code>, and we use inheritance to make that behavior available to <code>GoodDog</code> and <code>Cat</code> classes.</p>
+<pre class="language-ruby" data-file="good_dog_class.rb"><code class="language-ruby">class Animal
+  def speak
+    "Hello!"
+  end
+end
+
+class GoodDog &lt; Animal
+end
+
+class Cat &lt; Animal
+end
+
+sparky = GoodDog.new
+paws = Cat.new
+puts sparky.speak           # =&gt; Hello!
+puts paws.speak             # =&gt; Hello!
+</code></pre>
+<p>We use the <code>&lt;</code> symbol to signify that the <code>GoodDog</code> class is inheriting from the <code>Animal</code> class. This means that all of the methods in the <code>Animal</code> class are available to the <code>GoodDog</code> class for use. We also created a new class called <code>Cat</code> that inherits from <code>Animal</code> as well. We've eliminated the <code>speak</code> method from the <code>GoodDog</code> class in order to use the <code>speak</code> method from <code>Animal</code>.</p>
+<p>When we run this code we see the correct output. Both classes are now using the superclass <code>Animal</code>'s <code>speak</code> method.</p>
+<p>But what if we want to use the original <code>speak</code> method from the <code>GoodDog</code> class only. Let's add it back and see what happens.</p>
+<pre class="language-ruby" data-file="good_dog_class.rb"><code class="language-ruby">class Animal
+  def speak
+    "Hello!"
+  end
+end
+
+class GoodDog &lt; Animal
+  attr_accessor :name
+
+  def initialize(n)
+    self.name = n
+  end
+
+  def speak
+    "#{self.name} says arf!"
+  end
+end
+
+class Cat &lt; Animal
+end
+
+sparky = GoodDog.new("Sparky")
+paws = Cat.new
+
+puts sparky.speak           # =&gt; Sparky says arf!
+puts paws.speak             # =&gt; Hello!
+</code></pre>
+<p>In the <code>GoodDog</code> class, we're <strong>overriding</strong> the <code>speak</code> method in the <code>Animal</code> class because Ruby checks the object's class first for the method before it looks in the superclass. That means when we wrote the code <code>sparky.speak</code>, it first looked at <code>sparky</code>'s class, which is <code>GoodDog</code>. It found the <code>speak</code> method there and used it. When we wrote the code <code>paws.speak</code>, Ruby first looked at <code>paws</code>'s class, which is <code>Cat</code>. It did not find a <code>speak</code> method there, so it continued to look in <code>Cat</code>'s superclass, <code>Animal</code>. It found a <code>speak</code> method in <code>Animal</code>, and used it. We'll talk about this <em>method lookup</em> path more in depth in a bit.</p>
+<p>Inheritance can be a great way to remove duplication in your code base. There is an acronym that you'll see often in the Ruby community, "DRY".  This stands for "Don't Repeat Yourself". It means that if you find yourself writing the same logic over and over again in your programs, there are ways to extract that logic to one place for reuse.</p>
+<h2><a href="#super" name="super">super</a></h2>
+<p>Ruby provides us with the <code>super</code> keyword to call methods earlier in the method lookup path. When you call <code>super</code> from within a method, it searches the method lookup path for a method with the same name, then invokes it. Let's see a quick example of how this works:</p>
+<pre class="language-ruby"><code class="language-ruby">class Animal
+  def speak
+    "Hello!"
+  end
+end
+
+class GoodDog &lt; Animal
+  def speak
+    super + " from GoodDog class"
+  end
+end
+
+sparky = GoodDog.new
+sparky.speak        # =&gt; "Hello! from GoodDog class"
+</code></pre>
+<p>In the above example, we've created a simple <code>Animal</code> class with a <code>speak</code> instance method. We then created <code>GoodDog</code> which subclasses <code>Animal</code> also with a <code>speak</code> instance method to override the inherited version. However, in the subclass' <code>speak</code> method we use <code>super</code> to invoke the <code>speak</code> method from the superclass, <code>Animal</code>, and then we extend the functionality by appending some text to the return value.</p>
+<p>Another more common way of using <code>super</code> is with <code>initialize</code>. Let's see an illustration of that:</p>
+<pre class="language-ruby"><code class="language-ruby">class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+class GoodDog &lt; Animal
+  def initialize(color)
+    super
+    @color = color
+  end
+end
+
+bruno = GoodDog.new("brown")        # =&gt; #&lt;GoodDog:0x007fb40b1e6718 @color="brown", @name="brown"&gt;
+</code></pre>
+<p>The interesting concept we want to explain is the use of <code>super</code> in the <code>GoodDog</code> class. In this example, we're using <code>super</code> with no arguments. However, the <code>initialize</code> method, where <code>super</code> is being used, takes an argument and adds a new twist to how <code>super</code> is invoked. Here, in addition to the default behavior, <code>super</code> automatically forwards the arguments that were passed to the method from which <code>super</code> is called (<code>initialize</code> method in <code>GoodDog</code> class). At this point, <code>super</code> will pass the <code>color</code> argument in the <code>initialize</code> defined in the subclass to that of the <code>Animal</code> superclass and invoke it. That explains the presence of <code>@name="brown"</code> when the <code>bruno</code> instance is created. Finally, the subclass' <code>initialize</code> continues to set the <code>@color</code> instance variable.</p>
+<p>When called with specific arguments, eg. <code>super(a, b)</code>, the specified arguments will be sent up the method lookup chain. Let's see a quick example:</p>
+<pre class="language-ruby"><code class="language-ruby">class BadDog &lt; Animal
+  def initialize(age, name)
+    super(name)
+    @age = age
+  end
+end
+
+BadDog.new(2, "bear")        # =&gt; #&lt;BadDog:0x007fb40b2beb68 @age=2, @name="bear"&gt;
+</code></pre>
+<p>This is similar to our previous example, with the difference being that <code>super</code> takes an argument, hence the passed in argument is sent to the superclass. Consequently, in this example when a <code>BadDog</code> class is created, the passed in <code>name</code> argument ("bear") is passed to the superclass and set to the <code>@name</code> instance variable.</p>
+<p>There's one last twist. If you call <code>super()</code> exactly as shown -- with parentheses -- it calls the method in the superclass with no arguments at all. If you have a method in your superclass that takes no arguments, this is the safest -- and sometimes the only -- way to call it:</p>
+<pre class="language-ruby"><code class="language-ruby">class Animal
+  def initialize
+  end
+end
+
+class Bear &lt; Animal
+  def initialize(color)
+    super()
+    @color = color
+  end
+end
+
+bear = Bear.new("black")        # =&gt; #&lt;Bear:0x007fb40b1e6718 @color="black"&gt;
+</code></pre>
+<p>If you forget to use the parentheses here, Ruby will raise an <code>ArgumentError</code> exception since the number of arguments is incorrect.</p>
+<h2><a href="#mixinginmodules" name="mixinginmodules">Mixing in Modules</a></h2>
+<p>Another way to DRY up your code in Ruby is to use <strong>modules</strong>. We've already seen a little bit of how to use modules, but we'll give a few more examples here.</p>
+<p>Extracting common methods to a superclass, like we did in the previous section, is a great way to model concepts that are naturally hierarchical. We gave the example of animals. We have a generic superclass called <code>Animal</code> that can keep all basic behavior of all animals. We can then expand on the model a little and have, perhaps, a <code>Mammal</code> subclass of <code>Animal</code>. We can imagine the entire class hierarchy to look something like the figure below.</p>
+<p><img alt="Possible Class Hierarchy" src="//d2aw5xe2jldque.cloudfront.net/books/ruby/images/animal_hierarchy.jpg" style="width: 500px;"/></p>
+<p>The above diagram shows what pure class based inheritance looks like. Remember the goal of this is to put the right behavior (i.e., methods) in the right class so we don't need to repeat code in multiple classes. We can imagine that all <code>Fish</code> objects are related to animals that live in the water, so perhaps a <code>swim</code> method should be in the <code>Fish</code> class. We can also imagine that all <code>Mammal</code> objects will have warm blood, so we can create a method called <code>warm_blooded?</code> in the <code>Mammal</code> class and have it return <code>true</code>. Therefore, the <code>Cat</code> and <code>Dog</code> objects will have access to the <code>warm_blooded?</code> method which is automatically inherited from <code>Mammal</code> by the <code>Cat</code> and <code>Dog</code> classes, but they won't have access to the methods in the <code>Fish</code> class.</p>
+<p>This type of hierarchical modeling works, to some extent, but there are always exceptions. For example, we put the <code>swim</code> method in the <code>Fish</code> class, but some mammals can swim as well. We don't want to move the <code>swim</code> method into <code>Animal</code> because not all animals swim, and we don't want to create another <code>swim</code> method in <code>Dog</code> because that violates the DRY principle. For concerns such as these, we'd like to group them into a module and then <em>mix in</em> that module to the classes that require those behaviors. Here's an example:</p>
+<pre class="language-ruby"><code class="language-ruby">module Swimmable
+  def swim
+    "I'm swimming!"
+  end
+end
+
+class Animal; end
+
+class Fish &lt; Animal
+  include Swimmable         # mixing in Swimmable module
+end
+
+class Mammal &lt; Animal
+end
+
+class Cat &lt; Mammal
+end
+
+class Dog &lt; Mammal
+  include Swimmable         # mixing in Swimmable module
+end
+</code></pre>
+<p>And now <code>Fish</code> and <code>Dog</code> objects can swim, but objects of other classes won't be able to:</p>
+<pre class="language-ruby"><code class="language-ruby">sparky = Dog.new
+neemo  = Fish.new
+paws   = Cat.new
+
+sparky.swim                 # =&gt; I'm swimming!
+neemo.swim                  # =&gt; I'm swimming!
+paws.swim                   # =&gt; NoMethodError: undefined method `swim' for #&lt;Cat:0x007fc453152308&gt;
+</code></pre>
+<p>Using modules to group common behaviors allows us to build a more powerful, flexible and DRY design.</p>
+<p><em>Note: A common naming convention for Ruby is to use the "able" suffix on whatever verb describes the behavior that the module is modeling. You can see this convention with our <code>Swimmable</code> module. Likewise, we could name a module that describes "walking" as <code>Walkable</code>. Not all modules are named in this manner, however, it is quite common.</em></p>
+<h2><a href="#inheritancevsmodules" name="inheritancevsmodules">Inheritance vs Modules</a></h2>
+<p>Now you know the two primary ways that Ruby implements inheritance. Class inheritance is the traditional way to think about inheritance: one type inherits the behaviors of another type. The result is a new type that specializes the type of the superclass. The other form is sometimes called <strong>interface inheritance</strong>: this is where mixin modules come into play. The class doesn't inherit from another type, but instead inherits the interface provided by the mixin module. In this case, the result type is not a specialized type with respect to the module.</p>
+<p>You may wonder when to use class inheritance vs mixins. Here are a couple of things to consider when evaluating these choices.</p>
+<ul>
+<li>  You can only subclass (class inheritance) from one class. You can mix in as many modules (interface inheritance) as you'd like.
+</li>
+<li>  If there's an "is-a" relationship, class inheritance is usually the correct choice. If there's a "has-a" relationship, interface inheritance is generally a better choice. For example, a dog "is an" animal and it "has an" ability to swim.
+</li>
+<li>  You cannot instantiate modules (i.e., no object can be created from a module). Modules are used only for namespacing and grouping common methods together.
+</li>
+</ul>
+<p>As you get better at OO design, you'll start to develop a feel for when to use class inheritance versus mixing in modules.</p>
+<h2><a href="#methodlookup" name="methodlookup">Method Lookup Path</a></h2>
+<p>Now that you have a grasp on both inheritance and mixins. Let's put them both together to see how that affects the <em>method lookup path</em>. Recall the method lookup path is the order in which classes are inspected when you call a method. Let's take a look at the example code below.</p>
+<pre class="language-ruby"><code class="language-ruby">module Walkable
+  def walk
+    "I'm walking."
+  end
+end
+
+module Swimmable
+  def swim
+    "I'm swimming."
+  end
+end
+
+module Climbable
+  def climb
+    "I'm climbing."
+  end
+end
+
+class Animal
+  include Walkable
+
+  def speak
+    "I'm an animal, and I speak!"
+  end
+end
+</code></pre>
+<p>We have three modules and one class. We've mixed in one module into the <code>Animal</code> class. The method lookup path is the path Ruby takes to look for a method. We can see this path with the <code>ancestors</code> class method.</p>
+<pre class="language-ruby"><code class="language-ruby">puts "---Animal method lookup---"
+puts Animal.ancestors
+</code></pre>
+<p>The output looks like this:</p>
+<pre class="language-irb"><code class="language-irb">---Animal method lookup---
+Animal
+Walkable
+Object
+Kernel
+BasicObject
+</code></pre>
+<p>This means that when we call a method of any <code>Animal</code> object, first Ruby looks in the <code>Animal</code> class, then the <code>Walkable</code> module, then the <code>Object</code> class, then the <code>Kernel</code> module, and finally the <code>BasicObject</code> class.</p>
+<pre class="language-ruby"><code class="language-ruby">fido = Animal.new
+fido.speak                  # =&gt; I'm an animal, and I speak!
+</code></pre>
+<p>Ruby found the <code>speak</code> method in the <code>Animal</code> class and looked no further.</p>
+<pre class="language-ruby"><code class="language-ruby">fido.walk                   # =&gt; I'm walking.
+</code></pre>
+<p>Ruby first looked for the <code>walk</code> instance method in <code>Animal</code>, and not finding it there, kept looking in the next place according to our list, which is the <code>Walkable</code> module. It saw a <code>walk</code> method there, executed it, and stopped looking further.</p>
+<pre class="language-ruby"><code class="language-ruby">fido.swim
+  # =&gt; NoMethodError: undefined method `swim' for #&lt;Animal:0x007f92832625b0&gt;
+</code></pre>
+<p>Ruby traversed all the classes and modules in the list, and didn't find a <code>swim</code> method, so it threw an error.</p>
+<p>Let's add another class to the code above. This class will inherit from the <code>Animal</code> class and mix in the <code>Swimmable</code> and <code>Climbable</code> modules.</p>
+<pre class="language-ruby"><code class="language-ruby">class GoodDog &lt; Animal
+  include Swimmable
+  include Climbable
+end
+
+puts "---GoodDog method lookup---"
+puts GoodDog.ancestors
+</code></pre>
+<p>And this is the output we get:</p>
+<pre class="language-irb"><code class="language-irb">---GoodDog method lookup---
+GoodDog
+Climbable
+Swimmable
+Animal
+Walkable
+Object
+Kernel
+BasicObject
+</code></pre>
+<p>There are several interesting things about the above output. First, this tells us that the order in which we include modules is important. Ruby actually looks at the last module we included <em>first</em>. This means that in the rare occurrence that the modules we mix in contain a method with the same name, the last module included will be consulted first. The second interesting thing is that the module included in the superclass made it on to the method lookup path. That means that all <code>GoodDog</code> objects will have access to not only <code>Animal</code> methods, but also methods defined in the <code>Walkable</code> module, as well as all other modules mixed in to any of its superclasses.</p>
+<p>Sometimes when you're working on a large project, it can be confusing where all these methods are coming from. By understanding the method lookup path, we can have a better idea of where and how all available methods are organized.</p>
+<h2><a href="#moremodules" name="moremodules">More Modules</a></h2>
+<p>We've already seen how modules can be used to mix-in common behavior into classes. Now we'll see two more uses for modules.</p>
+<p>The first use case we'll discuss is using modules for <strong>namespacing</strong>. In this context, namespacing means organizing similar classes under a module. In other words, we'll use modules to group related classes. Therein lies the first advantage of using modules for namespacing. It becomes easy for us to recognize related classes in our code. The second advantage is it reduces the likelihood of our classes colliding with other similarly named classes in our codebase. Here's how we do it:</p>
+<pre class="language-ruby"><code class="language-ruby">module Mammal
+  class Dog
+    def speak(sound)
+      p "#{sound}"
+    end
+  end
+
+  class Cat
+    def say_name(name)
+      p "#{name}"
+    end
+  end
+end
+</code></pre>
+<p>We call classes in a module by appending the class name to the module name with two colons(<code>::</code>)</p>
+<pre class="language-ruby"><code class="language-ruby">buddy = Mammal::Dog.new
+kitty = Mammal::Cat.new
+buddy.speak('Arf!')           # =&gt; "Arf!"
+kitty.say_name('kitty')       # =&gt; "kitty"
+</code></pre>
+<p>The second use case for modules we'll look at is using modules as a <strong>container</strong> for methods, called module methods. This involves using modules to house other methods. This is very useful for methods that seem out of place within your code. Let's use our <code>Mammal</code> module to demonstrate:</p>
+<pre class="language-ruby"><code class="language-ruby">module Mammal
+  ...
+
+  def self.some_out_of_place_method(num)
+    num ** 2
+  end
+end
+</code></pre>
+<p>Defining methods this way within a module means we can call them directly from the module:</p>
+<pre class="language-ruby"><code class="language-ruby">value = Mammal.some_out_of_place_method(4)
+</code></pre>
+<p>We can also call such methods by doing:</p>
+<pre class="language-ruby"><code class="language-ruby">value = Mammal::some_out_of_place_method(4)
+</code></pre>
+<p>although the former is the preferred way.</p>
+<h2><a href="#privateprotectedandpublic" name="privateprotectedandpublic">Private, Protected, and Public</a></h2>
+<p>The last thing we want to cover is something that's actually quite simple, but necessary; Method Access Control. Access Control is a concept that exists in a number of programming languages, including Ruby. It is generally implemented through the use of <em>access modifiers</em>. The purpose of access modifiers is to allow or restrict access to a particular thing. In Ruby, the things that we are concerned with restricting access to are the methods defined in a class. In a Ruby context, therefore, you'll commonly see this concept referred to as <strong>Method Access Control</strong>.</p>
+<p>The way that Method Access Control is implemented in Ruby is through the use of the <code>public</code>, <code>private</code>, and <code>protected</code> access modifiers. Right now, all the methods in our <code>GoodDog</code> class are public methods. A <strong>public method</strong> is a method that is available to anyone who knows either the class name or the object's name. These methods are readily available for the rest of the program to use and comprise the class's <em>interface</em> (that's how other classes and objects will interact with this class and its objects).</p>
+<p>Sometimes you'll have methods that are doing work in the class but don't need to be available to the rest of the program. These methods can be defined as <strong>private</strong>. How do we define private methods? We use the <code>private</code> method call in our program and anything below it is private (unless another method, like <code>protected</code>, is called after it to negate it).</p>
+<p>In our <code>GoodDog</code> class we have one operation that takes place that we could move into a private method. When we initialize an object, we calculate the dog's age in Dog years. Let's refactor this logic into a method and make it private so nothing outside of the class can use it.</p>
+<pre class="language-ruby"><code class="language-ruby">class GoodDog
+  DOG_YEARS = 7
+
+  attr_accessor :name, :age
+
+  def initialize(n, a)
+    self.name = n
+    self.age = a
+  end
+
+  private
+
+  def human_years
+    age * DOG_YEARS
+  end
+end
+
+sparky = GoodDog.new("Sparky", 4)
+sparky.human_years
+</code></pre>
+<p>We get the error message:</p>
+<pre class="language-irb"><code class="language-irb">NoMethodError: private method `human_years' called for
+  #&lt;GoodDog:0x007f8f431441f8 @name="Sparky", @age=4&gt;
+</code></pre>
+<p>We have made the <code>human_years</code> method private by placing it under the <code>private</code> method. What is it good for, then, if we can't call it? <code>private</code> methods are only accessible from other methods in the class. For example, given the above code, the following would be allowed:</p>
+<pre class="language-ruby"><code class="language-ruby"># assume the method definition below is above the "private" method
+
+def public_disclosure
+  "#{self.name} in human years is #{human_years}"
+end
+</code></pre>
+<p>Note that in this case, we can <em>not</em> use <code>self.human_years</code>, because the <code>human_years</code> method is private. Remember that <code>self.human_years</code> is equivalent to <code>sparky.human_years</code>, which is not allowed for private methods. Therefore, we have to just use <code>human_years</code>. In summary, private methods are not accessible outside of the class definition at all, and are only accessible from inside the class when called without <code>self</code>.</p>
+<div class="alert-box info">
+<p>As of Ruby 2.7, it is now legal to call private methods with a literal <code>self</code> as the caller. Note that this does <strong>not</strong> mean that we can call a private method with any other object, not even one of the same type. We can only call a private method with the current object.</p>
+</div>
+<p>Public and private methods are most common, but in some less common situations, we'll want an in-between approach.
+For this, we can use the <code>protected</code> method to create <strong>protected</strong> methods.
+Protected methods are similar to private methods in that they cannot be invoked outside the class.
+The main difference between them is that protected methods allow access between class instances, while private methods do not.</p>
+<p>Let's take a look at an example:</p>
+<pre class="language-ruby"><code class="language-ruby">class Person
+  def initialize(age)
+    @age = age
+  end
+
+  def older?(other_person)
+    age &gt; other_person.age
+  end
+
+  protected
+
+  attr_reader :age
+end
+
+malory = Person.new(64)
+sterling = Person.new(42)
+
+malory.older?(sterling)  # =&gt; true
+sterling.older?(malory)  # =&gt; false
+
+malory.age
+  # =&gt; NoMethodError: protected method `age' called for #&lt;Person: @age=64&gt;
+</code></pre>
+<p>The above code shows us that like private methods, protected methods cannot be invoked from outside of the class.
+However, unlike private methods, other instances of the class (or subclass) can also invoke the method.
+This allows for controlled access, but wider access between objects of the same class type.</p>
+<h2><a href="#accidentalmethodoverriding" name="accidentalmethodoverriding">Accidental Method Overriding</a></h2>
+<p>It’s important to remember that every class you create inherently subclasses from <a href="//ruby-doc.org/core-2.1.2/Object.html">class Object</a>. The <code>Object</code> class is built into Ruby and comes with many critical methods.</p>
+<pre class="language-ruby"><code class="language-ruby">class Parent
+  def say_hi
+    p "Hi from Parent."
+  end
+end
+
+Parent.superclass       # =&gt; Object
+</code></pre>
+<p>This means that methods defined in the <code>Object</code> class are available in <em>all classes</em>.</p>
+<p>Further, recall that through the magic of inheritance, a subclass can override a superclass’s method.</p>
+<pre class="language-ruby"><code class="language-ruby">class Child &lt; Parent
+  def say_hi
+    p "Hi from Child."
+  end
+end
+
+child = Child.new
+child.say_hi         # =&gt; "Hi from Child."
+</code></pre>
+<p>This means that, if you accidentally override a method that was originally defined in the <code>Object</code> class, it can have far-reaching effects on your code. For example, <code>send</code> is an instance method that all classes inherit from <code>Object</code>. If you defined a new <code>send</code> instance method in your class, all objects of your class will call your custom <code>send</code> method, instead of the one in class <code>Object</code>, which is probably the one they mean to call. Object <code>send</code> serves as a way to call a method by passing it a symbol or a string which represents the method you want to call. The next couple of arguments will represent the method's arguments, if any. Let's see how <a href="//ruby-doc.org/core-2.1.2/Object.html#method-i-send">send</a> normally works by making use of our <code>Child</code> class:</p>
+<pre class="language-ruby"><code class="language-ruby">son = Child.new
+son.send :say_hi       # =&gt; "Hi from Child."
+</code></pre>
+<p>Let's see what happens when we define a <code>send</code> method in our <code>Child</code> class and then try to invoke <code>Object</code>'s <code>send</code> method:</p>
+<pre class="language-ruby"><code class="language-ruby">class Child
+  def say_hi
+    p "Hi from Child."
+  end
+
+  def send
+    p "send from Child..."
+  end
+end
+
+lad = Child.new
+lad.send :say_hi
+</code></pre>
+<p>Normally we would expect the output of this call to be <code>"Hi from Child."</code> but upon running the code we get a completely different result:</p>
+<pre class="language-irb"><code class="language-irb">ArgumentError: wrong number of arguments (1 for 0)
+from (pry):12:in `send'
+</code></pre>
+<p>In our example, we're passing <code>send</code> one argument even though our overridden <code>send</code> method does not take any arguments. Let's take a look at another example by exploring Object's <code>instance_of?</code> method. What this handy method does is to return <code>true</code> if an object is an instance of a given class and <code>false</code> otherwise. Let's see it in action:</p>
+<pre class="language-ruby"><code class="language-ruby">c = Child.new
+c.instance_of? Child      # =&gt; true
+c.instance_of? Parent     # =&gt; false
+</code></pre>
+<p>Now let's override <code>instance_of?</code> within <code>Child</code>:</p>
+<pre class="language-ruby"><code class="language-ruby">class Child
+  # other methods omitted
+
+  def instance_of?
+    p "I am a fake instance"
+  end
+end
+
+heir = Child.new
+heir.instance_of? Child
+</code></pre>
+<p>Again, we'll see something completely different though our intention was to use Object's <code>instance_of?</code> method:</p>
+<pre class="language-irb"><code class="language-irb">ArgumentError: wrong number of arguments (1 for 0)
+from (pry):22:in `instance_of?'
+</code></pre>
+<p>That said, one <code>Object</code> instance method that's easily overridden without any major side-effect is the <code>to_s</code> method. You'll normally want to do this when you want a different string representation of an object. Overall, it’s important to familiarize yourself with some of the common <code>Object</code> methods and make sure to not accidentally override them as this can have devastating consequences for your application.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>We've covered quite a bit of ground now. You should be feeling pretty comfortable with the general syntax and structure of the Ruby language. You've got one more set of exercises to help put this information to good use, then you'll be ready to take the next step in your journey as a Ruby developer.</p>
+<p>All this complex knowledge about OOP is meant to help us build better designed applications. While there are definitely <em>wrong</em> ways to design an application, there is often no right choice when it comes to object oriented design, only different tradeoffs. As you gain more experience in object oriented design, you'll start to develop a taste for how to organize and shape your classes. For now, all this may feel a little daunting, but once you learn how to think in an OO way, it's hard to <em>not</em> think in that manner.</p>
+<p>Finally, make sure to take time to go through the exercises. OOP is a tough concept if this is your first time encountering it. Even if you've programmed in another OO language before, Ruby's implementation may be a little different. It's not enough to read and understand; you must learn by doing. Let's get on to the exercises!</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Create a superclass called <code>Vehicle</code> for your <code>MyCar</code> class to inherit from and move the behavior that isn't specific to the <code>MyCar</code> class to the superclass. Create a constant in your <code>MyCar</code> class that stores information about the vehicle that makes it different from other types of Vehicles.</p>
+<p>Then create a new class called MyTruck that inherits from your superclass that also has a constant defined that separates it from the MyCar class in some way.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby">class Vehicle
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+end
+
+class MyCar &lt; Vehicle
+  NUMBER_OF_DOORS = 4
+end
+
+class MyTruck &lt; Vehicle
+  NUMBER_OF_DOORS = 2
+end
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-0"/>
+<map data-responsive="" id="register-0" name="register-0">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Add a class variable to your superclass that can keep track of the number of objects created that inherit from the superclass. Create a method to print out the value of this class variable as well.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby">class Vehicle
+  @@number_of_vehicles = 0
+
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
+  end
+
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
+  def initialize
+    @@number_of_vehicles += 1
+  end
+end
+
+class MyCar &lt; Vehicle
+  NUMBER_OF_DOORS = 4
+  #code omitted for brevity...
+end
+
+class MyTruck &lt; Vehicle
+  NUMBER_OF_DOORS = 2
+end
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-1"/>
+<map data-responsive="" id="register-1" name="register-1">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Create a module that you can mix in to ONE of your subclasses that describes a behavior unique to that subclass.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby">module Towable
+  def can_tow?(pounds)
+    pounds &lt; 2000
+  end
+end
+
+class Vehicle
+  @@number_of_vehicles = 0
+
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
+  end
+
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
+  def initialize
+    @@number_of_vehicles += 1
+  end
+end
+
+class MyCar &lt; Vehicle
+  NUMBER_OF_DOORS = 4
+  #code omitted for brevity...
+end
+
+class MyTruck &lt; Vehicle
+  include Towable
+
+  NUMBER_OF_DOORS = 2
+end
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-2"/>
+<map data-responsive="" id="register-2" name="register-2">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+<p>Errata:</p>
+<ul>
+<li>The narrator uses a ternary operator for the <code>Towable#can_tow?</code> method.
+This isn't necessary as the comparison itself (ie, <code>pounds &lt; 2000</code>) returns a boolean.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Print to the screen your method lookup for the classes that you have created.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby"># code omitted for brevity...
+
+puts MyCar.ancestors
+puts MyTruck.ancestors
+puts Vehicle.ancestors
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-3"/>
+<map data-responsive="" id="register-3" name="register-3">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Move all of the methods from the MyCar class that also pertain to the MyTruck class into the Vehicle class. Make sure that all of your previous method calls are working when you are finished.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby">module Towable
+  def can_tow?(pounds)
+    pounds &lt; 2000
+  end
+end
+
+class Vehicle
+  attr_accessor :color
+  attr_reader :model, :year
+  @@number_of_vehicles = 0
+
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
+  end
+
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
+  def initialize(year, model, color)
+    @year = year
+    @model = model
+    @color = color
+    @current_speed = 0
+    @@number_of_vehicles += 1
+  end
+
+  def speed_up(number)
+    @current_speed += number
+    puts "You push the gas and accelerate #{number} mph."
+  end
+
+  def brake(number)
+    @current_speed -= number
+    puts "You push the brake and decelerate #{number} mph."
+  end
+
+  def current_speed
+    puts "You are now going #{@current_speed} mph."
+  end
+
+  def shut_down
+    @current_speed = 0
+    puts "Let's park this bad boy!"
+  end
+
+  def spray_paint(color)
+    self.color = color
+    puts "Your new #{color} paint job looks great!"
+  end
+end
+
+class MyTruck &lt; Vehicle
+  include Towable
+
+  NUMBER_OF_DOORS = 2
+
+  def to_s
+    "My truck  is a #{self.color}, #{self.year}, #{self.model}!"
+  end
+end
+
+class MyCar &lt; Vehicle
+  NUMBER_OF_DOORS = 4
+
+  def to_s
+    "My car is a #{self.color}, #{self.year}, #{self.model}!"
+  end
+end
+
+lumina = MyCar.new(1997, 'chevy lumina', 'white')
+lumina.speed_up(20)
+lumina.current_speed
+lumina.speed_up(20)
+lumina.current_speed
+lumina.brake(20)
+lumina.current_speed
+lumina.brake(20)
+lumina.current_speed
+lumina.shut_down
+MyCar.gas_mileage(13, 351)
+lumina.spray_paint("red")
+puts lumina
+puts MyCar.ancestors
+puts MyTruck.ancestors
+puts Vehicle.ancestors
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-4"/>
+<map data-responsive="" id="register-4" name="register-4">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a method called <code>age</code> that calls a private method to calculate the age of the vehicle. Make sure the private method is not available from outside of the class.  You'll need to use Ruby's built-in <a href="http://ruby-doc.org/core-2.1.0/Time.html">Time</a> class to help.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby">class Vehicle
+  # code omitted for brevity...
+  def age
+    "Your #{self.model} is #{years_old} years old."
+  end
+
+  private
+
+  def years_old
+    Time.now.year - self.year
+  end
+end
+
+# code omitted for brevity...
+
+puts lumina.age   #=&gt; "Your chevy lumina is 17 years old"
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-5"/>
+<map data-responsive="" id="register-5" name="register-5">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Create a class 'Student' with attributes <code>name</code> and  <code>grade</code>. Do NOT make the grade getter public, so <code>joe.grade</code> will raise an error. Create a <code>better_grade_than?</code> method, that you can call like so...</p>
+<pre class="language-ruby"><code class="language-ruby">puts "Well done!" if joe.better_grade_than?(bob)
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-ruby"><code class="language-ruby">class Student
+  def initialize(name, grade)
+    @name = name
+    @grade = grade
+  end
+
+  def better_grade_than?(other_student)
+    grade &gt; other_student.grade
+  end
+
+  protected
+
+  def grade
+    @grade
+  end
+end
+
+joe = Student.new("Joe", 90)
+bob = Student.new("Bob", 84)
+puts "Well done!" if joe.better_grade_than?(bob)
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-6"/>
+<map data-responsive="" id="register-6" name="register-6">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Given the following code...</p>
+<pre class="language-ruby"><code class="language-ruby">bob = Person.new
+bob.hi
+</code></pre>
+<p>And the corresponding error message...</p>
+<pre class="language-irb"><code class="language-irb">NoMethodError: private method `hi' called for #&lt;Person:0x007ff61dbb79f0&gt;
+from (irb):8
+from /usr/local/rvm/rubies/ruby-2.0.0-rc2/bin/irb:16:in `&lt;main&gt;'
+</code></pre>
+<p>What is the problem and how would you go about fixing it?</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The problem is that the method <code>hi</code> is a private method, therefore it is unavailable to the object. I would fix this problem by moving the <code>hi</code> method above the <code>private</code> method call in the class.</p>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-7"/>
+<map data-responsive="" id="register-7" name="register-7">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Object Oriented Programming with Ruby/5.html">Next:  What's Next
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

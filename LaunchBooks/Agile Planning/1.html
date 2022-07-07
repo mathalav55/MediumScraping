@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Agile Planning: From Ideas to Story Cards</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":66,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Agile Planning: From Ideas to Story Cards" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="rzVeKlJQBgFRkea5cYrKgfFq8ugAM15KKisKSGgPupeH7ZGhuxvWjzfzkxRoUdGdbIpHxRpfA9kOkxLxTrH2Lw" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/agile_planning">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/agile_planning/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareispowerful"><span>Software Is Powerful</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareiscomplex"><span>Software Is Complex</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#ourgoal"><span>Our Goal</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/what_is_agile"><span class="chapter_title">What is Agile?</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#butseriouslywhatisagile"><span>But Seriously, What is Agile?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#thevaluesofagile"><span>The Values of Agile</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#workingsoftware"><span>Working Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#howdowegetthere"><span>How Do We Get There?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/why_is_process_important"><span class="chapter_title">Why is Process Important?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#commonpitfalls"><span>Common Pitfalls</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#itsaboutcare"><span>It's Really About Care</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>The Planning Process</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/process_overview"><span class="chapter_title">Process Overview</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/process_overview#wheredoesthisfit"><span>Where Does This Fit?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#letsfocus"><span>Let's Focus</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#rememberitsacycle"><span>Remember It's A Cycle</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/concept_to_personas"><span class="chapter_title">Concept to Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#ideasareeasy"><span>Ideas are Easy</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whoareyourusers"><span>Who Are Your Users?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#howtocreateapersona"><span>How to Create a Persona</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#thisisntawasteoftime"><span>This Isn't A Waste of Time</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/writing_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatisascenario"><span>What is a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whyarescenariosimportant"><span>Why are Scenarios Important?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#howdowewriteascenario"><span>How do we Write a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#focusonthecore"><span>Focus on the Core</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/story_boarding_and_wire_frames"><span class="chapter_title">Story Boarding and Wire Frames</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatisstoryboarding"><span>What is Storyboarding?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#drawingstoryboards"><span>Drawing Storyboards</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#wireframing"><span>Wireframing</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/epics_and_stories"><span class="chapter_title">Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#thegravelfactory"><span>The Gravel Factory</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatisauserstory"><span>What is a User Story?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#astoryisjustaplaceholder"><span>A Placeholder for a Conversation</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#buildingthebacklog"><span>Building the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#creatingepics"><span>Creating Epics</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#breakingdownepicstostories"><span>Breaking Down Epics to Stories</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/advanced_stories"><span>Stories Advanced Material</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/product_backlog"><span class="chapter_title">Product Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatisabacklog"><span>What is the Product Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatdoesitlooklike"><span>What Does the Backlog Look Like?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsinabacklog"><span>What is in the Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsnext"><span>What's Next?</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>A Cohesive Example</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/cohesive_example"><span class="chapter_title">Concept Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#ourteam"><span>Our Team</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#trelloourfirsttool"><span>Trello: Our First Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#concept"><span>The Application Concept</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_personas"><span class="chapter_title">Developing Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#startwiththeuser"><span>Start With The User</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thecontentconsumer"><span>The Content Consumer</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#theapplicationadministrator"><span>The Application Administrator</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thepersonarolerelationship"><span>The Persona-Role Relationship</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#ourfirstscenario"><span>Our First Scenario</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#thenextscenarios"><span>The Next Scenarios</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#adminscenarios"><span>Admin Scenarios</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_storyboarding"><span class="chapter_title">Storyboards and Wireframes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboarding"><span>Storyboarding</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#ournexttool"><span>Our Next Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboardwhennessesary"><span>Storyboard When Necessary</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#buildingoutwireframes"><span>Building Out Wireframes</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#awireframingtool"><span>A Wireframing Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#addingcontentwireframe"><span>Adding Content Wireframes</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_epics_and_stories"><span class="chapter_title">Fleshing out Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#epicscomefirst"><span>Epics Come First</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#theseedofsoftware"><span>The Seed of Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#storybreakdown"><span>Story Breakdown</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_backlog"><span class="chapter_title">Revewing the Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#orderingthebacklog"><span>Ordering the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#addingacceptancecriteria"><span>Adding Acceptance Criteria</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/whats_next"><span class="chapter_title">What's Next</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/whats_next#arewereadytocode"><span>Are They Ready to Code?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/whats_next#conclusion"><span>In Conclusion</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/agile_planning/read/what_is_agile&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/agile_planning/read/what_is_agile" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/agile_planning">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/agile_planning/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareispowerful"><span>Software Is Powerful</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareiscomplex"><span>Software Is Complex</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#ourgoal"><span>Our Goal</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/what_is_agile"><span class="chapter_title">What is Agile?</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#butseriouslywhatisagile"><span>But Seriously, What is Agile?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#thevaluesofagile"><span>The Values of Agile</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#workingsoftware"><span>Working Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#howdowegetthere"><span>How Do We Get There?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/why_is_process_important"><span class="chapter_title">Why is Process Important?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#commonpitfalls"><span>Common Pitfalls</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#itsaboutcare"><span>It's Really About Care</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>The Planning Process</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/process_overview"><span class="chapter_title">Process Overview</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/process_overview#wheredoesthisfit"><span>Where Does This Fit?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#letsfocus"><span>Let's Focus</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#rememberitsacycle"><span>Remember It's A Cycle</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/concept_to_personas"><span class="chapter_title">Concept to Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#ideasareeasy"><span>Ideas are Easy</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whoareyourusers"><span>Who Are Your Users?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#howtocreateapersona"><span>How to Create a Persona</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#thisisntawasteoftime"><span>This Isn't A Waste of Time</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/writing_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatisascenario"><span>What is a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whyarescenariosimportant"><span>Why are Scenarios Important?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#howdowewriteascenario"><span>How do we Write a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#focusonthecore"><span>Focus on the Core</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/story_boarding_and_wire_frames"><span class="chapter_title">Story Boarding and Wire Frames</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatisstoryboarding"><span>What is Storyboarding?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#drawingstoryboards"><span>Drawing Storyboards</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#wireframing"><span>Wireframing</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/epics_and_stories"><span class="chapter_title">Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#thegravelfactory"><span>The Gravel Factory</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatisauserstory"><span>What is a User Story?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#astoryisjustaplaceholder"><span>A Placeholder for a Conversation</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#buildingthebacklog"><span>Building the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#creatingepics"><span>Creating Epics</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#breakingdownepicstostories"><span>Breaking Down Epics to Stories</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/advanced_stories"><span>Stories Advanced Material</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/product_backlog"><span class="chapter_title">Product Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatisabacklog"><span>What is the Product Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatdoesitlooklike"><span>What Does the Backlog Look Like?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsinabacklog"><span>What is in the Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsnext"><span>What's Next?</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>A Cohesive Example</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/cohesive_example"><span class="chapter_title">Concept Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#ourteam"><span>Our Team</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#trelloourfirsttool"><span>Trello: Our First Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#concept"><span>The Application Concept</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_personas"><span class="chapter_title">Developing Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#startwiththeuser"><span>Start With The User</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thecontentconsumer"><span>The Content Consumer</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#theapplicationadministrator"><span>The Application Administrator</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thepersonarolerelationship"><span>The Persona-Role Relationship</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#ourfirstscenario"><span>Our First Scenario</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#thenextscenarios"><span>The Next Scenarios</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#adminscenarios"><span>Admin Scenarios</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_storyboarding"><span class="chapter_title">Storyboards and Wireframes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboarding"><span>Storyboarding</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#ournexttool"><span>Our Next Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboardwhennessesary"><span>Storyboard When Necessary</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#buildingoutwireframes"><span>Building Out Wireframes</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#awireframingtool"><span>A Wireframing Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#addingcontentwireframe"><span>Adding Content Wireframes</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_epics_and_stories"><span class="chapter_title">Fleshing out Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#epicscomefirst"><span>Epics Come First</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#theseedofsoftware"><span>The Seed of Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#storybreakdown"><span>Story Breakdown</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_backlog"><span class="chapter_title">Revewing the Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#orderingthebacklog"><span>Ordering the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#addingacceptancecriteria"><span>Adding Acceptance Criteria</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/whats_next"><span class="chapter_title">What's Next</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/whats_next#arewereadytocode"><span>Are They Ready to Code?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/whats_next#conclusion"><span>In Conclusion</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/agile_planning/read/what_is_agile&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/agile_planning/read/what_is_agile" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>What is Agile?</h1>
+<p>In this chapter we will review the history of Agile, where it came from and discuss its key principles. We will get to the core of what it means to produce software in an Agile way and most importantly we will focus on where the lessons of this book fit in.</p>
+<h2><a href="#introduction" name="introduction">Introduction</a></h2>
+<p>A significant portion of software businesses are organized to provide a useful application to their customers for a regular fee, typically delivered through the browser or mobile web. These companies, in general, began by solving a specific problem for their target users and over time added new features and improved their product.</p>
+<p>A key concept to understand is that, often, when these software products are first conceived, the entire scope of their solution is not known. As the solution is used by customers and tested by the market, new requirements emerge that the designers may never have anticipated. These features can then be added on to the existing application, driven by the organic emergence of customer needs.</p>
+<p>We aren't used to "building" things this way, because typically the more we build, the less the per-unit cost is. Consider a house: it needs a big hole in the ground, a foundation, plumbing, wiring, framing, a roof, and various finishing treatments. Once you get the work crew and the backhoe and the cement trucks out to the site, the difference in a foundation that is 1000 square feet and one that is 1500 will not be that much. But to add a 500 square foot foundation to an existing house would be really expensive.</p>
+<p>Thus when we build a house we often consider our future needs based on some reasonable assumptions. We might assume that we will have 2 kids and get another car, so we plan to build a 3 bedroom house with a 2 car garage. This seems reasonable, but as we all know, life is not always so predictable.</p>
+<p>What if we could grow our house? If it was cost effective, it would make perfect sense. Start out with a single bedroom house with a one car garage. Then we could add bedroom for the first child. Suddenly flying cars are invented! We can then add a landing pad on the roof. Oh my! We just had triplets, let's add 3 more bedrooms. It sounds crazy, but if it were cost effective, this would be the best way to "grow" a house, to adapt to changing needs.</p>
+<p>With software we <em>can</em> do this. We can start very simple and only do the minimum needed to solve the user's problem. Then we can add features driven by market need, always ready to adapt. In short we become very "agile" in our ability to respond to changing needs and requirements. The trouble starts when we build too much, too soon based on a lot of assumptions.</p>
+<h2><a href="#butseriouslywhatisagile" name="butseriouslywhatisagile">But Seriously, What is Agile?</a></h2>
+<p>When you hear the word "Agile" with regards to a software development team or project, it refers to a specific set of formalized concepts that came about as an answer for the need to adapt to changing requirements. In essence, Agile is about an incremental approach to building, such that a team is in a position to change direction quickly.</p>
+<p>Agile development as we know it today was synthesized in 2001 with the publication of the "<a href="http://agilemanifesto.org/">Manifesto for Agile Software Development</a>" as a collaborative effort between 17 influential software developers. This document continues to serve as the most succinct and authoritative source on what it means to practice agile software development.</p>
+<p>Why did these developers write this manifesto? To what were they reacting?</p>
+<p>During the latter half of the twentieth century, software development grew significantly from its military and academic roots into the major force we see in the economy today. At first, the same management techniques were applied to software projects as would have been applied to other industrial endeavors. Specifically, these techniques involved a process that favored up-front design, a detailed plan and schedule, and an assembly line production process.</p>
+<p>For software this became known as <strong>waterfall</strong> due to the way work would flow from each phase of development to the next. For example, design specifications would flow to software engineers to build and then to a quality assurance team to test. It's important to recognize that just like water can't flow back up a waterfall, it was difficult for feedback to flow back up the process. Once the spec was created it was set in stone, and by the time the product was testing, timelines usually dictated that changes could not be made, even if they were ultimately beneficial to the end user. In order to formalize a way to improve the old ways of doing things, Agile was born.</p>
+<h2><a href="#thevaluesofagile" name="thevaluesofagile">The Values of Agile</a></h2>
+<p>The values of agile software development are contained in the <a href="http://agilemanifesto.org/">Manifesto for Agile Software Development</a>, which is composed of 4 core principles. We will list and discuss each of these below:</p>
+<blockquote>
+<p>Individuals and interactions over processes and tools</p>
+</blockquote>
+<p>While processes and tools are often used to make collaboration more efficient, the focus must be on the interaction, rather than the tool. We can get bogged down by formalized process, for example, when perhaps a quick conversation between a developer and a tester is all that is required. A huge industry of tools and workflow processes has grown up around supporting agile development, but understand that these are still secondary. A highly functioning Agile team can be more effective with a white-board and post-it notes than a dysfunctional team can be with the most expensive project management software.</p>
+<blockquote>
+<p>Working software over comprehensive documentation</p>
+</blockquote>
+<p>The core of agile development is incremental delivery through development iterations. Specifically, small portions of a total deliverable will be completed, end-to-end, with customer or user feedback folded in to the next iteration. A focus on the "most important" features first requires a minimum of up front planning, with future features remaining flexible to change. Working software can self document through both its design (such as API specifications) or through its associated acceptance or system tests. This reduces the need for documentation that must be updated in parallel to the software.</p>
+<blockquote>
+<p>Customer collaboration over contract negotiation</p>
+</blockquote>
+<p>We want to constantly encourage deep interactions in the development process. A contract is instantly an adversarial stance, creating separation between the customer and the developer (this can be an internal customer, end user, or external client). Agile teams involve the customer in regular feedback cycles in-sync with development so as to reduce the need for rework and avoid going down the wrong path. This can take many forms including direct engagement with the final end users of software such as with usability tests, regular discussion with a "product owner" who serves as a representative of the end users and other stakeholders, or client review meetings where the working software is demonstrated.</p>
+<blockquote>
+<p>Responding to change over following a plan</p>
+</blockquote>
+<p>Continuous feedback and iterative development are central to the agile approach. The goal is to build in a structured way to embrace change, as the feedback is essential to quickly hone in on what the customer really wants. It is the old waterfall style approach that starts with following a plan. If at the end of the day, the original plan resulted in a bad solution, it may be too late to change the product. Many processes that support agile development build in buffer room to accomodate changing requirements.</p>
+<h2><a href="#workingsoftware" name="workingsoftware">Working Software</a></h2>
+<p>In addition to the core values listed above, there are also a further <a href="http://agilemanifesto.org/principles.html">12 principles of Agile Development</a> that further expand the manifesto. They are all worth reading and understanding but one of the principles is important enough to warrant further discussion and that is number seven, the idea that "Working software is the primary measure of progress." It is so important because adhering to this principle helps unify the efforts of multiple supporting teams and creates a measuring stick for assessing the value of work tasks.</p>
+<p>Let's consider an example with our fictional company, <em>PunchStarter</em>, and discuss a more traditional approach and then the agile approach to developing a feature set.</p>
+<p>PunchStarter wants to give inventors the ability to create a rich mini website in order to promote their fundraising campaign. Up until now, they have only allowed a title and description. The traditional, or waterfall, approach to this feature set might follow these steps:</p>
+<ol>
+<li>Determine all of the different features for the mini site (image galleries, videos, sound bites, different fonts, a markup language for power users, etc.)
+</li>
+<li>Have designers create an integrated set of composites detailing how everything should look and work together.
+</li>
+<li>Have the development team code all of the features.
+</li>
+<li>Have a team of testers verify everything works as intended.
+</li>
+<li>Release the block of functionality to the world.
+</li>
+</ol>
+<p>This seems reasonable but notice that in step one, a whole bunch of features were scoped. In fact there may be a lot of assumptions as to what is important. Maybe marketing suggested a rich editor because of one customer request for image galleries. Maybe the scope tried to creep with each stakeholder adding more features that could be built "because we are in there anyway." In step three, development may consider all of the features together, first creating all of the back end components, updating the database once, moving on to the front end. Finally, not until the last step do we have working software, with a chance for the users to try it out, and offer feedback.</p>
+<p>Now consider a more agile approach with an eye toward iterative delivery of working software:</p>
+<ol>
+<li>Prioritize all of the different features for the mini site (image galleries, videos, sound bites, different fonts, a markup language for power users, etc.) based on business value. In this case the image galleries are most important.
+</li>
+<li>Designers provide guidance to integrating only this feature into the existing application.
+</li>
+<li>The development team build and test this one particular set of functionality, working closely with testers to verify it.
+</li>
+<li>Image galleries is released, and user behavior is measured.
+</li>
+<li>Process is repeated for remaining features, incorporating user feedback.
+</li>
+</ol>
+<p>With the Agile approach, a subset of functionality is delivered, to production, and in total, before moving on the next feature. This is valuable because it shortens the time between idea and validation. What if users love the feature and swamp the website with image uploads? Well that is a good thing to learn before they might do a similar thing with even larger videos; the team would have a chance to upgrade their web servers. What if no one ever asked for a power user markup language? Well since it was never implemented no development time is wasted.</p>
+<p>The common fear is that doing things "one-at-a-time" will lead to disjointed, piecemeal development. Agile does not discourage thinking holistically about an application design in light of what <em>might</em> be developed, rather it advocates delivery in working increments so as to remain flexible to constant feedback.</p>
+<p>The Pareto Law in the context of software development suggests that 80% of users will only use 20% of features, and so why not develop those 20% of features first? (Source: <a href="http://www.mnl.com/ourideas/opensource/8020_rule_in_software_developm_1.php">http://www.mnl.com/ourideas/opensource/8020_rule_in_software_developm_1.php</a>). Agile methodologies help reduce the risk of delivering an application bloated with features that hardly anybody uses.</p>
+<p>It is therefore essential, when striving for an agile process in software development, if you ever are mired in discussion and debate, ask the question, "how does this quickly get us to working software?" This can help steer the focus of a team back on course.</p>
+<h2><a href="#howdowegetthere" name="howdowegetthere">How Do We Get There?</a></h2>
+<p>If our goal is to continuously deliver working, valuable software, then how do we get in a position to do that? How can we take a great idea for the next social network, CRM software, or photo sharing site, and deliver it in useful chunks, piece by piece to our user base, all the while being ready to change directions?</p>
+<p>Well the answer of course is to start with a plan. And that is the part of the Agile process on which the remainder of this book will focus. At a high level what we must do is strategically break down our big idea into bite-sized chunks of functionality, where each of these chunks has some value to our customer or user. When we have a large block of these chunks then we can begin the building process!</p>
+<p>It may sound a little like up-front design now, but trust us, it's different, and along the way we will show you how taking this approach to planning will maintain flexibility, letting you respond to changes in needs.</p>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Agile Planning/2.html">Next:  Why is Process Important?
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

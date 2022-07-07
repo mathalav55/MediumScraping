@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Creating multiple tables and table relationships</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":171,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Having all our data in one table can make for very difficult data management. We can split data in specialized tables that are related to one another. Such relationships include: One-to-One, One-to-Many, and Many-to-Many. Database design and a more indepth look at keys are also covered." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="pB7TiRiIgQYptySyxcnasZEDhH76CRE1aF5w10Mi5eNqOd8KQDcgGCHzkWsozMpnDRTgUbNXfwpT2B37_wj_3A" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Creating+multiple+tables+and+table+relationships&amp;url=https://launchschool.com/books/sql/read/table_relationships&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/table_relationships" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Creating+multiple+tables+and+table+relationships&amp;url=https://launchschool.com/books/sql/read/table_relationships&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/table_relationships" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Table Relationships</h1>
+<p>Thus far in this book, all the work we've done has been with a single database table. The majority of databases you'll work with as a developer will have more than one table, and those tables will be connected together in various ways to form table relationships. In this chapter we'll explore the reasons for having multiple tables in a database, look at how to define relationships between different tables, and outline the different types of table relationships that can exist.</p>
+<h2><a href="#normalization" name="normalization">Normalization</a></h2>
+<p>At this point, our <code>users</code> table doesn't need to hold that much data for each user in our system. It stores a name for the user, whether their account is enabled or not, when they last logged in, and an id to identify each user record. In reality, the requirements of our application will mean that we need to store a lot more data than that. Our app will be used to manage a library of SQL books and allow users to check out the books and also review them.</p>
+<p>To implement some of these requirements we could simply try adding more columns to our <code>users</code> table; the resulting table might look a little like this:</p>
+<p><img alt="Unnormalized Users Table" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/unnormalized-users.png"/></p>
+<p>Wow, that's a lot of information all in one table! There are other issues here as well, such as duplication of data (often referred to as 'redundancy'). For each book that a user checks out, we have to repeat all of the user data in our table. It's a similar story with the book data, if more than one person checks out a book, such as with 'My Second SQL Book', we have to repeat the book title, author, isbn, and published date.</p>
+<p>Duplicating data in this way can lead to issues with data integrity. For example what if for one of the 'My Second SQL Book' checkouts the title is entered as 'My 2nd SQL Book' instead, or a typo had been made with the isbn on one of the rows? From looking at the data in the table, how would we know which piece of data is correct?</p>
+<p>How do we deal with this situation? The answer is to split our data up across multiple different tables, and create relationships between them. The process of splitting up data in this way to remove duplication and improve data integrity is known as <em>normalization</em>.</p>
+<p>Normalization is a deep topic, and there are complex sets of rules which dictate the extent to which a database is judged to be <em>normalized</em>. These rule-sets, known as 'normal forms', are beyond the scope of this book; for now there are two important things to remember:</p>
+<ul>
+<li>  The <em>reason</em> for normalization is to reduce data redundancy and improve data integrity
+</li>
+<li>  The <em>mechanism</em> for carrying out normalization is arranging data in multiple tables and defining relationships between them
+</li>
+</ul>
+<p>We know that we want to split the data for our application across multiple tables, but how do we decide what those tables should be and what relationships should exist between them? When answering questions such as these it is often useful to zoom out and think at a higher level of abstraction, and this is where the process of database design comes in.</p>
+<h2><a href="#databasedesign" name="databasedesign">Database Design</a></h2>
+<p>At a high level, the process of database design involves defining <strong>entities</strong> to represent different sorts of data and designing <strong>relationships</strong> between those entities. But what do we mean by entities, and how do different entities relate to each other? Let's find out.</p>
+<h3>Entities</h3>
+<p>An entity represents a real world object, or a set of data that we want to model within our database; we can often identify these as the major nouns of the system we're modeling. For the purposes of this book we're going to try and keep things simple and draw a direct correlation between an entity and a single table of data; in a real database however, the data for a single entity might be stored in more than one table.</p>
+<p>What entities might we define for our SQL Book application?</p>
+<ul>
+<li>  Well, we already have a <code>users</code> table, and we can think of a <strong>user</strong> as a specific entity within our app; a 'user' is someone who uses our app.
+</li>
+<li>  The purpose of our SQL Book app is to allow users to use books about SQL, so in this context we can think of <strong>books</strong> as an entity within our system.
+</li>
+<li>  One of the things our users can do is to checkout books, so we could have a third entity called <strong>checkouts</strong> that exists between users and books.
+</li>
+<li>  We also want users to be able to leave reviews of books they've read, so we might have another entity called <strong>reviews</strong>.
+</li>
+<li>  Finally, we want to store address information for each user. Since this address data will only be used occasionally and not for every user interaction, we decide to store it in a separate table. We could potentially still think of this address data as part of the 'users' entity, but for now let's think of it as a separate entity called <strong>addresses</strong>.
+</li>
+</ul>
+<p>Now we have defined the entities we need, we can plan tables to store the data for each entity. Those tables might look something like this:</p>
+<p><img alt="SQL Book Library Tables Diagram" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/table-relationships.png"/></p>
+<h3>Relationships</h3>
+<p>We're making good progress with our database design. We've decided on the entities we want and have formed a picture of the tables we need, the columns in those tables, and even examples of the data that those columns will hold. There's something missing though, and that's the relationships between our entities.</p>
+<p>If we look at the diagram of our five tables, the tables are all isolated and it's not obvious how these tables should relate to each other. Let's simplify our tables a bit and explicitly define some relationships between them.</p>
+<p><img alt="Simple ERD Diagram" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/simple-erd-fixed.png"/></p>
+<p>This diagram shows an abstract representation of our various entities and also the relationships between them, (note: in reality we could imagine that more than one user might share the same address; this structure is intended for illustration purposes). We can think of this diagram as a simple Entity Relationship Diagram, or <strong>ERD</strong>. An ERD is a graphical representation of entities and their relationships to each other, and is a commonly used tool within database design.</p>
+<p>There are different types of ERD varying from conceptual to detailed, and often using specific conventions such as crow's foot notation to model relationships. We won't go into the details of these different types, or the conventions they use, in this book. For now it's useful to simply think of an ERD as any diagram which models relationships between entities.</p>
+<h2><a href="#keys" name="keys">Keys</a></h2>
+<p>Okay, so we now know the tables that we need and we've also defined the relationships that should exist between those tables in our ERD, but how do we actually implement those relationships in terms of our table schema? The answer to that is to use <em>keys</em>.</p>
+<p>In an earlier section of this book we looked at an aspect of schema called constraints, and explored how constraints act on and work with the data in our database tables. Keys are a special type of constraint used to establish relationships and uniqueness. They can be used to <em>identify a specific row in the current table</em>, or to <em>refer to a specific row in another table</em>. In this chapter we'll look at two types of keys that fulfill these particular roles: <strong>Primary Keys</strong>, and <strong>Foreign Keys</strong>.</p>
+<h3>Primary Keys</h3>
+<p>A necessary part of establishing relationships between two entities or two pieces of data is being able to identify the <em>data</em> correctly. In SQL, uniquely identifying data is critical. <strong>A Primary Key is a unique identifier for a row of data</strong>.</p>
+<p>In order to act as a unique identifier, a column must contain some data, and that data should be unique to each row. If you're thinking that those requirements sound a lot like our <code>NOT NULL</code> and <code>UNIQUE</code> constraints, you'd be right; in fact, making a column a <code>PRIMARY KEY</code> is essentially equivalent to adding <code>NOT NULL</code> and <code>UNIQUE</code> constraints to that column.</p>
+<p>The <code>id</code> column in our <code>users</code> table has both of these constraints, and we've used that column in many of our <code>SELECT</code> queries in order to uniquely identify rows; we've effectively had <code>id</code> as a primary key all along although we haven't explicitly set it as the Primary Key. Let's do that now:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">ALTER TABLE users ADD PRIMARY KEY (id);
+</code></pre>
+<p>Although any column in a table can have <code>UNIQUE</code> and <code>NOT NULL</code> constraints applied to them, each table can have only one Primary Key. It is common practice for that Primary Key to be a column named <code>id</code>. If you look at the other tables we've defined for our database, most of them have an <code>id</code> column. While a column of any name can serve as the primary key, using a column named <code>id</code> is useful for mnemonic reasons and so is a popular convention.</p>
+<p>Being able to uniquely identify a row of data in a table via that table's Primary Key column is only half the story when it comes to creating relationships between tables. The other half of this story is the Primary Key's partner, the Foreign Key.</p>
+<h3>Foreign Keys</h3>
+<p>A Foreign Key allows us to associate a row in one table to a row in another table. This is done by setting a column in one table as a Foreign Key and having that column reference another table's Primary Key column. Creating this relationship is done using the <code>REFERENCES</code> keyword in this form:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">FOREIGN KEY (fk_col_name)
+REFERENCES target_table_name (pk_col_name);
+</code></pre>
+<p>We'll explore some specific examples of how this is used when we look at setting up various kinds of relationships later in this chapter, but in general terms you can think of this reference as creating a connection between rows in different tables.</p>
+<p>Imagine for instance that we have two tables, one called <code>colors</code> and one called <code>shapes</code>. The <code>color_id</code> column of the <code>shapes</code> table is a Foreign Key which references the <code>id</code> column of the <code>colors</code> table.</p>
+<p><img alt="Shapes and Colors, separate tables" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/joins-explanation-separate-tables.png"/></p>
+<p>In the diagram above, the 'Red' row of our <code>colors</code> table is associated with the 'Square' and 'Star' rows of our <code>shapes</code> table. Similarly, 'Blue' is associated with 'Triangle' and 'Green' with 'Circle'. 'Orange' isn't currently associated with any row in the <code>shapes</code> table, but there is the potential to create such an association if we insert a row into <code>shapes</code> with a <code>color_id</code> of <code>3</code>.</p>
+<p>By setting up this reference, we're ensuring the <em>referential integrity</em> of a relationship. Referential integrity is the assurance that a column value within a record must reference an existing value; if it doesn't then an error is thrown. In other words, PostgreSQL won't allow you to add a value to the Foreign Key column of a table if the Primary Key column of the table it is referencing does not already contain that value. We'll discuss this concept in a bit more detail later on.</p>
+<p>The specific way in which a Foreign Key is used as part of a table's schema depends on the type of relationship we want to define between our tables. In order to implement that schema correctly it is useful to formally describe the relationships we need to model between our entities:</p>
+<ol>
+<li> A User can have <strong>ONE</strong> address. An address has only <strong>ONE</strong> user.
+</li>
+<li> A review can only be about <strong>ONE</strong> Book. A Book can have <strong>MANY</strong> reviews.
+</li>
+<li> A User can have <strong>MANY</strong> books that he/she may have checked out or returned. A Book can be/ have been checked out by <strong>MANY</strong> users.
+</li>
+</ol>
+<p>The entity relationships described above can be classified into three relationship types:</p>
+<ul>
+<li>  one-to-one
+</li>
+<li>  one-to-many
+</li>
+<li>  many-to-many
+</li>
+</ul>
+<p>Let's look at them each in turn.</p>
+<h2><a href="#onetoone" name="onetoone">one-to-one</a></h2>
+<p>A one-to-one relationship between two entities exists when a particular entity instance exists in one table, and it can have only one associated entity instance in another table.</p>
+<p><strong>Example:</strong> A user can have only one address, and an address belongs to only one user.</p>
+<div class="alert-box info">
+<p>This example is contrived: in the real world, users can have multiple addresses and multiple people can live at the same address.</p>
+</div>
+<p>In the database world, this sort of relationship is implemented like this: the <code>id</code> that is the <code>PRIMARY KEY</code> of the <code>users</code> table is used as both the <code>FOREIGN KEY</code> <em>and</em> <code>PRIMARY KEY</code> of the <code>addresses</code> table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">/*
+one-to-one: User has one address
+*/
+
+CREATE TABLE addresses (
+  user_id int, -- Both a primary and foreign key
+  street varchar(30) NOT NULL,
+  city varchar(30) NOT NULL,
+  state varchar(30) NOT NULL,
+  PRIMARY KEY (user_id),
+  FOREIGN KEY (user_id)
+      REFERENCES users (id)
+      ON DELETE CASCADE
+);
+</code></pre>
+<p>Executing the above SQL statement will create an <code>addresses</code> table, and create a relationship between it and the <code>users</code> table. Notice the <code>PRIMARY KEY</code> and <code>FOREIGN KEY</code> clauses at the end of the <code>CREATE</code> statement. These two clauses create the constraints that makes the <code>user_id</code> the Primary Key of the <code>addresses</code> table and also the Foreign Key for the <code>users</code> table.</p>
+<p>Let's go ahead and add some data to our table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO addresses
+         (user_id, street, city, state)
+  VALUES (1, '1 Market Street', 'San Francisco', 'CA'),
+         (2, '2 Elm Street', 'San Francisco', 'CA'),
+         (3, '3 Main Street', 'Boston', 'MA');
+</code></pre>
+<p>The <code>user_id</code> column uses values that exist in the <code>id</code> column of the <code>users</code> table in order to connect the tables through the foreign key constraint we just created.</p>
+<p><img alt="one-to-one schema" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/one-to-one.png"/></p>
+<h2><a href="#referentialintegrity" name="referentialintegrity">Referential Integrity</a></h2>
+<p>We're going to take a slight detour here to discuss a topic that's extremely important when dealing with table relationships: referential integrity. This is a concept used when discussing relational data which states that table relationships must always be consistent. Different RDBMSes might enforce referential integrity rules differently, but the concept is the same.</p>
+<p>The constraints we've defined for our <code>addresses</code> table enforce the one-to-one relationship we want between it and our <code>users</code> table, whereby a user can only have one address and an address must have one, and only one, user. This is an example of <em>referential integrity</em>. Let's demonstrate how this works.</p>
+<p>What happens if we try to add another address for a user who already has one?</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO addresses (user_id, street, city, state)
+  VALUES (1, '2 Park Road', 'San Francisco', 'CA');
+</code></pre>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">ERROR:  duplicate key value violates unique constraint "addresses_pkey"
+DETAIL:  Key (user_id)=(1) already exists.
+</code></pre>
+<p>The error above occurs because we are trying to insert a value <code>1</code> into the <code>user_id</code> column when such a value already exists in that column. The <code>UNIQUE</code> constraint on the column prevents us from doing so.</p>
+<p>How about if we try to add an address for a user who doesn't exist?</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO addresses (user_id, street, city, state)
+       VALUES (7, '11 Station Road', 'Portland', 'OR');
+</code></pre>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">ERROR:  insert or update on table "addresses" violates foreign key constraint "addresses_user_id_fkey"
+DETAIL:  Key (user_id)=(7) is not present in table "users".
+</code></pre>
+<p>Here we get a different error. The <code>FOREIGN KEY</code> constraint on the <code>user_id</code> column prevents us from adding the value <code>7</code> to that column because that value is not present in the <code>id</code> column of the <code>users</code> table.</p>
+<p>If you're wondering why we can add a user without an address but can't add an address without a user, this is due to the <em>modality</em> of the relationship between the two entities. Don't worry about exactly what this means for now, just think of it as another aspect of entity relationships.</p>
+<h3>The ON DELETE clause</h3>
+<p>You might have noticed in the table creation statement for our <code>addresses</code> table, the <code>FOREIGN KEY</code> definition included a clause which read <code>ON DELETE CASCADE</code>. Adding this clause, and setting it to <code>CASCADE</code> basically means that if the row being referenced is deleted, the row referencing it is also deleted. There are alternatives to <code>CASCADE</code> such as <code>SET NULL</code> or <code>SET DEFAULT</code> which instead of deleting the referencing row will set a new value in the appropriate column for that row.</p>
+<p>Determining what to do in situations where you delete a row that is referenced by another row is an important design decision, and is part of the concept of maintaining referential integrity. If we don't set such clauses we leave the decision of what to do up to the RDBMS we are using. In the case of PostgreSQL, if we try to delete a row that is being referenced by a row in another table and we have no <code>ON DELETE</code> clause for that reference, then an error will be thrown.</p>
+<h2><a href="#onetomany" name="onetomany">One-to-Many</a></h2>
+<p>Okay, time to get back to our different table relationship types with a look at one-to-many. A one-to-many relationship exists between two entities if an entity instance in one of the tables can be associated with multiple records (entity instances) in the other table. The opposite relationship does not exist; that is, each entity instance in the second table can only be associated with one entity instance in the first table.</p>
+<p><strong>Example:</strong> A review belongs to only one book. A book has many reviews.</p>
+<p>Let's set up the necessary data. First let's create our tables</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE books (
+  id serial,
+  title varchar(100) NOT NULL,
+  author varchar(100) NOT NULL,
+  published_date timestamp NOT NULL,
+  isbn char(12),
+  PRIMARY KEY (id),
+  UNIQUE (isbn)
+);
+
+/*
+ one-to-many: Book has many reviews
+*/
+
+CREATE TABLE reviews (
+  id serial,
+  book_id integer NOT NULL,
+  reviewer_name varchar(255),
+  content varchar(255),
+  rating integer,
+  published_date timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (book_id)
+      REFERENCES books(id)
+      ON DELETE CASCADE
+);
+</code></pre>
+<p>These table creation statements for our <code>books</code> and <code>reviews</code> tables are fairly similar to our previous example. There's a key difference worth pointing out in the statement for our <code>reviews</code> table however:</p>
+<ul>
+<li>  Unlike our <code>addresses</code> table, the <code>PRIMARY KEY</code> and <code>FOREIGN KEY</code> reference different columns, <code>id</code> and <code>book_id</code> respectively. This means that the <code>FOREIGN KEY</code> column, <code>book_id</code> is not bound by the <code>UNIQUE</code> constraint of our <code>PRIMARY KEY</code> and so the same value from the <code>id</code> column of the <code>books</code> table can appear in this column more than once. In other words a book can have many reviews.
+</li>
+</ul>
+<div class="alert-box info">
+<p>Note that the foreign key <code>book_id</code> has a <code>NOT NULL</code> constraint. In general, foreign keys on the "many" side of a one-to-many relationship should not allow <code>NULL</code>. In this case, it makes no sense to have a review that isn't tied to a book.</p>
+</div>
+<p>Now we have created our <code>books</code> and <code>reviews</code> tables, let's add some data to them.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO books
+  (id, title, author, published_date, isbn)
+  VALUES
+      (1, 'My First SQL Book', 'Mary Parker',
+          '2012-02-22 12:08:17.320053-03',
+          '981483029127'),
+      (2, 'My Second SQL Book', 'John Mayer',
+          '1972-07-03 09:22:45.050088-07',
+          '857300923713'),
+      (3, 'My First SQL Book', 'Cary Flint',
+          '2015-10-18 14:05:44.547516-07',
+          '523120967812');
+
+
+INSERT INTO reviews
+  (id, book_id, reviewer_name, content, rating,
+       published_date)
+  VALUES
+      (1, 1, 'John Smith', 'My first review', 4,
+          '2017-12-10 05:50:11.127281-02'),
+      (2, 2, 'John Smith', 'My second review', 5,
+          '2017-10-13 15:05:12.673382-05'),
+      (3, 2, 'Alice Walker', 'Another review', 1,
+          '2017-10-22 23:47:10.407569-07');
+</code></pre>
+<p>The order in which we add the data is important here. Since a column in <code>reviews</code> references data in <code>books</code> we must first ensure that the data exists in the <code>books</code> table for us to reference.</p>
+<p><img alt="one-to-many schema" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/one-to-many.png"/></p>
+<p>Just as with the <code>users</code>/ <code>addresses</code> relationship, the <code>FOREIGN KEY</code> creates relationships between the <code>reviews</code> table and the <code>books</code> table. Unlike the <code>users</code>/ <code>addresses</code> relationship however, both books and users can have multiple reviews. For example the <code>id</code> value of <code>2</code> for <code>My Second SQL Book</code> appears twice in the <code>book_id</code> column of the <code>reviews</code> table.</p>
+<p>In a real database our <code>reviews</code> table would probably also have a Foreign Key reference to the <code>id</code> column in <code>users</code> table rather than have user type data directly in a <code>reviewer_name</code> column. We set up the table in this way for our example because we wanted to focus on the one-to-many relationship type. If we had added such a Foreign Key to <code>reviews</code> we'd effectively be setting up a many-to-many relationship between <code>books</code> and <code>users</code>, which is what we'll look at next.</p>
+<h2><a href="#manytomany" name="manytomany">Many-to-Many</a></h2>
+<p>A many-to-many relationship exists between two entities if for one entity instance there may be multiple records in the other table, and vice versa.</p>
+<p><strong>Example:</strong> A user can check out many books. A book can be checked out by many users (over time).</p>
+<p>In order to implement this sort of relationship we need to introduce a third, cross-reference, table. This table holds the relationship between the two entities, by having <strong>two</strong> <code>FOREIGN KEY</code>s, each of which references the <strong>PRIMARY KEY</strong> of one of the tables for which we want to create this relationship. We already have our <code>books</code> and <code>users</code> tables, so we just need to create the cross-reference table: <code>checkouts</code>.</p>
+<p><img alt="many-to-many cross-reference table" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/checkouts-table-references.png"/></p>
+<p>Here, the <code>user_id</code> column in <code>checkouts</code> references the <code>id</code> column in <code>users</code>, and the <code>book_id</code> column in <code>checkouts</code> references the <code>id</code> column in <code>books</code>. Each row of the <code>checkouts</code> table uses these two Foreign Keys to create an association between rows of <code>users</code> and <code>books</code>.</p>
+<p>We can see on the first row of <code>checkouts</code>, the user with an <code>id</code> of <code>1</code> is associated with the book with an <code>id</code> of <code>1</code>. On the second row, the same user is also associated with the book with an <code>id</code> of <code>2</code>. On the third row, a different user, with an <code>id</code> of <code>2</code> is associated with the same book from the previous row. On the fourth row, the user with an <code>id</code> of <code>5</code> is associated with the book with an <code>id</code> of <code>3</code>.</p>
+<p>Don't worry if you don't completely understand this right away. Shortly, we'll expand on what these associations look like in terms of the data in <code>users</code> and <code>books</code>. First, though, let's create our <code>checkouts</code> table and add some data to it.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE checkouts (
+  id serial,
+  user_id int NOT NULL,
+  book_id int NOT NULL,
+  checkout_date timestamp,
+  return_date timestamp,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+                        ON DELETE CASCADE,
+  FOREIGN KEY (book_id) REFERENCES books(id)
+                        ON DELETE CASCADE
+);
+</code></pre>
+<p>You may have noticed that our table contains a couple of other columns <code>checkout_date</code> and <code>return_date</code>. While these aren't necessary to create the relationship between the <code>users</code> and <code>books</code> table, they can provide additional context to that relationship. Attributes like a checkout date or return date don't pertain specifically to users or specifically to books, but to the <em>association</em> between a user and a book.</p>
+<p>This kind of additional context can be useful within the business logic of the application using our database. For example, in order to prevent more than one user trying to check out the same book at the same time, the app could determine which books are currently checked out by querying those that have a value in the <code>checkout_date</code> column of the <code>checkouts</code> table but where the <code>return_date</code> is set to <code>NULL</code>.</p>
+<div class="alert-box info">
+<p>As with one-to-many relationships, the foreign keys in many-to-many relationships should not allow <code>NULL</code> entries. Thus, both <code>user_id</code> and <code>book_id</code> have the <code>NOT NULL</code> constraint. In this case, it makes no sense to have a checkout row for a user if they haven't checked out a specific book, nor does it make sense to have a row for book that hasn't been checked out by a specific user.</p>
+</div>
+<p>Now that we have our <code>checkouts</code> created, we can add the data that will create the associations between the rows in <code>users</code> and <code>books</code>.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO checkouts
+  (id, user_id, book_id, checkout_date, return_date)
+  VALUES
+    (1, 1, 1, '2017-10-15 14:43:18.095143-07',
+              NULL),
+    (2, 1, 2, '2017-10-05 16:22:44.593188-07',
+              '2017-10-13 13:0:12.673382-05'),
+    (3, 2, 2, '2017-10-15 11:11:24.994973-07',
+              '2017-10-22 17:47:10.407569-07'),
+    (4, 5, 3, '2017-10-15 09:27:07.215217-07',
+              NULL);
+</code></pre>
+<p>Let's have a look at what this data looks like in terms of the relationships between the tables.</p>
+<p><img alt="many-to-many schema" src="//d186loudes4jlv.cloudfront.net/sql/images/table_relationships/many-to-many.png"/></p>
+<p>Here we can see that the <code>id</code> value of <code>1</code> from the <code>users</code> table for 'John Smith' appears twice in the <code>user_id</code> column of <code>checkouts</code>, but alongside different values for <code>book_id</code> (<code>1</code> and <code>2</code>); this satisfies the 'a user can check out many books' part of the relationship. Similarly we can see that <code>id</code> value of <code>2</code> from the <code>books</code> table for 'My Second SQL Book' appears twice in the <code>books_id</code> column of <code>checkouts</code>, alongside different values for <code>user_id</code> (<code>1</code> and <code>2</code>); this satisfies the 'a book can be checked out by many users' part of the relationship.</p>
+<p>We can perhaps think of a many-to-many relationship as combining two one-to-many relationships; in this case between <code>checkouts</code> and <code>users</code>, and between <code>checkouts</code> and <code>books</code>.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>In this chapter we covered a number of different topics regarding table relationships:</p>
+<ul>
+<li>  We briefly covered normalization, and how this is used to reduce redundancy and improve data integrity within a database.
+</li>
+<li>  ERDs were introduced, and we discussed how these diagrams allow us to model the relationships between different entities.
+</li>
+<li>  We also looked at keys, and how Primary and Foreign keys work together to create the relationships between different tables.
+</li>
+<li>  Finally we looked at some of the different types of relationships that can exist between tables and how to implement these with SQL statements.
+</li>
+</ul>
+<p>To recap, here is a list of common relationships that you'll encounter when working with SQL:</p>
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th style="text-align: center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>one-to-one</td>
+<td style="text-align: center">
+<strong>A</strong> User has <strong>ONE</strong> address</td>
+</tr>
+<tr>
+<td>one-to-many</td>
+<td style="text-align: center">
+<strong>A</strong> Book has <strong>MANY</strong> reviews</td>
+</tr>
+<tr>
+<td>many-to-many</td>
+<td style="text-align: center">
+<strong>A</strong> user has <strong>MANY</strong> books and a book has <strong>MANY</strong> users</td>
+</tr>
+</tbody>
+</table>
+<p>Earlier in this book we looked at how to query data in a database table using <code>SELECT</code>. Now that our data is split across multiple tables, how can we structure our queries if we need data from more than one table at the same time? In order to do this, we need to <em>join</em> our tables together. In the next chapter we'll explore how to do exactly that by introducing another SQL keyword, <code>JOIN</code>.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Make sure you are connected to the <code>encyclopedia</code> database. We want to hold the continent data in a separate table from the country data.</p>
+<ol>
+<li> Create a <code>continents</code> table with an auto-incrementing <code>id</code> column (set as the Primary Key), and a <code>continent_name</code> column which can hold the same data as the <code>continent</code> column from the <code>countries</code> table.
+</li>
+<li> Remove the <code>continent</code> column from the <code>countries</code> table.
+</li>
+<li> Add a <code>continent_id</code> column to the <code>countries</code> table of type integer.
+</li>
+<li> Add a Foreign Key constraint to the <code>continent_id</code> column which references the <code>id</code> field of the <code>continents</code> table.
+</li>
+</ol>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_bf25cf9be2eb" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_bf25cf9be2eb">
+<p>The format for adding a Foreign Key to an existing table is:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">ALTER TABLE table_name
+      ADD FOREIGN KEY (column_name)
+      REFERENCES other_table(other_table_primary_key);
+</code></pre>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE continents (
+id serial PRIMARY KEY,
+continent_name varchar(50)
+);
+
+ALTER TABLE countries
+DROP COLUMN continent;
+
+ALTER TABLE countries
+ADD COLUMN continent_id integer;
+
+ALTER TABLE countries
+ADD FOREIGN KEY (continent_id)
+REFERENCES continents(id);
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write statements to add data to the <code>countries</code> and <code>continents</code> tables so that the data below is correctly represented across the two tables. Add both the countries and the continents to their respective tables in alphabetical order.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Capital</th>
+<th>Population</th>
+<th>Continent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>France</td>
+<td>Paris</td>
+<td>67,158,000</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td>USA</td>
+<td>Washington D.C.</td>
+<td>325,365,189</td>
+<td>North America</td>
+</tr>
+<tr>
+<td>Germany</td>
+<td>Berlin</td>
+<td>82,349,400</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td>Japan</td>
+<td>Tokyo</td>
+<td>126,672,000</td>
+<td>Asia</td>
+</tr>
+<tr>
+<td>Egypt</td>
+<td>Cairo</td>
+<td>96,308,900</td>
+<td>Africa</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>Brasilia</td>
+<td>208,385,000</td>
+<td>South America</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>We first need to add the continent names to the <code>continents</code> table, since we will be referencing the <code>id</code> value for each entry in <code>countries</code> table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO continents (continent_name) VALUES
+('Africa'),
+('Asia'),
+('Europe'),
+('North America'),
+('South America');
+</code></pre>
+<p>Once we have added this data, we can write a simple <code>SELECT</code> query to verify the <code>id</code> values for each continent.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM continents;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> id | continent_name
+----+----------------
+  1 | Africa
+  2 | Asia
+  3 | Europe
+  4 | North America
+  5 | South America
+(5 rows)
+</code></pre>
+<p>We can then use these <code>id</code> values from the <code>continents</code> table as the Foreign Key values for the <code>continent_id</code> column in the <code>INSERT</code> statement for our <code>countries</code> table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO countries (name, capital, population, continent_id)
+VALUES ('Brazil', 'Brasilia', 208385000, 5),
+('Egypt', 'Cairo', 96308900, 1),
+('France', 'Paris', 67158000, 3),
+('Germany', 'Berlin', 82349400, 3),
+('Japan', 'Tokyo', 126672000, 2),
+('USA', 'Washington D.C.', 325365189, 4);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Examine the data below:</p>
+<table>
+<thead>
+<tr>
+<th>Album Name</th>
+<th>Released</th>
+<th>Genre</th>
+<th>Label</th>
+<th>Singer Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Born to Run</td>
+<td>August 25, 1975</td>
+<td>Rock and roll</td>
+<td>Columbia</td>
+<td>Bruce Springsteen</td>
+</tr>
+<tr>
+<td>Purple Rain</td>
+<td>June 25, 1984</td>
+<td>Pop, R&amp;B, Rock</td>
+<td>Warner Bros</td>
+<td>Prince</td>
+</tr>
+<tr>
+<td>Born in the USA</td>
+<td>June 4, 1984</td>
+<td>Rock and roll, pop</td>
+<td>Columbia</td>
+<td>Bruce Springsteen</td>
+</tr>
+<tr>
+<td>Madonna</td>
+<td>July 27, 1983</td>
+<td>Dance-pop, post-disco</td>
+<td>Warner Bros</td>
+<td>Madonna</td>
+</tr>
+<tr>
+<td>True Blue</td>
+<td>June 30, 1986</td>
+<td>Dance-pop, Pop</td>
+<td>Warner Bros</td>
+<td>Madonna</td>
+</tr>
+<tr>
+<td>Elvis</td>
+<td>October 19, 1956</td>
+<td>Rock and roll, Rhythm and Blues</td>
+<td>RCA Victor</td>
+<td>Elvis Presley</td>
+</tr>
+<tr>
+<td>Sign o' the Times</td>
+<td>March 30, 1987</td>
+<td>Pop, R&amp;B, Rock, Funk</td>
+<td>Paisley Park, Warner Bros</td>
+<td>Prince</td>
+</tr>
+<tr>
+<td>G.I. Blues</td>
+<td>October 1, 1960</td>
+<td>Rock and roll, Pop</td>
+<td>RCA Victor</td>
+<td>Elvis Presley</td>
+</tr>
+</tbody>
+</table>
+<p>We want to create an <code>albums</code> table to hold all the above data except the singer name, and create a reference from the <code>albums</code> table to the <code>singers</code> table to link each album to the correct singer. Write the necessary SQL statements to do this and to populate the table with data. Assume Album Name, Genre, and Label can hold strings up to 100 characters. Include an auto-incrementing <code>id</code> column in the <code>albums</code> table.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_23747dc9d22f" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_23747dc9d22f">
+<p>The column of the <code>singers</code> table used as the Foreign Key for the <code>albums</code> table will need to have a <code>UNIQUE</code> constraint.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>First we need to ensure that the <code>id</code> column of the <code>singers</code> table has a <code>UNIQUE</code> constraint.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">ALTER TABLE singers
+ADD CONSTRAINT unique_id UNIQUE (id);
+</code></pre>
+<p>Then we can create an <code>albums</code> table that references that column.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE albums (
+id serial PRIMARY KEY,
+album_name varchar(100),
+released date,
+genre varchar(100),
+label varchar(100),
+singer_id int,
+FOREIGN KEY (singer_id) REFERENCES singers(id)
+);
+</code></pre>
+<p>Now we can populate the table with the necessary data, using the appropriate <code>id</code> values from the <code>singers</code> table for <code>singer_id</code> of the <code>albums</code> table (you can run a <code>SELECT</code> query on the <code>singers</code> table to get these values).</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO albums (album_name, released, genre, label, singer_id)
+VALUES ('Born to Run', '1975-08-25', 'Rock and roll', 'Columbia', 1),
+('Purple Rain', '1984-06-25', 'Pop, R&amp;B, Rock', 'Warner Bros', 6),
+('Born in the USA', '1984-06-04', 'Rock and roll, pop', 'Columbia', 1),
+('Madonna', '1983-07-27', 'Dance-pop, post-disco', 'Warner Bros', 5),
+('True Blue', '1986-06-30', 'Dance-pop, Pop', 'Warner Bros', 5),
+('Elvis', '1956-10-19', 'Rock and roll, Rhythm and Blues', 'RCA Victor', 7),
+('Sign o'' the Times', '1987-03-30', 'Pop, R&amp;B, Rock, Funk', 'Paisley Park, Warner Bros', 6),
+('G.I. Blues', '1960-10-01', 'Rock and roll, Pop', 'RCA Victor', 7);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Connect to the <code>ls_burger</code> database. If you run a simple <code>SELECT</code> query to retrieve all the data from the <code>orders</code> table, you will see it is very unnormalised. We have repetition of item names and costs and of customer data.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM orders;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> id | customer_name  |         burger          |    side     |      drink      |     customer_email      | customer_loyalty_points | burger_cost | side_cost | drink_cost
+----+----------------+-------------------------+-------------+-----------------+-------------------------+-------------------------+-------------+-----------+------------
+  3 | Natasha O'Shea | LS Double Deluxe Burger | Onion Rings | Chocolate Shake | natasha@osheafamily.com |                      42 |        6.00 |      1.50 |       2.00
+  2 | Natasha O'Shea | LS Cheeseburger         | Fries       |                 | natasha@osheafamily.com |                      18 |        3.50 |      1.20 |       0.00
+  1 | James Bergman  | LS Chicken Burger       | Fries       | Lemonade        | james1998@email.com     |                      28 |        4.50 |      1.20 |       1.50
+  4 | Aaron Muller   | LS Burger               | Fries       |                 |                         |                      13 |        3.00 |      1.20 |       0.00
+(4 rows)
+</code></pre>
+<p>We want to break this table up into multiple tables. First of all create a <code>customers</code> table to hold the customer name data and an <code>email_addresses</code> table to hold the customer email data. Create a one-to-one relationship between them, ensuring that if a customer record is deleted so is the equivalent email address record. Populate the tables with the appropriate data from the current <code>orders</code> table.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>First let's create the <code>customers</code> table. This just needs an <code>id</code> field and a <code>customer_name</code> field. The <code>id</code> field should be a <code>PRIMARY KEY</code> so that it is <code>UNIQUE</code> and <code>NOT NULL</code>.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE customers (
+id serial PRIMARY KEY,
+customer_name varchar(100)
+);
+</code></pre>
+<p>Next we need to create our <code>email_addresses</code> table. Since, in our system, a customer should only have one email address, and an email address should only belong to one customer, we need to create a one-to-one relationship. We do that by having a <code>customer_id</code> field in the table that acts as both the <code>PRIMARY KEY</code> for the <code>email_addresses</code> and the <code>FOREIGN KEY</code> for the <code>customers</code> table. We add the <code>ON DELETE</code> clause set to <code>CASCADE</code> to ensure that if we delete a customer, the email address record is also deleted.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE email_addresses (
+customer_id integer PRIMARY KEY,
+customer_email varchar(50),
+FOREIGN KEY (customer_id)
+REFERENCES customers (id)
+ON DELETE CASCADE
+);
+</code></pre>
+<p>Finally we can populate both our new tables with data.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO customers (customer_name)
+VALUES ('James Bergman'),
+('Natasha O''Shea'),
+('Aaron Muller');
+
+INSERT INTO email_addresses (customer_id, customer_email)
+VALUES (1, 'james1998@email.com'),
+(2, 'natasha@osheafamily.com');
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>We want to make our ordering system more flexible, so that customers can order any combination of burgers, sides and drinks. The first step towards doing this is to put all our product data into a separate table called <code>products</code>. Create a table and populate it with the following data:</p>
+<table>
+<thead>
+<tr>
+<th>Product Name</th>
+<th>Product Cost</th>
+<th>Product Type</th>
+<th>Product Loyalty Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LS Burger</td>
+<td>3.00</td>
+<td>Burger</td>
+<td>10</td>
+</tr>
+<tr>
+<td>LS Cheeseburger</td>
+<td>3.50</td>
+<td>Burger</td>
+<td>15</td>
+</tr>
+<tr>
+<td>LS Chicken Burger</td>
+<td>4.50</td>
+<td>Burger</td>
+<td>20</td>
+</tr>
+<tr>
+<td>LS Double Deluxe Burger</td>
+<td>6.00</td>
+<td>Burger</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Fries</td>
+<td>1.20</td>
+<td>Side</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Onion Rings</td>
+<td>1.50</td>
+<td>Side</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Cola</td>
+<td>1.50</td>
+<td>Drink</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Lemonade</td>
+<td>1.50</td>
+<td>Drink</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Vanilla Shake</td>
+<td>2.00</td>
+<td>Drink</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Chocolate Shake</td>
+<td>2.00</td>
+<td>Drink</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Strawberry Shake</td>
+<td>2.00</td>
+<td>Drink</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>The table should also have an auto-incrementing <code>id</code> column which acts as its <code>PRIMARY KEY</code>. The <code>product_type</code> column should hold strings of up to 20 characters. Other than that, the column types should be the same as their equivalent columns from the <code>orders</code> table.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>First we create the table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE products (
+id serial PRIMARY KEY,
+product_name varchar(50),
+product_cost numeric(4,2) DEFAULT 0,
+product_type varchar(20),
+product_loyalty_points integer
+);
+</code></pre>
+<p>Then we can add the data to it.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO products (product_name, product_cost, product_type, product_loyalty_points)
+VALUES ('LS Burger', 3.00, 'Burger', 10 ),
+('LS Cheeseburger', 3.50, 'Burger', 15 ),
+('LS Chicken Burger', 4.50, 'Burger', 20 ),
+('LS Double Deluxe Burger', 6.00, 'Burger', 30 ),
+('Fries', 1.20, 'Side', 3 ),
+('Onion Rings', 1.50, 'Side', 5 ),
+('Cola', 1.50, 'Drink', 5 ),
+('Lemonade', 1.50, 'Drink', 5 ),
+('Vanilla Shake', 2.00, 'Drink', 7 ),
+('Chocolate Shake', 2.00, 'Drink', 7 ),
+('Strawberry Shake', 2.00, 'Drink', 7);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>To associate customers with products, we need to do two more things:</p>
+<ol>
+<li> Alter or replace the <code>orders</code> table so that we can associate a customer with one or more orders (we also want to record an order status in this table).
+</li>
+<li> Create an <code>order_items</code> table so that an order can have one or more products associated with it.
+</li>
+</ol>
+<p>Based on the order descriptions below, amend and create the tables as necessary and populate them with the appropriate data.</p>
+<p>James has one order, consisting of a Chicken Burger, Fries, Onion Rings, and a Lemonade. It has a status of 'In Progress'.</p>
+<p>Natasha has two orders. The first consists of a Cheeseburger, Fries, and a Cola, and has a status of 'Placed'; the second consists of a Double Deluxe Burger, a Cheeseburger, two sets of Fries, Onion Rings, a Chocolate Shake and a Vanilla Shake, and has a status of 'Complete'.</p>
+<p>Aaron has one order, consisting of an LS Burger and Fries. It has a status of 'Placed'.</p>
+<p>Assume that the <code>order_status</code> field of the <code>orders</code> table can hold strings of up to 20 characters.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>Since we are going to amend the <code>orders</code> table so drastically, one option would be to drop it and then recreate it. The orders table needs to reference the <code>customers</code> table but also be referenced by the <code>order_items</code> table, so we need an <code>id</code> field to uniquely identify each order, a <code>customer_id</code> field to reference the customer who placed the order, and an <code>order_status</code> field.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">DROP TABLE orders;
+
+CREATE TABLE orders (
+id serial PRIMARY KEY,
+customer_id integer,
+order_status varchar(20),
+FOREIGN KEY (customer_id)
+REFERENCES customers (id)
+ON DELETE CASCADE
+);
+</code></pre>
+<p>Next we can create our <code>order_items</code> table. This should have an <code>id</code> to uniquely identify each order line, an <code>order_id</code> field to reference the <code>orders</code> table and a <code>product_id</code> field to reference the <code>products</code> table. We essentially use the <code>order_items</code> table to create a many-to-many relationship between <code>orders</code> and <code>products</code></p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE TABLE order_items (
+id serial PRIMARY KEY,
+order_id integer NOT NULL,
+product_id integer NOT NULL,
+FOREIGN KEY (order_id)
+REFERENCES orders (id)
+ON DELETE CASCADE,
+FOREIGN KEY (product_id)
+REFERENCES products (id)
+ON DELETE CASCADE
+);
+</code></pre>
+<p>Finally we can add our data. We add the data to <code>orders</code> first. The <code>id</code> values from the <code>orders</code> table can then be used as the <code>order_id</code> values in the <code>order_items</code> table. Similarly, the <code>id</code> values from the <code>products</code> table are used as the <code>product_id</code> values in the <code>order_items</code> table.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">INSERT INTO orders (customer_id, order_status)
+VALUES (1, 'In Progress'),
+(2, 'Placed'),
+(2, 'Complete'),
+(3, 'Placed');
+
+INSERT INTO order_items (order_id, product_id)
+VALUES (1, 3),
+(1, 5),
+(1, 6),
+(1, 8),
+(2, 2),
+(2, 5),
+(2, 7),
+(3, 4),
+(3, 2),
+(3, 5),
+(3, 5),
+(3, 6),
+(3, 10),
+(3, 9),
+(4, 1),
+(4, 5);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to SQL/12.html">Next:  SQL Joins
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>How to query data using SELECT</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":3,"applicationTime":147,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="A general overview of SELECT and its uses: queryig one or multiple columns, conditional queries, and ordering query results." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="QDF3YhgCupyGFvEvo0hiXvmg1-c9Mtsbqi4yFYOjCxKH1mFy9OdQVm9DN_4bolQYJByjeyt4mTdP0BCFJFyJiA" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=How+to+query+data+using+SELECT&amp;url=https://launchschool.com/books/sql/read/select_queries&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/select_queries" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=How+to+query+data+using+SELECT&amp;url=https://launchschool.com/books/sql/read/select_queries&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/select_queries" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Select Queries</h1>
+<p>In the previous chapter we used <code>INSERT</code> to add some data to our <code>users</code> table. Now that our table contains data, we can use <code>SELECT</code> to access, or <em>query</em>, that data in various ways. Querying data forms the <strong>Read</strong> part of our <strong>CRUD</strong> operations, and is arguably the most common operation in database-backed applications.</p>
+<p>We saw earlier in a brief SQL tutorial that <code>SELECT</code> may be used to query a wide array of data in a table: from specific columns to specific rows, or even a combination of the two. In this chapter and the next, we're going to go into more depth on what constitutes a <code>SELECT</code> statement. While the options we've covered so far are important, they're just a small part of what you can do with <code>SELECT</code>; in this and the following chapter, we'll dive a bit deeper into this important command and its usage.</p>
+<h2><a href="#selectquerysyntax" name="selectquerysyntax">Select Query Syntax</a></h2>
+<p>Let's start by breaking down the <code>SELECT</code> statement into individual generalized parts, as we've done for SQL statements in previous chapters:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT column_name, ...
+  FROM table_name
+  WHERE condition;
+</code></pre>
+<div class="alert-box info">
+<p>The ellipsis (<code>...</code>) in the above command format indicates that multiple column names may be specified. You can also use <code>*</code> if you want to specify all columns.</p>
+</div>
+<p>This example is relatively straightforward. A <code>SELECT</code> statement is very flexible, and can be used with a number of different clauses. We'll look at some other clauses and add them to our example as we move through this chapter. For now let's focus on the three parts shown above:</p>
+<ul>
+<li>  The column list
+</li>
+<li>  The table name
+</li>
+<li>  The <code>WHERE</code> clause
+</li>
+</ul>
+<p><img alt="Select query syntax" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-where-clause.png"/></p>
+<p>Let's look at an example using our <code>users</code> table:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT enabled, full_name FROM users
+WHERE id &lt; 2;
+</code></pre>
+<p>This should give us the following response:</p>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> enabled |  full_name
+---------+--------------
+ f       | John Smith
+(1 row)
+</code></pre>
+<p>This shows the columns we specified, and the data in those columns for the rows which match the <code>WHERE</code> condition.</p>
+<p><img alt="Select query with condition" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-query-syntax.png"/></p>
+<p>There are several things to note here:</p>
+<ul>
+<li>  The order of the columns in the response is the order that the column names are specified in our query, rather than the 'natural' order of the table columns
+</li>
+<li>  We used the <code>id</code> column in our <code>WHERE</code> condition so that it is used to filter our table, but we didn't specify <code>id</code> in our column list so the values in that column are not included in our results
+</li>
+<li>  We are told that <code>1 row</code> is returned. This is the number of rows in the table that match the <code>WHERE</code> condition
+</li>
+<li>  The <code>&lt;</code> in our <code>WHERE</code> condition is a 'less than' operator. We'll talk about operators some more later in this chapter
+</li>
+</ul>
+<div class="alert-box info">
+<p><strong>Identifiers and Key Words</strong></p>
+<p>In a SQL statement such as <code>SELECT enabled, full_name FROM users;</code> there are <em>identifiers</em> and <em>keywords</em>. The identifiers, such as <code>enabled</code>, <code>full_name</code>, and <code>users</code>, identify tables or columns within a table. The keywords, such as <code>SELECT</code> and <code>FROM</code>, tell PostgreSQL to do something specific.</p>
+<p>Since SQL is not a case-sensitive language, the case differences in our example can't be used by PostgreSQL to differentiate between identifiers and keywords. Instead it assumes that anything which is not a keyword (or operator, or function) is an identifier and so treats it as such. What do we do if we want to use an identifier that is the same as a keyword? For example, we might have a column called <code>year</code>, which is actually a reserved word in PostgreSQL. If used in certain SQL statements, depending on the context, this identifier would cause an error.</p>
+<p>Generally it's best to try and avoid naming columns the same as keywords for this very reason. If it's unavoidable however, you can double quote the identifier in your statement: <code>"year"</code>. PostgreSQL then knows to treat it specifically as an identifier rather than as a keyword.</p>
+</div>
+<h2><a href="#ordering" name="ordering">ORDER BY</a></h2>
+<p>Thus far, we've looked at using the <code>WHERE</code> to filter results. Another clause that you might use in a <code>SELECT</code> query is the <code>ORDER BY</code> clause. Rather than returning only certain rows, as <code>WHERE</code> does, <code>ORDER BY</code> displays the results of a query in a particular sort order. This can be useful for a number of reasons. For example, you may have a web page that display blog posts in order of the most recently created. In order to facilitate this, when you go retrieve the blog post records from your database, you could write your query so that they are returned in <em>descending</em> order based on time of creation. It all depends on the data sets you are dealing with and for what purpose you use that data. Being able to order data to fit your needs is an important part of utilizing SQL.</p>
+<p>SQL allows returning sorted data by adding the <code>ORDER BY column_name</code> clause to a query. Let's add to our <code>SELECT</code> query syntax example with an <code>ORDER BY</code> clause.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT column_name, ...
+       FROM table_name
+       WHERE condition
+       ORDER BY column_name;
+</code></pre>
+<p>The <code>ORDER BY</code> clause comes after we have specified the table name. If our statement includes a <code>WHERE</code> clause, the <code>ORDER BY</code> clause comes after this also.</p>
+<p>Let's try using <code>ORDER BY</code> by running a query on our <code>users</code> table, ordering it by <code>enabled</code>:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT full_name, enabled FROM users
+ORDER BY enabled;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  full_name   | enabled
+--------------+---------
+ John Smith   |  f
+ Jane Smith   |  t
+ Harry Potter |  t
+(3 rows)
+</code></pre>
+<p>There are a couple of things to note here:</p>
+<ul>
+<li>  When ordering by boolean values, <code>false</code> comes before <code>true</code> in ascending order
+</li>
+<li>  Since two of the rows, <code>Jane Smith</code> and <code>Harry Potter</code>, have the same value <code>t</code> for the <code>enabled</code> column we are ordering by, the sort order between those two rows is arbitrary.
+</li>
+</ul>
+<p>You may have noticed that the order of our rows hasn't actually changed here. Since the one <code>false</code> value for the <code>enabled</code> column is in a row that is already above the rows with <code>true</code> in that column, PostgreSQL doesn't actually need to reorder any of the rows and so can return them in their existing order.</p>
+<p><img alt="ORDER BY enabled ASC" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-sort-enabled-ASC.png"/></p>
+<p>You can fine tune your ordering with the <code>ORDER BY</code> clause by specifying the sort direction, either <em>ascending</em> or <em>descending</em>, using the keywords <code>ASC</code> or <code>DESC</code>. If omitted, then the default is <code>ASC</code>, which is why our previous query was sorted by <code>enabled</code> in <em>ascending</em> order.</p>
+<p>If we add <code>DESC</code> after the <code>ORDER BY</code> expression in our previous query, the rows with <code>true</code> for <code>enabled</code> should be ordered before those with <code>false</code>.</p>
+<p><img alt="ORDER BY enabled DESC" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-sort-enabled-DESC.png"/></p>
+<p>Let's execute the query to check:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT full_name, enabled FROM users
+ORDER BY enabled DESC;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  full_name   | enabled
+--------------+---------
+ Jane Smith   |  t
+ Harry Potter |  t
+ John Smith   |  f
+(3 rows)
+</code></pre>
+<p>We can see that the order has changed. <code>Jane Smith</code> and <code>Harry Potter</code> are now above <code>John Smith</code> since <code>enabled</code> is now 'descending' from <code>t</code> to <code>f</code>. The order between the <code>Jane Smith</code> and <code>Harry Potter</code> rows hasn't changed however, since they both have the same value for <code>enabled</code>.</p>
+<p>You can fine tune your ordering even further by returning results ordered by more than one column. This is done by having comma-separated expressions in the <code>ORDER BY</code> clause. If we add <code>id DESC</code> to our <code>ORDER BY</code> clause, the rows will first be ordered by <code>enabled</code> as in our previous example, but then <em>within</em> any sets of rows which have identical values for <code>enabled</code> a second level of ordering will be applied, this time by <code>id</code> in descending order.</p>
+<p><img alt="ORDER BY enabled DESC" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-sort-enabled-DESC-id-DESC.png"/></p>
+<p>Let's try it out:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT full_name, enabled FROM users
+ORDER BY enabled DESC, id DESC;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  full_name   | enabled
+--------------+---------
+ Harry Potter |  t
+ Jane Smith   |  t
+ John Smith   |  f
+(3 rows)
+</code></pre>
+<p><code>Harry Potter</code> is now above <code>Jane Smith</code> since the value of his <code>id</code> field <code>3</code> is greater than that of hers <code>2</code> and we are ordering by <code>id</code> in a descending order. <code>John Smith</code> is still below both of them since we first order by <code>enabled</code> in descending order. The value in <code>id</code> doesn't affect the sort order for the <code>John Smith</code> row, though coincidentally this row would have still have come last if we'd ordered our rows just according to descending <code>id</code> without first ordering by <code>enabled</code>.</p>
+<p>There's a couple of things you may have noticed about our query:</p>
+<ul>
+<li>  As with a <code>WHERE</code> clause, we can <code>ORDER BY</code> a column even if we do not include it in our column list
+</li>
+<li>  We can set a sort direction for <em>each</em> column we are using to order our results. In this case we set both <code>enabled</code> and <code>id</code> to <code>DESC</code>
+</li>
+</ul>
+<h2><a href="#operators" name="operators">Operators</a></h2>
+<p>Now we've looked at the basics of filtering and ordering our data, let's explore how we make our queries even more powerful by using Operators. You've already encountered a few operators in this book such as <code>&lt;&gt;</code> and <code>&lt;</code>, but until now we haven't really said too much about them.</p>
+<p>Operators are generally used as part of an expression in a <code>WHERE</code> clause. We'll briefly look at a few different operators and how to use them as part of a <code>SELECT</code> query by grouping some of them into the following different types:</p>
+<ol>
+<li> Comparison
+</li>
+<li> Logical
+</li>
+<li> String Matching
+</li>
+</ol>
+<p>The operators we discuss below are only a selection of those available within PostgreSQL; they do however represent some of the most commonly used operators and fundamental use cases that you will encounter.</p>
+<h3>Comparison Operators</h3>
+<p>These operators are used to compare one value to another. Often these values are numerical, but other data types can also be compared. Examples of comparison operator would be 'less than' <code>&lt;</code> or 'not equal to' <code>&lt;&gt;</code> (both of which we've already encountered).</p>
+<p>Within the expression of a <code>WHERE</code> clause, the comparison operator is placed in between the two things being compared; i.e. the column name and the specific value to be compared against the values in that column. Let's look at an example, using the 'greater than or equal to' operator <code>&gt;=</code>.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT full_name, enabled, last_login
+       FROM users
+       WHERE id &gt;= 2;
+</code></pre>
+<p>The above example should return all of the rows for which the value in the <code>id</code> column is greater than or equal to <code>2</code>; since this is every row except for the first, the second and third rows should be returned.</p>
+<p><img alt="Comparison Operator" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-comparison-operators.png"/></p>
+<p>Executing the statement should get the following response:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">  full_name   | enabled |         last_login
+--------------+---------+----------------------------
+ Jane Smith   | t       | 2017-10-25 10:26:50.295461
+ Harry Potter | t       | 2017-10-25 10:26:50.295461
+(2 rows)
+</code></pre>
+<p>Some other comparison operators that work in a similar way are listed below:</p>
+<table class="table small-font">
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>less than</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>greater than</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>less than or equal to</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>greater than or equal to</td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>equal</td>
+</tr>
+<tr>
+<td>
+<code>&lt;&gt;</code> or <code>!=</code>
+</td>
+<td>not equal</td>
+</tr>
+</table>
+<p>As well as the comparison operators listed above, there are what is termed <em>comparison predicates</em> which behave much as operators but have special syntax. Examples include <code>BETWEEN</code>, <code>NOT BETWEEN</code>, <code>IS DISTINCT FROM</code>, <code>IS NOT DISTINCT FROM</code>. We won't discuss these in this book, though there are two important ones which we will briefly cover: <code>IS NULL</code> and <code>IS NOT NULL</code>.</p>
+<p><code>NULL</code> is a special value in SQL which actually represents the absence of a value or an unknown value. Don't worry too much about the finer details of what this means for now, we'll explore this some more later in the curriculum. On a practical level though, what this means is that we can't simply treat <code>NULL</code> as we would any other value. We couldn't, for example, have a <code>WHERE</code> clause in the form <code>WHERE column_name = NULL</code>. When identifying <code>NULL</code> values we must instead use the <code>IS NULL</code> comparison predicate.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM my_table WHERE my_column IS NULL;
+</code></pre>
+<p>The above example would select all rows for which the column <code>my_column</code> had a <code>NULL</code> value.</p>
+<p>Using <code>IS NOT NULL</code> would do the opposite; i.e. it would select all rows for which the column had any value <em>other than</em> <code>NULL</code>.</p>
+<h3>Logical Operators</h3>
+<p>Logical operators can be used to provide more flexibility to your expressions. There are three logical operators:</p>
+<ol>
+<li> <code>AND</code>
+</li>
+<li> <code>OR</code>
+</li>
+<li> <code>NOT</code>
+</li>
+</ol>
+<p>The third one, <code>NOT</code> is less commonly used than the other two, so we won't cover it here. The <code>AND</code> and <code>OR</code> operators allow you to combine multiple conditions in a single expression. Let's try them out with some quick examples:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM users
+         WHERE full_name = 'Harry Potter'
+            OR enabled = 'false';
+</code></pre>
+<p>The above statement should retrieve two rows. This is because there is one row where the value of <code>full_name</code> is <code>"Harry Potter"</code> and so matches the first condition, and another row where <code>enabled</code> is <code>false</code> and so matches the second condtion. Since by using <code>OR</code> we are interested in rows that satisfy <strong>either</strong> condition, both of these rows should be returned. The other row in our table didn't satisfy either of the conditions and so shouldn't be returned.</p>
+<p><img alt="Logical Operator OR" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-logical-operators.png"/></p>
+<p>Let's execute the statement to test this out:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql"> id |  full_name   | enabled |         last_login
+----+--------------+---------+----------------------------
+  1 | John Smith   | f       | 2017-10-25 10:26:10.015152
+  3 | Harry Potter | t       | 2017-10-25 10:26:50.295461
+(2 rows)
+</code></pre>
+<p>If we changed that statement to use the logical operator <code>AND</code> instead of <code>OR</code>, the response would be quite different.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM users
+         WHERE full_name = 'Harry Potter'
+           AND enabled = 'false';
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> id | full_name | enabled | last_login
+----+-----------+---------+------------
+(0 rows)
+</code></pre>
+<p>By using <code>AND</code> we are saying that we are only interested in rows that satisfy <strong>both</strong> conditions. Since there are no rows where <code>full_name</code> is <code>"Harry Potter"</code> and <code>enabled</code> is also <code>false</code>, no rows satisfy our overall condition and so <code>0</code> rows are returned.</p>
+<h3>String Matching Operators</h3>
+<p>String, or pattern, matching allows you to add flexibility to your conditional expressions in another way, by searching for a sub-set of the data within a column. For instance, let's say we wanted to find all users with the last name Smith. We can't directly check if <code>full_name</code> is equal to Smith, since Smith is only part of the entire name. We need a way to look at a substring within the entire name. As the name suggests, string matching can only be done when the data type of the column is a string type. It is most often carried out using the <code>LIKE</code> operator. Let's try it out by using our <code>full_name</code> example:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT * FROM users WHERE full_name LIKE '%Smith';
+</code></pre>
+<p>Our <code>WHERE</code> clause here looks very much like other <code>WHERE</code> clauses we've seen so far in this book, except where the <code>=</code> operator would normally be, we use the <code>LIKE</code> operator instead. Also notice the use of the <code>%</code> character in the value that we want to match against; this is a wildcard character. By putting <code>%</code> just before Smith we are saying:</p>
+<blockquote>
+<p>Match all users that have a full name with any number of characters followed by "Smith"</p>
+</blockquote>
+<p><img alt="String matching with LIKE" src="//d186loudes4jlv.cloudfront.net/sql/images/select_queries/select-data-string-matching-operators.png"/></p>
+<p>Test this out by executing the statement. You should receive the following response:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">id | full_name  | enabled |         last_login
+----+------------+---------+----------------------------
+ 1 | John Smith | f       | 2017-10-25 10:26:10.015152
+ 2 | Jane Smith | t       | 2017-10-25 10:26:50.295461
+(2 rows)
+</code></pre>
+<p>Note that <code>LIKE</code> is case sensitive: <code>LIKE %Smith</code> matches <code>Smith</code> but not <code>smith</code> or <code>SMITH</code>. If you want a case-insensitive selection, you can use <code>ILIKE %Smith</code>.</p>
+<p>As well as the <code>%</code> character, the underscore <code>_</code> can also be used as a wildcard with <code>LIKE</code> and <code>ILIKE</code>. However, <code>_</code> stands in for only a <em>single</em> character whereas <code>%</code> stands in for <em>any number</em> of characters.</p>
+<p>An alternative to <code>LIKE</code> and <code>ILIKE</code> for pattern matching is to use <code>SIMILAR TO</code>. It works in much the same way as <code>LIKE</code>, except that it compares the target column to a Regex (Regular Expression) pattern. We won't cover <code>SIMILAR TO</code> or Regular Expressions in this book, though if you would like to learn more about Regex, we have <a href="https://launchschool.com/books/regex">another book</a> about that topic! (Note: the Regex book doesn't specifically cover SQL-flavored Regex).</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>The <code>SELECT</code> statement is probably the most commonly used statement in SQL. Every database-backed application will need to present data to users in some way. In order to meet the many and varied data presentation requirements of different applications, developers need to be able to query data in very specific ways. In this chapter we've explored the <code>SELECT</code> statement syntax, and looked at a few ways in which we can fine-tune our queries, such as using operators or ordering results.</p>
+<p>Let's quickly recap:</p>
+<table class="table small-font">
+<tr>
+<th style="width: 250px">SELECT Clause</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>ORDER BY column_name [ASC, DESC]</td>
+<td>Orders the data selected by a column name within the associated table. Data can be ordered in descending or ascending order; if neither are specified, the query defaults to ascending order. The brackets (`[]`) indicate that you can select `ASC` or `DESC`, but not both.</td>
+</tr>
+<tr>
+<td>WHERE column_name [&gt;,&lt;, &gt;=, &lt;=, =, &lt;&gt;] value</td>
+<td>Filters a query result based on some comparison between a column's value and a specified literal value. There are several comparison operators available for use, from "greater than" to "not equal to". The brackets (`[]`) indicate that you can choose any of the operators, but only one of them.</td>
+</tr>
+<tr>
+<td>WHERE expression1 [AND, OR] expression2</td>
+<td>Filters a query result based whether one expression is true [and,or] another expression is true. The brackets (`[]`) indicate that you can choose `AND` or `OR`, but not both.
+  </td>
+</tr>
+<tr>
+<td>WHERE string_column LIKE '%substring'</td>
+<td>Filters a query result based on whether a substring is contained within string_column's data and has any number of characters before that substring. Those characters are matched using the wildcard <code>%</code>. <code>%</code> doesn't have to come before a substring, you can also put it after one as well, matching the substring first and then any number of characters after that substring.</td>
+</tr>
+</table>
+<p>In the next chapter, we'll continue to explore <code>SELECT</code> and learn some more ways in which queries can be fine-tuned to return exactly the data that you need.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Make sure you are connected to the <code>encyclopedia</code> database. Write a query to retrieve the population of the USA.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT population
+FROM countries
+WHERE name = 'USA';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> population
+------------
+  325365189
+(1 row)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the population and the capital (with the columns in that order) of all the countries in the table.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT population, capital
+FROM countries;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> population |     capital
+------------+-----------------
+   67158000 | Paris
+  325365189 | Washington D.C.
+   82349400 | Berlin
+  126672000 | Tokyo
+(4 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the names  of all the countries ordered alphabetically.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT name FROM countries
+ORDER BY name;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name
+---------
+ France
+ Germany
+ Japan
+ USA
+(4 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the names and the capitals of all the countries in order of population, from lowest to highest.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT name, capital
+FROM countries
+ORDER BY population;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name   |     capital
+---------+-----------------
+ France  | Paris
+ Germany | Berlin
+ Japan   | Tokyo
+ USA     | Washington D.C.
+(4 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the same information as the previous query, but ordered from highest to lowest.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT name, capital
+FROM countries
+ORDER BY population DESC;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name   |     capital
+---------+-----------------
+ USA     | Washington D.C.
+ Japan   | Tokyo
+ Germany | Berlin
+ France  | Paris
+(4 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query on the <code>animals</code> table, using <code>ORDER BY</code>, that will return the following output:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">       name       |      binomial_name       | max_weight_kg | max_age_years
+------------------+--------------------------+---------------+---------------
+ Peregrine Falcon | Falco Peregrinus         |        1.5000 |            15
+ Pigeon           | Columbidae Columbiformes |        2.0000 |            15
+ Dove             | Columbidae Columbiformes |        2.0000 |            15
+ Golden Eagle     | Aquila Chrysaetos        |        6.3500 |            24
+ Kakapo           | Strigops habroptila      |        4.0000 |            60
+(5 rows)
+</code></pre>
+<p>Use only the columns that can be seen in the above output for ordering purposes.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT name, binomial_name, max_weight_kg, max_age_years
+  FROM animals
+  ORDER BY max_age_years, max_weight_kg, name DESC;
+</code></pre><p>To return the data in the order specified, we need to order the data by three different columns.</p>
+<ul>
+<li>  The initial ordering, by <code>max_age_years</code>, affects all five rows. Within this ordering, since three of the rows (<code>Peregrine Falcon</code>, <code>Pigeon</code>, and <code>Dove</code>) have the same value, the ordering between them is arbitrary.
+</li>
+<li>  The second level of ordering, by <code>max_weight_kg</code>, affects only these three rows; whatever happens at this level of ordering doesn't affect the initial level of ordering which placed the <code>Golden Eagle</code> and <code>Kakapo</code> rows at the bottom. Here again two of the rows (<code>Pigeon</code>, and <code>Dove</code>) have the same value, so the ordering between them is arbitrary.
+</li>
+<li>  The final level of ordering, by <code>name</code>, affects only those two rows who had the same value for the previous order condition. Here we specify a sort direction so that the <code>Pigeon</code> row ends up above the <code>Dove</code> row.
+</li>
+</ul>
+<p>Try running the query a few times, adding or removing one of the sort conditions each time to see how that affects the order.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that returns the names of all the countries with a population greater than 70 million.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT name FROM countries
+WHERE population &gt; 70000000;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name
+---------
+ USA
+ Germany
+ Japan
+(3 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that returns the names of all the countries with a population greater than 70 million but less than 200 million.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT name FROM countries
+WHERE population &gt; 70000000
+AND population &lt; 200000000;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">  name
+---------
+ Germany
+ Japan
+(2 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that will return the first name and last name of all entries in the celebrities table where the value of the deceased column is not true.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT first_name, last_name
+FROM celebrities
+WHERE deceased != true
+OR deceased IS NULL;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name |  last_name
+------------+-------------
+ Bruce      | Springsteen
+ Scarlett   | Johansson
+ Tom        | Cruise
+ Madonna    |
+ Elvis      | Presley
+(5 rows)
+</code></pre>
+<p>You might expect to be able to just use the first part of that <code>WHERE</code> expression (to the left of the <code>OR</code>). Doing this, however, excludes Elvis from our results as he has a <code>NULL</code> value for the <code>deceased</code> column.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT first_name, last_name
+FROM celebrities
+WHERE deceased != true;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name |  last_name
+------------+-------------
+ Bruce      | Springsteen
+ Scarlett   | Johansson
+ Tom        | Cruise
+ Madonna    |
+(4 rows)
+</code></pre>
+<p>When identifying <code>NULL</code> values we must use <code>IS NULL</code> rather than a normal comparison operator. This is an example of why you might want to avoid the possibility of <code>NULL</code> values in a column with a boolean data type.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that will return the first and last names of all the celebrities who sing.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT first_name, last_name
+FROM celebrities
+WHERE occupation LIKE '%Singer%';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name |  last_name
+------------+-------------
+ Bruce      | Springsteen
+ Frank      | Sinatra
+ Madonna    |
+ Prince     |
+ Elvis      | Presley
+(5 rows)
+</code></pre>
+<p>Here we use the <code>LIKE</code> clause with a string containing wildcards. Two wildcards are used in the query, one either side of the word <code>Singer</code>, since this word could potentially appear anwhere within the <code>occupation</code> string.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that will return the first and last names of all the celebrities who act.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT first_name, last_name
+FROM celebrities
+WHERE occupation LIKE '%Actor%'
+OR occupation LIKE '%Actress%';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name | last_name
+------------+-----------
+ Scarlett   | Johansson
+ Frank      | Sinatra
+ Tom        | Cruise
+ Madonna    |
+ Prince     |
+ Elvis      | Presley
+(6 rows)
+</code></pre>
+<p>Here we could potentially have used a single <code>WHERE</code> clause, <code>LIKE '%Act%'</code> rather than two separated by an <code>OR</code>. In that case we would have to be careful that there wasn't the possibility of the that three letter combination appearing elsewhere in the string. When using string matching it's important to make your search terms specific enough for the data that you want to retrieve.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that will return the first and last names of all the celebrities who both sing and act.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_0b539d41ff54" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_0b539d41ff54">
+<p>You can use parentheses to group sub-clauses together.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT first_name, last_name
+FROM celebrities
+WHERE (occupation LIKE '%Actor%' OR occupation LIKE '%Actress%')
+AND occupation LIKE '%Singer%';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> first_name | last_name
+------------+-----------
+ Frank      | Sinatra
+ Madonna    |
+ Prince     |
+ Elvis      | Presley
+(4 rows)
+</code></pre>
+<p>This one is a little tricky. We've not really talked about <a href="https://www.postgresql.org/docs/9.6/static/sql-syntax-lexical.html#SQL-PRECEDENCE">operator precedence</a> in PostgreSQL, and we won't go into too much detail here other than to say that certain operators (e.g. <code>AND</code>) have higher precedence than others (e.g. <code>OR</code>). When writing queries that combine a number of these operators, it is advisable to use parentheses to group them together in order to avoid any potential precedence issues.</p>
+<p>Try running the above query without the parentheses and see if you can work out why the result is different.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Connect to the <code>ls_burger</code> database. Write a query that lists all of the burgers that have been ordered, from cheapest to most expensive, where the cost of the burger is less than $5.00.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT burger FROM orders
+WHERE burger_cost &lt; 5.00
+ORDER BY burger_cost;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">      burger
+-------------------
+ LS Burger
+ LS Cheeseburger
+ LS Chicken Burger
+(3 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query to return the customer name and email address and loyalty points from any order worth 20 or more loyalty points. List the results from the highest number of points to the lowest.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT customer_name, customer_email, customer_loyalty_points
+FROM orders
+WHERE customer_loyalty_points &gt;= 20
+ORDER BY customer_loyalty_points DESC;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> customer_name  |     customer_email      | customer_loyalty_points
+----------------+-------------------------+-------------------------
+ Natasha O'Shea | natasha@osheafamily.com |                      42
+ James Bergman  | james1998@email.com     |                      28
+(2 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that returns all the burgers ordered by Natasha O'Shea.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT burger FROM orders
+WHERE customer_name = 'Natasha O''Shea';
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">         burger
+-------------------------
+ LS Cheeseburger
+ LS Double Deluxe Burger
+(2 rows)
+</code></pre>
+<p>Just as when adding data to a table with <code>INSERT</code>, we need to escape quote marks in our <code>SELECT</code> queries too.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that returns the customer name from any order which does not include a drink item.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT customer_name FROM orders
+WHERE drink IS NULL;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext"> customer_name
+----------------
+ Natasha O'Shea
+ Aaron Muller
+(2 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that returns the three meal items for any order which does not include fries.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT burger, side, drink
+FROM orders
+WHERE side != 'Fries'
+OR side IS NULL;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">         burger          |    side     |      drink
+-------------------------+-------------+-----------------
+ LS Double Deluxe Burger | Onion Rings | Chocolate Shake
+ LS Burger               |             |
+(2 rows)
+</code></pre>
+<p>Here we need to account for <code>NULL</code> values as well through use of the <code>OR</code> operator.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a query that returns the three meal items for any order that includes both a side and a drink.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">SELECT burger, side, drink
+FROM orders
+WHERE side IS NOT NULL
+AND drink IS NOT NULL;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">         burger          |    side     |      drink
+-------------------------+-------------+-----------------
+ LS Chicken Burger       | Fries       | Cola
+ LS Double Deluxe Burger | Onion Rings | Chocolate Shake
+(2 rows)
+</code></pre>
+<p>Here we need to use <code>IS NOT NULL</code> to only return rows where there is a value in the specified columns.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to SQL/9.html">Next:  More on Select
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

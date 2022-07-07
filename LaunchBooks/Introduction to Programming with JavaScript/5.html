@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Learning JavaScript functions and how you should use them</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":160,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Learning functions allows the same piece of code to be executed many times in a program, without having to repeatedly rewrite the code. Programming languages have different names for it including procedures and methods. In JavaScript, we call them functions." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="6UsincgFHtjtblJzXcbWyB2zbs0s-ndkshOzJqPqivi-Pazyo23_lSQxR-BvCrhHMknmacP0L3GZdF8BQ8npLA" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Learning+JavaScript+functions+and+how+you+should+use+them&amp;url=https://launchschool.com/books/javascript/read/functions&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/functions" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Learning+JavaScript+functions+and+how+you+should+use+them&amp;url=https://launchschool.com/books/javascript/read/functions&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/functions" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Functions</h1>
+<p>You'll often have some code that you need to execute multiple times in a program. You may need to run it 2 or 3 times, or you may need to run it millions of times. Regardless, you don't want to write that code over and over again. What can you do?</p>
+<p>One option is to use loops—we'll discuss them later—but they aren't always helpful. Instead, most languages have a feature called procedures that let you extract the code and run it as a separate unit. In JavaScript, we call these procedures <strong>functions</strong>.</p>
+<h2><a href="#usingfunctions" name="usingfunctions">Using Functions</a></h2>
+<p>Before you can use a function, you must first define it with the reserved keyword, <code>function</code>. After the word <code>function</code>, you write the function's name followed by a pair of parentheses (<code>()</code>). After the closing parenthesis, the code you want to associate with the function -- the <strong>function body</strong> -- gets placed between curly braces (<code>{}</code>).</p>
+<p>For instance, here's a function named <code>say</code>:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function say() {
+  console.log("Hi!");
+}
+</code></pre>
+<p>Why do we want a function named <code>say</code>? To say something, of course! Let's try it.</p>
+<p>Create a file named <code>say.js</code> that contains the following code:</p>
+<pre class="language-js" data-file="say.js" data-numbers="off"><code class="language-js">console.log("hello");
+console.log("hi");
+console.log("how do you do");
+console.log("Quite all right");
+</code></pre>
+<p>Notice how we've duplicated the <code>console.log</code> call several times. Instead of calling it every time we want to output something, we want to have some code that we can call when we need to log something.</p>
+<p>Update <code>say.js</code> with this code:</p>
+<pre class="language-js" data-file="say.js"><code class="language-js">function say(words) {
+  console.log(words);
+}
+
+say("hello");
+say("hi");
+say("how do you do");
+say("Quite all right");
+</code></pre>
+<p>At first glance, this program seems silly. It doesn't reduce the amount of code, and in fact, it adds more; quite a bit more. Also, the <code>say</code> function doesn't provide any functionality that <code>console.log</code> doesn't. However, there is a benefit here. We've extracted the logic to display text in a way that makes our program more flexible. If we later need to change how we show some text, we can make the change in one place: the <code>say</code> function. We don't have to change any other code to get the updated behavior. We'll see such an update in a few minutes.</p>
+<p>Functions are called by typing their name and providing some optional values that we call <strong>arguments</strong>. In <code>say.js</code>, the function definition includes <code>(words)</code> after the function name. This syntax tells us that we should supply (<strong>pass</strong>) a single argument to the function when we call it. Arguments let you pass data from outside the function's scope into the function so it can access the data. If the function definition doesn't need access to outside data, you don't need any arguments.</p>
+<p>In the definition of a function, the names between parentheses are called <strong>parameters</strong>. The arguments are the values of those parameters.</p>
+<p>Function names and parameters are both considered variable names in JavaScript. Parameters, in particular, are <strong>local variables</strong>; they are only defined locally, within the body of the function.</p>
+<div class="alert-box info">
+<p>You can name functions and parameters with any valid variable name. However, you should use meaningful, explicit names that follow the same naming conventions we discussed earlier. In the above example, we name the parameter <code>words</code> since the <code>say</code> function expects the caller to pass in some words. Other suitable names might be <code>sentence</code> or <code>text</code>.</p>
+</div>
+<p>When we call the <code>say</code> function, we must provide a value, an argument, for the <code>words</code> parameter. For instance, on line #5 we pass the value <code>"hello"</code> to the function, which it uses to initialize <code>words</code>. The function can use the value in any way it needs to. Note that the parameter's scope is the function definition; you can't use it outside of <code>say</code>.</p>
+<div class="alert-box info">
+<p>Programmers often talk about function <strong>invocation</strong> and <strong>invoking</strong> functions. The terms are synonymous with "call" and "calling." You <em>invoke a function</em> or write a <em>function invocation</em>. We use these terms as well.</p>
+<p>The local variable names between parenthesis (<code>()</code>) are properly called <strong>parameters</strong>, not arguments. Arguments are the values you pass into the function for each of those parameters. The parameter values inside the function are also called arguments. You can think of parameters as placeholders, while arguments refer to the values that get stored in the placeholders.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function add(left, right) { // left &amp; right are parameters here
+  let sum = left + right;   // left &amp; right are arguments here
+  return sum;
+}
+
+let sum = add(3, 6); // 3 and 6 are arguments
+</code></pre>
+<div class="alert-box warning">
+<p>Many developers conflate the terms "parameter" and "argument" and use them interchangeably. The difference is typically not crucial to understanding, but it's still a good idea to use the correct terminology. We'll strive to do so in the rest of this book.</p>
+</div>
+</div>
+<p>Let's return to <code>say.js</code>. When we call <code>say("hello")</code>, we pass the string <code>"hello"</code> as the argument that gets associated with the <code>words</code> parameter. The code within the function definition then executes with the <code>words</code> local variable assigned to <code>"hello"</code>.</p>
+<p>As mentioned earlier, one benefit that functions give us is the ability to make changes in one location. Suppose we want to add a <code>!</code> to the end of every string we send to <code>say</code>. All we have to do is change one line of code no matter how often we call <code>say</code>:</p>
+<pre class="language-js" data-file="say.js" data-numbers="off"><code class="language-js">function say(words) {
+  #highlight;
+  console.log(words + "!");
+  #endhighlight;
+}
+
+say("hello"); // =&gt; hello!
+say("hi"); // =&gt; hi!
+say("how are you"); // =&gt; how are you!
+say("I'm fine"); // =&gt; I'm fine!
+</code></pre>
+<p>Run this code to see the result. We've now added a <code>!</code> to each line after changing a single line of code. Now you're starting to see the power of functions.</p>
+<h2><a href="#returnvalues" name="returnvalues">Return Values</a></h2>
+<p>All of the functions we've written so far display text on the console. They can do much more. One common use case is to perform an operation and <strong>return</strong> a result to the call location for later use. We do that with <strong>return values</strong> and the <code>return</code> statement.</p>
+<p>All JavaScript function calls evaluate to a value. By default, that value is <code>undefined</code>; this is the <strong>implicit return value</strong> of most JavaScript functions. However, when you use a <code>return</code> statement, you can return a specific value from a function. This is an <strong>explicit return value</strong>. Outside of the function, there is no distinction between implicit and explicit return values, but it's important to remember that all functions return something unless they raise an exception, even if they don't execute a <code>return</code> statement.</p>
+<p>Let's create an <code>add</code> function that returns the sum of two numbers:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function add(a, b) {
+  return a + b;
+}
+
+add(2, 3); // returns 5
+</code></pre>
+<p>When you run this program, it doesn't log anything since <code>add</code> doesn't call <code>console.log</code> or any other output methods. However, the function does return a value: <code>5</code>. When JavaScript encounters the <code>return</code> statement, it evaluates the expression, terminates the function, and returns the expression's value to the location where we called it.</p>
+<p>Let's capture the return value in a variable and log it to the console to verify that:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let twoAndThree = add(2, 3);
+console.log(twoAndThree); // =&gt; 5
+</code></pre>
+<p>JavaScript uses the <code>return</code> statement to return a value to the code that called the function: the <strong>caller</strong>. If you don't specify a value, it returns <code>undefined</code>. Either way, the <code>return</code> statement causes the function to stop running and returns control to the caller.</p>
+<p>Functions that always return a boolean value, i.e., <code>true</code> or <code>false</code>, are called <strong>predicates</strong>. You will almost certainly encounter this term in future readings and videos, so commit it to memory.</p>
+<h2><a href="#defaultparametrs" name="defaultparameters">Default Parameters</a></h2>
+<p>When you define a function, you sometimes want to structure it so that you can call it without an argument. Let's update <code>say</code> to use a default value when the caller doesn't provide an argument.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function say(words = "hello") {
+  console.log(words + "!");
+}
+
+say("Howdy"); // =&gt; Howdy!
+say();        // =&gt; hello!
+</code></pre>
+<p>You'll notice that <code>say()</code>—without arguments—logs "hello!" to the console. Since we've provided a default value for <code>words</code>, we can call our function without arguments. Nice!</p>
+<h2><a href="#nestedfunctions" name="nestedfunctions">Nested Functions</a></h2>
+<p>You can create functions anywhere, even nested inside another function:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function foo() {
+  function bar() {
+    console.log("BAR");
+  }
+
+  bar(); // =&gt; BAR
+  bar(); // =&gt; BAR
+}
+
+foo();
+bar(); // ReferenceError: bar is not defined
+</code></pre>
+<p>Here, the <code>bar</code> function is nested within the <code>foo</code> function. Such nested functions get created and destroyed every time the outer function runs. (This has a mostly negligible effect on performance.) They are also private functions since we can't access a nested function from outside the function where it is defined.</p>
+<h2><a href="#functionsscope" name="functionsscope">Functions &amp; Scope</a></h2>
+<p>Let's take a few minutes to review the crucial concept of variable scope and learn how scope works with functions. In JavaScript, there are two types of variables based on where they're accessible: <strong>global</strong> variables and <strong>local</strong> variables. Global variables are available throughout a program, while local variables are confined to a function or a block. The keyword you use to declare a variable and the location where you declare it combine to determine whether the variable is global or local. Ignoring <code>var</code> for now, we'll focus on <code>let</code> and <code>const</code> instead. Where you declare a <code>let</code> or <code>const</code> variable determines whether the variable is global or local.</p>
+<h3>Global Variables</h3>
+<p>As the name suggests, global variables have a global scope, which means that they are available everywhere within a program. You can read and reassign them at any time. Any variable declared inside a function or block is a local variable - everything else is a global variable.</p>
+<p>Let's look at an example. Add the following code to a file named <code>greeting.js</code> and run it.</p>
+<pre class="language-js" data-file="greeting.js" data-numbers="off"><code class="language-js">let greetingMessage = "Good Morning!";
+console.log(greetingMessage);
+</code></pre>
+<p>The result is predictable; it logs <code>'Good Morning!'</code> to the console. The <code>greetingMessage</code> variable is a global variable since it isn't part of a function definition. Its declaration is at the global level, so its scope is global.</p>
+<p>Let's change our program slightly by writing a function that uses <code>greetingMessage</code>:</p>
+<pre class="language-js" data-file="greeting.js" data-numbers="off"><code class="language-js">let greetingMessage = "Good Morning!";
+
+function greetPeople() {
+  console.log(greetingMessage);
+}
+
+greetPeople();
+</code></pre>
+<p>This program produces the same output as before. However, here we use <code>greetingMessage</code> from within the function. We can do that since <code>greetingMessage</code> is a global variable, which means we can use it anywhere. We can even reassign global variables from inside a function.</p>
+<pre class="language-js" data-file="greeting.js"><code class="language-js">let greetingMessage = "Good Morning!";
+
+function greetPeople() {
+  console.log(greetingMessage);
+}
+
+function changeGreetingMessage(newMessage) {
+  greetingMessage = newMessage;
+}
+
+changeGreetingMessage("Good Evening");
+greetPeople(); // =&gt; 'Good Evening'
+</code></pre>
+<p>We've added a <code>changeGreetingMessage</code> function to our program that reassigns <code>greetingMessage</code> to a new string supplied as an argument. Line 11 invokes the function, passing in the <code>'Good Evening'</code> string, which becomes the new value for the global <code>greetingMessage</code>.</p>
+<p>Global variables can be useful in some scenarios, e.g., application-wide configuration. However, most developers discourage their use since they often lead to bugs. In general, you should limit the scope of your variables as much as possible; smaller variable scopes limit the risk that an outer scope might misuse the variable.</p>
+<h3>Local Variables</h3>
+<p>As the name suggests, local variables in JavaScript have a local scope, meaning that you can't access them outside the function that declares them. As with global variables, where you declare a local variable determines its scope.</p>
+<p>Let's see an example of local variables in action.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function greetPeople() {
+  let greetingMessage = "Good Morning!";
+  console.log(greetingMessage);
+}
+
+greetPeople();
+</code></pre>
+<p>The above code is functionally identical to the first example in the previous section. However, it doesn't use any global variables. The <code>greetPeople</code> function declares <code>greetingMessage</code> internally. It's accessible within the function, but a <code>ReferenceError</code> occurs if you try to use it elsewhere.</p>
+<pre class="language-js" data-file="greeting.js"><code class="language-js">function greetPeople() {
+  let greetingMessage = "Good Morning!";
+  console.log(greetingMessage);
+}
+
+greetPeople();
+console.log(greetingMessage); // raises ReferenceError
+</code></pre>
+<p>Try running the above program with <code>node</code> to see the error message.</p>
+<p>This discussion raises a question: how can we ask <code>greetPeople</code> to output a different greeting message if we've hard-coded our greeting message on line 2? The answer is function arguments, of course:</p>
+<pre class="language-js" data-file="greeting.js" data-numbers="offm"><code class="language-js">function greetPeople(greetingMessage) {
+  console.log(greetingMessage);
+}
+
+greetPeople("Good Morning!");
+</code></pre>
+<p>The <code>greetingMessage</code> parameter acts like a local variable. It <em>is</em>, in fact, a local variable. The chief difference is that we initialize it from the argument passed to the function. Parameters have local scope within a function.</p>
+<p>That brings us to another important property of local variables. Local variables are short-lived; they go away when the function that corresponds to their scope stops running. When we invoke the function, we start a new scope. If the code within that scope declares a new variable, that variable belongs to the scope. When the last bit of code in that scope finishes running, the local variables in that scope go away. JavaScript repeats this process each time we invoke a function.</p>
+<p>Thus far, we've talked about variables scoped to a function definition. Another way to scope variables locally is to use block-scoping. We've already discussed it in the <em>Variables</em> chapter, and we'll expand on it further in the next chapter. For now, block scoping occurs when you use <code>let</code> or <code>const</code> inside a block and confines the variable's scope to that block.</p>
+<p>Variable scoping is a crucial topic in programming. A solid grasp of the concept is essential to fluency with any programming language. We explore it in great detail in our introductory courses at Launch School.</p>
+<h2><a href="#functionsvsmethods" name="functionsvsmethods">Functions vs. Methods</a></h2>
+<p>Thus far, all our function calls used <code>functionName(obj)</code> syntax. We call a function by writing parentheses after its name and passing it zero or more arguments. If you want to convert a string to all uppercase letters, you might expect to use a function call like <code>toUpperCase(string)</code>. However, you need to use a different syntax called <strong>method invocation</strong>.</p>
+<p>Method invocation occurs when you prepend a variable name or value followed by a period (<code>.</code>) to a function invocation, e.g. <code>'xyzzy'.toUpperCase()</code>. We call such functions <strong>methods</strong>. We cover this topic in more detail in the Core Curriculum. For now, think of the previous code as the method <code>toUpperCase</code> returning a modified version of the string <code>'xyzzy'</code>.</p>
+<p>It's unfortunate, but there is no easy way to determine whether you need to use a function or method call for any given function. You must read the documentation or study the source code.</p>
+<h2><a href="#mutatingthecaller" name="mutatingthecaller">Mutating the Caller</a></h2>
+<p>Sometimes a method permanently alters the object that invokes the method: it <strong>mutates the caller</strong>. To contrast this with non-mutating methods, let's see an example:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let name = "Pete Hanson";
+console.log(name.toUpperCase()); // =&gt; 'PETE HANSON'
+console.log(name);               // =&gt; 'Pete Hanson'
+</code></pre>
+<p>The <code>toUpperCase</code> string method performs a non-mutating (non-destructive) operation. It preserves the previous value of the string: '<code>Pete Hanson</code>'. Non-mutating methods like <code>toUpperCase()</code> often return a new value or object, but leave the caller unchanged.</p>
+<p>Some methods permanently alter the object. We'll use an array method to illustrate. We haven't talked about arrays in detail yet, but we have enough knowledge for this example:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let oddNumbers = [1, 3, 5, 7, 9];
+oddNumbers.pop();
+console.log(oddNumbers); // =&gt; [1, 3, 5, 7]
+</code></pre>
+<p>The <code>pop()</code> method removes the last element from an array, but it does so destructively: the change is permanent. Where the String <code>toUpperCase</code> method returns a new value that's a changed version of the original string, <code>pop</code> alters the array in-place. In other words, it mutates its caller (the array).</p>
+<p>We can also talk about whether functions mutate their arguments. Let's create a function that illustrates this concept:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function changeFirstElement(array) {
+  array[0] = 9;
+}
+
+let oneToFive = [1, 2, 3, 4, 5];
+changeFirstElement(oneToFive);
+console.log(oneToFive); // =&gt; [9, 2, 3, 4, 5]
+</code></pre>
+<p>This code uses the <code>[index]</code> syntax to change the first element of the array that we pass to the <code>changeFirstElement</code> function. When the function finishes running, we can see that the original array changed.</p>
+<p>Not all functions behave like that; none of our greeting functions alter the values we passed them. To see an example of a non-destructive array function, let's create a function that adds a new element to an array and returns the new array:</p>
+<pre class="language-js"><code class="language-js">function addToArray(array) {
+  return array.concat(10);
+}
+
+let oneToFive = [1, 2, 3, 4, 5];
+console.log(addToArray(oneToFive)); // =&gt; [1, 2, 3, 4, 5, 10]
+console.log(oneToFive);             // =&gt; [1, 2, 3, 4, 5]
+</code></pre>
+<p>The <code>concat</code> method returns a new array that contains a copy of the original array combined with the additional elements that we supply with the arguments. Since <code>concat</code> creates a copy of the original array and then mutates the copy, it leaves the original array intact, as shown on line #7.</p>
+<p>One non-obvious point here is that mutation is a concern when dealing with arrays and objects, but not with primitive values like numbers, strings, and booleans. Primitive values are <strong>immutable</strong>. That means their values never change: operations on immutable values always return new values. Operations on <strong>mutable</strong> values (arrays and objects) may or may not return a new value and may or may not mutate data.</p>
+<p>How do you know which methods mutate the caller and which don't? It's useful to know that all primitive values are immutable, so this question never arises when dealing with them. However, there's no way to tell whether a function mutates an array or object. You have to use the documentation or memorize it through repetition.</p>
+<p>We discuss object mutation in much more detail in our courses at Launch School.</p>
+<div class="alert-box info">
+<p>If you have experience programming in other languages and wonder whether JavaScript is a pass-by-value or pass-by-reference language, JavaScript is both! It uses pass-by-value when dealing with primitive values and pass-by-reference with objects and arrays.</p>
+</div>
+<h2><a href="#functioncomposition" name="functioncomposition">Function Composition</a></h2>
+<p>Let's look at some simple examples of combining functions. First, let's define <code>add</code> and <code>subtract</code> functions and call them:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+let sum = add(20, 45);
+console.log(sum); // =&gt; 65
+
+let difference = subtract(80, 10);
+console.log(difference); // =&gt; 70
+</code></pre>
+<p>Both <code>add</code> and <code>subtract</code> have two parameters and return the result of performing an arithmetic operation on, what we assume, are numeric values.</p>
+<p>This works fine. However, in a process called <strong>function composition</strong>, JavaScript lets us use a function call as an argument to another function. Stated differently, we're saying that we can pass <code>add(20, 45)</code> and <code>subtract(80, 10)</code> as arguments to another function:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">console.log(add(20, 45)); // =&gt; 65
+console.log(subtract(80, 10)); // =&gt; 70
+</code></pre>
+<p>Passing the function call's return value to <code>console.log</code> is the canonical example of function composition in JavaScript. It's useful but uninteresting. Life gets more interesting when you pass function call results to a function that does something more complicated:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function times(num1, num2) {
+  return num1 * num2;
+}
+
+console.log(times(add(20, 45), subtract(80, 10))); // =&gt; 4550
+// 4550 == ((20 + 45) * (80 - 10))
+</code></pre>
+<p>Here, we pass the return values of <code>add(20, 45)</code> and <code>subtract(80, 10)</code> to the <code>times</code> function, and we pass the return value of <code>times</code> to <code>console.log</code>! It produces the same result as the following verbose code:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let sum = add(20, 45);
+let difference = subtract(80, 10);
+let result = times(sum, difference);
+console.log(result);
+</code></pre>
+<p>Let's see an even more complicated example:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">add(subtract(80, 10), times(subtract(20, 6), add(30, 5))); // =&gt; 560
+</code></pre>
+<p>Let's break down what this code does:</p>
+<ol>
+<li> First, we pass two arguments to <code>add</code>: <code>subtract(80, 10)</code> and <code>times(subtract(20, 6), add(30, 5))</code>.
+</li>
+<li> The first argument—the <code>subtract</code> function call—returns <code>70</code>.
+</li>
+<li> The second argument, the <code>times</code> function call, furthermore has two arguments: <code>subtract(20, 6)</code> and <code>add(30, 5)</code>.
+
+<ul>
+<li> <code>subtract(20, 6)</code> returns <code>14</code>
+</li>
+<li> <code>add(30, 5)</code> returns <code>35</code>
+</li>
+<li>  using the return values, the entire function call becomes <code>times(14, 35)</code>
+</li>
+<li>  the overall value of the <code>times</code> call is <code>490</code>
+</li>
+</ul>
+</li>
+<li> Using the return values from steps 2 and 3, we get <code>add(70, 490)</code> which returns <code>560</code>.
+</li>
+</ol>
+<p>We've seen that function calls always return a value, and we can pass that function call as an argument to another function call. Thus, it's vital to know what values our functions return. In the final analysis, those values get passed as arguments to other functions.</p>
+<h2><a href="#threewaystodefineafunction" name="threewaystodefineafunction">Three Ways to Define a Function</a></h2>
+<p>Thus far, we've studied one way to define functions in JavaScript:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function functionName(zeroOrMoreArguments...) {
+  // function body
+}
+</code></pre>
+<p>In JavaScript, we call a function definition that looks like that a <strong>function declaration</strong>. A notable property of function declarations is that you can call the function before you declare it. We'll learn why that is in the Core Curriculum; for now, all you need to know is that you don't have to declare functions before calling them.</p>
+<p>Let's see an example of invoking a function before declaring it:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">greetPeople();
+
+function greetPeople() {
+  console.log("Good Morning!");
+}
+</code></pre>
+<p>Add the above code to a <code>.js</code> file and run it with node. You'll see that it works without raising any errors.</p>
+<p>Let's see another way to define a function called a <strong>function expression</strong>.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let greetPeople = function () {
+  console.log("Good Morning!");
+};
+
+greetPeople();
+</code></pre>
+<p>That might look a little strange, but it's JavaScript that you'll see often. Most of it looks like a standard function declaration. However, since we're saving it to a variable, it's a function expression instead. Function expressions have one key difference from a function declaration: you cannot invoke a function expression before it appears in your program.</p>
+<p>Our example declares a variable named <code>greetPeople</code> and assigns it to the function expression after the <code>=</code> sign. We can do that since JavaScript functions are <strong>first-class functions</strong>. The key feature of first-class functions is that you can treat them like any other value. In fact, <strong>all JavaScript functions are objects</strong>. Thus, you can assign them to variables, pass them as arguments to other functions, and return them from a function call. The implications are far-reaching, though you won't really appreciate why that is until later in the Core Curriculum.</p>
+<div class="alert-box info">
+<p>The space after the word <code>function</code> in a function expression is not required, so many programmers omit it:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let greetPeople = function() {
+  console.log("Good Morning!");
+};
+</code></pre>
+<p>There's no one accepted style for whether the space should be included. Whether you do is up to your team's style guide or your personal preferences. At LaunchSchool, we don't enforce a style for the spacing. You'll see both styles in our material.</p>
+</div>
+<p>Any function definition that doesn't have the word <code>function</code> at the very beginning of a statement is a function expression. Even wrapping what looks like a function declaration in parentheses creates a function expression:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">(function greetPeople() { // This is a function expression, not a declaration
+  console.log("Good Morning!");
+});
+</code></pre>
+<p>Another common example of function expressions occur in higher-order functions, a concept we won't explore in this book, but should show:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function makeGreeter(name) {
+  return function greeter() {
+    console.log(`Hello ${name}`);
+  };
+}
+</code></pre>
+<p>Don't worry too much about what that code does. However, look closely at the definition of the <code>greeter</code> function. That is not a function declaration -- it's a function expression.</p>
+<p>There's a third kind of function in JavaScript called an <strong>arrow function</strong>. Syntactically, arrow functions look radically different from function declarations and expressions. Let's look at one:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let greetPeople = () =&gt; console.log("Good Morning!");
+greetPeople();
+</code></pre>
+<p>Wow! That's quite a departure from the functions we've seen so far. Arrow functions are similar to function expressions, but they use a different syntax. The differences are not merely syntactic, however. We'll discuss them in more detail in the Core Curriculum.</p>
+<p>For now, let's look at one interesting property of arrow functions: implicit returns. First, we'll convert the <code>add</code> function from the previous section to use arrow function syntax:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let add = (a, b) =&gt; a + b;
+</code></pre>
+<p>That's much shorter! Note the lack of a <code>return</code> statement. We can omit it in arrow functions <em>when and only when the function body contains a single expression</em> (the expression may have subexpressions, but the entire expression must evaluate to a single value). Suppose it contains two or more expressions or statements. In that case, you must explicitly return a value if you need it, and you must also use curly braces:</p>
+<div class="alert-box info">
+<p>Run the following code in your browser's console; it won't work in Node! If you don't see a dialog that asks you to enter a number, move the console window out of the way.</p>
+</div>
+<pre class="language-js"><code class="language-js">let add = (a, b) =&gt; a + b;
+let getNumber = (text) =&gt; {
+  let input = prompt(text);
+  return Number(input);
+};
+
+let number1 = getNumber("Enter a number: ");
+let number2 = getNumber("Enter another number: ");
+console.log(add(number1, number2));
+</code></pre>
+<p>On line #2, we define an arrow function that requires one parameter. The parentheses around the parameter name are optional in this case and are often omitted.</p>
+<h2><a href="#callstack" name="callstack">The Call Stack</a></h2>
+<p>One important aspect of functions that all programmers need to understand is the concept of the <strong>call stack</strong>, or more casually, the <strong>stack</strong>.</p>
+<p>The call stack helps JavaScript keep track of what function is executing as well as where execution should resume when the function returns. To do that, it works like a stack of books: if you have a stack of books, you can put a new book on the top or remove the topmost book from the stack. In much the same way, the call stack puts information about the current function on the top of the stack, then removes that information when the function returns.</p>
+<p>Let's assume that we have the following code:</p>
+<pre class="language-js"><code class="language-js">function first() {
+  console.log("first function");
+}
+
+function second() {
+  first();
+  console.log("second function");
+}
+
+second();
+</code></pre>
+<p>When this program starts running, the call stack initially has one item -- called a <strong>stack frame</strong> -- that represents the global (top-level) portion of the program. The initial stack frame is sometimes called the <code>main</code> function. JavaScript uses this frame to keep track of what part of the main program it is currently working on.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">main</td>
+</tr>
+</tbody>
+</table>
+<p>When program execution reaches the function invocation on line 10, it first updates the <code>main</code> stack frame with the current program location. JavaScript will use this location later to determine where execution should resume when <code>second</code> finishes running.</p>
+<p>After setting the location in the current stack frame, JavaScript creates a new stack frame for the <code>second</code> function and places it on the top of the call stack: we say that the new frame is <strong>pushed</strong> onto the stack. Our call stack now looks like this:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">second</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the frame for the <code>second</code> function is now <em>stacked</em> on top of the <code>main</code> frame. While the <code>second</code> frame is still on the stack, <code>main</code> remains stuck beneath it, inaccessible. At the same time, the <code>main</code> function becomes dormant and the <code>second</code> function becomes active.</p>
+<p>The <code>second</code> function calls the <code>first</code> function on line 6. That action causes JavaScript to update the <code>second</code> frame so that JavaScript will know where to resume execution later. It then creates a new stack frame for the <code>first</code> function and pushes it to the call stack.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">first</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 6</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>Once the <code>first</code> function begins executing, it invokes the <code>console.log</code> method. All JavaScript functions and methods, including the built-in ones like <code>console.log</code>, share the same call stack. Therefore, we need to record our current location and then push a new frame to the stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">console.log</td>
+</tr>
+<tr>
+<td style="text-align: center">first: line 2</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 6</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>Chances are, <code>console.log</code> also has several internal function calls. However, we will ignore them and just assume that <code>console.log</code> does all its work without any additional function calls. Instead, it just logs the message <code>first function</code> to the console, then immediately returns.</p>
+<p>When <code>console.log</code> returns, JavaScript removes -- <strong>pops</strong> -- the top frame from the call stack. That's the frame for <code>console.log</code> in this example. That leaves the previous stack frame exposed. JavaScript uses this frame to determine where execution should resume. In this case, execution resumes immediately after line 2.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">first: line 2</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 6</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>Eventually, the <code>first</code> function will return. When that happens, the <code>first</code> frame gets popped from the stack. That exposes the stack frame for <code>second</code>, and that, in turn, tells JavaScript that it should resume execution on line 6.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 6</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>Next, control passes to the <code>console.log</code> call on line 7. Before <code>console.log</code> is called, the stack frame for <code>second</code> is adjusted to point to line 7:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 7</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>We now invoke <code>console.log</code> again. When that happens, it gets added to the stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">console.log</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 7</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>When <code>console.log</code> finishes, its stack frame gets popped from the stack, and control returns to <code>second</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">second: line 7</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>second</code> method then finishes executing, which causes its stack frame to be removed from the stack, exposing the stack frame for <code>main</code>. The <code>main</code> frame tells JavaScript to resume execution on line 10.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">main: line 10</td>
+</tr>
+</tbody>
+</table>
+<p>Eventually, the <code>main</code> function has no more code to run. When this happens, the <code>main</code> frame gets popped from the stack, and the program ends.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Call Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+</tr>
+</tbody>
+</table>
+<div class="alert-box info">
+<p>The call stack has a limited size that varies based on the JavaScript implementation. That size is usually sufficient for more than 10000 stack entries. If the stack runs out of room, you will see a <code>RangeError</code> exception together with a message that mentions the stack.</p>
+</div>
+<div class="alert-box info">
+<p>If you need a slightly more visual approach, take 10 minutes to watch <a href="https://www.youtube.com/watch?v=W8AeMrVtFLY">this video</a>.</p>
+</div>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>Functions and methods are fundamental concepts in JavaScript programming. Knowing what a function does is crucial to your development as a JavaScript programmer. You'll use them all the time, in programs both big and small.</p>
+<p>Understanding variable scope is essential towards becoming fluent with JavaScript. Function composition is something you'll use often, and understanding mutation helps you catch and avoid an entire class of bugs. There are multiple ways to declare functions: function declarations, function expressions, and arrow functions.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>What does this code log to the console? Does executing the <code>foo</code> function affect the output? Why or why not?</p>
+<pre class="language-js"><code class="language-js">let bar = 1;
+function foo() {
+  let bar = 2;
+}
+
+foo();
+console.log(bar);
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The code logs <code>1</code> to the console. <code>foo</code> doesn't affect the value assigned to <code>bar</code> on line 1 since JavaScript functions create an inner scope. Thus, the <code>bar</code> variable on line 3 is not the same as the one on line 1. In the end, <code>foo()</code> has no bearing on the final output.</p>
+<p>Compare this result to the following code:</p>
+<pre class="language-js"><code class="language-js">let bar = 1;
+function foo() {
+  bar = 2;
+}
+
+foo();
+console.log(bar);
+</code></pre>
+<p>In this case, <code>console.log</code> would log 2 since <code>bar</code> on line 1 is now in scope within the function. Thus, line 3 changes the global variable <code>bar</code> to 2.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>In the exercises for the previous chapter, you wrote a dynamic greeter program named <code>greeter.js</code>. Add a function to this program that solicits the user's first and last names in separate invocations; the function should return the appropriate name as a string.  Use the return values to greet the user with their full name.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_db1e3f4f4e76" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_db1e3f4f4e76">
+<p>You need to pass a prompt argument to the function.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function getName(prompt) {
+  let readlineSync = require('readline-sync');
+  let name = readlineSync.question(prompt);
+  return name;
+}
+
+let firstName = getName('What is your first name? ');
+let lastName = getName('What is your last name? ');
+console.log(`Hello, ${firstName} ${lastName}!`);
+</code></pre><p>Note how creating a function and giving it a meaningful name makes the intent of the program's main body a little clearer.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a program that uses a <code>multiply</code> function to multiply two numbers and returns the result. Ask the user to enter the two numbers, then output the numbers and result as a simple equation.</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ node multiply.js
+Enter the first number: 3.141592653589793
+Enter the second number: 2.718281828459045
+3.141592653589793 * 2.718281828459045 = 8.539734222673566
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function multiply(left, right) {
+  return left * right;
+}
+
+function getNumber(prompt) {
+  let readlineSync = require('readline-sync');
+  return parseFloat(readlineSync.question(prompt));
+}
+
+let left = getNumber('Enter the first number: ');
+let right = getNumber('Enter the second number: ');
+console.log(`${left} * ${right} = ${multiply(left, right)}`);
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What does the following code log to the console?</p>
+<pre class="language-js"><code class="language-js">function scream(words) {
+  words = words + '!!!!';
+  return;
+  console.log(words);
+}
+
+scream('Yipeee');
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>It doesn't log anything. The <code>return</code> on line 3 terminates the function before it can log anything.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What does the following code log to the console?</p>
+<pre class="language-js"><code class="language-js">function scream(words) {
+  return words + '!!!!';
+}
+
+scream('Yipeee');
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>This program also doesn't log anything. The function returns a value, <code>Yipeee!!!!</code>, but it doesn't do anything with it. In particular, it doesn't write it to the console.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to Programming with JavaScript/6.html">Next:  Flow Control
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

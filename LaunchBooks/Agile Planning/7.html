@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Agile Planning: From Ideas to Story Cards</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":1,"applicationTime":157,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Agile Planning: From Ideas to Story Cards" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="9c3f-gWd5BT1vkv8ivLto8XrLP096oYsdIQpATdKJ9j61LmCUg8h-AqKMI-ZCW1YzO5ieHX9mu2OkEw52ZWGog" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/agile_planning">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/agile_planning/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareispowerful"><span>Software Is Powerful</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareiscomplex"><span>Software Is Complex</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#ourgoal"><span>Our Goal</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/what_is_agile"><span class="chapter_title">What is Agile?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#butseriouslywhatisagile"><span>But Seriously, What is Agile?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#thevaluesofagile"><span>The Values of Agile</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#workingsoftware"><span>Working Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#howdowegetthere"><span>How Do We Get There?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/why_is_process_important"><span class="chapter_title">Why is Process Important?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#commonpitfalls"><span>Common Pitfalls</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#itsaboutcare"><span>It's Really About Care</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>The Planning Process</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/process_overview"><span class="chapter_title">Process Overview</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/process_overview#wheredoesthisfit"><span>Where Does This Fit?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#letsfocus"><span>Let's Focus</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#rememberitsacycle"><span>Remember It's A Cycle</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/concept_to_personas"><span class="chapter_title">Concept to Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#ideasareeasy"><span>Ideas are Easy</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whoareyourusers"><span>Who Are Your Users?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#howtocreateapersona"><span>How to Create a Persona</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#thisisntawasteoftime"><span>This Isn't A Waste of Time</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/writing_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatisascenario"><span>What is a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whyarescenariosimportant"><span>Why are Scenarios Important?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#howdowewriteascenario"><span>How do we Write a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#focusonthecore"><span>Focus on the Core</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/story_boarding_and_wire_frames"><span class="chapter_title">Story Boarding and Wire Frames</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatisstoryboarding"><span>What is Storyboarding?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#drawingstoryboards"><span>Drawing Storyboards</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#wireframing"><span>Wireframing</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/epics_and_stories"><span class="chapter_title">Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#thegravelfactory"><span>The Gravel Factory</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatisauserstory"><span>What is a User Story?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#astoryisjustaplaceholder"><span>A Placeholder for a Conversation</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#buildingthebacklog"><span>Building the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#creatingepics"><span>Creating Epics</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#breakingdownepicstostories"><span>Breaking Down Epics to Stories</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/advanced_stories"><span>Stories Advanced Material</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/product_backlog"><span class="chapter_title">Product Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatisabacklog"><span>What is the Product Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatdoesitlooklike"><span>What Does the Backlog Look Like?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsinabacklog"><span>What is in the Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsnext"><span>What's Next?</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>A Cohesive Example</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/cohesive_example"><span class="chapter_title">Concept Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#ourteam"><span>Our Team</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#trelloourfirsttool"><span>Trello: Our First Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#concept"><span>The Application Concept</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_personas"><span class="chapter_title">Developing Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#startwiththeuser"><span>Start With The User</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thecontentconsumer"><span>The Content Consumer</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#theapplicationadministrator"><span>The Application Administrator</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thepersonarolerelationship"><span>The Persona-Role Relationship</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#ourfirstscenario"><span>Our First Scenario</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#thenextscenarios"><span>The Next Scenarios</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#adminscenarios"><span>Admin Scenarios</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_storyboarding"><span class="chapter_title">Storyboards and Wireframes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboarding"><span>Storyboarding</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#ournexttool"><span>Our Next Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboardwhennessesary"><span>Storyboard When Necessary</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#buildingoutwireframes"><span>Building Out Wireframes</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#awireframingtool"><span>A Wireframing Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#addingcontentwireframe"><span>Adding Content Wireframes</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_epics_and_stories"><span class="chapter_title">Fleshing out Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#epicscomefirst"><span>Epics Come First</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#theseedofsoftware"><span>The Seed of Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#storybreakdown"><span>Story Breakdown</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_backlog"><span class="chapter_title">Revewing the Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#orderingthebacklog"><span>Ordering the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#addingacceptancecriteria"><span>Adding Acceptance Criteria</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/whats_next"><span class="chapter_title">What's Next</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/whats_next#arewereadytocode"><span>Are They Ready to Code?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/whats_next#conclusion"><span>In Conclusion</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/agile_planning/read/epics_and_stories&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/agile_planning/read/epics_and_stories" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/agile_planning">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/agile_planning/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareispowerful"><span>Software Is Powerful</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareiscomplex"><span>Software Is Complex</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#ourgoal"><span>Our Goal</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/what_is_agile"><span class="chapter_title">What is Agile?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#butseriouslywhatisagile"><span>But Seriously, What is Agile?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#thevaluesofagile"><span>The Values of Agile</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#workingsoftware"><span>Working Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#howdowegetthere"><span>How Do We Get There?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/why_is_process_important"><span class="chapter_title">Why is Process Important?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#commonpitfalls"><span>Common Pitfalls</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#itsaboutcare"><span>It's Really About Care</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>The Planning Process</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/process_overview"><span class="chapter_title">Process Overview</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/process_overview#wheredoesthisfit"><span>Where Does This Fit?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#letsfocus"><span>Let's Focus</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#rememberitsacycle"><span>Remember It's A Cycle</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/concept_to_personas"><span class="chapter_title">Concept to Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#ideasareeasy"><span>Ideas are Easy</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whoareyourusers"><span>Who Are Your Users?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#howtocreateapersona"><span>How to Create a Persona</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#thisisntawasteoftime"><span>This Isn't A Waste of Time</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/writing_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatisascenario"><span>What is a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whyarescenariosimportant"><span>Why are Scenarios Important?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#howdowewriteascenario"><span>How do we Write a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#focusonthecore"><span>Focus on the Core</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/story_boarding_and_wire_frames"><span class="chapter_title">Story Boarding and Wire Frames</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatisstoryboarding"><span>What is Storyboarding?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#drawingstoryboards"><span>Drawing Storyboards</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#wireframing"><span>Wireframing</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/epics_and_stories"><span class="chapter_title">Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#thegravelfactory"><span>The Gravel Factory</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatisauserstory"><span>What is a User Story?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#astoryisjustaplaceholder"><span>A Placeholder for a Conversation</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#buildingthebacklog"><span>Building the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#creatingepics"><span>Creating Epics</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#breakingdownepicstostories"><span>Breaking Down Epics to Stories</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/advanced_stories"><span>Stories Advanced Material</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/product_backlog"><span class="chapter_title">Product Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatisabacklog"><span>What is the Product Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatdoesitlooklike"><span>What Does the Backlog Look Like?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsinabacklog"><span>What is in the Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsnext"><span>What's Next?</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>A Cohesive Example</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/cohesive_example"><span class="chapter_title">Concept Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#ourteam"><span>Our Team</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#trelloourfirsttool"><span>Trello: Our First Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#concept"><span>The Application Concept</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_personas"><span class="chapter_title">Developing Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#startwiththeuser"><span>Start With The User</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thecontentconsumer"><span>The Content Consumer</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#theapplicationadministrator"><span>The Application Administrator</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thepersonarolerelationship"><span>The Persona-Role Relationship</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#ourfirstscenario"><span>Our First Scenario</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#thenextscenarios"><span>The Next Scenarios</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#adminscenarios"><span>Admin Scenarios</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_storyboarding"><span class="chapter_title">Storyboards and Wireframes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboarding"><span>Storyboarding</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#ournexttool"><span>Our Next Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboardwhennessesary"><span>Storyboard When Necessary</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#buildingoutwireframes"><span>Building Out Wireframes</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#awireframingtool"><span>A Wireframing Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#addingcontentwireframe"><span>Adding Content Wireframes</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_epics_and_stories"><span class="chapter_title">Fleshing out Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#epicscomefirst"><span>Epics Come First</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#theseedofsoftware"><span>The Seed of Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#storybreakdown"><span>Story Breakdown</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_backlog"><span class="chapter_title">Revewing the Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#orderingthebacklog"><span>Ordering the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#addingacceptancecriteria"><span>Adding Acceptance Criteria</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/whats_next"><span class="chapter_title">What's Next</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/whats_next#arewereadytocode"><span>Are They Ready to Code?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/whats_next#conclusion"><span>In Conclusion</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/agile_planning/read/epics_and_stories&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/agile_planning/read/epics_and_stories" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Epics and Stories</h1>
+<p>Over the course of the last several chapters we've detailed parts of the agile planning process designed to take a software application from initial conception through detailed user interface wireframes. This chapter marks a turning point in the agile planning process, where we really get specific about what we are going to build by methodically breaking down our scenarios, storyboards, and wireframes (our <em>artifacts</em>) into smaller and more well defined chunks in order to achieve some key goals:</p>
+<ul>
+<li>Smaller chunks of functionality are easier to estimate in terms of complexity, thus providing a facility to plan for development capacity and timing.
+</li>
+<li>The process of breaking down large features squashes out ambiguity and flushes out assumptions about how something will work.
+</li>
+<li>Small chunks of functionality are more likely to be completed during the course of a typical development iteration (sprint) and allow the team to continuously deliver working software.
+</li>
+</ul>
+<h2><a href="#thegravelfactory" name="thegravelfactory">The Gravel Factory</a></h2>
+<p>Before we dive into the nitty-gritty process, we will begin with a metaphor for how we should think about breaking down our artifacts into the smaller chunks of functionality (known as "Epics") and the still further smaller chunks (known as "User Stories" or just plain "Stories").</p>
+<p>Imagine your goal is to continuously deliver a fine grade of gravel to your customers, who happen to need it to build roads, foundations and so forth. You start with huge boulders delivered from the quarry, the size of cars. None of these are even remotely usable by your customers, they know that ultimately the boulders will turn into the gravel, but need them to be crushed first. Your factory starts by exploding a boulder into much smaller rocks. And then takes several of the rocks and crushes them into stones. And finally a portion of these stones and grinds them into the final gravel your customers need.</p>
+<p><img height="450" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/rock_evolution.png" width="650"/> </p>
+<p>This is how we should think about breaking down an application into Epics and Stories. This story is designed to illustrate two lessons:</p>
+<ol>
+<li>
+<strong>This breakdown process is just-in-time.</strong> Note that we specifically <strong>did not</strong> explode all of the boulders to rocks at once, nor grind all the stones to gravel. Why? Well that would take a lot of time, and our customers need the gravel <em>now!</em> Also what if one customer wanted a finer or coarser grade of gravel? If we did all the processing at once we could only provide one type. Similarly while breaking down our artifacts, we try to do so such that we can deliver Stories to the development team just-in-time for them to work on them.
+</li>
+<li>
+<strong>This breakdown process is continuous.</strong> When we talk about the breakdown process, we are talking about a continuous process, but one that does indeed <em>begin</em> when a project kicks off. Just as new boulders will arrive at the gravel factory, so too will new user scenarios, wireframes, and storyboards be generated as the product or application grows. Each will need to be continuously broken down into smaller and smaller parts <strong>before</strong> the development team can start working on those parts.
+</li>
+</ol>
+<p>You'll notice that this breakdown process is very similar to the process overview we discussed earlier. A large idea is broken into several smaller ones, then one of those is further divided and so forth. In order for the software developers to continuously deliver working, valuable software, we must first continuously deliver detailed specifications.</p>
+<p><img height="450" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/epic_rocks.jpg" width="650"/> </p>
+<h2><a href="#whatisauserstory" name="whatisauserstory">What is a User Story?</a></h2>
+<p>In the context of Agile software development, a user story (or epic) is a very specific thing. It is a way to describe application functionality in a way that focuses on the end user and the benefits they derive from the feature. (Source: <a href="https://www.scrumalliance.org/community/articles/2013/september/agile-user-stories.aspx">https://www.scrumalliance.org/community/articles/2013/september/agile-user-stories.aspx</a>)</p>
+<p>There is a specific format used to write user stories, they don't need to be long and involved, they only need three parts:</p>
+<pre class="language-irb"><code class="language-irb">In order to _achieve some value_
+As a _user type_
+I want to _perform an action_
+</code></pre>
+<p>This can be just as correctly written user first:</p>
+<pre class="language-irb"><code class="language-irb">As a _user type_
+I want to _perform an action_
+In order to _achieve some value_
+</code></pre>
+<p>Some organizations prefer to focus first on the user involved, some prefer to focus on the value derived. You should decide early on in a project what your format is and stick to it.  Each of the lines is necessary to form a good user story or epic:</p>
+<h3>User Type: The Who</h3>
+<p>The user type should describe a class of the application user, these should typically map back to the either the personas we created or specific application roles. Defining the user helps the whole development team understand who will be using the feature, and what their motivations and needs are. For example:</p>
+<pre class="language-irb"><code class="language-irb">As a soccer mom user...
+</code></pre>
+<p>Would set a different context than:</p>
+<pre class="language-irb"><code class="language-irb">As a corporate executive user...
+</code></pre>
+<h3>Perform an Action: The What</h3>
+<p>The action is the actual functionality that the story describes, this is ultimately what will be expanded into either more detailed stories (in the case of epics) or detailed acceptance criteria. The scope of this action helps to classify the size of the story. Here is an example of a small action statement:</p>
+<pre class="language-irb"><code class="language-irb">I want to save a single todo item...
+</code></pre>
+<p>And one which is more involved:</p>
+<pre class="language-irb"><code class="language-irb">I want to organize my todos into categories...
+</code></pre>
+<p>Determining how "big" a story or epic is can become more art than science and is something that will come with experience. We discuss a little later about ways to think about the size of a story.</p>
+<h3>Achieve Some Value: The Why</h3>
+<p>The final part of a user story is describing the value that is achieved for the user by implementing the desired functionality. This sentence describes <em>why</em> we are even bothering to build the functionality and sets context for everyone involved in the planning process. When developers know the reason behind the need to build a certain feature, they are better positioned to use their creativity to deliver a quality solution. For example, in the story:</p>
+<pre class="language-irb"><code class="language-irb">As a soccer mom user
+I want to organize my todos into categories
+In order to focus on a specific set of items while working
+</code></pre>
+<p>The last line let's us know why the user wants to do this organization.</p>
+<p>It's important to remember that the value described in the user story should be aligned to the user in the story. It is value <em>they</em> are trying to achieve which will in turn create value for the total product and business. You should avoid the "because I said so" type of user stories, for example:</p>
+<pre class="language-irb"><code class="language-irb">As soccer mom user
+I want to link my social media profiles to my account
+In order that the marketing team can track social engagement
+</code></pre>
+<p>Clearly if you asked any of our example users, they almost certainly would not have the interests of the marketing team motivating their desire for features. By writing stories this way or, worse, not providing the "why" at all, allows lots of assumptions to creep into the feature specification process. If the why is not provided, a sinister "implied why" might be inferred: "because story writer knows best," which stifles the necessary negotiation over the priority of a feature, how it's implemented, and if it is even needed. Furthermore, having user stories motivated by non-user needs is a sure-fire way to lead to feature bloat, delivering an overly complicated application that isn't geared toward solving the users' problems.</p>
+<h2><a href="#astoryisjustaplaceholder" name="astoryisjustaplaceholder">A Placeholder for a Conversation</a></h2>
+<p>A user story is composed of three parts: the who, the what, and the why. But remember that ultimately a user story is just a placeholder for further discussion among the team. We avoid specifying details and implementation in user stories precisely to encourage the conversation and defer specifics until the last possible moment, when we know the most.</p>
+<p>Would you pack for a weekend camping trip 3 months in advance? You could, but you'd either have to pack all sorts of different things to account for the weather or risk packing your hot weather gear, only to have it rain the whole weekend. It would be better to pack the night before, knowing with confidence what the weather will be like.</p>
+<p>We take this same approach in both the specification and breakdown of user stories and epics. We make a note of the feature, in the form of the story, and then when it is ready to be worked on, bring all of the most up-to-date information to bare. What does this look like for an example story? Consider the following:</p>
+<pre class="language-irb"><code class="language-irb">As a soccer mom user
+I want to share a todo category with a friend
+In order that they can help me with my tasks
+</code></pre>
+<p>There are a lot of details and specifics that are required to actually implement this feature. You might be thinking of several questions as you read through it. The best place for these details to be fleshed out are conversations with the product designers. Ron Jeffries developed a concept called "The 3 Cs" to describe story creation and the necessary discussion: Card, Conversation and Confirmation:</p>
+<h3>Card</h3>
+<p>Whether you enter your user stories in a software base management tool or really write them on an index card, all user stories should be thought of as being on a card. Cards are small and can't contain a lot of information, just the simple <em>As a...</em>, <em>I want to...</em>, <em>In order to...</em>. It "does not contain all the information that makes up the requirement. Instead, the card has just enough text to identify the requirement, and to remind everyone what the story is. The card is a token representing the requirement."  (Source: <a href="http://xprogramming.com/articles/expcardconversationconfirmation/">http://xprogramming.com/articles/expcardconversationconfirmation/</a>)</p>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sticky-note.png"/></p>
+<p>We have a general idea of what the above story might look like: the user will probably go to their todo categories page, select a category, chose the share option, select a friend, and have some facility to manage their friends. The story is sufficient to evoke an <em>idea</em> of what is going on in the minds of the development team.</p>
+<h3>Conversation</h3>
+<p>The conversation is critical to turning the simple story into something that can actually be built. In the discussions with product managers and designers, software developers will learn the ins and outs of the feature, what the interface should look like, what the user experience flow should be, what performance requirements are needed and so forth. Stories are planned iteratively, each time with more information known. In the discussions we might learn how the friend selection interface should look, that we have a have a set of social network integrations we need to support, that there should be a button on a todo category page that says "Share with Friend," and other things like this.</p>
+<h3>Confirmation</h3>
+<p>The confirmation step is a way to formally capture the many conversations that take place in defining a story. These can take the form of documentation, use cases or design wireframes, but the best way to confirm a story is to write acceptance tests.</p>
+<p>The conversations that occur in preparing a story might be captured by a list of specific tests that could (and should) be automatically run to verify that what we wanted to build with the simple story sentences is built fully to everyone's satisfaction. This is where the rubber meets the road. One example of a confirmation acceptance test for our example story would be:</p>
+<pre class="language-irb"><code class="language-irb">Given I am on the "todo categories" page
+And I have a todo category called "Work"
+And I have a friend called "Sue"
+When I click the link "Work"
+And I click the "Share with Friend" button
+And I select "Sue" from the "Friends" drop down
+And I press the "Confirm Share" button
+Then I should see "The Work category has been shared with your friend Sue!"
+And "Sue" should have access to my category "Work"
+</code></pre>
+<p>This is just one of many necessary acceptance tests that will be needed to get everyone on the exact same page with regards to what actually needs to be built.</p>
+<p>By remembering that a story (or epic) is just a placeholder for a conversation, you will be in the right frame of mind for the actual process of breaking down our user scenarios into smaller and smaller pieces. A team can get bogged down discussing implementations and spit-balling about great features and how things work. By focusing on user needs and deferring the details until you are ready to build, you can efficiently create a large product backlog with considerable flexibility in final implementation.</p>
+<h2><a href="#buildingthebacklog" name="buildingthebacklog">Building the Backlog</a></h2>
+<p>Now that you have a fairly good handle on what a story is and how to write a good one, you are prepared to learn about the process of "crushing that gravel." That is, breaking down the large user scenarios into epic level stories, and then smaller stories, so that you have a bulk of work that can be planned and built.</p>
+<h3>The Story Writing Workshop</h3>
+<p>At the beginning and through the development of an Agile software product, the product development team will collaborate on filling out the backlog of user stories. Though typically composed of product managers and designers, it is important to also include test engineers and developers as their unique perspective can inform the writing process. Engineers could say that something is nearly impossible, or help decide if a story needs to be broken down further or other stories combined based on technical difficulty. "Anyone can write user stories. It's the product owner's responsibility to make sure a product backlog of Agile user stories exists, but that doesn't mean that the product owner is the one who writes them. Over the course of a good Agile project, you should expect to have user story examples written by each team member. Also, note that who writes a user story is far less important than who is involved in the discussion of it." (Source: <a href="https://www.scrumalliance.org/community/articles/2013/september/agile-user-stories.aspx">https://www.scrumalliance.org/community/articles/2013/september/agile-user-stories.aspx</a>)</p>
+<p>The workshop should not be considered a one-time thing, but the first of several used to bulk up the backlog for development. A project might begin with one large writing workshop, then as the product develops, stories will be regularly added and prioritized into the backlog. </p>
+<p>The goal of the initial story writing process is to create enough estimable stories that the development team can use to plan a release, which we will cover in the next chapter. You may start a project with several user scenarios, which each could expand out into numerous epics, and then those in turn would turn into many stories. If your team were to attempt to break down the whole of the product into every story, it would be very difficult, if not impossible for two reasons:</p>
+<ol>
+<li>
+<strong>Fatigue</strong> - There is no way a product team could realistically work together for the days it would take to write out hundreds of user stories. After a few hours, people will grow tired, less concerned with the task at hand and lose the creative edge. Break the workshop into a couple of small meetings, with defined goals. Give people a chance to mentally recuperate.
+</li>
+<li>
+<strong>Uncertainty</strong> - Many of the features may not be wholly known during the writing workshop, the very process of participating in the workshop may create new questions, new feature ideas, and opportunities for further user research. It might simply not be possible to define all the stories so far in the future. Furthermore, likely the needs of the user could change, the team will discover more required features along the way, and ones which initially were thought important might become irrelevant.
+</li>
+</ol>
+<p>And so as you work through your process of breaking down scenarios, be strategic about it. You may leave some scenarios until future workshops. Break down the most important into several epics, and pick several high priority epics to break down into stories. Remember the gravel metaphor: the development team needs small, well defined stories to plan and execute, the first workshop is simply to get the project started.</p>
+<h2><a href="#creatingepics" name="creatingepics">Creating Epics</a></h2>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/epics.jpg"/></p>
+<p>To illustrate some of the nuances that arise while breaking down user scenarios, let's work through an example based on two of the previously listed user scenarios. Here they are again:</p>
+<h3>Scenario 4: Organizing Todos into Lists</h3>
+<p><em>Janet has lots of things to keep track of at work, at home, with her kids, and some times she has missed important todo items because they have been cluttered up with less important ones. She finally has a little free time while waiting for her kids at the schools pick up area. She pulls our her iPad and launches our application. She creates a few "lists" for different areas in her life: work, kids, finances, errands, dog, and home. Then she starts moving all of her existing todos into each of the lists. When she is done her todo list is very organized and at a glance she can see what needs doing. At work she focuses on the "work" list, and when she is talking with her children she is sure to add any relevant items to the "kids" list.</em></p>
+<h3>Scenario 5: Sharing Todo Lists with Friends</h3>
+<p><em>Janet is relived that her husband is home for a few days from one of his many business trips. He has a few days off, but its a particular busy week for Janet and she is hoping she can offload some of her typical todos onto her husband. The house is out of a ton of groceries and the kids need materials to build a science project. She creates a list for "groceries" and jots down all of the items they need from the store, she also moves in the todo item "construction paper" from the "errands" list and "dog food" from the "dog" list. She then shares this list with her husband. He receives an email and is able to view and mark things completed on this todo list. He goes to the store and gets everything that they need.</em></p>
+<p>Once the team has decided which high priority user scenarios it will try to fulfill, the next step will be to define several epic level user stories with the goal of capturing the critical tasks that the users complete when interacting with the software. It might be helpful to think of epics as blocks of functionality that have value to the end user in total, while the stories that they are composed of, even though they do deliver value to the user, need to be joined to other valuable stories to "actually do anything that's really valuable." For example:</p>
+<pre class="language-irb"><code class="language-irb">As a User
+I want to reset my password
+In order to access the application again
+</code></pre>
+<p>This could be thought of as more of an epic when compared to the stories to which it might be further broken down:</p>
+<pre class="language-irb"><code class="language-irb">As a User
+I want to receive an email with password reset instructions
+So I can finish the password reset process
+</code></pre>
+<p>Alternatively, it could also be helpful to simply describe the stories as needed to break apart the scenario, and then revisit them, classifying those that need further granularity as epics, and those that could realistically be built in a sprint as a story.</p>
+<p>After a team has spent some time with both of the above scenarios, they might come up with several epics that define core user tasks:</p>
+<pre class="language-irb"><code class="language-irb">As a soccer mom user
+I want to organize my todos into categories
+In order to focus on a specific set of items while working
+
+As a soccer mom user
+I want to manage my todo categories
+So that I can keep them organized and up to date
+
+As a soccer mom user
+I want to share a category with a friend
+In order that they could help me with my tasks
+
+As a non todo app user
+I want to access a category which has been shared with me
+So I can help the app user with their tasks
+
+As a soccer mom user
+I want to manage which categories have been shared
+So I can un-share them if I need to
+</code></pre>
+<p>These are just some of many epics (and these are reasonably sized epics) that may come about while working though the break down process. As the team discusses the user needs they'll inevitably cover things like account management, profiles, security, and so on. It's important that the team steers the discussion toward achieving specific user scenarios, and tables some of the "nice-to-haves" for future planning sessions. There can be a lot of value in just building the "minimum" required to achieve the user needs. The software is less bloated, can be delivered more quickly, and time can be devoted to validating other features before they are rolled into the product backlog. Check out the advanced material at the end of the chapter for more information on building the minimum.</p>
+<h2><a href="#breakingdownepicstostories" name="breakingdownepicstostories">Breaking Down Epics to Stories</a></h2>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/stories.jpg"/></p>
+<p>After several high priority epics have been developed, the team may switch gears and start further breaking down some of the epics into more granular stories. Let's take a look at one of our epics and then several of the stories it might spawn:</p>
+<pre class="language-irb"><code class="language-irb">As a soccer mom user
+I want to share a category with a friend
+In order that they can help me with my tasks
+</code></pre>
+<p>This epic is a little vague and one you start thinking about all the moving parts that would go in to building it, it quickly becomes apparent that it could be split into several more atomic stories:</p>
+<pre class="language-irb"><code class="language-irb">As a soccer mom user
+I want to add a friend to my account
+So that I can share a todo list with the friend
+
+As a soccer mom user
+I want to remove a friend from my account
+So they won't be able to access categories I had shared with them
+
+As a soccer mom user
+I want to share a category with an existing friend
+In order that they could help me with my tasks
+
+As a soccer mom user
+I want to see which todo items my friend has marked completed
+So I can keep track of which ones I've done versus them
+</code></pre>
+<p>There likely could be additional stories to support the epic of sharing a todo category. Notice that each of the above stories is valuable in the context of the epic, but not really valuable in and of themselves. There is some close dependencies with these stories, but they are still relatively independent and negotiable. The team could defer several of these stories if conditions warrant and still achieve the intent of the epic.</p>
+<p>Writing good user stories is as much of an art as it is a science, a skill you will improve over time as you practice and understand your product and development team. Writing user stories collaboratively can improve the process. More questions will be asked, silly mistakes avoided, and higher quality stories will be developed. As stories are ultimately built, make a note of which ones were difficult to plan further or build, and see if there are any patterns and adjust accordingly. Just as with everything in Agile software development, use feedback loops to constantly improve.</p>
+<h2><a href="#whatsnext" name="whatsnext">What's Next</a></h2>
+<p>In this chapter we took our product design artifacts (personas, scenarios, storyboards, and wireframes) and discussed continuously defining feature requirements at a more and more granular level, so that engineers have a very clear idea of <em>what</em> they are to build.</p>
+<p>You should have a good sense of:</p>
+<ul>
+<li>What a user story is, and how to write a good one.
+</li>
+<li>How we break down user scenarios into epics and then user stories.
+</li>
+<li>That these processes are continuous, often happening on a large scale at the beginning of the project, and many times throughout the project.
+</li>
+</ul>
+<p>In the next chapter we will discuss the concept of the <em>product backlog</em> which is the large set of all the stories and epics you created while working through this chapter.</p>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Agile Planning/8.html">Next:  Stories Advanced Material
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

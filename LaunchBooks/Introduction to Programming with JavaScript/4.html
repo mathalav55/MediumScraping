@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Interfacing with the outside world in JavaScript</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":124,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="The most basic method that a program can use to interact with the outside world is taking keyboard input from the command line and then displaying output back to the command line." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="R-julizwHfN4QIroqsJM9tTcXzmRcNrI3m2zk6BorgVOOcnevtgCUnnMGlkZaeX4pzMzsiVEUSvlv8ToN3FlNA" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Interfacing+with+the+outside+world+in+JavaScript&amp;url=https://launchschool.com/books/javascript/read/input_output&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/input_output" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Interfacing+with+the+outside+world+in+JavaScript&amp;url=https://launchschool.com/books/javascript/read/input_output&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/input_output" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Input/Output</h1>
+<p>Computers and software don't live in isolation. They are tools that solve real-world problems, which means that they must interact with the real world. A computer needs to take input from some source, perform some actions on that input, and then provide output.</p>
+<p>Computer programs can use a multitude of input sources, such as mice, keyboards, disks, the network, and environmental sensors. Similarly, a program can write output to multiple places, such as the screen, a log, or a network.</p>
+<p>A computer can obtain input from another computer's output. For example, when you enter your login credentials for a website, your computer encrypts those credentials and sends them to the website's authentication server, which then inputs the data and attempts to verify your identity. In this fashion, two computers can work together to perform different parts of a common task.</p>
+<p>In this chapter, we'll discuss the most basic method that a program can use to interact with the outside world: reading keyboard input from the command line and displaying output.</p>
+<h2><a href="#commandlineoutput" name="commandlineoutput">Command Line Output</a></h2>
+<p>You've already seen one method for writing data: <code>console.log</code>. This built-in function takes any JavaScript value, regardless of type, and logs it to the console. Let's see an example. Create a file named <code>greetings.js</code> with the following content:</p>
+<pre class="language-js" data-file="greetings.js" data-numbers="off"><code class="language-js">let name = 'Jane';
+console.log(`Good morning, ${name}!`);
+</code></pre>
+<p>In this simple example we initialize a <code>name</code> variable with the string <code>'Jane'</code>, then use it in a template literal string to build and display a greeting message. Run the program with <code>node</code> to see it in action:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">&gt; node greetings.js
+Good morning, Jane!
+</code></pre>
+<p>There are other ways to send messages to the console in <code>node</code>, but <code>console.log</code> works in both <code>node</code> and most browsers. You can run the above code in a browser and see the same results in the browser's console. The <em>Preparations</em> chapter shows you how to run JavaScript in a browser and how to open Chrome's developer console.</p>
+<h2><a href="#commandlineinput" name="commandlineinput">Command Line Input</a></h2>
+<p>In the previous example, we assigned a value to <code>name</code> and displayed a fixed greeting message that uses that name. That's probably not the most exciting thing you've seen today. We <strong>hard-coded</strong> the name into a variable, which means that the program will always use the same name. If we want to greet a different person, we have to modify the program and run it again. You probably wouldn't bother using a program that worked like that.</p>
+<p>Can we ask the user to provide her name and greet her with a message that uses the name she entered? Yes, we can. Node.js has an API called <strong>readline</strong> that lets JavaScript programs read input from the command line. However, the API isn't straightforward or simple: it requires an understanding of asynchronous programming and higher-order functions. We don't explore these concepts in this book. For now, we can use a simplified version of the readline library called <strong>readline-sync</strong>.</p>
+<div class="alert-box info">
+<p>To install readline-sync, you must first create a <code>package.json</code> file in the current directory. Use the <code>ls</code> command to see if there is one already:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ ls package.json
+package.json
+</code></pre>
+<p>If you see this output, you already have a <code>package.json</code> file and can skip the rest of this info box. If, however, you see an error message, you need to run the <code>npm init -y</code> command:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ ls package.json
+ls: cannot access 'package.json': No such file or directory
+
+$ npm init -y
+Wrote to .../package.json:
+
+{
+  "name": "Downloads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+</code></pre>
+</div>
+<p>Once you have a <code>package.json</code> file, you can install <code>readline-sync</code> as follows:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ npm install readline-sync --save
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN Downloads@1.0.0 No description
+npm WARN Downloads@1.0.0 No repository field.
+
++ readline-sync@1.4.10
+added 1 package from 1 contributor and audited 1 package in 0.423s
+found 0 vulnerabilities
+</code></pre>
+<p>You should see output similar to that shown above. You can usually ignore those messages unless you see some <code>npm ERR!</code> messages.</p>
+<p>The <code>npm install</code> command with a <code>--save</code> option installs the package in the <code>node_modules</code> subdirectory of your current directory. By placing it in this subdirectory, any Node.js programs stored in the current directory can require the package with a simple call to <code>require</code>, as we'll see in the following example:</p>
+<h3>Example: Greet the User By Name</h3>
+<p>Let's use <code>readline-sync</code> to write a program that displays a personalized greeting message for the user based on the name she provides. Create a file named <code>personalized_greeting.js</code> with the following code:</p>
+<pre class="language-js" data-file="personalized_greeting.js"><code class="language-js">let rlSync = require('readline-sync');
+let name = rlSync.question("What's your name?\n");
+console.log(`Good Morning, ${name}!`);
+</code></pre>
+<p>Run the program from the command line with <code>node</code>. It displays the <code>What's your name?</code> question, then waits for your input. When you enter a name and hit Return, the program displays a custom greeting message:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ node personalized_greeting.js
+What's your name?
+Sarah
+Good Morning, Sarah!
+</code></pre>
+<p>This example needs a little explanation. Line 1 uses Node's built-in <code>require</code> function to import <code>readline-sync</code> into your program. It returns the library as an object, which we assign to the <code>rlSync</code> variable.</p>
+<p>In line 2, we use <code>rlSync</code> to call the <code>question</code> method. This method displays its string argument, then waits for the user to respond. When the user types some text and presses Return, it returns that text to the program. Here, we assign that text to the variable <code>name</code> and use it to display a personalized greeting.</p>
+<h3>Example: Add Two Numbers Together</h3>
+<p>Let's write a program that asks for two numbers from the user, adds them, then displays the result. Put the following code in a new file called <code>sum_numbers.js</code> and then run it:</p>
+<pre class="language-js" data-file="sum_numbers.js"><code class="language-js">let rlSync = require('readline-sync');
+
+let number1 = rlSync.question('Enter the first number\n');
+let number2 = rlSync.question('Enter the second number\n');
+let sum = number1 + number2;
+
+console.log(`The numbers ${number1} and ${number2} add to ${sum}`);
+</code></pre>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ node sum_numbers.js
+Enter the first number
+2
+Enter the second number
+3
+The numbers 2 and 3 add to 23
+</code></pre>
+<p>Hmm. Something isn't right. The program reports that the result is <code>23</code>, not <code>5</code> like we want. Where do you think the problem lies? If you said that <code>question</code> returns strings so <code>+</code> performs concatenation, you're right! Since <code>number1</code> and <code>number2</code> both hold string values instead of numbers, the <code>+</code> operator concatenates them instead of adding them. If you want to add two variables arithmetically, both variables must have the Number data type.</p>
+<p>As we learned earlier, we can convert (coerce) strings to numbers with the <code>Number</code> function. Update lines 3 and 4 from <code>sum_numbers.js</code> to match this code:</p>
+<pre class="language-js" data-file="sum_numbers.js" data-numbers="off"><code class="language-js">let rlSync = require('readline-sync');
+
+#highlight
+let number1 = Number(rlSync.question('Enter the first number\n'));
+let number2 = Number(rlSync.question('Enter the second number\n'));
+#endhighlight
+let sum = number1 + number2;
+
+console.log(`The numbers ${number1} and ${number2} add to ${sum}`);
+</code></pre>
+<p><code>rlSync.question()</code> still returns a string, but this time we coerce each string to a number with the <code>Number</code> function. With numbers in both variables, JavaScript adds them arithmetically. Verify that the revised program reports the answer as <code>5</code>.</p>
+<p>Be sure to play with these examples a bit. You can, for example, replace addition with subtraction or multiplication in the above example. Try to think of some applications of <code>rlSync.question</code> on your own.</p>
+<p>In general, I/O (Input/Output) in Node is a complex topic that requires knowledge of concepts that we haven't learned yet. They're essential concepts, but we don't discuss them in this book; we cover them in the Core Curriculum. Until then, we can use <code>readline-sync</code> to interact with users.</p>
+<h2><a href="#inputinthebrowser" name="inputinthebrowser">Input in the Browser</a></h2>
+<p>Browsers provide an environment that differs radically from that of Node.js: browser users must interact with JavaScript programs in an entirely different way. Real-world browser applications let users click on buttons, enter text, select checkboxes and radio buttons, and even adjust sliders. These actions provide input to the application, which then performs work in response, such as changing the page content, sending data to a database, or displaying some additional content.</p>
+<p>Working with a browser's input controls requires a working knowledge of the Document Object Model (DOM), which is outside the scope of this book. However, you don't need to know about the DOM to get user inputs. Most browsers implement the <code>prompt</code> function which lets a program ask for and obtain text-based input from the user.</p>
+<p>Let's re-implement our personalized greeting program for the browser. First, we need to create an HTML file with the following content:</p>
+<pre class="language-html" data-file="personalized_greeting_browser.html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Testing Prompt&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src="personalized_greeting_browser.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>If you're unfamiliar with HTML, don't worry. All you need to know right now is that HTML filenames typically end with <code>.html</code>, and the <code>src</code> attribute in the <code>&lt;script&gt;</code> <em>tag</em> on line 7 identifies the name of a JavaScript file. When your browser encounters this tag, it loads the JavaScript file and executes the code that it contains.</p>
+<p>Since our HTML expects a <code>personalized_greeting_browser.js</code> file, go ahead and create one with the code shown below. Place it in the same directory as the HTML file:</p>
+<pre class="language-js" data-file="personalized_greeting_browser.js" data-numbers="off"><code class="language-js">let name = prompt("What's your name?");
+console.log(`Good Morning, ${name}`);
+</code></pre>
+<p>Open the HTML file in Chrome. You can use Chrome's File, Open File menu option. If you're using Windows without a menu bar in Chrome, try using <code>Control-O</code>. You should see a dialog that looks something like this:</p>
+<p><img alt="chrome's prompt" src="//d186loudes4jlv.cloudfront.net/javascript/images/browser_prompt.png"/></p>
+<p>The <code>prompt</code> function works much like <code>rlSync.question</code>: it waits for the user to input some text and click the 'OK' button, and then returns the user's input as a string. As with the Node.js version of this program, we can assign the return value to a variable and use it later in the program. In this example, our program uses the string to build a personalized greeting message and logs it to the console.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>These examples are simple, but they demonstrate how you can obtain user input, perform some work with that input, and then use the results to show some output to the user. This input/output cycle is at the heart of every computer program. After all, software that accepts no input and provides no output is useless.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Write a dynamic greeter program named <code>greeter.js</code>. The program should ask for your name, then output <code>Hello, {name}!</code> where <code>{name}</code> is the name you entered:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ node greeter.js
+What is your name? Sue
+Hello, Sue!
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-file="Node solution 1" data-numbers="off"><code class="language-js">let readlineSync = require('readline-sync');
+let name = readlineSync.question('What is your name? ');
+console.log('Hello, ' + name + '!');
+</code></pre><pre class="language-js" data-file="Node solution 2" data-numbers="off"><code class="language-js">let readlineSync = require('readline-sync');
+let name = readlineSync.question('What is your name? ');
+console.log(`Hello, ${name}!`);
+</code></pre>
+<pre class="language-js" data-file="Browser solution" data-numbers="off"><code class="language-js">let name = prompt('What is your name? ');
+console.log(`Hello, ${name}!`);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Modify the <code>greeter.js</code> program to ask for the user's first and last names separately, then greet the user with their full name.</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ node greeter.js
+What is your first name? Sue
+What is your last name? Roberts
+Hello, Sue Roberts!
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">let readlineSync = require('readline-sync');
+let firstName = readlineSync.question('What is your first name? ');
+let lastName = readlineSync.question('What is your last name? ');
+console.log(`Hello, ${firstName} ${lastName}!`);
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Modify the <code>age.js</code> program you wrote in the exercises for the <em>Variables</em> chapter. The updated code should ask the user to enter their age instead of hard-coding the age in the program. Here's an example run:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">How old are you? 22
+You are 22 years old.
+In 10 years, you will be 32 years old.
+In 20 years, you will be 42 years old.
+In 30 years, you will be 52 years old.
+In 40 years, you will be 62 years old.
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">let readlineSync = require('readline-sync');
+let age = readlineSync.question('How old are you? ');
+age = parseInt(age);
+console.log(`You are ${age} years old.`);
+console.log(`In 10 years, you will be ${age + 10} years old.`);
+console.log(`In 20 years, you will be ${age + 20} years old.`);
+console.log(`In 30 years, you will be ${age + 30} years old.`);
+console.log(`In 40 years, you will be ${age + 40} years old.`);
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to Programming with JavaScript/5.html">Next:  Functions
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

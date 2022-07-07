@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Core Ruby Tools</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":3,"applicationTime":158,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Core Ruby Tools" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="Sqzt97a03JwRU381XubJJdRns23rFGDudsS4n9yh57q6IgxUUi9LH4rX8Nln53cya6IwgxXm-qSFBaWpvI-Qig" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/core_ruby_tools">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Introduction to Core Ruby Tools</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/introduction"><span>Introduction</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/your_ruby_installation"><span class="chapter_title">Your Ruby Installation</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyoncloud9"><span>Ruby on Cloud9</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonmacs"><span>Ruby on a Mac</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonlinux"><span>Ruby on Linux</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatrubyamirunning"><span>What Ruby Am I Running?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatgetsinstalledwithruby"><span>What Gets Installed With Ruby?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/gems"><span class="chapter_title">Gems</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/gems#whataregems"><span>What are Gems?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#gemsrubyandyourcomputer"><span>Gems, Ruby, and your Computer</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/ruby_version_managers"><span class="chapter_title">Ruby Version Managers</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whatarervms"><span>What Are Ruby Version Managers?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whichrvm"><span>Which Ruby Version Manager Should I Use?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rvm"><span>RVM</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rbenv"><span>rbenv</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/bundler"><span class="chapter_title">Bundler</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#installingbundler"><span>Installing Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#gemfile"><span>Gemfile and Gemfile.lock</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#runningappswithbundler"><span>Running Apps With Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#wherearerubiesgemsapps"><span>Where Are My Rubies, Gems and Apps Now?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#bundleexec"><span>bundle exec</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#moreinfobundler"><span>More Info About Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/rake"><span class="chapter_title">Rake</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whatisrake"><span>What Is Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#howtouserake"><span>How Do You Use Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whyrake"><span>Why Do I Need Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#realworldexample"><span>A Real World Example</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#relationships"><span>Relationships</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#usefullinks"><span>Useful Links</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/core_ruby_tools/read/ruby_version_managers&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/core_ruby_tools/read/ruby_version_managers" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/core_ruby_tools">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Introduction to Core Ruby Tools</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/introduction"><span>Introduction</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/your_ruby_installation"><span class="chapter_title">Your Ruby Installation</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyoncloud9"><span>Ruby on Cloud9</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonmacs"><span>Ruby on a Mac</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonlinux"><span>Ruby on Linux</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatrubyamirunning"><span>What Ruby Am I Running?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatgetsinstalledwithruby"><span>What Gets Installed With Ruby?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/gems"><span class="chapter_title">Gems</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/gems#whataregems"><span>What are Gems?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#gemsrubyandyourcomputer"><span>Gems, Ruby, and your Computer</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/ruby_version_managers"><span class="chapter_title">Ruby Version Managers</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whatarervms"><span>What Are Ruby Version Managers?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whichrvm"><span>Which Ruby Version Manager Should I Use?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rvm"><span>RVM</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rbenv"><span>rbenv</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/bundler"><span class="chapter_title">Bundler</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#installingbundler"><span>Installing Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#gemfile"><span>Gemfile and Gemfile.lock</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#runningappswithbundler"><span>Running Apps With Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#wherearerubiesgemsapps"><span>Where Are My Rubies, Gems and Apps Now?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#bundleexec"><span>bundle exec</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#moreinfobundler"><span>More Info About Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/rake"><span class="chapter_title">Rake</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whatisrake"><span>What Is Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#howtouserake"><span>How Do You Use Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whyrake"><span>Why Do I Need Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#realworldexample"><span>A Real World Example</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#relationships"><span>Relationships</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#usefullinks"><span>Useful Links</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/core_ruby_tools/read/ruby_version_managers&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/core_ruby_tools/read/ruby_version_managers" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Ruby Version Managers</h1>
+<p>In the previous chapter, we discussed RubyGems and how they interact with Ruby and your local file system. In that discussion, we casually mentioned that ruby version managers play a role in how Ruby uses Gems. However, we did not go into detail. Specifically, we did not discuss what ruby version managers are nor what services they provide to a developer who is writing and using Ruby programs. In this chapter, we will talk about those topics.</p>
+<h2><a href="#whatarervms" name="whatarervms">What Are Ruby Version Managers?</a></h2>
+<p><strong>Ruby version managers</strong> are programs that let you install, manage, and use multiple versions of Ruby. If you're just getting started with Ruby, you may wonder why you could possibly need to use more than one version of Ruby. Chances are, the programs you've written so far are "version agnostic"; that is, they don't rely on features of Ruby that depend on any specific ruby version. If you do rely on such features, the ones you use all run well in whatever version of Ruby you use, so you're not even aware that you're using version-specific features.</p>
+<p>However, this won't always be the case: Ruby is an evolving language with features added, modified, and deleted with every new version. Eventually, you're going to write or use a Ruby program that needs a different version of Ruby, and that's when you will find that you need a Ruby version manager.</p>
+<p>To provide an idea of what might change, here's a short list of some major changes to Ruby over the past few major versions at the time of this writing:</p>
+<ul>
+<li>
+<p>Version 1.9: Changed block variables to require local variables; Introduced <code>{ a: 5, b: 6 }</code> syntax for hashes with symbol keys; Many incompatible changes.</p>
+</li>
+<li>
+<p>Version 2.0: Added keyword arguments; Added <code>%i()</code> syntax for symbol arrays.</p>
+</li>
+<li>
+<p>Version 2.2: Removed several obsolete libraries.</p>
+</li>
+<li>
+<p>Version 2.3: Added squiggle heredocs (<code>&lt;&lt;~HERE</code>); Added safe navigation operator (<code>&amp;.</code>); Added <code>#positive?</code>, <code>#negative?</code>, and <code>#zero?</code> methods to the <code>Numeric</code> class.</p>
+</li>
+</ul>
+<p>As you can see, every new version has some changes; sometimes, programs that run on older versions of Ruby no longer work in more recent versions. Someday, you will need to install another version of Ruby without removing your current Ruby.</p>
+<p>Another reason to use Ruby version managers is when working on multiple applications. Software applications tend to standardize on a specific Ruby version in order to guarantee developers don't use unsupported language features. For example, you may be asked to help out with an existing project that has standardized on Ruby version 2.1, but your current local Ruby version is 2.3, which you need to work on your current projects. In that case, you will need the assistance of a Ruby version manager to help you manage and move between different Rubies as you switch between different projects.</p>
+<h2><a href="#whichrvm" name="whichrvm">Which Ruby Version Manager Should I Use?</a></h2>
+<p>There are two major ruby version managers in common use: <a href="https://rvm.io/">RVM</a> and <a href="https://github.com/rbenv/rbenv">rbenv</a>. (There are others as well, like <code>chruby</code>, but their use is much less widespread.) They take different approaches to the problem of using multiple versions of Ruby, but the result is the same: you can easily use multiple versions of Ruby on the same system.</p>
+<p>Which version manager should you use, though? This partly depends on your own preferences and needs, but most people can just pick one and start using it. Functionally, the two systems perform all the tasks most developers need. In most cases, there is little in the way of features to recommend one over the other.</p>
+<p>If you're using Cloud9 or a Linux system, we recommend RVM as it is easier to install and use. There are some problems with RVM on a Mac, however, mostly having to do with using older versions of Ruby, which we ask to you to do later. For that reason, you may want to use Rbenv on a Mac. If you have Homebrew installed, the easiest way to install Rbenv is with the <code>brew install rbenv</code> command.</p>
+<p>For information on how to install and use RVM or rbenv, see the documentation at the <a href="http://www.rvm.io">RVM</a> and <a href="https://github.com/sstephenson/rbenv">Rbenv</a> websites. In this book, we focus attention on how they interact with your system.</p>
+<h2><a href="#rvm" name="rvm">RVM</a></h2>
+<p>Figure 3 shows a typical installation of two different Ruby versions under RVM. This output assumes that <code>rvm</code> stores its files in <code>/usr/local/rvm</code>; depending on your system and installation, the directory may be elsewhere. For instance, a common location is <code>~/.rvm</code> (<code>~/</code> means your home directory).</p>
+<p><strong>Figure 3</strong></p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ tree /usr/local/rvm        # the following is partial output
+/usr/local/rvm               # RVM path directory
+├── gems
+│   ├── ruby-2.2.2
+│   │   ├── bin
+│   │   │   ├── bundle
+│   │   │   └── rubocop
+│   │   └── gems
+│   │       ├── bundler-1.12.5
+│   │       ├── freewill-1.0.0
+│   │       │   └── lib
+│   │       │       └── freewill.rb
+│   │       ├── pry-0.10.4
+│   │       └── rubocop-0.43.1
+│   └── ruby-2.3.1
+│       ├── bin
+│       │   ├── bundle
+│       │   └── rubocop
+│       └── gems
+│           ├── bundler-1.12.5
+│           ├── freewill-1.0.0
+│           │   └── lib
+│           │       └── freewill.rb
+│           ├── pry-0.10.4
+│           └── rubocop-0.45.0
+└── rubies
+    ├── ruby-2.2.2
+    │   └── bin
+    │       ├── gem
+    │       ├── irb
+    │       └── ruby
+    └── ruby-2.3.1
+        └── bin
+            ├── gem
+            ├── irb
+            └── ruby
+</code></pre>
+<p>Study the above diagram a little bit to get a feel for how RVM structures Rubies and their Gems.</p>
+<h3>How RVM Works</h3>
+<p>At RVM's core is a set of directories in which RVM stores all your Ruby versions, its associated tools (such as <code>gem</code> and <code>irb</code>), and its Gems. Each directory is specific to a given Ruby version. If you need Ruby 2.3.1, RVM uses the files in the <code>ruby-2.3.1</code> directory; if you need Ruby 2.2.2, it gets the files from the <code>ruby-2.2.2</code> directory. Note that the standard Ruby executables are found in the <code>rubies</code> subdirectory of RVM's main directory, while Gems are found in the <code>gems</code> subdirectory. Note also that the Gem version numbers can differ between Rubies: in this case, Ruby 2.2.2 uses Rubocop 0.43.1, while Ruby 2.3.1 uses Rubocop 0.45.0.</p>
+<p>RVM defines a shell function (see your shell's documentation for information on functions) named <code>rvm</code>. Your shell uses this function in preference to executing the disk-based <code>rvm</code> command. There are complex reasons behind using shell functions, but the main reason is that a function can modify your environment, while a disk-based command cannot.</p>
+<div class="alert-box info">
+<p>It's not important to know very much about shell functions. They are worth mentioning merely because they are uncommon. This distinction might be important if you ever need to diagnose problems with RVM.</p>
+</div>
+<p>When you run <code>rvm use VERSION</code> to change the Ruby version you want to use, you actually invoke the <code>rvm</code> function. It modifies your environment so that the various ruby commands invoke the correct version. For instance, <code>rvm use 2.2.2</code> modifies your <code>PATH</code> variable so that the <code>ruby</code> command uses the Ruby installed in the <code>ruby-2.2.2</code> directory. It makes other changes as well, but the <code>PATH</code> change is the most noticeable.</p>
+<p>Things get more interesting when you set a project-specific version of Ruby, as we'll see in Setting Local Rubies.</p>
+<p>If this sounds pretty complex, it is; but, in day-to-day use, it's mostly invisible. If you want to run, say, <code>rubocop</code> from the Ruby 2.2.2 directory, you tell RVM to use Ruby 2.2.2, then run the <code>rubocop</code> command. The system searches for a <code>rubocop</code> command in your <code>PATH</code>, and runs the first one it finds. Since the RVM directories usually occur early in your <code>PATH</code>, the system finds the desired <code>rubocop</code> command that pertains to Ruby 2.2.2. In Figure 3, we can see that the <code>rubocop</code> command lives in <code>/usr/local/rvm/gems/ruby-2.2.2/bin</code>.</p>
+<h3>Installing Rubies</h3>
+<p>One of the first things you should do with RVM is to install the Ruby versions you need. This is easy to do, and only needs to be done once for any particular version of Ruby.</p>
+<p>Let's say you're about to start work on a project that requires Ruby 2.2.2. The first thing you should do is to check whether you already have Ruby 2.2.2 installed. To do this, run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm list rubies
+
+rvm rubies
+
+   ruby-2.1.5 [ x86_64 ]
+=* ruby-2.3.1 [ x86_64 ]
+
+# =&gt; - current
+# =* - current &amp;&amp; default
+#  * - default
+</code></pre>
+<p>This command shows that you currently have Ruby versions 2.1.5 and 2.3.1 installed, and that version 2.3.1 is both the current version and the default version. Since the listing does not show version 2.2.2, we need to install it:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm install 2.2.2
+</code></pre>
+<div class="alert-box info">
+<p>You may get a warning that version 2.2.2 is obsolete, out-of-date, vulnerable to security issues, or just a plain bad idea to install. This is normal with older unsupported versions of Ruby. Ideally, you don't want to use these Rubies, but that's not always practical if you need the older version for an existing application.</p>
+<p>We specifically ask you to install version 2.2.2 here so we can demonstrate how to install and work with different versions of Ruby. You can uninstall 2.2.2 when you complete this chapter.</p>
+<p>If you still can't install 2.2.2, try something more recent, such as 2.4.10, 2.5.9, or 2.6.7 -- as long as it's older than your default ruby version. There may be some discrepancies with installing a more recent version, but the main idea is to get some practice with working with multiple versions of Ruby.</p>
+</div>
+<div class="alert-box info">
+<p>If you're using Cloud 9, attempting to install an older version of Ruby may produce an error that looks like this:</p>
+<pre class="language-plaintext"><code class="language-plaintext">curl: (23) Failed writing body (0 != 2750)
+There was an error(23).
+</code></pre>
+<p>If you see this error, try running the following commands to set up a more friendly environment in your Cloud 9 instance:</p>
+<pre class="language-terminal"><code class="language-terminal">$ rvm group add rvm "$USER"
+$ rvm fix-permissions
+$ rvm install 2.2.2
+</code></pre>
+<p>You should only need to run these commands once.</p>
+</div>
+<h3>Setting Local Rubies</h3>
+<p>Now that you have Ruby 2.2.2 installed, how do you tell RVM to use it? There are several ways, each described in RVM's documentation. The easiest way is to run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm use 2.2.2
+</code></pre>
+<p>As we saw earlier, this command modifies your environment to ensure that the first ruby your system finds is version 2.2.2. This same change also works for related commands such as <code>gem</code>, <code>irb</code> and <code>rubocop</code>.</p>
+<p>Usually, you won't use this command. Instead, you will define a default version, and then override the default on a directory-by-directory basis. To define the default version -- the Ruby version that RVM uses automatically in a new terminal session or shell -- just run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm use 2.3.1 --default
+</code></pre>
+<p>If you later set a different version as the current Ruby, you can restore the default with:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm use default
+</code></pre>
+<p>So far, so good. This is straightforward, and easily fits in with the <code>PATH</code> changes described in the previous section. Suppose, though, that you want to use a different version of Ruby with one of your projects? It's not too hard to switch versions with the <code>rvm use VERSION</code> command, but it is error prone: you will sometimes forget to change versions, and may also forget to switch back to the default ruby when you finish. Instead, you should automate the version changes. This is where things get a bit complex, though.</p>
+<p><a href="https://rvm.io/workflow/projects">There are several ways to do this</a>, but the easiest is to create a <code>.ruby-version</code> file in your project's root directory; the content of this file is just the version number of ruby that you want to use when using programs from that directory. For example, suppose we want to use Ruby 2.2.2 for the project in our <code>~/src/magic</code> directory. To do this, run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ cd ~/src/magic
+$ rvm --ruby-version use 2.2.2
+</code></pre>
+<p>This creates a <code>.ruby-version</code> file in the directory. Once set, you don't need to worry about setting the version for this project. For good measure, you should set your default version in your home directory:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ cd ~
+$ rvm --ruby-version default
+</code></pre>
+<p>This ensures that RVM uses the default Ruby when you aren't in the project directory.</p>
+<p>To make use of the <code>.ruby-version</code> file, RVM replaces the <code>cd</code> command from your shell with a shell function. This function invokes the real <code>cd</code> command, then checks for the <code>.ruby-version</code> file (it also checks for some other files we won't discuss). If it finds one of these files, it retrieves the version number from the file, and then modifies your environment in the same way the <code>rvm</code> function does. Thus, every time you change directories with the <code>cd</code> command, RVM modifies your environment to run the proper Ruby version.</p>
+<p>RVM also uses the <code>Gemfile</code> for ruby projects that use Bundler (described in the next chapter). If the <code>Gemfile</code> contains a <code>ruby</code> directive, RVM uses that version of ruby to run the program. Note, however, that the <code>.ruby-version</code> file takes precedence.</p>
+<p>See the <a href="https://rvm.io/">RVM</a> documentation for more information on this process.</p>
+<h3>Where Are My Rubies, Gems and Apps Now?</h3>
+<p>RVM creates a directory at installation known as the RVM path; it also installs all RVM-related files, including all the Rubies and Gems that it manages, in this directory. To determine the location of the RVM path, run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm info rvm
+</code></pre>
+<p>On the author's Cloud9 account, this displays:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">ruby-2.2.2:
+
+  rvm:
+    version:      "rvm 1.27.0 (latest) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]"
+    updated:      "2 months 6 days 20 hours 34 minutes 44 seconds ago"
+    path:         "/usr/local/rvm"
+</code></pre>
+<p>The <code>path</code> entry in that listing is the RVM path.</p>
+<p>As we see in Figure 3, there are two important subdirectories in the RVM path: the <code>rubies</code> directory, and the <code>gems</code> directory. The <code>rubies</code> directory contains all the rubies managed by RVM, as well as its associated utilities, libraries, and Gems. The <code>gems</code> directory has a similar structure, but each of the subdirectories contains a <code>bin</code> subdirectory: this directory contains the executable programs associated with your Gems, like <code>rubocop</code> and <code>bundle</code>.</p>
+<p>You may recall that <code>gem env</code> displays some interesting details about your Ruby and Gem configuration, most notably the directories it uses. After installing RVM, <code>gem env</code> still works; it shows you the details for the Ruby and Gem currently active in RVM; many of these files are under the RVM path.</p>
+<h3>When Things Go Wrong</h3>
+<p>RVM is a complex system. While problems are rare once you have it running, this complexity can sometimes get in the way of stability, especially since it modifies system commands like <code>cd</code> by invoking them through shell functions. There are many moving parts that have the potential to go wrong. They probably won't go wrong, but the potential remains.</p>
+<p>Given that, the most likely issue with RVM is that you get confused about which version of Ruby you are running, or you install or update Gems with the wrong <code>gem</code> command. When trying to diagnose an RVM problem, first make sure that you are using the correct Ruby version -- such problems are easier to see -- then check for Gem versioning issues.</p>
+<p>Here are some useful troubleshooting hints and commands:</p>
+<ul>
+<li>
+<p>Make sure your directory name does not include any spaces, and none of its ancestors (parents, grandparents, etc) do either. RVM does not currently support directory names with spaces.</p>
+</li>
+<li>
+<p><code>type cd | head -1 ; type rvm | head -1</code></p>
+<p>Use this command to verify that you are using the <code>cd</code> and <code>rvm</code> functions, not the built-in <code>cd</code> command nor the executable file <code>rvm</code>. These commands should print:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">cd is a function
+rvm is a function
+</code></pre>
+<p>If it does, everything is okay. Otherwise, the <code>cd</code> and <code>rvm</code> functions aren't defined properly and RVM fails to work.</p>
+<p>To load <code>cd</code> and <code>rvm</code> as functions, confirm that your shell startup file (<code>.profile</code>, <code>.bash_profile</code>, etc. -- see your specific shell's documentation) includes a command that looks like something like this:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">$ source "{RVM PATH}"/scripts/rvm"
+</code></pre>
+<p>(<code>{RVM PATH}</code> is the name of your RVM path.) This command should be near the end of the file, after any commands that set or modify your <code>PATH</code> variable or replace built-in commands with functions. If you must change the file, start a new terminal session after making the changes, then close any previously open terminal sessions.</p>
+</li>
+<li>
+<p><code>echo $PATH</code></p>
+<p>Confirm that the <code>{RVM PATH}/rubies-{VERSION}/bin</code> and <code>{RVM PATH}/gem/rubies-{VERSION}/bin</code> directories are present in your <code>PATH</code>, and listed before any other directories that may contain programs with the same name. If, for example, <code>/usr/bin</code> occurs before <code>{RVM_PATH}/rubies-{VERSION}/bin</code> in your PATH, your system may load the system version of Ruby instead of one managed by RVM.</p>
+</li>
+<li>
+<p><code>rvm info</code></p>
+<p>Displays a longish list of information about the current RVM environment. Similar to <code>gem env</code> in the information provided, but formatted differently, and includes RVM-specific information.</p>
+</li>
+<li>
+<p><code>rvm current</code></p>
+<p>Displays the active version of Ruby. If you see the wrong version displayed and don't understand why, see <a href="https://rvm.io/">the documentation</a>. The section on "Choosing the Ruby Version" is particularly important. If you use gemsets (see below), this command includes the gemset name in its output.</p>
+</li>
+<li>
+<p><code>rvm fix-permissions</code></p>
+<p>Repairs the permissions on RVM files. This may be useful if you accidentally use <code>sudo</code> to install, modify or update RVM, or any of its rubies or Gems. If you see "permission denied" messages on any of these files, try running this command.</p>
+</li>
+<li>
+<p><code>rvm repair all</code></p>
+<p>Repairs files that help RVM manage the different rubies. This may be useful if RVM seems completely broken in areas.</p>
+</li>
+<li>
+<p><code>rvm get latest</code></p>
+<p>Download and install the latest version of RVM. This is most useful when you are using a new or unfamiliar feature that may not be available or working correctly in your current version of RVM</p>
+</li>
+<li>
+<p><code>gem env</code></p>
+<p>Display configuration information about your RubyGems system.</p>
+</li>
+<li>
+<p><code>gem list</code></p>
+<p>Displays a list of all Gems installed for the current Ruby, along with their version numbers. For instance:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ gem list
+bundler (1.12.5)
+freewill (1.1.1, 1.0.0)
+pry (0.10.4)
+rubocop (0.43.1)
+</code></pre>
+<p>Note how this shows two different versions for the <code>freewill</code> Gem, which means that both versions are installed and available. If you switch to another Ruby version, the output will be different:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rvm use 2.1.5
+bundler (1.12.2)
+pry (0.10.1)
+rubocop (0.35.1)
+</code></pre>
+<p>Here, all of the Gem versions have changed, and the lack of an entry for <code>freewill</code> shows that it is not installed for this Ruby.</p>
+</li>
+<li>
+<p>Read the <a href="https://rvm.io/support/troubleshooting">official troubleshooting information for RVM</a>.</p>
+</li>
+</ul>
+<h3>RVM Gemsets</h3>
+<p>RVM supports something called gemsets. This feature provides capabilities similar to that provided by Bundler (discussed in the next chapter): it lets you tie specific Gems to each of your projects. Bundler is, by far, more widely used, so we recommend using it instead of gemsets. However, you may one day need to learn about gemsets, so you might want to take a look at <a href="https://rvm.io/gemsets/basics">the basic gemsets documentation</a>.</p>
+<h2><a href="#rbenv" name="rbenv">rbenv</a></h2>
+<p>Figure 4 shows a typical installation of two different Ruby versions under rbenv.</p>
+<p><strong>Figure 4</strong></p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ tree /usr/local/rbenv # the following is partial output
+/usr/local/rbenv # rbenv root directory
+├── shims
+│   ├── bundle
+│   ├── irb
+│   ├── rubocop
+│   └── ruby
+└── versions
+    ├── 2.2.2
+    │   ├── bin
+    │   │   ├── bundle
+    │   │   ├── irb
+    │   │   ├── rubocop
+    │   │   └── ruby
+    │   └── lib
+    │       └── ruby
+    │           └── gems
+    │               └── 2.2.0
+    │                   └── gems
+    │                       ├── bundler-1.12.5
+    │                       ├── freewill-1.0.0
+    │                       │   └── lib
+    │                       │       └── freewill.rb
+    │                       ├── pry-0.10.4
+    │                       └── rubocop-0.43.1
+    └── 2.3.1
+        ├── bin
+        │   ├── bundle
+        │   ├── irb
+        │   ├── rubocop
+        │   └── ruby
+        └── lib
+            └── ruby
+                └── gems
+                    └── 2.2.0
+                        └── gems
+                            ├── bundler-1.12.5
+                            ├── freewill-1.0.0
+                            │   └── lib
+                            │       └── freewill.rb
+                            ├── pry-0.10.4
+                            └── rubocop-0.45.0
+</code></pre>
+<h3>How rbenv Works</h3>
+<p>At rbenv's heart is a set of directories very similar to the directories at RVM's core. It stores and uses the rubies, associated tools, and Gems from these directories. There are subdirectories for each version of Ruby located in the <code>versions</code> directory. If you need Ruby 2.3.1, rbenv uses the files in the 2.3.1 directory; if you need Ruby 2.2.2 it gets the files from the 2.2.2 directory. Note that the Gem version numbers can differ: in this case, Ruby 2.2.2 uses Rubocop 0.43.1, while Ruby 2.3.1 uses Rubocop 0.45.0.</p>
+<p>As a user of either rbenv or rvm, you'll feel that both tools are very similar with only a small difference in syntax. However, under the hood, how rbenv manages Rubies is a significant departure from how RVM does it. rbenv uses a set of small scripts called <strong>shims</strong>. The scripts have the same names as the various ruby and Gem programs. They live in the <code>shims</code> sub-directory of the main rbenv installation directory. Valid rbenv installations include the <code>shims</code> directory in the <code>PATH</code>; rbenv places it before any other directories that contain ruby or any related programs; this ensures that the system searches the <code>shims</code> directory first. This way, when you run one of the ruby commands or Gems, the system executes the proper shim script. The shim script, in turn, executes <code>rbenv exec PROGRAM</code>; this command determines what version of Ruby it should use, and executes the appropriate program from the Ruby version-specific directories, e.g., <code>/usr/local/rbenv/versions/2.3.1/bin</code>.</p>
+<p>That all sounds pretty complex, and it is. However, in practice, it's mostly invisible. If you want to run, say, <code>rubocop</code> from the Ruby 2.2.2 directory, you tell rbenv to use Ruby 2.2.2, then run the <code>rubocop</code> command. Magically, the system finds the <code>rubocop</code> shim, the shim runs <code>rbenv exec rubocop</code>, and that runs the Ruby 2.2.2 version of <code>rubocop</code>.</p>
+<h3>Installing Rubies</h3>
+<p>One of the first things you should do with rbenv is to install the Ruby versions you need. This is easy to do, and only needs to be done once for any particular version of Ruby.</p>
+<p>Let's say you're about to start work on a project that requires Ruby 2.2.2. You first need to check whether you already have Ruby 2.2.2 installed. To do this, run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rbenv versions
+
+system
+2.1.5
+* 2.3.1 (set by /Users/.../project/.ruby-version)
+</code></pre>
+<p>This command shows that you currently have Ruby versions 2.1.5 and 2.3.1 installed, and that version 2.3.1 is the currently selected Ruby version. Since the listing does not show version 2.2.2, we need to install it. However, unlike RVM, rbenv does not provide a way to install new Rubies by default. Fortunately, there's an easy fix: just install the <code>ruby-build</code> rbenv plugin. If you're on a Mac with a Homebrew version of Ruby, just run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ brew install ruby-build
+</code></pre>
+<p>Otherwise, follow the installation instructions on the <a href="https://github.com/rbenv/ruby-build">ruby-build GitHub page</a>.</p>
+<p>Once you've installed the <code>ruby-build</code> plugin, you can install Ruby 2.2.2 with:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rbenv install 2.2.2
+</code></pre>
+<h3>Setting Local Rubies</h3>
+<p>Now that you have Ruby 2.2.2 installed, how do you tell rbenv to use it? There are several ways, each described in rbenv's GitHub README file. The easiest way is to first run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rbenv global 2.3.1
+</code></pre>
+<p>This sets the default version of Ruby to use as 2.3.1. From there, you only need to worry about programs that need a different version. For example, let's say the program in your <code>~/src/magic</code> directory needs Ruby 2.0.0. To arrange that, run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ cd ~/src/magic
+$ rbenv local 2.0.0
+</code></pre>
+<p>This creates a <code>.ruby-version</code> file in the <code>~/src/magic</code> directory; when you run any Ruby-based programs stored in this directory, <code>rbenv</code> checks the <code>.ruby-version</code> file, and uses that version of Ruby for the program. If there is no <code>.ruby-version</code> file, <code>rbenv</code> launches a search for an alternative <code>.ruby-version</code> file, and, if it still can't find one, it uses the global version of Ruby.</p>
+<p>Note that this <code>.ruby-version</code> file is identical to the <code>.ruby-version</code> file used by RVM: same name, same content, same function, and the same search sequence.</p>
+<p>See the <a href="https://github.com/rbenv/rbenv">rbenv</a> documentation for more information on this process.</p>
+<h3>Where Are My Rubies, Gems and Apps Now?</h3>
+<p>Rbenv creates a directory at installation known as the rbenv root directory; it also installs all rbenv related files, including all the Rubies and Gems that it manages, in this directory. To determine the location of the rbenv root directory, run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rbenv root
+</code></pre>
+<p>On the author's system, this displays:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ /usr/local/rbenv
+</code></pre>
+<p>This corresponds to the top level directory in Figure 4.</p>
+<p>Figure 4 shows that there are two important subdirectories in the root directory: the <code>shims</code> directory, and the <code>versions</code> directory. The <code>shims</code> directory contains all the shims used by rbenv, while <code>versions</code> contains all the different Rubies. Inside the <code>versions</code> directory, you will find one directory for each Ruby version you have installed; inside each of these directories, you will find the specific version of Ruby, all its companion programs, and your Gems for that version.</p>
+<p>You may recall that you can use <code>gem env</code> to learn some interesting details about your Ruby and Gem configuration, most notably the directories it uses. After installing rbenv, <code>gem env</code> still works, and shows you the details for the Ruby and Gem currently active in rbenv; you will find many of these files stored under the rbenv root directory.</p>
+<h3>When Things Go Wrong</h3>
+<p>Compared to RVM, rbenv uses a conservative approach to perform its tasks: it doesn't rely on making dynamic changes to your environment or system commands. Instead, it makes a small, one-time change to your <code>PATH</code>, and leaves your system to run exactly as designed. This is the real strength of rbenv, and the main reason many developers prefer it over RVM; it's less likely to go wrong. There's just not that many moving parts to worry about.</p>
+<p>Hence, problems with rbenv are few once you have it running. The worst that is likely to happen is that you might accidentally delete or move some files it needs, which you can usually fix from backups (you have backups, right?). The most likely issue with rbenv is that you get confused about which version of Ruby you are running, or you use the wrong <code>gem</code> command to install or update some Gems. When trying to diagnose an rbenv problem, first make sure you are using the correct Ruby version -- such problems are easier to see -- then check for Gem versioning issues.</p>
+<p>Here are some useful troubleshooting commands:</p>
+<ul>
+<li>
+<p><code>rbenv version</code></p>
+<p>Displays the currently active version of Ruby, along with a short explanation of how <code>rbenv</code> determined the version. If you see the wrong version displayed and don't understand why, see <a href="https://github.com/rbenv/rbenv">the documentation</a>. The section on "Choosing the Ruby Version" is particularly important.</p>
+</li>
+<li>
+<p><code>echo $PATH</code></p>
+<p>Confirm that your <code>shims</code> directory is in your PATH. Specifically, verify that it occurs early in your path. If, for example, <code>/usr/bin</code> occurs before <code>/usr/local/rbenv/shims</code> in your PATH, your system may load the system version of Ruby instead of one managed by rbenv.</p>
+</li>
+<li>
+<p><code>rbenv which COMMAND</code></p>
+<p>Displays the disk location of the command named by COMMAND (e.g., <code>ruby</code>, <code>irb</code>, <code>rubocop</code>)</p>
+</li>
+<li>
+<p><code>rbenv rehash</code></p>
+<p>Rebuilds the <code>shims</code> directory. If you can't execute some commands or <code>rbenv</code> doesn't appear to be running the correct commands, try this command.</p>
+</li>
+<li>
+<p><code>rbenv root</code></p>
+<p>Display the path of the rbenv root directory.</p>
+</li>
+<li>
+<p><code>rbenv shims</code></p>
+<p>Display a list of all current shims.</p>
+</li>
+<li>
+<p><code>gem env</code></p>
+<p>Display configuration information about your RubyGems system.</p>
+</li>
+</ul>
+<h3>Plugins</h3>
+<p>There are a dozen or so <a href="https://github.com/rbenv/rbenv/wiki/Plugins">plugins</a> that extend the capabilities provided by rbenv. Don't forget to check them out as your use of rbenv expands. Of particular interest to almost everybody is <a href="https://github.com/rbenv/ruby-build#readme">ruby-build</a>; this adds the <code>install</code> command to the <code>rbenv</code> command so you can install rubies directly with rbenv; this is easier than manually configuring and installing each version.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>Ruby version managers let you manage multiple versions of Ruby, the utilities (such as <code>irb</code>) associated with each version, and the RubyGems installed for each Ruby. With version managers, you can install and uninstall ruby versions and gems, and run specific versions of ruby with specific programs and environments.</p>
+<p>The two main version managers, RVM and rbenv, are similar in function, with little to distinguish between the two for most developers. By default, RVM has more features, but rbenv plugins provide much of the functionality not provided by the base install of rbenv. RVM works by dynamically managing your environment, mostly by modifying your <code>PATH</code> variable and replacing the built-in <code>cd</code> command with an RVM-aware shell function; rbenv works by just modifying your <code>PATH</code> and some other environment variables.</p>
+<p>As we've seen, Ruby programs often need a specific version of Ruby, and specific versions of the Gems it uses. Ruby version managers take care of most of the issues arising from these differing requirements, but sometimes you'll find that they aren't enough. For example, you may need to use Ruby 2.2.2 for two different projects instead of your default 2.3.1, but you may also need separate versions of the Rails Gem, say 4.2.7 for one project, and version 5.0.0 for the other. While both RVM and rbenv (with the aid of a plugin) can handle these requirements, the easier and more common path is to use a RubyGem called Bundler. We discuss Bundler in the next chapter.</p>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Core Ruby Tools/4.html">Next:  Bundler
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Agile Planning: From Ideas to Story Cards</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":4,"applicationTime":71,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Agile Planning: From Ideas to Story Cards" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="TTkRPpmMf_yZnVl7O8FvjdsjOO3CIl8lZ-6So0TFA3o2FFiJsQu1Yk_Pp1logauNvPRNIphapmSMHM8Ok9cZGw" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/agile_planning">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/agile_planning/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareispowerful"><span>Software Is Powerful</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareiscomplex"><span>Software Is Complex</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#ourgoal"><span>Our Goal</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/what_is_agile"><span class="chapter_title">What is Agile?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#butseriouslywhatisagile"><span>But Seriously, What is Agile?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#thevaluesofagile"><span>The Values of Agile</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#workingsoftware"><span>Working Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#howdowegetthere"><span>How Do We Get There?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/why_is_process_important"><span class="chapter_title">Why is Process Important?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#commonpitfalls"><span>Common Pitfalls</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#itsaboutcare"><span>It's Really About Care</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>The Planning Process</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/process_overview"><span class="chapter_title">Process Overview</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/process_overview#wheredoesthisfit"><span>Where Does This Fit?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#letsfocus"><span>Let's Focus</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#rememberitsacycle"><span>Remember It's A Cycle</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/concept_to_personas"><span class="chapter_title">Concept to Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#ideasareeasy"><span>Ideas are Easy</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whoareyourusers"><span>Who Are Your Users?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#howtocreateapersona"><span>How to Create a Persona</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#thisisntawasteoftime"><span>This Isn't A Waste of Time</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/writing_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatisascenario"><span>What is a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whyarescenariosimportant"><span>Why are Scenarios Important?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#howdowewriteascenario"><span>How do we Write a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#focusonthecore"><span>Focus on the Core</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/story_boarding_and_wire_frames"><span class="chapter_title">Story Boarding and Wire Frames</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatisstoryboarding"><span>What is Storyboarding?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#drawingstoryboards"><span>Drawing Storyboards</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#wireframing"><span>Wireframing</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/epics_and_stories"><span class="chapter_title">Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#thegravelfactory"><span>The Gravel Factory</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatisauserstory"><span>What is a User Story?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#astoryisjustaplaceholder"><span>A Placeholder for a Conversation</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#buildingthebacklog"><span>Building the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#creatingepics"><span>Creating Epics</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#breakingdownepicstostories"><span>Breaking Down Epics to Stories</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/advanced_stories"><span>Stories Advanced Material</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/product_backlog"><span class="chapter_title">Product Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatisabacklog"><span>What is the Product Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatdoesitlooklike"><span>What Does the Backlog Look Like?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsinabacklog"><span>What is in the Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsnext"><span>What's Next?</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>A Cohesive Example</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/cohesive_example"><span class="chapter_title">Concept Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#ourteam"><span>Our Team</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#trelloourfirsttool"><span>Trello: Our First Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#concept"><span>The Application Concept</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_personas"><span class="chapter_title">Developing Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#startwiththeuser"><span>Start With The User</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thecontentconsumer"><span>The Content Consumer</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#theapplicationadministrator"><span>The Application Administrator</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thepersonarolerelationship"><span>The Persona-Role Relationship</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#ourfirstscenario"><span>Our First Scenario</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#thenextscenarios"><span>The Next Scenarios</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#adminscenarios"><span>Admin Scenarios</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_storyboarding"><span class="chapter_title">Storyboards and Wireframes</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboarding"><span>Storyboarding</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#ournexttool"><span>Our Next Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboardwhennessesary"><span>Storyboard When Necessary</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#buildingoutwireframes"><span>Building Out Wireframes</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#awireframingtool"><span>A Wireframing Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#addingcontentwireframe"><span>Adding Content Wireframes</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_epics_and_stories"><span class="chapter_title">Fleshing out Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#epicscomefirst"><span>Epics Come First</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#theseedofsoftware"><span>The Seed of Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#storybreakdown"><span>Story Breakdown</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_backlog"><span class="chapter_title">Revewing the Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#orderingthebacklog"><span>Ordering the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#addingacceptancecriteria"><span>Adding Acceptance Criteria</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/whats_next"><span class="chapter_title">What's Next</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/whats_next#arewereadytocode"><span>Are They Ready to Code?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/whats_next#conclusion"><span>In Conclusion</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/agile_planning/read/myflix_storyboarding&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/agile_planning/read/myflix_storyboarding" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/agile_planning">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/agile_planning/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareispowerful"><span>Software Is Powerful</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#softwareiscomplex"><span>Software Is Complex</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/introduction#ourgoal"><span>Our Goal</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/what_is_agile"><span class="chapter_title">What is Agile?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#butseriouslywhatisagile"><span>But Seriously, What is Agile?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#thevaluesofagile"><span>The Values of Agile</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#workingsoftware"><span>Working Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/what_is_agile#howdowegetthere"><span>How Do We Get There?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/why_is_process_important"><span class="chapter_title">Why is Process Important?</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#commonpitfalls"><span>Common Pitfalls</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/why_is_process_important#itsaboutcare"><span>It's Really About Care</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>The Planning Process</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/process_overview"><span class="chapter_title">Process Overview</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/process_overview#wheredoesthisfit"><span>Where Does This Fit?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#letsfocus"><span>Let's Focus</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/process_overview#rememberitsacycle"><span>Remember It's A Cycle</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/concept_to_personas"><span class="chapter_title">Concept to Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#ideasareeasy"><span>Ideas are Easy</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whoareyourusers"><span>Who Are Your Users?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#howtocreateapersona"><span>How to Create a Persona</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#thisisntawasteoftime"><span>This Isn't A Waste of Time</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/concept_to_personas#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/writing_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatisascenario"><span>What is a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whyarescenariosimportant"><span>Why are Scenarios Important?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#howdowewriteascenario"><span>How do we Write a Scenario?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#focusonthecore"><span>Focus on the Core</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/writing_scenarios#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/story_boarding_and_wire_frames"><span class="chapter_title">Story Boarding and Wire Frames</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatisstoryboarding"><span>What is Storyboarding?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#drawingstoryboards"><span>Drawing Storyboards</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#wireframing"><span>Wireframing</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/story_boarding_and_wire_frames#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/epics_and_stories"><span class="chapter_title">Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#thegravelfactory"><span>The Gravel Factory</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatisauserstory"><span>What is a User Story?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#astoryisjustaplaceholder"><span>A Placeholder for a Conversation</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#buildingthebacklog"><span>Building the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#creatingepics"><span>Creating Epics</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#breakingdownepicstostories"><span>Breaking Down Epics to Stories</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/epics_and_stories#whatsnext"><span>What's Next</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/agile_planning/read/advanced_stories"><span>Stories Advanced Material</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/product_backlog"><span class="chapter_title">Product Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatisabacklog"><span>What is the Product Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatdoesitlooklike"><span>What Does the Backlog Look Like?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsinabacklog"><span>What is in the Backlog?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/product_backlog#whatsnext"><span>What's Next?</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>A Cohesive Example</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/cohesive_example"><span class="chapter_title">Concept Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#introduction"><span>Introduction</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#ourteam"><span>Our Team</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#trelloourfirsttool"><span>Trello: Our First Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/cohesive_example#concept"><span>The Application Concept</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_personas"><span class="chapter_title">Developing Personas</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#startwiththeuser"><span>Start With The User</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thecontentconsumer"><span>The Content Consumer</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#theapplicationadministrator"><span>The Application Administrator</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_personas#thepersonarolerelationship"><span>The Persona-Role Relationship</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_scenarios"><span class="chapter_title">Writing Scenarios</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#ourfirstscenario"><span>Our First Scenario</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#thenextscenarios"><span>The Next Scenarios</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_scenarios#adminscenarios"><span>Admin Scenarios</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_storyboarding"><span class="chapter_title">Storyboards and Wireframes</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboarding"><span>Storyboarding</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#ournexttool"><span>Our Next Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#storyboardwhennessesary"><span>Storyboard When Necessary</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#buildingoutwireframes"><span>Building Out Wireframes</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#awireframingtool"><span>A Wireframing Tool</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_storyboarding#addingcontentwireframe"><span>Adding Content Wireframes</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_epics_and_stories"><span class="chapter_title">Fleshing out Epics and Stories</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#epicscomefirst"><span>Epics Come First</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#theseedofsoftware"><span>The Seed of Software</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_epics_and_stories#storybreakdown"><span>Story Breakdown</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/myflix_backlog"><span class="chapter_title">Revewing the Backlog</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#orderingthebacklog"><span>Ordering the Backlog</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/myflix_backlog#addingacceptancecriteria"><span>Adding Acceptance Criteria</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/agile_planning/read/whats_next"><span class="chapter_title">What's Next</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/agile_planning/read/whats_next#arewereadytocode"><span>Are They Ready to Code?</span>
+</a></li>
+<li>
+<a href="/books/agile_planning/read/whats_next#conclusion"><span>In Conclusion</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/agile_planning/read/myflix_storyboarding&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/agile_planning/read/myflix_storyboarding" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Storyboards and Wireframes</h1>
+<p>Now that our team has several high priority scenarios identified for the MyFlix application, they'll move right into the storyboarding and wireframing process. We'll be following the progress on Trello along the way.</p>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/story-boarding.jpg"/></p>
+<h2><a href="#storyboarding" name="storyboarding">Storyboarding</a></h2>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> All right, let's start storyboarding some of our scenarios, why don't you drag that card into the storyboarding column?
+</li>
+</ul>
+<p><img alt="starting to storyboard joining" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/myflix_trello_4.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Oh, I see, so when we do a step the card goes into the respective column? That's pretty helpful.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Exactly, and trust me, once we have several people working on the project and tons of scenarios, this will be a huge help to keeping things organized.
+</li>
+<li>
+<strong><em>Pete:</em></strong> It's like an assembly line...
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Very good observation, that's a good way to think about it, there are certain things that we need to do at each step of the way to add value to the initial user scenario, eventually there will be more columns and that value add will include the actual coding of the features.
+</li>
+<li>
+<strong><em>Pete:</em></strong> I can't wait for that! So what's this storyboarding all about, like in movies?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yup, in the same way directors use storyboarding to describe complex shots and action sequences, we'll use storyboarding to describe interactions with our application.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Why do we need to do that, didn't we just describe them in the scenarios?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Haven't you ever heard that a picture is worth a thousand words?
+</li>
+<li>
+<strong><em>Pete:</em></strong> True, but then couldn't we have done that in the first place when we were thinking about scenarios?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Remember, Pete, that it was pretty quick to write down our scenarios, drawing these storyboards will take a bit more time. We could have come up with some scenarios that we decided to throw out, or edit. We kept it simple at first, now we'll increase the detail and specificity.
+</li>
+</ul>
+<h2><a href="#ournexttool" name="ournexttool">Our Next Tool</a></h2>
+<p>The storyboards in this book were made with a tool called StoryboardThat: <a href="https://www.storyboardthat.com">https://www.storyboardthat.com</a>. If you are great at drawing you might have just as much fun sketching out you own storyboards on paper, and it can even be faster that way. However, using a tool like this can ensure consistency across your team, so everything always looks the same and you can focus on the interactions.</p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> This is pretty cool Kelly, it's like a little comic book maker, I was worried I would have to be drawing pictures, I'm not too great at that.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> These things are what we call "low-fidelity," the idea is not to be Picasso, but simply to get key points across, just showing the interaction visually can provide a lot of information.
+</li>
+<li>
+<strong><em>Pete:</em></strong> What kind of information?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Context. It's one thing to say something, but another to see it, can't you think of anything that looked good on paper, but upon seeing it you thought otherwise?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Ha ha ha, yeah now that I think about it, my dad had this whole plan for a "man cave" in our basement, it looked great on paper: bar, pool table, fun stuff on the wall, but whooo boy, when we got the concept design back from the contractors, it looked like a bad frat house.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well there you go, we are trying to do similar things here so we can direct our efforts correctly, without spending too much first. What ended up happening?
+</li>
+<li>
+<strong><em>Pete:</em></strong> We changed a bunch of stuff around, and it ended up looking a lot better in the end.
+</li>
+<li>
+<p><strong><em>Kelly:</em></strong> That's what I like to hear. So let's get started, why don't you describe each step of the scenario and I'll draw out a frame.</p>
+</li>
+<li>
+<p><strong><em>Pete:</em></strong> All right, so let's say Blake is sitting on his couch, in his apartment and searching on the Internet for that Independent film...</p>
+</li>
+<li>
+<p><strong><em>Kelly:</em></strong> Something like this?</p>
+</li>
+</ul>
+<p><img alt="frame 1" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_sitting_on_the_couch.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Yeah exactly, ok so he types in the name of the movie into a search engines and then searches.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Ok got it:
+</li>
+</ul>
+<p><img alt="frame 2" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_zombie_romance_showtimes.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> And then when his search results come up, he'll hopefully see that the movie has a profile page on MyFlix, and he'll be curious cause it will say something like "watch online now."
+</li>
+<li>
+<strong><em>Kelly:</em></strong> All right I see what you're saying.
+</li>
+</ul>
+<p><img alt="frame 3" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_google_results.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Ok, so now he is on this movie profile page, and sure enough it's the movie that he is looking for, but he obviously can't watch it because he doesn't have an account, so it shows clearly that he needs to sign up to watch or something like that.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Got it.
+</li>
+</ul>
+<p><img alt="frame 4" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_signup_to_watch.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Hi, nice font on the movie title, I like it. All right so now he has to do all the sign up things, which I guess we aren't being too specific about right now.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Right.
+</li>
+<li>
+<strong><em>Pete:</em></strong> So then, he probably is "doing signup things" and has to use a credit card to enter payment information.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Like so?
+</li>
+</ul>
+<p><img alt="frame 5" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_i_have_a_credit_card.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Perfect. Finally since he signed up he's able to watch the movie, and so he's enjoying the movie from the comfort of his own home.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Like this:
+</li>
+</ul>
+<p><img alt="frame 6" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_just_watching_my_show.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Yeah there we go!
+</li>
+<li>
+<strong><em>Kelly:</em></strong> One question though Pete, how does the movie get to the screen from his laptop?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Well didn't we say he used the browser on his TV? Or I guess he could just use a monitor cable from his computer?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Ok cool, just want to make sure you were thinking about that. So here's our completed storyboard for the "Joining MyFlix"
+</li>
+</ul>
+<p><img src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_full.png" width="700"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Nice, that looks pretty great. Now we'll do the next one?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yeah in a moment, first let's attach the storyboard to our scenario card:
+</li>
+</ul>
+<p><img alt="adding joining storyboard to card" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_storyboard_to_card.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Oh that's right, cool, it just shows up on the card.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yeah and you can see how we've added more value to this scenario.
+</li>
+</ul>
+<h2><a href="#storyboardwhennessesary" name="storyboardwhennessesary">Storyboard When Necessary</a></h2>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> All right, I get the hang of this, let's move the "Adding Content" card into storyboarding and get started.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Are you sure that one needs a storyboard?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Well yeah, isn't that the next thing we have to do, I thought we had to storyboard all of our scenarios.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Not exactly, it's not as simple as that, you don't always have to make a storyboard for every one of of your scenarios, only the ones that are difficult to conceptualize.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Well how do you know when to and when not to?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well storyboarding can be thought of a good communication tool, either with yourself, or others on your team. It can be helpful, after some time, to review a storyboard, and you know exactly what is going on. But sometimes the scenarios are so straight forward that a storyboard is overkill. Let's take a look at that adding content scenario:
+</li>
+</ul>
+<p><em>Carrie has several new episodes of a new TV show that she needs to distribute. She accesses the MyFlix administration system and queues several videos for upload, as they are uploading she fills in meta data, and sets their release dates.</em></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Yeah looks pretty complicated, she's gonna have to use several screens, and click on different options and stuff. I'd say worth a storyboard.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well Pete, I think once we get to the <em>next</em> step you'll realize that this scenario will benefit more from a <em>wireframe</em> which will show more user interface details. As it is, pretty much all Carrie is doing is using the app, so any storyboard, would just be lots of frames of her, at her desk, clicking on the computer screen.
+</li>
+<li>
+<strong><em>Pete:</em></strong> So if you are just clicking on a screen, it's not worth storyboarding?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> You can kind of think about it like that, but more generally, storyboards are helpful where the environment and multiple users or personas are involved. If it's just a single user, using a computer interface, most of the interaction can be captured in a wireframe.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Well what would be a good candidate for a storyboard?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> How about the "car mode" on your cell phone?
+</li>
+<li>
+<strong><em>Pete:</em></strong> What do you mean?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well think about that scenario, you are in your car, and you need to fire up some navigation app on your phone. There are lots of phones that have a car mode where you see a few important apps you would need, and they have huge icons so you can press them quickly after glancing away from the road.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Sounds dangerous Kelly.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well I mean, yeah, but that's not the point, the point is that in that storyboard you would have the context of the car, you'd see the big icons, you'd see the situation and environment where the interaction takes place, and how it informs the design of the feature. Why don't we try a more complicated example that would benefit from a storyboard.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Ok which one?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> I think the "Inviting a Friend" is a good one.
+</li>
+<li>
+<strong><em>Pete:</em></strong> All right, I just dragged it into the Storyboard column:
+</li>
+</ul>
+<p><img alt="starting on invite a friend" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/myflix_trello_inviting_friend.png"/></p>
+<p><em>Blake's friend Katie has a unique taste in films herself and one which Blake respects. He figures she would be into the selection and usefulness of the MyFlix application so he sends her an invitation through the application because it will allow her to sign up with the first month free. When Blake learns later that Katie did create an account, he chooses to follow her so he can watch her public queue and watch history, and find new films that he might like to watch based on her opinion.</em></p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> So what's going on in this one, do you see why it would benefit from a storyboard?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Yeah, because we have two users, Katie and Blake, and Blake uses the app, and then something happens that Katie needs to deal with, and then Blake does something. So that back and forth would be best captured in a Storyboard?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Great Pete, you'll be an agile planner yet, care to put together the storyboard?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Absolutely, here's one:
+</li>
+</ul>
+<p><img src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_full_invite_a_friend.png" width="700"/></p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> I like that, and then what?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Yep, let's add it to the scenario card.
+</li>
+</ul>
+<p><img alt="adding invite storyboard to card" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/sb_invite_a_friend_to_card.png"/></p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> Very good. We are moving right along, now why don't we add some wireframes to these scenarios!
+</li>
+</ul>
+<h2><a href="#buildingoutwireframes" name="buildingoutwireframes">Building Out Wireframes</a></h2>
+<p>Our team has made a few storyboards of high priority scenarios that have helped to clarify the desired interactions. Next, we'll move into building wireframes for a few of the scenarios. Remember that wireframes focus on the layout and interaction, not so much on the design. This is where our application really starts to get down in the details and we get closer and closer to starting the building process.</p>
+<p>We group wireframes with storyboards because not every scenario requires a storyboard, and the work on storyboarding naturally flows into creating wireframes.</p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> Ready to make some wireframes Pete?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Ok, but not so sure I know what you mean.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Wireframes are how we are going to actually design the parts of the MyFlix app.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Like draw the forms and interfaces and views?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Correct, now that we have a few scenarios, some of which have really rough pictures of user interfaces, we now need to get serious and design what the interfaces would actually look like at each step of the way.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Oh I think I'll like this, it sounds like we are a lot closer to building.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yeah we are, Pete, we are getting less general and a more specific.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Awesome, we'll I think we should use Photoshop for this, so we can show good detail, I'll start by figuring out a good color scheme for MyFlix and design a logo, that way our wireframes will look professional...
+</li>
+<li>
+<strong><em>Kelly:</em></strong> You're getting ahead of yourself again Pete, we don't care at all about what the app is going to look like at this point.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Sure we do, it has to look good or no one would use it.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Do you use Craigslist?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Yeah sure I do, but what does that have to do with anything?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Does it look good?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Not really, it's so simple it looks like they didn't do much design at all.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well then why do you use it?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Well because it just works, I can find or sell stuff easily and everyone else is using it.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> So maybe things don't have to look so good for people to use them.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Oh... I guess not, still though, can't we have a little design?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Pete, that distracts us from the interaction, the point of wireframing is to focus on just the basics, the interactions, and then layer on design once we are building the thing. Patterns will emerge along the way, and then those patterns can be incorporated into the design. Also, by spending a lot of time on design, you can box in yourself to a certain way of doing things. Wireframes should be able to be made rather quickly so you can try different ideas.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Yeah that's true it would take me a little while to come up with a good design.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yeah, and remember as with all things, we want to do a minimum amount of work, to yield the maximum results, or feedback to each step of the Agile planning process. I have an idea for a tool we can use that will make this easier.
+</li>
+</ul>
+<h2><a href="#awireframingtool" name="awireframingtool">A Wireframing Tool</a></h2>
+<p>As we move into wireframing our scenarios, a really good tool to use that will support the process is Balsamiq Mockups: <a href="http://balsamiq.com/products/mockups">http://balsamiq.com/products/mockups</a>. It is purposely "rough" and prevents making things "pixel perfect". That way, you can focus on the interactions and layout. There is also a huge included library of common web application elements to make your designs look consistent.</p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> We're going to use Balsamiq to make our wireframes.
+</li>
+<li>
+<strong><em>Pete:</em></strong> These look kinda ugly, I don't want our app to look like that.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> It won't look like these Pete, it's supposed to be ugly, that way we don't get distracted at all about design. Remember, focus on interactions.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Ok so how do we do this?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> First let's move the scenario card into the Wireframing column on Trello:
+</li>
+</ul>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/trello_sb_to_wireframing.png"/></p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> Next, let's take a look at our first scenario and its storyboard, what is the first part of the application that's mentioned?
+</li>
+<li>
+<strong><em>Pete:</em></strong> It's the movie page where Blake can sign up.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Right, so we'll start with wireframing that page. Think about all the elements that need to be on that page for the scenario to take place. How about we each come up with wireframes for what we think would work and then compare?
+</li>
+<li>
+<strong><em>Pete:</em></strong> All right, sounds good to me.
+</li>
+</ul>
+<h3>Pete's Initial Joining MyFlix Wireframes</h3>
+<p><img alt="Pete's Initial Joining MyFlix Wireframes" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_zombie_romance.png"/></p>
+<h3>Kelly's Initial Joining MyFlix Wireframes</h3>
+<p><img alt="Kelly's Initial Joining MyFlix Wireframes" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_zombie_romance_signup.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Kelly, your wireframe isn't very good, it's so simple...
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Thanks for the kind words Pete, why don't you tell me about your wireframe.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Sure, well this is the public movie page that Blake would find, it has the movie title and description, and the button to sign up to watch, and then obviously there will be a menu bar up top with search, and then breadcrumbs for the navigation, maybe some links to other popular movies...
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Stop right there, what does any of that stuff have to do with the scenario at hand?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Well it's all part of the app, it needs to be in the wireframe so people know what is going on.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> No it doesn't, your wireframe is overly complicated, the point of the scenario is lost among a whole bunch of features that we aren't developing.
+</li>
+<li>
+<strong><em>Pete:</em></strong> I thought we were going to have reviews?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Maybe later, but for now, and for this scenario, especially because it's one of our first, we only want to show the bare minimum of the interactions. We won't show navigation until we have built other things to which to navigate.
+</li>
+<li>
+<strong><em>Pete:</em></strong> But Kelly, we <em>will</em> need navigation, why not just put it in.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Again, because we want to focus on the bare minimum and not over design the interactions prematurely. We might have whole other scenarios that deal with some of the extra things you included. Remember the core of our application is people watching movies online, so we'll build that first and add to it. We don't want to add a search box, just because it looks nice, it needs to have a whole scenario backing it.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Oh yeah, well what's so good about your wireframe?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well for one, it's super simple, and shows just the basics. Blake would land on this page from his search, read the description and know this is the movie he was looking for, and he'd see this blurred out movie player, so he's thinking "wow I could watch this right now," but the movie player is overlaid with a big sign up button. There is only one thing for the user to do, click sign up. He won't get distracted by any of the other links like in your wireframe.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Oh yeah I guess we do want to encourage him to sign up as much as possible. Everything about this planning process seems to revolve around doing a lot less than what I know we will need.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well when I hear "I know what we'll need," I hear a lot of confidence in assumptions, assumptions that could turn out to be incorrect. I just think it's best to be humble, validate assumptions, and let the current needs drive the features of an application.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Fine. We'll use your wireframe. What now?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well let's finish wireframing this whole scenario, we'll work together on it.
+</li>
+</ul>
+<h3>Joining MyFlix Wireframes</h3>
+<p>Below are each of the necessary wireframes for the "Joining MyFlix" scenario along with an accompanying description.</p>
+<p>The user lands on the public movie page, which has the basic description of the film and a way for the user to sign up:</p>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_zombie_romance_signup.png"/></p>
+<p>Clicking the sign up button takes the user to the sign up page where they enter their basic user information and payment details:</p>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_credit_card_page.png"/></p>
+<p>After submitting their sign up form, they are shown a page notifying them of a confirmation email:</p>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_thank_you_page.png"/></p>
+<p>After they've clicked the link in the confirmation email, they are redirected back to the original movie page, where they are signed in and a message notifies them that the confirmation was successful:</p>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_home_page.png"/></p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> What do you think Pete?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Wow this is really starting to look like an application. But what's with the email confirmation screen, we didn't talk about that in the scenario or the storyboard?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> That's the nature of the game Pete, as we continue to add more detail and requirements to the scenarios, we'll find that there are things we would have initially missed. For example, we'd often confirm a new user account, and that is captured in the wireframes and more generally included in the original scenario under "finally accesses his account."
+</li>
+<li>
+<strong><em>Pete:</em></strong> So it's ok to add more complications to the wireframes if they are part of the context of the interaction?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yes Pete, in this case, it's not adding extra stuff, it's adding more information and realism to the interaction, so we can see each step, and how it actually might look in the app.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Another question: what happens if the user, for example, enters a mismatched password, or bad credit card number, wouldn't there be some sort of error?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Very good Pete, that's exactly the kind of thing we'd also want to capture with a wireframe. At first it would be important, but after a while there'd likely be a pattern for how error messages and form validation are handled and we wouldn't need to wireframe it each time.
+</li>
+<li>
+<strong><em>Pete:</em></strong> This scenario is getting a lot more complicated, aren't we going for the most simple?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> We are, but this <em>is</em> where things start to come into focus, we are going for most simple, or <em>minimum viable</em> but we have to remember that "viable" part. Good form validation will be needed for a functional interaction, and it's exactly asking questions like "what' happens if..." that help us flesh out the other necessary parts of the scenario. Let's add one more wireframe for the error situation:
+</li>
+</ul>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_password_error.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Hey, that's what I'm talking about, this whole scenario is really clear in my mind now, I could almost start coding it from this.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yeah, "almost" there is still a little more work to do before we start coding. Why don't we add these wireframes to the scenario card in Trello and do one more set of wireframes?
+</li>
+</ul>
+<p><img alt="Adding wireframes to joining trello card" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/trello_adding_attachments.png"/></p>
+<h2><a href="#addingcontentwireframe" name="addingcontentwireframe">Adding Content Wireframes</a></h2>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> Ok Pete, for this wireframing exercise let's try something for our other persona, something for which we don't already have a storyboard, the "Adding Content" scenario.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Sounds great, I'll move that card right into the wireframing columns:
+</li>
+</ul>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/myflix_trello_scenarios_to_wireframing.png"/></p>
+<ul>
+<li>
+<p><strong><em>Kelly:</em></strong> All right let's read through the scenario again, and make sure we are on the same page:</p>
+<p><em>Carrie has several new episodes of a new TV show that she needs to distribute. She accesses the MyFlix administration system and queues several videos for upload. As they are uploading, she fills in meta data and sets their release dates.</em></p>
+</li>
+<li>
+<p><strong><em>Pete:</em></strong> Oh boy Kelly, this is really complicated!</p>
+</li>
+<li>
+<p><strong><em>Kelly:</em></strong> What do you mean?</p>
+</li>
+<li>
+<p><strong><em>Pete:</em></strong> Well look at all this stuff going on, "queuing video uploads?", "filling in data as videos upload?". Wouldn't it just be easier to make a simple "Add video page" where you enter the file's URL and the meta data and when you submit it adds the video?</p>
+</li>
+<li>
+<p><strong><em>Kelly:</em></strong> I like where your head is at Pete, that would be more simple and easier to develop. And this is a great example of adjusting scenarios when we have more information. When we first wrote this, it made sense, but now that we are working on the wireframing and adding more details, it's evident that there could be a simpler way, and that is OK. We can update scenarios when we learn new things, that's what makes us Agile. What do you suggest for an updated scenario?</p>
+</li>
+<li>
+<p><strong><em>Pete:</em></strong> How about:</p>
+<p><em>Carrie has a new episode of a TV show that she needs to distribute. She uploads the video to the MyFlix CDN server. Then she accesses the MyFlix administration system in order to add the video. She enters basic information and the release date as well as enters the associated video's URL. After processing she sees that it is confirmed for release.</em></p>
+</li>
+<li>
+<p><strong><em>Kelly:</em></strong> Hey, that is a lot better, I think that would be easier to develop as well as wireframe the interaction. We don't have a storyboard here so let's work through each part of the interaction and develop the appropriate wireframe.</p>
+</li>
+<li>
+<p><strong><em>Pete:</em></strong> Ok, so in the first part, she has to access the administration part of the site, so let’s have her going to a special administrator's login and entering her user information:</p>
+</li>
+</ul>
+<p><img alt="admin login" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_admin_login.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> After she logs on, because, I guess this is the only thing she can do right now, she is taken right to the add a video page, even though she will probably have some sort of admin dashboard, we only have one thing, so that would be unnecessary for now:
+</li>
+</ul>
+<p><img alt="add a video page" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_add_new_video.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> On the add video page she fills out the name, description, release date, and the URL of the video file, When she clicks "add video" she’ll be directed back to the list of videos screen, where she’ll see the confirmation. and the video should be in that list... Ah ok, maybe that is the page she should see right after login.
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Yeah that seems reasonable, why don't we also add a wireframe for what it might have looked like before she added the video?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Yeah like this?
+</li>
+</ul>
+<p><img alt="video list page with added video" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_video_add_confirmation.png"/></p>
+<p><img alt="empty video list page" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/wireframe_available_videos.png"/></p>
+<ul>
+<li>
+<strong><em>Kelly:</em></strong> Yeah all of these are great. Again you see how, out of this scenario we had to include the ideas of the "video list page" in order for the interaction to be complete?
+</li>
+<li>
+<strong><em>Pete:</em></strong> Yeah, I'll add these wireframes to the Trello card:
+</li>
+</ul>
+<p><img alt="" src="//d186loudes4jlv.cloudfront.net/agile_planning/images/trello_adding_more_attachments.png"/></p>
+<ul>
+<li>
+<strong><em>Pete:</em></strong> Ok, great, we have some good wireframes, this is awesome Kelly, it's cool to see what the app is going to look like. Now can I get started coding up these views?
+</li>
+<li>
+<strong><em>Kelly:</em></strong> Well we have just a few more steps in the process, we are getting quite close to coding, but the last thing we have to do is generate a set of user stories or user epics that will drive the development.
+</li>
+<li>
+<strong><em>Pete:</em></strong> Sigh, OK let's do it!
+</li>
+</ul>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Agile Planning/14.html">Next:  Fleshing out Epics and Stories
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

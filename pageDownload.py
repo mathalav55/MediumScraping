@@ -7,7 +7,6 @@ import urllib.request
 import cssutils
 import logging
 import re
-
 headers = [('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'),
                           ('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
                           ('Connection', 'keep-alive')
@@ -28,7 +27,7 @@ def removeFloor(soup):
   return soup
 
 #function to download web page
-def downloadPage(pageUrl,folder):
+def downloadPage(pageUrl,folder="test",title=""):
   print ("Connecting to server")
   cssutils.log.setLevel(logging.CRITICAL)
   directory = folder + '/'
@@ -42,13 +41,25 @@ def downloadPage(pageUrl,folder):
   print ("Connection Success!")
   try :
           soup = BeautifulSoup(html_doc, 'html.parser')
-          fName = soup.title.text
+          fName = ''
+
+          # setting file name
+          if len(title) > 0:
+            fName = title
+          else:      
+            fName = soup.title.text
           f = open( directory + fName + '.html', 'w' )
-          soup = removeSidepods(soup)
-          soup = removeFloor(soup)
-          text = removeRearWing(str(soup))
-          f.write(text)
+    
+          # adding link for next page
+          nextLinkDiv = soup.find_all('div' , class_="next_chapter")
+          if len(nextLinkDiv) > 0:
+            nextLink = nextLinkDiv[0].find('a')
+            nextLink['href'] = directory + str(int(title) + 1) + '.html'
+            print(nextLink['href'])
+          #writing data to file
+          f.write(str(soup))
           f.close()
+          
           print (fName + 'Downloaded successfully!')
   except Exception as e:
       print ("Exception occurred while downloading " + fName + "Exception= ",e)

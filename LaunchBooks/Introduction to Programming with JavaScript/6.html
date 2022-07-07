@@ -1,0 +1,2038 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>JavaScript Programming Language: comparisons &amp; conditionals</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":151,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Booleans, comparisons and the ability to control the flow of code execution with conditionals - fundamental tools of every programming language including JavaScript." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="kvDjBPjvUN4c0DW3oqVe-wRErovj3DEwCI_sSs4ejmrbHV2Wlih89gvzY1b7isE-bLu3yKkoCqUrBd1GRspRUA" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=JavaScript+Programming+Language%3A+comparisons+%26+conditionals&amp;url=https://launchschool.com/books/javascript/read/flow_control&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/flow_control" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/javascript">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/javascript/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/introduction#briefhistory"><span>A Brief JavaScript History</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#javascriptsfuture"><span>JavaScript's Future</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#abstraction"><span>Abstraction</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#whatsnotcovered"><span>What's Not Covered</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/preparations#runtimeenvironments"><span>Runtime Environments</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#installation"><span>Installation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#stylishjavascript"><span>Stylish JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#namingconventions"><span>Naming Conventions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#onsemicolons"><span>On Semicolons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thecommandline"><span>The Command Line</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#runningjavascript"><span>Running JavaScript</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#thechromeconsole"><span>The Chrome Console</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#documentation"><span>Documentation</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/basics#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#explicitcoercion"><span>Explicit Coercion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#datastructures"><span>Data Structures</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#expressionsandreturnvalues"><span>Expressions and Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#statements"><span>Statements</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/variables#variablesandvariablenames"><span>Variables and Variable Names</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringandassigningvariables"><span>Declaring and Assigning Variables</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#declaringconstants"><span>Declaring Constants</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#acommongotcha"><span>A Common Gotcha</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/input_output"><span class="chapter_title">Input/Output</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/input_output#commandlineoutput"><span>Command Line Output</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#commandlineinput"><span>Command Line Input</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#inputinthebrowser"><span>Input in the Browser</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/input_output#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/functions"><span class="chapter_title">Functions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/functions#usingfunctions"><span>Using Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#returnvalues"><span>Return Values</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#defaultparameters"><span>Default Parameters</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#nestedfunctions"><span>Nested Functions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsscope"><span>Functions &amp; Scope</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functionsvsmethods"><span>Functions vs. Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#functioncomposition"><span>Function Composition</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#threewaystodefineafunction"><span>Three Ways to Define a Function</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/functions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/javascript/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/javascript/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#logicaloperators"><span>Logical Operators</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#shortcircuits"><span>Short Circuits</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#truthiness"><span>Truthiness</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#operatorprecedence"><span>Operator Precedence</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#theternaryoperator"><span>The Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#switchstatement"><span>Switch Statement</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/loops_iterating"><span class="chapter_title">Loops &amp; Iterating</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/loops_iterating#whileloops"><span>while Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#forloops"><span>for Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#controllingloops"><span>Controlling Loops</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#arrayiteration"><span>Array Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/loops_iterating#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#iterationmethods"><span>Iteration Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayscanbeodd"><span>Arrays Can Be Odd</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#arrayequality"><span>Array Equality</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#otherarraymethods"><span>Other Array Methods</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/objects"><span class="chapter_title">Objects</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/objects#whatareobjects"><span>What are Objects?</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectsvsprimitives"><span>Objects vs. Primitives</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#prototypes"><span>Prototypes</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#iteration"><span>Iteration</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#commonoperations"><span>Common Operations</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#objectvsarrays"><span>Objects vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/objects#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/javascript/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/javascript/read/more_stuff#variablesaspointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#forinforof"><span>for/in and for/of</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#methodchaining"><span>Method Chaining</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#themathobject"><span>The Math Object</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#dates"><span>Dates</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exceptions"><span>Exceptions</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#readingstacktraces"><span>Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#essixandbeyond"><span>ES6 and Beyond</span>
+</a></li>
+<li>
+<a href="/books/javascript/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/javascript/read/next_steps"><span>Conclusion &amp; Next Steps</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=JavaScript+Programming+Language%3A+comparisons+%26+conditionals&amp;url=https://launchschool.com/books/javascript/read/flow_control&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/javascript/read/flow_control" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Flow Control</h1>
+<p>A computer program is like a journey for your data. During this journey, data encounters situations that impact it, changing it forever. Like any journey, one must travel a given path. On that path, there are different roads the data can take. Sometimes the data takes one road; sometimes it takes another. Which roads the data takes depends on the program's end goal.</p>
+<p>When writing programs, you want your data to take the correct path. You want it to turn left or right, up, down, reverse, or proceed straight ahead when it's supposed to. We call this <strong>flow control</strong>.</p>
+<p>How do we make data do the right thing? We use conditionals.</p>
+<h2><a href="#conditionals" name="conditionals">Conditionals</a></h2>
+<p>A conditional is a fork (or multiple forks) in the road. Your data arrives at a conditional, which then tells the data where to go. The simplest conditionals use a combination of <code>if</code> statements with comparison and logical operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&amp;&amp;</code>, <code>||</code>) to direct traffic. They use the keywords <code>if</code> and <code>else</code>.</p>
+<p>That's enough talking; let's write some code. Create a file named <code>conditional.js</code> with the following content:</p>
+<pre class="language-js" data-file="conditional.js"><code class="language-js">// Run this code in your browser with an HTML file
+
+let a = prompt('Enter a number');
+
+if (a === '3') {
+  console.log("a is 3");
+} else if (a === '4') {
+  console.log("a is 4");
+} else {
+  console.log("a is neither 3, nor 4");
+}
+</code></pre>
+<p>Here, we use the browser's <code>prompt</code> function to get a number from the user.</p>
+<p>Run <code>conditional.js</code> at least three times. You can rerun the code in your browser by refreshing the window.</p>
+<ul>
+<li>  The first time, enter the value <code>3</code>.
+</li>
+<li>  The second time, enter the value <code>4</code>.
+</li>
+<li>  The third and subsequent times, input any other value.
+</li>
+</ul>
+<p>This code uses the <code>===</code> operator to determine whether the input value is equal to <code>'3'</code> and, if not, whether it is equal to <code>'4'</code>. If the value is <code>'3'</code>, the program runs line 6. If the value is <code>'4'</code>, it runs line 8. If the value is something else, it runs line 10. As you can see, we can control the program's flow by setting conditionals in an <code>if</code> statement. Nice work!</p>
+<p>Note that <code>prompt</code> returns a string value, so our comparisons compare <code>a</code> against string values.</p>
+<p>The examples below are all valid JavaScript conditionals.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">if (x === 3) {                          // Example 1
+  console.log("x is 3");
+}
+
+if (x === 3) {                          // Example 2
+  console.log("x is 3");
+} else {
+  console.log("x is NOT 3");
+}
+
+if (x === 3) console.log("x is 3");     // Example 3
+
+if (x === 3)                            // Example 4
+  console.log("x is 3");
+
+if (x === 3)                            // Example 5
+  console.log("x is 3");
+else
+  console.log("x is NOT 3");
+
+if (x === 3) {                          // Example 6
+  console.log('x is 3');
+} else {
+  if (x === 4) {
+    console.log('x is 4');
+  } else {
+    console.log('x is NOT 3 or 4');
+  }
+}
+
+if (x === 3) {                          // Example 7
+  console.log("x is 3");
+} else if (x === 4) {
+  console.log("x is 4");
+} else {
+  console.log('x is NOT 3 or 4');
+}
+</code></pre>
+<p>Example 1 demonstrates the simplest <code>if</code> statement: it has a single condition (<code>x === 3</code>) and a single <strong>clause</strong>—a block, statement, or expression in this context—that executes when the condition is <code>true</code>. When the condition is <code>false</code>, execution resumes with the first statement or expression after the <code>if</code> statement without running the code in the clause.</p>
+<p>Example 2 demonstrates that you can handle both <code>true</code> and <code>false</code> conditions in the same <code>if</code> statement by using an <code>else</code> clause. When the condition is <code>true</code>, the code in the <code>if</code> clause (the first block) runs; when it's <code>false</code>, the code in the <code>else</code> clause runs. It's important to understand that the <code>else</code> clause is not a separate statement: it's part of the <code>if</code> statement.</p>
+<p>Examples 3, 4, and 5 show that you don't need a block when the <code>if</code> or <code>else</code> clause contains a single statement or expression. You need braces for a block when you want to execute multiple statements or expressions in a clause. Otherwise, you can omit them. However, this practice can cause problems. Consider the following code:</p>
+<pre class="language-js"><code class="language-js">if (x === 3)
+  console.log('x is 3');
+  console.log('x is an odd number');
+</code></pre>
+<p>Based on the indentation, it looks like the programmer expects line 3 to execute when <code>x</code> is <code>3</code>, but not when it has some other value. However, line 3 is <em>not</em> part of the <code>if</code> statement. It's a separate expression that follows the <code>if</code> statement. Though JavaScript allows this practice, you should avoid it in most cases. Blocks make your code more readable and reliable.</p>
+<p>Examples 6 and 7 both behave the same way. Example 6 uses a nested <code>if</code> statement in the <code>else</code> clause, while example 7 shows the result of removing the block. Here, we can ignore our suggestion to use blocks in <code>if</code> statements; <code>else if</code> is one place where omitting the block is preferable. It's easier to read and maintain example 7 since you don't have the syntactic clutter of extra braces and indentation.</p>
+<h2><a href="#comparisons" name="comparisons">Comparisons</a></h2>
+<p>Let's look at the comparison operators in some more depth so you can build more complicated conditional statements. One thing to remember is that comparison operators return a boolean value: <code>true</code> or <code>false</code>. We'll play with them in <code>node</code> to see how they work.</p>
+<div class="alert-box info">
+<p>The expressions or values that an operator uses are its <strong>operands</strong>. In comparisons, the expressions to the left and right of the operator are the operands. For instance, the equality comparison <code>x === y</code> uses the <code>===</code> operator with two operands: <code>x</code> and <code>y</code>.</p>
+</div>
+<ul>
+<li>
+<p><b><code>===</code></b><br/>
+The <strong>strict equality operator</strong>, also known as the <strong>identity operator</strong>, returns <code>true</code> when the operands have the same type <em>and</em> value, <code>false</code> otherwise. We discussed <code>===</code> in <em>The Basics</em> chapter. It should be familiar even if it still looks strange.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; 5 === 5
+= true
+
+&gt; 5 === 4
+= false
+
+&gt; 'abc' === 'abc'
+= true
+
+&gt; 'abc' === 'abcd'
+= false
+
+&gt; 'abc' === 'aBc'
+= false
+
+&gt; '5' === '5'
+= true
+
+&gt; '5' === '6'
+= false
+
+&gt; 5 === '5'
+= false
+
+&gt; '' === 0
+= false
+</code></pre>
+<p>Notice that we can compare strings for strict equality. To be strictly equal, two strings must have the exact same value. The specific value doesn't matter, just that both strings have the same value. If there is any difference at all, the strings are not equal.</p>
+<p>We threw these last two examples in as a reminder that two values must have the same type or they are not equal. Thus, the string <code>'5'</code> is not the same as the number <code>5</code>. The comparison is thus <code>false</code>. Furthermore, the last example shows that two different "falsy" values (described later in this chapter) are not equal.</p>
+</li>
+<li>
+<p><b><code>!==</code></b><br/>
+The <strong>strict inequality operator</strong> returns <code>false</code> when the operands have the same type and value, <code>true</code> otherwise. Note that <code>!==</code> is the inverse of <code>===</code>: when <code>===</code> returns <code>true</code>, <code>!==</code> returns false, and vice versa.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">// Compare with the `===` examples.
+
+&gt; 5 !== 5
+= false
+
+&gt; 5 !== 4
+= true
+
+&gt; 4 !== 156
+= true
+
+&gt; 'abc' !== 'def'
+= true
+
+&gt; 'abc' !== 'aBc'
+= true
+
+&gt; 5 !== '5'
+= true
+</code></pre>
+<p>As with <code>===</code>, we can easily compare two values of the same type for strict inequality and get reasonable results. However, if the two values have different types, the return value is <code>true</code>.</p>
+</li>
+<li>
+<p><b><code>==</code></b><br/>
+The <strong>non-strict equality operator</strong>, also known as the <strong>loose equality operator</strong>, is similar to <code>===</code>. However, when the operands have different types, <code>==</code> attempts to coerce one of the operands to the other operand's type before it compares them, and it may coerce both operands in some cases. The result is <code>true</code> when the final values are the same, <code>false</code> otherwise. The coercion behavior can lead to unexpected results. For instance, when we compare the number <code>5</code> to the string <code>'5'</code> using <code>==</code>, we get <code>true</code>; with <code>===</code>, we get <code>false</code>.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">// Compare with the `===` examples.
+
+&gt; 5 == 5
+= true
+
+&gt; 5 == 4
+= false
+
+&gt; 5 == '5'
+= true
+
+&gt; '' == 0
+= true
+</code></pre>
+</li>
+<li>
+<p><b><code>!=</code></b><br/>
+The <strong>non-strict inequality operator</strong>, also known as the <strong>loose inequality operator</strong>, is similar to <code>!==</code>. However, when the operands have different types, <code>!=</code> attempts to coerce one of the operands to the other operand's type before it compares them, and it may coerce both operands in some cases. The result is <code>false</code> when the final values are the same, <code>true</code> otherwise.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">// Compare with the `==` and `!==` examples.
+
+&gt; 5 != 5
+= false
+
+&gt; 5 != 4
+= true
+
+&gt; 5 != '5'
+= false
+
+&gt; '' != 0
+= false
+</code></pre>
+<div class="alert-box info">
+<p>The rules that govern which operand <code>==</code> and <code>!=</code> coerces to the other are complex and difficult to remember. Avoid these operators when you can. For instance, you can use explicit coercion and <code>===</code> in most cases.</p>
+<p>That advice is not universal. There are JavaScript developers, including some well-known ones, who will tell you to go ahead and use the loose operators, <code>==</code> and <code>!=</code>. Their reasoning is easy to understand: your code should not be attempting to compare different kinds of things, except in a few well-defined, isolated cases. Using the strict operators as a workaround is just masking bad code. They're not completely wrong! If you're comparing strings with arrays, your code almost certainly needs a redesign.</p>
+<p>That said, there are some edge cases that you need to be aware of with the loose operators. For that reason, the style we use at Launch School insists that you always use the strict operators. Doing so won't prevent you from having to fix bad code, but at this stage of your journey, it's less confusing to use the strict operators, and easier to debug.</p>
+</div>
+</li>
+<li>
+<p><b><code>&lt;</code></b><br/>
+The <strong>less than operator</strong> returns <code>true</code> when the value of the left operand has a value that is less than the value of the right operand, <code>false</code> otherwise.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; 4 &lt; 5
+= true
+
+&gt; 5 &lt; 4
+= false
+
+&gt; 5 &lt; 5
+= false
+
+&gt; "4" &lt; "5"
+= true
+
+&gt; "42" &lt; "402"
+= false
+
+&gt; "42" &lt; "420"
+= true
+
+&gt; "42" &lt; 420
+= true
+</code></pre>
+<p>The examples with strings are especially tricky! Make sure you understand them. When comparing strings, the comparison is character-by-character. JavaScript moves from left-to-right in the strings looking for the first character that is different from its counterpart in the other string. Once it finds a character that differs, it compares that character with its counterpart, and makes a decision based on that. If both strings are equal up to the length of the shorter string as in the next to last example, then the shorter string is considered less than the longer string.</p>
+<p>The final example shows that if you use <code>&lt;</code> with two different types, some sort of coercion will take place. In this case, <code>"42"</code> gets coerced to a number, so a numeric comparison takes place. Don't try to remember this.</p>
+</li>
+<li>
+<p><b><code>&gt;</code></b><br/>
+The <strong>greater than operator</strong> returns <code>true</code> when the value of the left operand has a value that is greater than the value of the right operand, <code>false</code> otherwise.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">// Compare with the `&lt;` examples.
+
+&gt; 4 &gt; 5
+= false
+
+&gt; 5 &gt; 4
+= true
+
+&gt; 5 &gt; 5
+= false
+
+&gt; "4" &gt; "5"
+= false
+
+&gt; "42" &gt; "402"
+= true
+
+&gt; "42" &gt; "420"
+= false
+
+&gt; "42" &gt; 420
+= false
+</code></pre>
+<p>As with <code>&lt;</code>, the <code>&gt;</code> operator can be used to compare strings, and can even be used with mixed types (but with sometimes bizarre results).</p>
+</li>
+<li>
+<p><b><code>&lt;=</code></b><br/>
+The <strong>less than or equal to operator</strong> returns <code>true</code> when the value of the left operand has a value that is less than <em>or equal to</em> the value of the right operand, <code>false</code> otherwise. Note that <code>=&lt;</code> is not a valid comparison operator.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">// Compare with the `&lt;` examples.
+
+&gt; 4 &lt;= 5
+= true
+
+&gt; 5 &lt;= 4
+= false
+
+&gt; 5 &lt;= 5
+= true
+</code></pre>
+<p>Of course, the <code>&lt;=</code> operator works equally well with strings.</p>
+</li>
+<li>
+<p><b><code>&gt;=</code></b><br/>
+The <strong>greater than or equal to operator</strong> returns <code>true</code> when the value of the left operand has a value that is greater than <em>or equal to</em> the value of the right operand, <code>false</code> otherwise. Note that <code>=&gt;</code> is not a valid comparison operator.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">// Compare with the `&gt;` examples.
+
+&gt; 4 &gt;= 5
+= false
+
+&gt; 5 &gt;= 4
+= true
+
+&gt; 5 &gt;= 5
+= true
+</code></pre>
+<p>Of course, the <code>&gt;=</code> operator works equally well with strings.</p>
+</li>
+</ul>
+<h2><a href="#logicaloperators" name="logicaloperators">Logical Operators</a></h2>
+<p>You're beginning to get a decent grasp of basic conditional flow. Let's take a few minutes to see how we can combine multiple conditions to create more specific and complex scenarios. The <code>!</code>, <code>&amp;&amp;</code>, and <code>||</code> <strong>logical operators</strong> provide the ability to combine conditions:</p>
+<ul>
+<li>
+<p><b><code>!</code></b><br/>
+The <strong>not operator</strong> returns <code>true</code> when its operand is <code>false</code> and returns <code>false</code> when the operand is <code>true</code>. That is, it negates its operand. Note that, unlike most operators, <code>!</code> takes a single operand; the operand appears to the right of the operator.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; !true
+= false
+
+&gt; !false
+= true
+
+&gt; !(4 === 4)
+= false
+
+&gt; !(4 !== 4)
+= true
+</code></pre>
+<p>In these examples, JavaScript first evaluates the expression on the right, then applies <code>!</code> to the result, thus negating it. For instance, we know that <code>4 === 4</code> is <code>true</code>, so <code>!(4 === 4)</code> is <code>false</code>.</p>
+<div class="alert-box info">
+<p>You may encounter code that uses <code>!!</code> in some expressions. We'll discuss that a little later in this chapter.</p>
+</div>
+</li>
+<li>
+<p><b><code>&amp;&amp;</code></b><br/>
+The <strong>and operator</strong> returns <code>true</code> when both operands are <code>true</code> and <code>false</code> when either operand is <code>false</code>.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; true &amp;&amp; true
+= true
+
+&gt; true &amp;&amp; false
+= false
+
+&gt; false &amp;&amp; true
+= false
+
+&gt; false &amp;&amp; false
+= false
+
+&gt; (4 === 4) &amp;&amp; (5 === 5)
+= true
+
+&gt; (4 === 4) &amp;&amp; (5 === 6)
+= false
+
+&gt; (4 === 5) &amp;&amp; (5 === 5)
+= false
+
+&gt; (4 === 5) &amp;&amp; (5 === 6)
+= false
+</code></pre>
+</li>
+<li>
+<p><b><code>||</code></b><br/>
+The <strong>or operator</strong> returns <code>true</code> when either operand is <code>true</code> and <code>false</code> when both operands are <code>false</code>.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; true || true
+= true
+
+&gt; true || false
+= true
+
+&gt; false || true
+= true
+
+&gt; false || false
+= false
+
+&gt; (4 === 4) || (5 === 5)
+= true
+
+&gt; (4 === 4) || (5 === 6)
+= true
+
+&gt; (4 === 5) || (5 === 5)
+= true
+
+&gt; (4 === 5) || (5 === 6)
+= false
+</code></pre>
+</li>
+</ul>
+<div class="alert-box info">
+<p><code>&amp;&amp;</code> and <code>||</code> don't always return <code>true</code> or <code>false</code>, but they do when they operate on boolean values. A little later in this chapter we'll see what happens when we use <code>&amp;&amp;</code> and <code>||</code> with non-boolean values.</p>
+</div>
+<h2><a href="#shortcircuits" name="shortcircuits">Short Circuits</a></h2>
+<p>The <code>&amp;&amp;</code> and <code>||</code> operators both use a mechanism called <strong>short circuit evaluation</strong> to evaluate their operands. Consider these two expressions:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; isRed(item) &amp;&amp; isPortable(item)
+&gt; isGreen(item) || hasWheels(item)
+</code></pre>
+<p>The first expression returns <code>true</code> when <code>item</code> is both red and portable. If either condition is <code>false</code>, then the overall result <strong>must</strong> be <code>false</code>. Thus, if the program determines that <code>item</code> is not red, it doesn't have to check whether it is portable. JavaScript short-circuits the entire expression by terminating evaluation as soon as it determines that <code>item</code> isn't red. It doesn't need to call <code>isPortable()</code> since it already knows that the entire expression must be <code>false</code>.</p>
+<p>Similarly, the second expression returns <code>true</code> when <code>item</code> is either green or has wheels. When either condition is <code>true</code>, the overall result <strong>must</strong> be <code>true</code>. Thus, if the program determines that <code>item</code> is green, it doesn't have to check whether it has wheels. Again, JavaScript short-circuits the entire expression once it determines that <code>item</code> is green. The entire expression must be <code>true</code>.</p>
+<h2><a href="#truthiness" name="truthiness">Truthiness</a></h2>
+<p>Notice that every <code>if</code> statement has an expression that evaluates as true or false. However, the expression doesn't have to be one of the boolean values, <code>true</code> and <code>false</code>. JavaScript can coerce any value to a boolean value, and that's what it does in conditional contexts like the <code>if</code> statement.</p>
+<p>For instance, you can write code like this:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">a = 5
+if (a) {
+  console.log("how can this be true?");
+} else {
+  console.log("it is not true");
+}
+</code></pre>
+<pre class="language-js" data-numbers="off"><code class="language-js">b = 0
+if (b) {
+  console.log("how can this be true?");
+} else {
+  console.log("it is not true");
+}
+</code></pre>
+<p>The first example logs "how can this be true?" while the second logs "it is not true." This works since JavaScript coerces the value <code>5</code> to <code>true</code>, and the value <code>0</code> to <code>false</code>. To repeat, JavaScript can coerce any value to a boolean. Thus, you can use any expression in a conditional expression. We often say that the expression <strong>evaluates as</strong> or <strong>evaluates to</strong> true or false.</p>
+<p>We can even write code like this:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let x;
+
+if (x = 5) {
+  console.log("how can this be true?");
+} else {
+  console.log("it is not true");
+}
+</code></pre>
+<p>The above code doesn't test whether <code>x</code> is equal to <code>5</code>. Instead, it assigns the variable <code>x</code> to <code>5</code>, then evaluates the assignment's return value (<code>5</code>) as a boolean. Here, <code>5</code> evaluates as true when it appears in a boolean expression.</p>
+<p>Why is that? The answer is simple: when coercing a value to a boolean, JavaScript treats the following values as false:</p>
+<ul>
+<li> <code>false</code>
+</li>
+<li>  The number <code>0</code>. This includes all 3 variations of zero in JavaScript:
+
+<ul>
+<li> <code>0</code>: The ordinary zero value.
+</li>
+<li> <code>-0</code>: A negative zero. That's mathematical nonsense, but a real thing in JavaScript.
+</li>
+<li> <code>0n</code>: The <code>BigInt</code> version of zero.
+</li>
+</ul>
+</li>
+<li>  An empty string (<code>''</code>)
+</li>
+<li> <code>undefined</code>
+</li>
+<li> <code>null</code>
+</li>
+<li> <code>NaN</code>
+</li>
+</ul>
+<p>Everything else evaluates as true.</p>
+<p>We often use the term <strong>falsy</strong> to refer to values that evaluate as false, while the values that evaluate as true are <strong>truthy</strong>. We use these terms when we need to distinguish between boolean <code>true</code> and <code>false</code> values. We can also discuss <strong>truthiness</strong>: whether something is a truthy or falsy value.</p>
+<p>Truthiness is exceptionally useful in JavaScript; there are plenty of situations where you want to treat the values <code>0</code> (all 3 variants), <code>''</code>, <code>undefined</code>, <code>null</code>, and <code>NaN</code> as though they were false. It helps make conditional expressions read more naturally, but it can also catch an unwary programmer by surprise. If you have experience with another language that uses falsy values, be wary; most languages don't share the same idea of what values are falsy. That's a constant headache for programmers that work with multiple languages.</p>
+<p>Let's return to the <code>if (x = 5)</code> example. When you see code like that, it's important to remember that <code>x = 5</code> is an assignment. It returns <code>5</code>, which, in turn, is a truthy value. You should avoid using assignments in conditionals: at first glance, <code>if (x = 5)</code> and <code>if (x == 5)</code> look identical. However, they have entirely different meanings and produce different results. That makes the code suspect: the assignment might be intentional, but it might also be a mistake, and mistakes are bugs waiting to bite the unwary. Worse yet, another programmer may come along and naively "fix" the code.</p>
+<p>The <code>&amp;&amp;</code> and <code>||</code> logical operators, as you'll recall, use short-circuit evaluation. These operators work with truthy and falsy values too, and they can also return truthy values instead of boolean values. When using <code>&amp;&amp;</code> and <code>||</code>, the return value is always the value of the operand evaluated last:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; 3 &amp;&amp; 'foo'  // last evaluated operand is 'foo'
+= 'foo'
+
+&gt; 'foo' &amp;&amp; 3  // last evaluated operand is 3
+= 3
+
+&gt; 0 &amp;&amp; 'foo'  // last evaluated operand is 0
+= 0
+
+&gt; 'foo' &amp;&amp; 0  // last evaluated operand is 0
+= 0
+</code></pre>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; 3 || 'foo'  // last evaluated operand is 3
+= 3
+
+&gt; 'foo' || 3  // last evaluated operand is 'foo'
+= 'foo'
+
+&gt; 0 || 'foo'  // last evaluated operand is 'foo'
+= 'foo'
+
+&gt; 'foo' || 0  // last evaluated operand is 'foo'
+= 'foo'
+
+&gt; '' || 0     // last evaluated operand is 0
+= 0
+</code></pre>
+<p>Suppose you have an expression of some kind that returns a value that is either truthy or falsy, but isn't a boolean value:</p>
+<pre class="language-js"><code class="language-js">let foo = null;
+let bar = 'qux';
+let isOk = foo || bar;
+</code></pre>
+<p>In this code, <code>isOk</code> gets set to a truthy value of <code>"qux"</code>. In most cases, you can use <code>"qux"</code> as though it were actually a boolean <code>true</code> value. However, using a string value as though it is a boolean isn't the clearest way to write your code. It may even look like a mistake to another programmer who is trying to track down a bug. In some strange cases, it may even be a mistake.</p>
+<p>You can address this easily enough by using an <code>if</code> statement or a ternary expression:</p>
+<pre class="language-js"><code class="language-js">let isOk = (foo || bar) ? true : false;
+</code></pre>
+<pre class="language-js"><code class="language-js">let isOk;
+if (foo || bar) {
+  isOk = true;
+} else {
+  isOk = false;
+}
+</code></pre>
+<p>Either of those snippets sets <code>isOk</code> to an appropriate boolean value. However, they do so in a somewhat wordy manner. Many JavaScript programmers use a more concise coercion by using what looks like a <code>!!</code> operator:</p>
+<pre class="language-js"><code class="language-js">let isOk = !!(foo || bar);
+</code></pre>
+<p>In reality, <code>!!</code> isn't a separate operator in JavaScript. Instead, it's two consecutive <code>!</code> operators. The expression <code>!!a</code> is equivalent to writing <code>!(!a)</code>. The inner <code>!</code> converts the value of <code>a</code> to <code>false</code> if it is truthy, or <code>true</code> if <code>a</code> is falsy. The outer <code>!</code> then flips <code>true</code> to <code>false</code> or <code>false</code> to <code>true</code>. In the end, we end up with a boolean value instead of a truthiness value:</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; !!3    // 3 is truthy, !3 is false, !false is true
+= true
+
+&gt; !!''   // '' is falsy, !'' is true, !true is false
+= false
+</code></pre>
+<h2><a href="#operatorprecedence" name="operatorprecedence">Operator Precedence</a></h2>
+<p>JavaScript has a set of <strong>precedence</strong> rules it uses to evaluate expressions that use multiple operators and sub-expressions. The following is a list of the comparison operations from the highest precedence (top) to lowest (bottom).</p>
+<ul>
+<li> <code>&lt;=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code> - Comparison
+</li>
+<li> <code>===</code>, <code>!==</code>, <code>==</code>, <code>!=</code> - Equality
+</li>
+<li> <code>&amp;&amp;</code> - Logical AND
+</li>
+<li> <code>||</code> - Logical OR
+</li>
+</ul>
+<p>With the precedence list in hand, we can look at the following expression and determine how to evaluate it:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">if (x || y &amp;&amp; z) {
+  // do something
+}
+</code></pre>
+<p>For the moment, let's ignore the fact that both <code>||</code> and <code>&amp;&amp;</code> are short-circuit operators. The program first evaluates the <code>y &amp;&amp; z</code> sub-expression since <code>&amp;&amp;</code> has higher precedence than <code>||</code>. It then takes the result of that evaluation and evaluates <code>x || result</code>.</p>
+<p>We can use parentheses to override the precedence: sub-expressions in parentheses get evaluated before un-parenthesized expressions at the same depth in the main expression (don't worry about what we mean by depth right now):</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">if ((x || y) &amp;&amp; z) {
+  // do something
+}
+</code></pre>
+<p>In this code, <code>x || y</code> gets evaluated first, and then <code>result &amp;&amp; z</code>. That's a different result from the un-parenthesized expression. Parentheses help the computer and other programmers understand your intentions; you should strive to use parentheses in any expression that uses two or more different operators.</p>
+<p>JavaScript evaluates parentheses in the usual algebraic order. That is, it evaluates the expression in the innermost set of parentheses first, then works its way out to the outermost part of the expression. When multiple parenthesized subexpressions appear at the same depth, it evaluates them from left to right. Once it evaluates the parenthesized expressions, it evaluates the final expression value.</p>
+<p>Short circuit evaluation doesn't change the precedence rules, but, if you try to think about it, you may end up confused. Wait until later before you try to understand how and why. For now, remember that short-circuit evaluation may prevent JavaScript from evaluating the expression to the right of the operator, but the precedence rules remain the same.</p>
+<h2><a href="#theternaryoperator" name="theternaryoperator">The Ternary Operator</a></h2>
+<p>The <strong>ternary operator</strong> is a quick and easy way to write a short, concise, and simple if/else conditional. It uses a combination of the <code>?</code> and <code>:</code> symbols and takes 3 operands (hence, the name "ternary"):</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; 1 == 1 ? 'this is true' : 'this is not true'
+= 'this is true'
+
+&gt; 1 == 0 ? "this is true" : "this is not true"
+= 'this is not true'
+ </code></pre>
+<p>How does this work? JavaScript first evaluates the first operand (the comparisons). If it has a truthy result, JavaScript evaluates the second operand (<code>this is true</code>) and returns its value. Otherwise, it evaluates the third operand (<code>this is not true</code>) and returns its value.</p>
+<p>The chief advantage that the ternary operator has over an <code>if/else</code> statement is that the entire structure is an expression. What that means is that we can treat the ternary expression as a value: we can assign it to a variable, pass it as an argument, and so on. Since <code>if/else</code> is a statement, we can't capture its result to a variable.</p>
+<pre class="language-node" data-numbers="off"><code class="language-node">&gt; let message = true ? 'this is true' : 'this is not true'
+= undefined
+
+&gt; message
+= 'this is true'
+
+&gt; console.log(false ? 'this is true' : 'this is not true')
+this is not true
+= undefined
+</code></pre>
+<p>You can't do that with an <code>if/else</code> statement.</p>
+<p>If you feel unsure of how this works, play around with it in <code>node</code> and test some other cases. Nothing creates familiarity faster than repeated exposure and experimentation.</p>
+<h2><a href="#switchstatement" name="switchstatement">Switch Statement</a></h2>
+<p>The last conditional flow structure we want to discuss is the <code>switch</code> statement. A <code>switch</code> statement is similar to an <code>if</code> statement, but it has a different interface. It compares a single value against multiple values for strict equality (as with the <code>===</code> operator), whereas <code>if</code> can test multiple expressions with any condition.</p>
+<p><code>switch</code> statements use the reserved words <code>switch</code>, <code>case</code>, <code>default</code>, and <code>break</code>. It's often easier to show rather than tell, and that's certainly the case with the <code>switch</code> statement. First, create a file named <code>switch.js</code> with this content:</p>
+<pre class="language-js" data-file="switch.js" data-numbers="off"><code class="language-js">let a = 5;
+
+switch (a) {
+  case 5:
+    console.log('a is 5');
+    break;
+  case 6:
+    console.log('a is 6');
+    break;
+  default:
+    console.log('a is neither 5, nor 6');
+    break;
+} // =&gt; a is 5
+</code></pre>
+<p>This example is functionally identical to the following <code>if/else</code> statement:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let a = 5;
+
+if (a === 5) {
+  console.log('a is 5');
+} else if (a === 6) {
+  console.log('a is 6');
+} else {
+  console.log('a is neither 5, nor 6');
+} // =&gt; a is 5
+</code></pre>
+<p>You can see how similar they are, but you can also see how they differ. The <code>switch</code> statement evaluates the expression, <code>a</code>, compares its value to the value in each <code>case</code> clause and then executes the statements and expressions associated with the first matching clause. In this example, the value of the expression is <code>5</code>; thus, the program executes the statements and expressions associated with the <code>case 5:</code> clause. The statements and expressions in the <code>default:</code> clause run when the expression doesn't match any of the <code>case</code> clauses; it acts like the final <code>else</code> in an <code>if</code> statement.</p>
+<p>The <code>break</code> statement in each <code>case</code> is crucial. Without a break, execution "falls through" to the next <code>case</code> clause.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let a = 5;
+
+switch (a) {
+  case 5:
+    console.log('a is 5');
+  case 6:
+    console.log('a is 6');
+  default:
+    console.log('a is neither 5, nor 6');
+} // =&gt; a is 5
+  //    a is 6
+  //    a is neither 5, nor 6
+</code></pre>
+<p>This behavior is a little strange, and <em>almost</em> always undesirable. In most cases, you want to avoid fall-throughs that lead to executing multiple <code>case</code> clauses for a single value. Code that falls through multiple cases like this is, by its nature, suspect; it looks like you forgot to use the <code>break</code> statement, which makes it look like a bug waiting to happen. Even if the code is correct, it looks wrong. Often, it is wrong.</p>
+<p>However, that doesn't mean that fall-throughs are never appropriate. There are use cases where they work well. For instance, suppose you want to execute the same action for two or more cases:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">let a = 5;
+
+switch (a) {
+  case 5:
+  case 6:
+  case 7:
+    // executed if a is 5, 6, or 7
+    console.log("a is either 5, 6, or 7");
+    break;
+  case 8:
+  case 9:
+    // executed if a is 8 or 9
+    console.log('a is 8 or 9');
+    break;
+  default:
+    // executed if a is anything else
+    console.log('a is not 5, 6, 7, 8, or 9');
+    break;
+}
+</code></pre>
+<p>Technically, this is fall-through, but, since each <code>case</code> executes a single clause, it's safe to use and doesn't suggest a possible error.</p>
+<p>There are plenty of uses for <code>switch</code> statements. They're potent tools in JavaScript. If you're uncomfortable with them, spend some time modifying the ones we presented above and watch how they respond to your changes. Test their boundaries and learn their capabilities. Curiosity will serve you well in your journey towards mastering JavaScript. There is much to discover!</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>This chapter covered booleans, comparisons, and using conditionals to control the flow of code execution. These are some of the fundamental tools you'll need to become a JavaScript developer.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>What values do the following expressions evaluate to?</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">false || (true &amp;&amp; false);
+true || (1 + 2);
+(1 + 2) || true;
+true &amp;&amp; (1 + 2);
+false &amp;&amp; (1 + 2);
+(1 + 2) &amp;&amp; true;
+(32 * 4) &gt;= 129;
+false !== !true;
+true === 4;
+false === (847 === '847');
+false === (847 == '847');
+(!true || (!(100 / 5) === 20) || ((328 / 4) === 82)) || false;
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>false || (true &amp;&amp; false)</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true || (1 + 2)</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>(1 + 2) || true</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>true &amp;&amp; (1 + 2)</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>false &amp;&amp; (1 + 2)</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(1 + 2) &amp;&amp; true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>(32 * 4) &gt;= 129</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false !== !true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true === 4</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false === (847 === '847')</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>false === (847 == '847')</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(!true || (!(100 / 5) === 20) || ((328 / 4) === 82)) || false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>Remember that expressions involving the logical operators of <code>||</code> and <code>&amp;&amp;</code> use short-circuit evaluation; they also return truthiness values.</p>
+<p>The last expression needs some explanation:</p>
+<ol>
+<li> <code>!true</code> is <code>false</code>
+</li>
+<li> <code>!(100 / 5) === 20)</code> is also false because <code>!(100 / 5)</code> is a boolean value, and <code>===</code> always returns <code>false</code> when the operands have different types.
+</li>
+<li> <code>((328 / 4) === 82)</code> is <code>true</code>
+</li>
+<li> Put together, items 1-3 combine with <code>||</code> as <code>(false || false || true)</code>, which is <code>true</code>.
+</li>
+<li> Using the value from item 4 results in <code>true || false</code>, which is <code>true</code>.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a function, <code>evenOrOdd</code>, that determines whether its argument is an even number. If it is, the function should log <code>'even'</code> to the console; otherwise, it should log <code>'odd'</code>. For now, assume that the argument is always an integer.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_d7351ed5ab08" data-toggle="collapse" type="button">Hint 1</button></span></div><div class="collapse" id="collapse_d7351ed5ab08">
+<p>A number is even if you can divide it by two with no remainder. For instance, <code>4</code> is even since <code>4</code> divided by <code>2</code> has no remainder. Conversely, <code>3</code> is odd since <code>3</code> divided by <code>2</code> has a remainder of <code>1</code>.</p>
+</div></div>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_0d009aa553af" data-toggle="collapse" type="button">Hint 2</button></span></div><div class="collapse" id="collapse_0d009aa553af">
+<p>You can use the <code>%</code> remainder operator shown in <em>The Basics</em> chapter to determine the remainder.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function evenOrOdd(number) {
+  if (number % 2 === 0) {
+    console.log('even');
+  } else {
+    console.log('odd');
+  }
+}
+</code></pre><p>The solution uses the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_%28%29">remainder operator (%)</a> to determine whether the number is even. If the result of <code>number % 2</code> is <code>0</code>, the number is even.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Let's improve our previous implementation of <code>evenOrOdd</code>. Add a validation check to ensure that the argument is an integer. If it isn't, the function should issue an error message and return.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_5c738a18b1b9" data-toggle="collapse" type="button">Hint</button></span></div><div class="collapse" id="collapse_5c738a18b1b9">
+<p>You can use <code>Number.isInteger(value)</code> to determine whether a numeric <code>value</code> is an integer. It returns <code>true</code> if the value is an integer, <code>false</code> otherwise.</p>
+</div></div>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function evenOrOdd(number) {
+  if (!Number.isInteger(number)) {
+    console.log('Sorry, the value you passed is not an integer');
+    return;
+  }
+
+  if (number % 2 === 0) {
+    console.log('even');
+  } else {
+    console.log('odd');
+  }
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What does the following code log to the console, and why?</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function barCodeScanner(serial) {
+  switch (serial) {
+    case '123':
+      console.log('Product1');
+    case '113':
+      console.log('Product2');
+    case '142':
+      console.log('Product3');
+    default:
+      console.log('Product not found!');
+  }
+}
+
+barCodeScanner('113');
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The output is:</p>
+<pre class="language-plaintext" data-numbers="off"><code class="language-plaintext">Product2
+Product3
+Product not found!
+</code></pre>
+<p>Since the <code>case</code> clauses of the <code>switch</code> statement lack <code>break</code> statements, control falls through from the matching <code>case '113'</code> clause and executes the code in the <code>case '142'</code> and <code>default</code> clauses as well. JavaScript doesn't care that the criteria for extra <code>case</code> clauses don't match our <code>serial</code> value. This fall-through behavior is often undesirable. To avoid it, you must add <code>break</code> statements to each <code>case</code> clause:</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function barCodeScanner(serial) {
+  switch (serial) {
+    case '123':
+      console.log('Product1');
+      break;
+    case '113':
+      console.log('Product2');
+      break;
+    case '142':
+      console.log('Product3');
+      break;
+    default:
+      console.log('Product not found!');
+  }
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Refactor this statement to use an <code>if</code> statement instead.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">return foo() ? 'bar' : qux();
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">if (foo()) {
+  return 'bar';
+} else {
+  return qux();
+}
+</code></pre><p>Ternary operators are most useful when the values are simple expressions; anything more complicated than calling a function or accessing a variable or literal value can lead to unreadable code. Our original code is an excellent example of how to use the ternary operator; the refactoring merely demonstrates that you understand how it works.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What does this code output to the console?</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">function isArrayEmpty(arr) {
+  if (arr) {
+    console.log('Not Empty');
+  } else {
+    console.log('Empty');
+  }
+}
+
+isArrayEmpty([]);
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The output is <code>Not Empty</code> since, while the array is empty -- it has no elements and the <code>length</code> property is <code>0</code> -- it isn't falsy. Thus, JavaScript executes the first branch of the <code>if</code> statement.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a function that takes a string as an argument and returns an all-caps version of the string when the string is longer than 10 characters. Otherwise, it should return the original string. Example: change <code>'hello world'</code> to <code>'HELLO WORLD'</code>, but don't change <code>'goodbye'</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-file="Solution 1" data-numbers="off"><code class="language-js">function capsLong(string) {
+  if (string.length &gt; 10) {
+    return string.toUpperCase();
+  } else {
+    return string;
+  }
+}
+
+console.log(capsLong("Sue Smith"));     // =&gt; Sue Smith
+console.log(capsLong("Sue Robertson")); // =&gt; SUE ROBERTSON
+console.log(capsLong("Joe Thomas"));    // =&gt; Joe Thomas
+console.log(capsLong("Joe Stevens"));   // =&gt; JOE STEVENS
+</code></pre><pre class="language-js" data-file="Solution 2" data-numbers="off"><code class="language-js">function capsLong(string) {
+  return ((string.length &gt; 10) ? string.toUpperCase() : string);
+}
+
+console.log(capsLong("Sue Smith"));     // =&gt; Sue Smith
+console.log(capsLong("Sue Robertson")); // =&gt; SUE ROBERTSON
+console.log(capsLong("Joe Thomas"));    // =&gt; Joe Thomas
+console.log(capsLong("Joe Stevens"));   // =&gt; JOE STEVENS
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Write a function that logs whether a number is between 0 and 50 (inclusive), between 51 and 100 (inclusive), greater than 100, or less than 0.</p>
+<pre class="language-js" data-numbers="off"><code class="language-js">numberRange(25);
+numberRange(75);
+numberRange(125);
+numberRange(-25);
+</code></pre>
+<p><strong>Expected Output</strong></p>
+<pre class="language-plaintext"><code class="language-plaintext">25 is between 0 and 50
+75 is between 51 and 100
+125 is greater than 100
+-25 is less than 0
+</code></pre>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-js" data-numbers="off"><code class="language-js">function numberRange(number) {
+  if (number &lt; 0) {
+    console.log(`${number} is less than 0`);
+  } else if (number &lt;= 50) {
+    console.log(`${number} is between 0 and 50`);
+  } else if (number &lt;= 100) {
+    console.log(`${number} is between 50 and 100`);
+  } else {
+    console.log(`${number} is greater than 100`);
+  }
+}
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to Programming with JavaScript/7.html">Next:  Loops &amp; Iterating
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

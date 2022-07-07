@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Introduction to the Command Line</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":116,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Introduction to the Command Line" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="ThMPgfVplg4Zx94aIU2tKMbhXvWELt3WJ1KP-2Jhr9SbSLdLiEnyf3Gi9DuWHpU7YxYor0v3_lw1r9ctx-wLqQ" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/command_line">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/command_line/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/command_line/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/command_line/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/introduction#briefoverview"><span>A Brief Overview</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/introduction#whyshouldilearncli"><span>What's in it for me?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/preparations#whoshouldreadthisbook"><span>Who should read this book</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/preparations#gettingthemostoutofthebook"><span>Getting the Most Out of this Book</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/preparations#serversetup"><span>Server Setup</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to the Command Line</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/command_line_interface"><span class="chapter_title">The Command Line Interface</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/command_line_interface#whatisaninterface"><span>What is an interface?</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/command_line_interface#whatiscliusedfor"><span>What is the Command Line used for?</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/command_line_interface#commoncommands"><span>What are some common commands?</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/command_line_interface#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/command_line/read/files_directories_executables"><span class="chapter_title">Files, Directories, and Executables</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/command_line/read/files_directories_executables#clicore"><span>The Core of the Command Line</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#linuxunixfs"><span>Linux/Unix File System</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#navigating"><span>Navigating</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#managingfiles"><span>Managing Files and Folders</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#executables"><span>Executables</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/environment"><span class="chapter_title">The Environment</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/environment#environmentvariables"><span>Environment Variables</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/environment#changeenvironment"><span>How to Change your Command Line Environment</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/environment#path"><span>$PATH and Executables</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/environment#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/permissions"><span class="chapter_title">Permissions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/permissions#overview"><span>Overview</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#interpretingpermissions"><span>Interpreting Permissions</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#settingpermissions"><span>Setting Permissions</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#usersandgroups"><span>Users and Groups</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#rootuserandsudo"><span>Root User and Sudo</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/other_interfaces"><span class="chapter_title">Other Interfaces</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/other_interfaces#context"><span>Changing context in Terminal</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#repl"><span>Read-Eval-Print-Loop (REPL)</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#editors"><span>Editors</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#bash-interface"><span>Bash: a Special Interface</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#repl"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/conclusion#overview"><span>Overview of Concepts</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/conclusion#wheretogofromhere"><span>Where to Go from Here</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/command_line/read/files_directories_executables&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/command_line/read/files_directories_executables" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/command_line">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/command_line/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/command_line/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/command_line/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/introduction#briefoverview"><span>A Brief Overview</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/introduction#whyshouldilearncli"><span>What's in it for me?</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/preparations#whoshouldreadthisbook"><span>Who should read this book</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/preparations#gettingthemostoutofthebook"><span>Getting the Most Out of this Book</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/preparations#serversetup"><span>Server Setup</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Introduction to the Command Line</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/command_line_interface"><span class="chapter_title">The Command Line Interface</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/command_line_interface#whatisaninterface"><span>What is an interface?</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/command_line_interface#whatiscliusedfor"><span>What is the Command Line used for?</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/command_line_interface#commoncommands"><span>What are some common commands?</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/command_line_interface#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/command_line/read/files_directories_executables"><span class="chapter_title">Files, Directories, and Executables</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/command_line/read/files_directories_executables#clicore"><span>The Core of the Command Line</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#linuxunixfs"><span>Linux/Unix File System</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#navigating"><span>Navigating</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#managingfiles"><span>Managing Files and Folders</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#executables"><span>Executables</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/files_directories_executables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/environment"><span class="chapter_title">The Environment</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/environment#environmentvariables"><span>Environment Variables</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/environment#changeenvironment"><span>How to Change your Command Line Environment</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/environment#path"><span>$PATH and Executables</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/environment#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/permissions"><span class="chapter_title">Permissions</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/permissions#overview"><span>Overview</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#interpretingpermissions"><span>Interpreting Permissions</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#settingpermissions"><span>Setting Permissions</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#usersandgroups"><span>Users and Groups</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#rootuserandsudo"><span>Root User and Sudo</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/permissions#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/other_interfaces"><span class="chapter_title">Other Interfaces</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/other_interfaces#context"><span>Changing context in Terminal</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#repl"><span>Read-Eval-Print-Loop (REPL)</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#editors"><span>Editors</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#bash-interface"><span>Bash: a Special Interface</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/other_interfaces#repl"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/command_line/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/command_line/read/conclusion#overview"><span>Overview of Concepts</span>
+</a></li>
+<li>
+<a href="/books/command_line/read/conclusion#wheretogofromhere"><span>Where to Go from Here</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/command_line/read/files_directories_executables&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/command_line/read/files_directories_executables" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Files, Directories, and Executables</h1>
+<h2><a href="#clicore" name="clicore">The Core of the Command Line</a></h2>
+<p>In a desktop environment, like that of OS X, you have windows, menu bars, and the desktop to give context to what you are doing. In the command line, however, the context is solely the file system. In fact, files and directories are what make up the command line. Almost everything you do at the prompt will deal with files. Every time you type a command, you are telling the computer to execute a file.</p>
+<p>Not only does the file system provide context for you when you're trying to work on or get information about files and directories, it also provides context for the commands you run. For example, you can use the <code>ls</code> command to list the files in a directory. When you run the command by itself, it uses your current directory as context, and lists the files that are in the directory you are in.</p>
+<h2><a href="#linuxunixfs" name="linuxunixfs">Linux/Unix File System</a></h2>
+<p>Let's look for a moment at some of the symbols that will help us navigate the command line:</p>
+<ul>
+<li> <code>/</code> - The root directory or a separator when listing directories
+</li>
+<li> <code>.</code> - The current directory (also <code>./</code>) or the same level
+</li>
+<li> <code>..</code> - The directory one level up (also <code>../</code>)
+</li>
+<li> <code>../..</code> - The directory that is two levels up; that is, the directory that is one level up from <code>..</code>
+</li>
+<li> <code>~</code> - Your "home" directory, or the directory you are placed in when you log in.
+</li>
+<li> <code>*</code> - The "splat" or "glob" operator. This is the wildcard of the command line and represents "any characters."
+</li>
+</ul>
+<p>The above symbols can be combined with directory and file names to represent their locations. The path <code>/home/ubuntu</code> can be dissected as follows:</p>
+<pre class="language-text" data-disable-copy="true"><code class="language-text">root directory + "home" directory + directory separator + "ubuntu" (user)
+directory
+</code></pre>
+<p>While it may not make sense to do so, somewhat "nonsensical" combinations can represent valid paths. The following path is the same as <code>/home/ubuntu</code>:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">/home/ubuntu/../.././home/ubuntu/
+</code></pre>
+<p>Let's break the above path into its parts:</p>
+<ul>
+<li> <code>/home/ubuntu/</code> - The <code>ubuntu</code> directory within the <code>home</code> directory within the root (<code>/</code>) directory.
+</li>
+<li> <code>../../</code> - Up two directories (which takes us back to the root directory).
+</li>
+<li> <code>./</code> - The same directory (which is still <code>/</code>).
+</li>
+<li> <code>home/ubuntu/</code> - Back down into the home directory, then the ubuntu directory.
+</li>
+</ul>
+<p>Note that there's a dramatic difference between a path that starts with a leading slash vs one that doesn't. For example:</p>
+<ul>
+<li>
+<p><code>/home/ubuntu</code> This path specifies a folder called <code>ubuntu</code> that lives in a directory called <code>home</code>, which is itself in the <em>root directory</em>.</p>
+</li>
+<li>
+<p><code>home/ubuntu</code> This path specifies a completely different folder. This path means there's a folder called <code>ubuntu</code> that lives in a directory called <code>home</code>, which is itself in the <em>current directory</em>.</p>
+</li>
+</ul>
+<p>The leading slash makes all the difference. Make sure to pay careful attention to that whenever you're looking at paths.</p>
+<h2><a href="#navigating" name="navigating">Navigating</a></h2>
+<p>Navigating your computer's file system is pretty easy with the help of the File System Legend above, and a few simple commands:</p>
+<ul>
+<li> <code>cd</code> - change directory
+</li>
+<li> <code>ls</code> - list files
+</li>
+<li> <code>pwd</code> - display the current working directory
+</li>
+</ul>
+<p>Let's get a feel for navigating the command line interface by opening up Terminal or logging in to your managed server or virtual machine and treading water for a bit. After logging in, type the following commands and note what happens after each step:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash"># Change directory (with no arguments)
+$ cd
+$ pwd
+/home/ubuntu
+
+# Change to root directory
+$ cd /
+$ pwd
+/
+
+# Change directory (with no arguments again)
+$ cd
+$ pwd
+/home/ubuntu
+
+# Go up one directory
+$ cd ../
+$ pwd
+/home
+
+# Show files and directories (with no arguments, it uses current directory)
+$ ls
+ubuntu
+
+# Navigate into "ubuntu" directory
+$ cd ubuntu
+$ pwd
+/home/ubuntu
+
+# Change to ~ (home) directory
+$ cd ~
+$ pwd
+/home/ubuntu
+
+# Show files and directories in root directory
+$ ls /
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  rootfs  run  sbin  selinux  srv  sys  tmp  usr  var
+
+# Show files that match a certain pattern
+# using the splat operator (asterisk)
+
+# The following example may not produce the same
+# results on your system. On some systems, such as
+# Ubuntu, you may need to use `sudo ls /*ot` instead
+# of ls /*ot, but on others, such as a Mac, you
+# will only get error messages. What's important
+# here is to learn how to use the commands, not
+# replicate the results.
+
+$ ls /*ot
+boot root
+</code></pre>
+<p>Did you notice that typing <code>cd</code> by itself takes you to your "home" directory? Which command(s) made you "descend" into a directory? Which command(s) made you go up a directory? What was the difference in the output of <code>ls</code> vs. <code>ls /</code>? What do you think the output of <code>ls ./</code> would be if you first ran <code>cd /</code>?</p>
+<p>The last example shows that the splat (<code>*</code>) allows you to list files that match a pattern. The asterisk is the wildcard and represents any number of any characters, so <code>*ot</code> represents any file or directory that ends in <code>ot</code>.</p>
+<h2><a href="#managingfiles" name="managingfiles">Managing Files and Folders</a></h2>
+<p>With an understanding that "where you are" in the command line provides context for your commands, and a working knowledge of navigating the command line interface, we can move on to learning to manage files and directories from the command line.</p>
+<p>When you open up Finder in Mac or Windows Explorer in Windows, you can see manila-folder-style directories along with icons that represent documents, images, and programs. Think for a moment about some of the things that you do with the files from time to time. Do you ever move files around? Maybe sometimes you copy a file so that you can make a new version. Have you made new directories before? It's probably not too surprising by now that you can do the same things from the command line. Some of the most frequently used commands for managing files and directories on the command line are <code>cp</code>, <code>mv</code>, <code>mkdir</code>, <code>touch</code>, and <code>rm</code>. Their meanings are listed here:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left">Command</th>
+<th style="text-align: left">What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left"><code>cp</code></td>
+<td style="text-align: left">Copy one or more files to a new location</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>mv</code></td>
+<td style="text-align: left">Move or rename a file or directory</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>mkdir</code></td>
+<td style="text-align: left">Make a new directory</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>touch</code></td>
+<td style="text-align: left">Create a new file or update modification time if a file with that name exists</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>rm</code></td>
+<td style="text-align: left">Remove one or more files or directories</td>
+</tr>
+</tbody>
+</table>
+<p>To get acquainted with these commands, go ahead and try them out. Try the following exercises to solidify your understanding of the above commands:</p>
+<ol>
+<li>
+<p>Create a directory in your home directory called "cli-tmp".</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_4595a388b171" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_4595a388b171">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">mkdir ~/cli-tmp
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>From the home directory, create a file in the cli-tmp directory called "from-home.txt".</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_a1a1fd29f173" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_a1a1fd29f173">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cd
+touch cli-tmp/from-home.txt
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Navigate to the cli-tmp directory, then create a file called "in-cli-tmp".</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_35945565836f" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_35945565836f">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cd cli-tmp
+touch in-cli-tmp
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Try to make a directory called "in-cli-tmp" within the <code>cli-tmp</code> directory. What happens?</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_91d59b9110d2" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_91d59b9110d2">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ mkdir in-cli-tmp
+mkdir: in-cli-tmp: File exists
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Remove the <code>from-home.txt</code> file.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_1fd966fe2af5" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_1fd966fe2af5">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">rm from-home.txt
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Remove the <code>cli-tmp</code> directory (hint use <code>man</code> to see how to remove a directory recursively).</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_4d2e01654478" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_4d2e01654478">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cd
+rm -r cli-tmp
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Create a nested set of directories in your home directory: cli-tmp &gt; parents &gt; children &gt; grandchildren (hint: use the <code>-p</code> flag to do it all at once).</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_62c0af48f760" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_62c0af48f760">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">mkdir -p ~/cli-tmp/parents/children/grandchildren
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Navigate to the <code>children</code> directory.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_ffd18f151dca" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_ffd18f151dca">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cd ~/cli-tmp/parents/children
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Create a file named "bob".</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_bbb5e26959b1" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_bbb5e26959b1">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">touch bob
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Move the file named "bob" to the <code>grandchildren</code> directory.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_9e06f81c1ce8" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_9e06f81c1ce8">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">mv bob grandchildren
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Copy the <code>grandchildren</code> directory to the <code>parents</code> directory with a new name: <code>nephews</code>.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_28292d144659" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_28292d144659">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cp -r grandchildren ../nephews
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Copy the contents of the "nephews" directory to the "children" directory.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_ae3fd5ba93ea" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_ae3fd5ba93ea">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cp ../nephews/* ./
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>View what you've done with the <code>tree</code> command: <code>tree ~/cli-tmp</code>.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_4fa00afd63ad" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_4fa00afd63ad">
+<p><strong>Note</strong>: You may need to install the <code>tree</code> command using <a href="http://brew.sh/">homebrew</a> or a similar tool if you are on a Mac. On Cloud9, you can install it using <code>sudo yum install tree</code>. If that doesn't work, try <code>sudo apt-get install tree</code>.</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ tree ~/cli-tmp
+/Users/[username]/cli-tmp/
+└── parents
+  ├── children
+  │   ├── bob
+  │   └── grandchildren
+  │       └── bob
+  └── nephews
+      └── bob
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Remove the "bob" file from the <code>grandchildren</code> directory.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_b2bbc83a4d9b" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_b2bbc83a4d9b">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">rm ~/cli-tmp/parents/children/grandchildren/bob
+</code></pre>
+</div></div>
+</li>
+<li>
+<p>Remove the <code>cli-tmp</code> directory.</p>
+<div class="markup-collapse clearfix"><div><span class="collapse-button"><button aria-controls="collapseExample" aria-expanded="false" class="button secondary tiny" data-target="#collapse_eba59e6ce941" data-toggle="collapse" type="button">Solution</button></span></div><div class="collapse" id="collapse_eba59e6ce941">
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">cd
+rm -r cli-tmp
+</code></pre>
+</div></div>
+</li>
+</ol>
+<h2><a href="#executables" name="executables">Executables</a></h2>
+<p>In the last chapter, we talked about the anatomy of commands, which was basically "command plus arguments." But what is a command really? As mentioned at the beginning of this chapter, a command is just a file. That's right: <code>ls</code>, <code>mkdir</code>, and <code>cd</code> are all files. Files that can be used as commands are called executables. Not all files are executables.</p>
+<p>What makes an executable different from other files?</p>
+<ol>
+<li> They have special characters at the beginning to tell the computer how to execute them.
+</li>
+<li> They have scripts or machine language as their content.
+</li>
+<li> They have the executable permission (we'll talk more about this later).
+</li>
+</ol>
+<p>To run an executable, you just type its path as the first part of your input, then type in your arguments, and hit enter, like this:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ /bin/echo "Hello World"
+Hello World
+</code></pre>
+<p>In the above example, <code>/bin/echo</code> is the path to the executable, and <code>"Hello World"</code> is the first (and only) argument.</p>
+<p>If you want to execute a file in your current directory, you have to type <code>./</code> or the path to your current directory before the filename. For common or installed commands, you won't usually have to specify the path of the executable because the command line interface already knows where to find it. That's why you can type <code>echo</code> instead of <code>/bin/echo</code>.</p>
+<p>When you use the <code>echo</code> executable, it will probably take no more than a few milliseconds to run, and the chances that it will freeze or get stuck are almost zero. Some executables, however, cause long-running processes, and it is useful at times to be able to exit out of them before they exit on their own. Some commands and executables run in a loop, and won't exit until you tell them to. Others freeze or take a lot longer than you expected, and need to be stopped short. On Unix-like systems, there is an almost ubiquitous way of exiting out of any executable's process: <code>Ctrl + c</code>. This key combination sends a signal to the process to terminate <code>SIGINT</code>.</p>
+<p>If you are using Bash commands and accidentally create an <a href="https://en.m.wikipedia.org/wiki/Infinite_loop">infinite loop</a>, you can exit out of it with <code>Ctrl + c</code>:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$  while true; do echo 'Hit CTRL+C'; sleep 1; done
+Hit CTRL+C
+Hit CTRL+C
+Hit CTRL+C
+</code></pre>
+<p>The above will echo "Hit CTRL+C", then sleep for a second, until you hit <code>Ctrl + c</code> on your keyboard.</p>
+<div class="alert-box info">
+<p>Note the format "Ctrl + c" means "hold down the control key, then press c, and release." You'll see other combinations like this as you learn more about programming and about using Bash.</p>
+</div>
+<p>In the next chapter, we'll discuss how the command line knows where installed commands are located.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>List the hidden files in a directory.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>You can list all files, including hidden ones, in a directory using the <code>-a</code> flag.</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ ls -a
+.   .bash_history  .bash_profile  .cache   .gem    .npm
+..  .bash_logout   .bashrc        .config  .local  .profile
+</code></pre>
+<p>To only list hidden (also called dotfiles) files, you can use the following command:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ ls -d .*
+.   .bash_history  .bash_profile  .cache   .gem    .npm  .viminfo
+..  .bash_logout   .bashrc        .config  .local  .profile  .ssh
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-0"/>
+<map data-responsive="" id="register-0" name="register-0">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>List the files in the parent directory. Then list the files in the parent directory's parent directory.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>You can list a parent directory's files using the following command:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ ls ..
+ubuntu
+</code></pre>
+<p>What happens if you run that command from the root directory?</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd /
+$ ls ..
+bin   home            lib64       opt   sbin  usr
+boot  initrd.img      lost+found  proc  srv   var
+dev   initrd.img.old  media       root  sys   vmlinuz
+etc   lib             mnt         run   tmp   vmlinuz.old
+</code></pre>
+<p>As you can see, since the root directory doesn't have a parent directory, it just prints out the files in the root directory itself.</p>
+<p>To list the files of the parent's parent directory, just add a slash and an extra <code>..</code>:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd
+$ ls ../..
+bin   home            lib64       opt   sbin  usr
+boot  initrd.img      lost+found  proc  srv   var
+dev   initrd.img.old  media       root  sys   vmlinuz
+etc   lib             mnt         run   tmp   vmlinuz.old
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-1"/>
+<map data-responsive="" id="register-1" name="register-1">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What's the difference between abc/ and /abc?</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The path <code>abc/</code> (also <code>./abc</code> and <code>./abc/</code>) are paths relative to your current working directory. The path <code>/abc</code>, however, is the file or directory <code>abc</code> in the root directory.</p>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-2"/>
+<map data-responsive="" id="register-2" name="register-2">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>What does ../abc mean?</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>The path <code>../abc</code> is a reference to the parent directory (<code>..</code>), and the file or directory called "abc" within that directory.</p>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-3"/>
+<map data-responsive="" id="register-3" name="register-3">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Suppose you are in a directory with 7 files. You need to move 6 of them into a "tmp" directory, that you have yet to create. How do you do that?</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>Let's break this up into a few steps:</p>
+<p>First, create the temporary directory:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ mkdir ~/tmp
+</code></pre>
+<p>The fastest way to move all but one file is to move all the files, then move the one file back. Assuming the one file that you don't want to move is <code>1.file</code>, the following commands will do the trick:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ mv * ~/tmp
+$ mv ~/tmp/1.file ./
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-4"/>
+<map data-responsive="" id="register-4" name="register-4">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Suppose you have two directories called xyz/ and abc/. How do you move all the files in abc/ that end with ".txt" into xyz/?</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>Using the glob operator <code>*</code>, (also known as the wildcard or just asterisk) you can move all files that match a particular pattern. First, check your pattern:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ ls abc/*.txt
+1.txt  2.txt  3.txt
+</code></pre>
+<p>Then move the files:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ mv abc/*.txt xyz/
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-5"/>
+<map data-responsive="" id="register-5" name="register-5">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Let's review some common navigation tasks:</p>
+<p>To get your current location, use <code>pwd</code>:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ pwd
+/home/ubuntu
+</code></pre>
+<p>To change your current directory, use <code>cd</code>. Using it without any arguments will take you to your home directory:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd
+$ pwd
+/home/ubuntu
+</code></pre>
+<p>You can also pass the <code>$HOME</code> variable as an argument, or use the <code>~</code> (tilde) as the first argument to achieve the same results:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd $HOME
+$ pwd
+/home/ubuntu
+$ cd ~
+$ pwd
+/home/ubuntu
+</code></pre>
+<p>Go to the root directory (<code>/</code>):</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd /
+$ pwd
+/
+</code></pre>
+<p>Use the <code>ls</code> command to determine what files and directories are located in the current directory:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd /
+$ pwd
+/
+$ ls
+bin   dev  home  lib64  lost+found  mnt  proc  run   selinux  sys  usr
+boot  etc  lib   local  media       opt  root  sbin  srv      tmp  var
+</code></pre>
+<p>Pass a directory or a path as an argument to the <code>cd</code> command to go directly to that location:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd usr
+$ pwd
+/usr
+</code></pre>
+<p>You can also get a sneak peek into what directories are located in a specific path:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd /
+$ pwd
+/
+$ ls usr
+bin  etc  games  include  lib  lib64  libexec  local  sbin  share  src  tmp
+</code></pre>
+<p>Use the <code>-lah</code> set of flags as arguments to the <code>ls</code> command to get more detailed information about files and directories:</p>
+<pre class="language-none"><code class="language-none">$ cd /
+$ ls -lah
+total 112K
+dr-xr-xr-x 24 root root 4.0K Mar 16 20:56 .
+dr-xr-xr-x 24 root root 4.0K Mar 16 20:56 ..
+-rw-r--r--  1 root root    0 Mar 16 20:56 .autofsck
+dr-xr-xr-x  2 root root 4.0K Oct  1  2014 bin
+dr-xr-xr-x  3 root root 4.0K Oct  1  2014 boot
+drwxr-xr-x 16 root root 2.8K Jun  3 21:48 dev
+drwxr-xr-x 76 root root 4.0K Jun  3 21:48 etc
+drwxr-xr-x  3 root root 4.0K Sep 29  2014 home
+dr-xr-xr-x  7 root root 4.0K Mar 25  2014 lib
+dr-xr-xr-x 10 root root  12K Oct  1  2014 lib64
+drwxr-xr-x  2 root root 4.0K Mar 25  2014 local
+drwx------  2 root root  16K Mar 25  2014 lost+found
+drwxr-xr-x  2 root root 4.0K Jan  6  2012 media
+drwxr-xr-x  2 root root 4.0K Jan  6  2012 mnt
+drwxr-xr-x  3 root root 4.0K Mar 25  2014 opt
+dr-xr-xr-x 75 root root    0 Mar 16 20:56 proc
+dr-xr-x---  3 root root 4.0K Jun  3 21:48 root
+drwxr-xr-x  4 root root 4.0K Sep 29  2014 run
+dr-xr-xr-x  2 root root  12K Oct  1  2014 sbin
+drwxr-xr-x  2 root root 4.0K Jan  6  2012 selinux
+drwxr-xr-x  2 root root 4.0K Jan  6  2012 srv
+dr-xr-xr-x 13 root root    0 Mar 16 20:56 sys
+drwxrwxrwt  3 root root 4.0K Jun 10 03:34 tmp
+drwxr-xr-x 13 root root 4.0K Mar 25  2014 usr
+drwxr-xr-x 19 root root 4.0K Mar 25  2014 var
+</code></pre>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>In this exercise we're going to play with executables. We'll find the location of so-called "default executables" by using the <code>which</code> command, then execute a file using its absolute path.</p>
+<p>To figure out a default executable's location, you can use the <code>which</code> command:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ which touch
+/bin/touch
+</code></pre>
+<p>Now we can execute the <code>touch</code> command using its full path or name:</p>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd
+$ touch test
+$ ls
+test
+$ /bin/touch test2
+$ ls
+test test2
+</code></pre>
+<p>We can do the same thing now with the <code>rm</code> command:</p>
+<div class="alert-box warning">
+<p><strong>Warning!</strong></p>
+<p>The "rm" command is extremely dangerous. There is no easy, or even moderately difficult, way to restore what you delete with the "rm" command!</p>
+</div>
+<pre class="language-bash" data-disable-copy="true"><code class="language-bash">$ cd
+$ rm test
+$ ls
+test2
+$ which rm
+/bin/rm
+$ /bin/rm test2
+$ ls
+$
+</code></pre>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-6"/>
+<map data-responsive="" id="register-6" name="register-6">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to the Command Line/4.html">Next:  The Environment
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

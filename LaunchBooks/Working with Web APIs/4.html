@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Working with Web APIs</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":0,"applicationTime":66,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Working with Web APIs" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="diigsnDZtxLkpoHo8O-UOVw6Y1kBa5Gkrr9WZBWviUjvL9kGmKomwgVK-p8nfawH27bVcDV7J8ZgmNfUBOEdxg" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/working_with_apis">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/working_with_apis/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/working_with_apis/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/working_with_apis/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/introduction#whatthisbookcovers"><span>What this Book Covers</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/introduction#examples"><span>Examples</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/preparations##installinghttpie"><span>Installing HTTPie</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/preparations##installingpostman"><span>Installing Postman</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/using_postman"><span class="chapter_title">Using Postman</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/using_postman#makingarequest"><span>Making a Request</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/using_postman#checkingtheweather"><span>Checking the Weather</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/using_postman#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>API Basics</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/defining_api"><span class="chapter_title">Defining API</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/defining_api#whatisanapi"><span>What is an API?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#webapis"><span>Web APIs</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#provider_and_consumer"><span>Provider and Consumer</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#clientsandservers"><span>What about Clients and Servers?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/what_apis_can_do"><span class="chapter_title">What APIs Can Do</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#sharingdate"><span>Sharing Data</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#enablingautomation"><span>Enabling Automation</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#leverageexistingservices"><span>Leverage Existing Services</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/accessibility"><span class="chapter_title">Accessibility</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/accessibility#publicandprivate"><span>Public and Private</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/accessibility#termsandconditions"><span>Terms and Conditions</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/accessibility#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/a_review_of_http"><span class="chapter_title">A Review of HTTP</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#requestandresponse"><span>Request and Response</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#statuscode"><span>Status Code</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#headers"><span>Headers</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#body"><span>Body</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/a_review_of_urls"><span class="chapter_title">A Review of URLs</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#url_or_uri"><span>URL or URI?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#the_parts_of_an_url"><span>The Parts of a URL</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#identifiers_in_paths"><span>Identifiers in Paths</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/media_types"><span class="chapter_title">Media Types</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/media_types#whatisamediatype"><span>What is a Media Type?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#dataserialization"><span>Data Serialization</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#xml"><span>XML</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#json"><span>JSON</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/rest_and_crud"><span class="chapter_title">REST and CRUD</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#rest"><span>What is REST?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#crud"><span>CRUD</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#restfulapitemplate"><span>A RESTful API Template</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#resourceorientedthinking"><span>Resource Oriented Thinking</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#conventionsnotrules"><span>Conventions, not Rules</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working with an API</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/fetching_resources"><span class="chapter_title">Fetching Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#serversetup"><span>Server Setup</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#fetchingaresource"><span>Fetching a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#what_is_a_resource"><span>What is a Resource?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#fetching_a_collection"><span>Fetching a Collection</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#elements_and_collections"><span>Elements and Collections</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/requests_in_depth"><span class="chapter_title">Requests in Depth</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/requests_in_depth#get_and_post"><span>GET and POST</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/requests_in_depth#parts_of_a_request"><span>Parts of a Request</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/requests_in_depth#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/creating_resources"><span class="chapter_title">Creating Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#http_request_side_effects"><span>HTTP Request Side Effects</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#creating_a_resource"><span>Creating a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#handling_errors"><span>Handling errors</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/more_http_methods"><span class="chapter_title">More HTTP Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/more_http_methods#updating_a_resource"><span>Updating a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/more_http_methods#deleting_a_resource"><span>Deleting a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/more_http_methods#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Real World APIs</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/twitter_api"><span class="chapter_title">Twitter API</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#whatisoauth"><span> What is OAuth?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#settingupatwitterapplication"><span>Setting up a Twitter Application</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#fetching_a_tweet"><span>Fetching a Tweet</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#posting_a_tweet"><span>Posting a Tweet</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#twitterapiandrest"><span>Twitter API and REST</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Reference</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/http_response_headers"><span class="chapter_title">HTTP Response Headers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#accesscontrolalloworigin"><span>Access-Control-Allow-Origin</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#allow"><span>Allow</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#contentlength"><span>Content-Length</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#contenttype"><span>Content-Type</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#etag"><span>ETag</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#lastmodified"><span>Last-Modified</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#wwwauthenticate"><span>WWW-Authenticate</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#xheader"><span>X-* Headers</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/working_with_apis/read/what_apis_can_do&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/working_with_apis/read/what_apis_can_do" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/working_with_apis">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/working_with_apis/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/working_with_apis/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/working_with_apis/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/introduction#whatthisbookcovers"><span>What this Book Covers</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/introduction#examples"><span>Examples</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/preparations##installinghttpie"><span>Installing HTTPie</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/preparations##installingpostman"><span>Installing Postman</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/using_postman"><span class="chapter_title">Using Postman</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/using_postman#makingarequest"><span>Making a Request</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/using_postman#checkingtheweather"><span>Checking the Weather</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/using_postman#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>API Basics</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/defining_api"><span class="chapter_title">Defining API</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/defining_api#whatisanapi"><span>What is an API?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#webapis"><span>Web APIs</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#provider_and_consumer"><span>Provider and Consumer</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#clientsandservers"><span>What about Clients and Servers?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/defining_api#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/what_apis_can_do"><span class="chapter_title">What APIs Can Do</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#sharingdate"><span>Sharing Data</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#enablingautomation"><span>Enabling Automation</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#leverageexistingservices"><span>Leverage Existing Services</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/what_apis_can_do#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/accessibility"><span class="chapter_title">Accessibility</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/accessibility#publicandprivate"><span>Public and Private</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/accessibility#termsandconditions"><span>Terms and Conditions</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/accessibility#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/a_review_of_http"><span class="chapter_title">A Review of HTTP</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#requestandresponse"><span>Request and Response</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#statuscode"><span>Status Code</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#headers"><span>Headers</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#body"><span>Body</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_http#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/a_review_of_urls"><span class="chapter_title">A Review of URLs</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#url_or_uri"><span>URL or URI?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#the_parts_of_an_url"><span>The Parts of a URL</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#identifiers_in_paths"><span>Identifiers in Paths</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/a_review_of_urls#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/media_types"><span class="chapter_title">Media Types</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/media_types#whatisamediatype"><span>What is a Media Type?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#dataserialization"><span>Data Serialization</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#xml"><span>XML</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#json"><span>JSON</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/media_types#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/rest_and_crud"><span class="chapter_title">REST and CRUD</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#rest"><span>What is REST?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#crud"><span>CRUD</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#restfulapitemplate"><span>A RESTful API Template</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#resourceorientedthinking"><span>Resource Oriented Thinking</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#conventionsnotrules"><span>Conventions, not Rules</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/rest_and_crud#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working with an API</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/fetching_resources"><span class="chapter_title">Fetching Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#serversetup"><span>Server Setup</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#fetchingaresource"><span>Fetching a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#what_is_a_resource"><span>What is a Resource?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#fetching_a_collection"><span>Fetching a Collection</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#elements_and_collections"><span>Elements and Collections</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/fetching_resources#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/requests_in_depth"><span class="chapter_title">Requests in Depth</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/requests_in_depth#get_and_post"><span>GET and POST</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/requests_in_depth#parts_of_a_request"><span>Parts of a Request</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/requests_in_depth#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/creating_resources"><span class="chapter_title">Creating Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#http_request_side_effects"><span>HTTP Request Side Effects</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#creating_a_resource"><span>Creating a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#handling_errors"><span>Handling errors</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/creating_resources#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/more_http_methods"><span class="chapter_title">More HTTP Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/more_http_methods#updating_a_resource"><span>Updating a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/more_http_methods#deleting_a_resource"><span>Deleting a Resource</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/more_http_methods#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Real World APIs</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/twitter_api"><span class="chapter_title">Twitter API</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#whatisoauth"><span> What is OAuth?</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#settingupatwitterapplication"><span>Setting up a Twitter Application</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#fetching_a_tweet"><span>Fetching a Tweet</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#posting_a_tweet"><span>Posting a Tweet</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#twitterapiandrest"><span>Twitter API and REST</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/twitter_api#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Reference</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/working_with_apis/read/http_response_headers"><span class="chapter_title">HTTP Response Headers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#accesscontrolalloworigin"><span>Access-Control-Allow-Origin</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#allow"><span>Allow</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#contentlength"><span>Content-Length</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#contenttype"><span>Content-Type</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#etag"><span>ETag</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#lastmodified"><span>Last-Modified</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#wwwauthenticate"><span>WWW-Authenticate</span>
+</a></li>
+<li>
+<a href="/books/working_with_apis/read/http_response_headers#xheader"><span>X-* Headers</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/working_with_apis/read/what_apis_can_do&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/working_with_apis/read/what_apis_can_do" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>What APIs Can Do</h1>
+<h2><a href="#sharingdate" name="sharingdate">Sharing Data</a></h2>
+<p>Perhaps the most common use case for web APIs is simply sharing data between systems. Consider a web application for creating birthday cards. Instead of requiring a user to enter the names and birthdays for each of their friends, the application could use an API provided by Facebook to fetch data about a user's friends automatically.</p>
+<p>At a certain level, all APIs are used to transfer data between systems. This basic capability offers many benefits to application developers and users alike. An extremely common case would be providing data to a mobile application that needs to access data from a web-based service. The Netflix mobile application (and actually all of the various Netflix apps that run on different devices) need to be able to access your same Netflix account. Since this data is kept on a central server, it can be exposed to the mobile and other apps using an API.</p>
+<h2><a href="#enablingautomation" name="enablingautomation">Enabling Automation</a></h2>
+<p>Imagine a hat manufacturer who is really working on making its customers happy. Let's call this company HatCo. HatCo has a web store where their entire catalog of hats is available for shipment anywhere in the world. As part of a new customer happiness campaign, HatCo has announced that each order enters the purchaser into a drawing for a free custom hat.</p>
+<p>HatCo needs to make sure that every person who places an order through the website is entered into a sweepstakes for a daily drawing. Right now the company is a year old and only fills a few orders each day. It is one of the employees' responsibilities to manually enter each customer's information into the sweepstakes system.</p>
+<p>Fast-forward a few years into the future. After several years of steady growth, hundreds of orders are now placed on the HatCo web site each day. It takes hours for a human to copy the customer information into the sweepstakes system, and there are plenty of typos and mistakes made along the way that corrupt some of the data as it is transferred.</p>
+<p>Luckily, both the HatCo web store and their sweepstakes system provide APIs. The store's API grants access to information about orders and customers, and the sweepstakes' API offers a way to add or remove entries from a drawing. The company hires a developer to write a program that fetches a days' worth of orders from the web store and enters the customers who placed those orders into the sweepstakes system. This program is set up to run at midnight every night. It copies the data from one system to the other without making any mistakes and allows a now happy HatCo employee to use their time for something more fun.</p>
+<p><strong>APIs allow users of a service to make use of it in new and useful ways.</strong></p>
+<h2><a href="#leverageexistingservices" name="leverageexistingservices">Leverage Existing Services</a></h2>
+<p>NearPhoto is a new (imaginary) mobile application startup with plenty of VC funding. This company is dedicated to <em>changing the way nearby photos are found</em>.</p>
+<p>NearPhoto is working on an app that, not surprisingly, displays photos taken near a mobile device's current location. Their founder has drawn up a plan to ship this application by the end of the year:</p>
+<ol>
+<li>Create a large data set of images from all over the world and associate each with the geographic location where it was taken.
+</li>
+<li>Build a way to search all this data spatially in order to find images taken near a given point.
+</li>
+<li>Build an app that sends queries to this system and displays the results.
+</li>
+</ol>
+<p>After consulting with the CTO, the founder learns that the proposed plan is going to be a whole lot of work, take a really long time, and require huge amounts of disk space to store all the photos. Luckily, the CTO has a different idea of how to proceed with development:</p>
+<ol>
+<li>Get access to an existing photo dataset that includes geographic search functionality, such as that of Instagram, Facebook, or Flickr.
+</li>
+<li>Build an app that sends queries to this system and displays the results.
+</li>
+</ol>
+<p>This new plan is easily accomplished using existing APIs. By following this path, the company is well on its way to a profitable exit for everyone involved.</p>
+<p>The number of things a modern web application is expected to do is vast. Even fairly simple sites will need to process credit card payments, send emails, fetch information about books, or call cell phones and read messages to the recipient. While it is possible to write all of the code to perform these tasks oneself, it usually doesn't make sense to, especially for smaller companies with basic needs.</p>
+<p><strong>APIs enable application developers to build their applications on top of a variety of other specialized systems, allowing them to focus on their actual objectives and not worry about all the complexities of every part of the system.</strong> In a way, it's like hiring a team of specialists for a construction project. While it would be possible to do everything, it makes a lot more sense to delegate certain responsibilities to a specialist. A project will have better results if it is built by a plumber, an electrician, and a carpenter than if it was all done by a single person. Plus, the team effort will likely result in a higher quality product in less time.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<ul>
+<li>APIs break down the walls between systems, allowing them to share data.
+</li>
+<li>APIs provide an "escape hatch" enabling service users to customize the software's behavior or integrate it into other systems if required.
+</li>
+<li>Many modern web applications provide an API that allows developers to integrate their own code with these applications, taking advantage of the services' functionality in their own apps.
+</li>
+</ul>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Working with Web APIs/5.html">Next:  Accessibility
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

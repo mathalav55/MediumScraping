@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Create and access your first database</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":8,"applicationTime":138,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Create a new database. Commands for connecting and describing different parts of a database are presented. Delete a database." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="E25KP8yxo8qRp3d25xy1_x_ioD2yS3UsFQcB6o06IDlQIE752tJAc6WG6W_FG8_i_U1RMZq1qzEYIq8Ld_Q8Jg" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Create+and+access+your+first+database&amp;url=https://launchschool.com/books/sql/read/create_database&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/create_database" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/sql">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/sql/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/sql/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/introduction#data"><span>The importance of data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#structureddata"><span>Structured Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#spreadsheetdb"><span>Spreadsheet as Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#rdbms"><span>Relational Database Management Systems</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#sql"><span>SQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#whylearnsql"><span>Why learn SQL?</span>
+</a></li>
+<li>
+<a href="/books/sql/read/introduction#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/preparations#vocabulary"><span>Vocabulary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#installingpostgresql"><span>Installing PostgreSQL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/preparations#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/interacting_with_postgresql"><span class="chapter_title">Interacting With PostgreSQL</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#interactingwithadatabase"><span>Interacting With a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#postgresqlclientapps"><span>PostgreSQL Client Applications</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#psqlconsole"><span>The psql console</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#sqlsublanguages"><span>SQL Sub-languages</span>
+</a></li>
+<li>
+<a href="/books/sql/read/interacting_with_postgresql#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/basics_tutorial"><span class="chapter_title">SQL Basics Tutorial</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/basics_tutorial#setup"><span>Set Up</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#connect"><span>Connect</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectall"><span>Select all</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumns"><span>Selecting columns</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectrows"><span>Selecting rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#selectcolumnsandrows"><span>Selecting columns and rows</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#datavsschema"><span>Data vs Schema</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/basics_tutorial#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Schema</span>
+<ul class="topics">
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_database"><span class="chapter_title">Create and View Databases</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/sql/read/create_database#creatingadatabase"><span>Create a database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#connecttodb"><span>Connecting to a Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#deletingdb"><span>Delete the Database</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_database#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/create_table"><span class="chapter_title">Create and View Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/create_table#tablecreationsyntax"><span>Table Creation Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#datatypes"><span>Data Types</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#keysandconstraints"><span>Keys and Constraints</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#viewtable"><span>View the Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#schemadcl"><span>Schema and DCL</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/create_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/alter_table"><span class="chapter_title">Alter a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/alter_table#altertablesyntax"><span>Alter Table Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingatable"><span>Renaming a Table</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#renamingacolumn"><span>Renaming a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#changedatatype"><span>Changing a Column's Datatype</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingaconstraint"><span>Adding a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingaconstraint"><span>Removing a Constraint</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#addingacolumn"><span>Adding a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#removingacolumn"><span>Removing a Column</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#droppingtables"><span>Dropping Tables</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/alter_table#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Your First Database: Data</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/add_data"><span class="chapter_title">Add Data with INSERT</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/add_data#datadml"><span>Data and DML</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#setup"><span>Setup</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#insertionstatementsyntax"><span>Insertion Statement Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#addingrows"><span>Adding Rows of Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#constraintsdata"><span>Constraints and Adding Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/add_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/select_queries"><span class="chapter_title">Select Queries</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/select_queries#selectquerysyntax"><span>Select Query Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#ordering"><span>ORDER BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#operators"><span>Operators</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/select_queries#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/more_on_select"><span class="chapter_title">More on Select</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/more_on_select#limitoffset"><span>LIMIT and OFFSET</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#distinct"><span>DISTINCT</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#functions"><span>Functions</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#groupby"><span>GROUP BY</span>
+</a></li>
+<li>
+<a href="/books/sql/read/more_on_select#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/update_and_delete_data"><span class="chapter_title"> Update Data in a Table</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatingdata"><span>Updating Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#deletingdata"><span>Deleting Data</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#updatevsdelete"><span>Update vs Delete</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#usecaution"><span>Use Caution</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/update_and_delete_data#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Working With Multiple Tables</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/table_relationships"><span class="chapter_title">Create Multiple Tables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/table_relationships#normalization"><span>Normalization</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#databasedesign"><span>Database Design</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#keys"><span>Keys</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetoone"><span>one-to-one</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#referentialintegrity"><span>Referential Integrity</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#onetomany"><span>One-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#manytomany"><span>Many-to-Many</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/table_relationships#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/joins"><span class="chapter_title">SQL Joins</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/joins#joinsyntax"><span>Join Syntax</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#typesofjoins"><span>Types of Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#multiplejoins"><span>Multiple Joins</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#aliasing"><span>Aliasing</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#subqueries"><span>Subqueries</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/joins#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/sql/read/resources"><span class="chapter_title">Summary and Additional Resources</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/sql/read/resources#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#nextsteps"><span>Next Steps</span>
+</a></li>
+<li>
+<a href="/books/sql/read/resources#resources"><span>Resources</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Create+and+access+your+first+database&amp;url=https://launchschool.com/books/sql/read/create_database&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/sql/read/create_database" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Create and View Databases</h1>
+<p>In the previous chapter we talked about how schema and data work together to provide us with structured data with which we can interact in various, useful ways. In this section we're going to focus on schema, and how it provides the structure to house our data.</p>
+<p>Thus far we've only very briefly discussed schema, and that's been mostly in terms of tables and table columns. We'll look at tables more closely in the next couple of chapters; before we can work with tables, however, we need somewhere for the tables to exist: we need to create the database itself.</p>
+<p>A schema is also part of the database. We can perhaps think of a building as a database. The floor plan would them be the schema, while the physical rooms correspond to the tables in the database. The rooms are perhaps different sizes, have different things in them, and some of them might be connected to each other, but they all exist within the schema (the floor plan) of the building (database).</p>
+<p>In this chapter, you will create your first database. Recall that there are three SQL sub-languages: Data Definition Language, Data Manipulation Language, and Data Control Language. We will be using Data Definition Language, or DDL, to create our database, since this deals with setting up the structure, or <em>schema</em>, of a database.</p>
+<p>As the name implies, Data Definition Language is focused on defining the characteristics of the database and its tables and columns. This includes creating databases and tables, or altering and changing finer details about your database, such as table names and column data types. But it does not deal with the <em>data</em> within a database.</p>
+<p>Follow along the below instructions step by step to work through the meta-commands and SQL statements provided.</p>
+<h2><a href="#creatingadatabase" name="creatingadatabase">Create a database</a></h2>
+<p>If you're currently in the psql console (e.g. from working through the tutorial in the previous chapter), then type in \q and hit 'enter' to return to the terminal.</p>
+<p>Let's create a new database. We'll name it <code>sql_book</code> and use the <code>createdb</code> command to create it:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">createdb sql_book
+</code></pre>
+<p>Now that our new sql_book database has been created, we should be able to connect to it via the psql console. We'll use the <code>psql</code> command, passing it the <code>-d</code> option with the database name <code>sql_book</code>:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">psql -d sql_book
+</code></pre>
+<p>This opens the psql console and connects to the database specified by the <code>-d</code> option.</p>
+<p>If you see the prompt below (ignoring the version number, which may be different), then everything is working as intended:</p>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">psql (9.5.3)
+Type "help" for help.
+
+sql_book=#
+</code></pre>
+<p>Notice that the prompt in the psql console is the database that we are connected to.</p>
+<p>We can also see that a new database has been added to our current list of databases by using the <code>\list</code> meta-command. Let's try that now.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">\list
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">                                List of databases
+Name           |   Owner   | Encoding |   Collate   |    Ctype    |    Access privileges
+---------------+-----------+----------+-------------+-------------+-------------------------
+postgres       |   User    | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+sql_book       |   User    | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+template0      |   User    | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/User            +
+               |           |          |             |             | User=CTc/User
+template1      |   User    | UTF8     | en_US.UTF-8 | en_US.UTF-8 | User=CTc/User      +
+               |           |          |             |             | =c/User
+(4 rows)
+</code></pre>
+<p>After you install PostgreSQL, you'll start out with four databases: <code>template0</code>, <code>template1</code>, <code>postgres</code>, and a database for the currently logged in user. And the output above shows, whenever you create a new database it will be added to the running list of databases.</p>
+<h3>Using a SQL Statement</h3>
+<p>We created our <code>sql_book</code> database from the terminal using the PostgreSQL client application <code>createdb</code>. In an earlier chapter we explained that some PostgreSQL client applications essentially act as 'wrappers' around actual SQL syntax; <code>createdb</code> is one of these. Using <code>createdb</code> can offer us a nice shortcut, but the same operation can be accomplished using the SQL statement <code>CREATE DATABASE</code>. Remember that utility functions are executed from the terminal, while SQL statements are executed from within the psql console.</p>
+<p>For example, if we wanted to create another database from the psql console, we could do so with an SQL statement like this:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE DATABASE another_database;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">CREATE DATABASE
+</code></pre>
+<p>On the first line we are using the <code>CREATE DATABASE</code> SQL command with <code>another_database</code> as the value for 'name' for that command. Note that we terminate our statement with a semi-colon <code>;</code> in order to tell PostgreSQL that the command ends here and that it should now execute the command.</p>
+<p>The <code>CREATE DATABASE</code> in the PostgreSQL's output lets us know that it has executed the statement successfully.</p>
+<div class="alert-box info">
+<p><strong>Convention: Uppercase Commands, Lowercase names</strong></p>
+<p>Throughout the book, we use the convention of uppercase for SQL statements and lowercase names for tables and databases. This convention is for clarity only and is used by many SQL developers, but SQL itself is not case-sensitive. For example, we will write:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE DATABASE my_database;
+</code></pre>
+<p>instead of:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">create database my_database;
+</code></pre>
+<p>even though both options work. This is a pretty common convention, so we suggest you follow along with this guideline.</p>
+</div>
+<p>Use the <code>CREATE DATABASE</code> command to create one more database called <code>yet_another_database</code> in the same way. Once you have done this, use the <code>list</code> meta-command to check that both <code>another_database</code> and <code>yet_another_database</code> have been added to your list of databases.</p>
+<p>When creating our <code>another_database</code> and <code>yet_another_database</code> databases, we only passed a single parameter, 'name' to the <code>CREATE DATABASE</code> command. This parameter is mandatory. It is worth noting that there are other, optional, parameters which set things such as the database's encoding, collation, connection limit, and so on. These other parameters are beyond the scope of this book; when omitted, PostgreSQL simply uses the default settings for these parameters.</p>
+<h3>Database naming</h3>
+<p>There are some conventions you should be aware of when naming a database. As a guideline, always try to keep database names self-descriptive. A descriptive name is especially helpful if you end up having a lot of databases. A database containing information about Employees could be named 'employees' or 'employee_database'. A less descriptive name might be 'emp' or 'records'. Also, database names should be written in <strong>snake_case</strong>, that is, lowercase with words separated by underscores.</p>
+<h2><a href="#connnecttodb" name="connecttodb">Connecting to a Database</a></h2>
+<p>In order to be able to issue commands to a database we need to be connected to it. At the start of this chapter, we saw that from terminal we can open the psql console and connect to a database using the <code>psql</code> command with the <code>-d</code> option and a database name.</p>
+<p>When we are in the psql console itself, we can connect to a different database by using the <code>\c</code> or <code>\connect</code> meta-commands (these both do the same thing). Let's try this out.</p>
+<p>We should currently be connected to the <code>sql_book</code> database that we connected to earlier. Let's now use the <code>\c</code> meta-command to connect to the <code>another_database</code> database you created:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">\c another_database
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">You are now connected to database "another_database" as user "User".
+another_database-#
+</code></pre>
+<p>On the first line we were connected to the <code>sql_book</code> database, as can be seen by the prompt. We used the <code>\c</code> meta command, passing it <code>another_database</code> as the 'dbname' argument.</p>
+<p>The output simply informs us that we have successfully connected to the database <code>another_database</code>. When we open a connection to <code>another_database</code> in this way, the previous connection is closed. We are now connected to <code>another_database</code> and not <code>sql_book</code>.</p>
+<p>Notice that the prompt has now changed to <code>another_database</code> to show that we are now connected to it. Also notice that meta-commands, unlike SQL statements, do not have to be terminated with a semi-colon.</p>
+<div class="alert-box info">
+<p>The <code>\c</code> and <code>\connect</code> meta-commands can take arguments other than 'dbname', such as 'username', 'host', 'port', etc. When omitted, the command reuses the values from the previous connection. If connecting to a locally installed database you can generally omit these other arguments entirely.</p>
+<p>The pieces of connection information represented by these arguments aren't specific to the <code>\c</code> and <code>\connect</code> meta-commands, or even to PostgreSQL. This type of connection information is generally required whichever interface you are using to connect to a database, particularly when connecting to databases that are hosted remotely, or on a different server to the application or system that is connecting to that database.</p>
+</div>
+<p>Let's now disconnect from <code>another_database</code> and connect to <code>yet_another_database</code> instead. Use the <code>\c</code> or <code>\connect</code> meta-commands to connect to the <code>yet_another_database</code> database.</p>
+<p>Your command prompt should now look like this:</p>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">yet_another_database=#
+</code></pre>
+<h2><a href="#deletingdb" name="deletingdb">Delete the Database</a></h2>
+<p>Occasionally you're going to want to delete a database. We can use the SQL command <code>DROP DATABASE</code> to do this. The syntax is pretty much the same as that for <code>CREATE DATABASE</code>; the command, followed by the name of the database we want to delete, followed by a semi-colon. Let's use the <code>DROP DATABASE</code> to delete the
+<code>another_database</code> database:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">DROP DATABASE another_database;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">DROP DATABASE
+yet_another_database=#
+</code></pre>
+<p>The first line above is our SQL statement. The <code>DROP DATABASE</code> in the output is the response returned by PostgreSQL to let us know that it has executed the statement successfully. Our prompt is again available on the third line, ready for us to issue another command.</p>
+<h3>Using dropdb</h3>
+<p>In the same way that <code>createdb</code> is a PostgreSQL client application that acts as a wrapper for the <code>CREATE DATABASE</code> SQL command, <code>dropdb</code> performs the same role for the <code>DROP DATABASE</code> SQL command.</p>
+<p>To use <code>dropdb</code>, we need to issue the command from terminal rather than the psql console. Use <code>\q</code> to quit the psql console and return to terminal. From terminal, let's use <code>dropdb</code> to delete the <code>yet_another_database</code> database.</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">dropdb yet_another_database
+</code></pre>
+<div class="alert-box warning">
+<p><strong>Caution</strong>
+The <code>DROP DATABASE</code> and <code>dropdb</code> commands should be used with extreme care, as their actions are permanent and cannot be reversed. When these commands are issued, <strong>all</strong> data and schema related to the database is deleted. It's best to take a minute and think carefully before issuing these commands.</p>
+</div>
+<p>Re-open the psql console and connect to the <code>sql_book</code> database by using the <code>psql</code> command:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">psql -d sql_book
+</code></pre>
+<p>If you use the <code>\list</code> meta-command now, you should see that <code>another_database</code> and <code>yet_another_database</code> are no longer in the list of databases.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>We're just dipping our toes in, but we already have a small handful of commands, so let's quickly recap. First we have some commands that can be used within a <code>psql</code> session:</p>
+<table>
+<thead>
+<tr>
+<th>PSQL Meta-Command</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>\l</code> or <code>\list</code>
+</td>
+<td>displays all databases</td>
+</tr>
+<tr>
+<td>
+<code>\c sql_book</code> or <code>\connect sql_book</code>
+</td>
+<td>connects to the <em>sql_book</em> database</td>
+</tr>
+<tr>
+<td><code>\q</code></td>
+<td>exits the PostgreSQL session and return to the command-line prompt</td>
+</tr>
+</tbody>
+</table>
+<div class="alert-box info">
+<p>One meta-command that we haven't met yet, but that you may find useful is the <code>\e</code> command, which calls up an editor that let's you edit and rerun the previous command. By default PostgreSQL uses the vim editor to edit and save queries for execution when you use the <code>\e</code> metacommand. You may want to change the default editor used by <code>\e</code> to one you're more accustomed to; add the following lines of code to either your <code>.bashrc</code> or <code>.zshrc</code> file, depending on whether you're using a bash shell or a zsh shell.</p>
+<pre class="language-bash" data-numbers="off"><code class="language-bash">$ export EDITOR="cli_editor_command -w"
+$ export VISUAL="cli_editor_command -w"
+</code></pre>
+<p><code>cli_editor_command</code> is a placeholder for the command you use to launch your editor of choice from the command line. For instance, here are some common command-line commands for invoking editors:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Editor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Visual Studio Code</td>
+</tr>
+<tr>
+<td>atom</td>
+<td>Atom</td>
+</tr>
+<tr>
+<td>subl</td>
+<td>Sublime Text</td>
+</tr>
+</tbody>
+</table>
+<p>Once you make these changes, you will need to restart your Terminal session.</p>
+<p>Note that some command line shortcuts for code editors aren't useable immediately after installing your editor of choice; you may have to add the associated command's diretoru to your <code>$PATH</code> first and/or symlink the command necessary to launch your editor from the terminal.</p>
+</div>
+<p>We also have some commands that are programs installed by PostgreSQL on our system:</p>
+<table>
+<thead>
+<tr>
+<th>Client/Application Command-Line Command</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>psql -d sql_book</code></td>
+<td>starts a <code>psql</code> session and connect to the <em>sql_book</em> database</td>
+</tr>
+<tr>
+<td><code>createdb sql_book</code></td>
+<td>creates a new database called <em>sql_book</em> using a psql utility</td>
+</tr>
+<tr>
+<td><code>dropdb my_database</code></td>
+<td>permanently deletes the database named <em>my_database</em> and all its data</td>
+</tr>
+</tbody>
+</table>
+<p>Remember, that some of the utilities we've shown such as <code>createdb</code> and <code>dropdb</code> are wrapper functions for actual SQL statements:</p>
+<table>
+<thead>
+<tr>
+<th>SQL Statement</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CREATE DATABASE sql_book</code></td>
+<td>creates a new database called <em>sql_book</em>
+</td>
+</tr>
+<tr>
+<td><code>DROP DATABASE my_database</code></td>
+<td>permanently deletes the database named <em>my_database</em> and all its data</td>
+</tr>
+</tbody>
+</table>
+<p>In the next chapter, we will create a table and go into more specific details about DDL and altering our database structure, or database schema.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>From the Terminal, create a database called <code>database_one</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-shell" data-numbers="off"><code class="language-shell">createdb database_one
+</code></pre><p>To create a database from the Terminal, we can use the PostgreSQL client application <code>createdb</code>, and pass it the name of the database that we want to create.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>From the Terminal, connect via the psql console to the database that you created in the previous question.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-shell" data-numbers="off"><code class="language-shell">psql -d database_one
+</code></pre><p>Here we can use the PostgreSQL client application <code>psql</code>, passing it the <code>-d</code> option followed by the name of the database to which we want to connect. This opens a psql console session in our terminal window and connects to the database we specified.</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">psql (9.5.3)
+Type "help" for help.
+
+database_one=#
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>From the psql console, create a database called <code>database_two</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">CREATE DATABASE database_two;
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">CREATE DATABASE
+database_one=#
+</code></pre>
+<p>From the psql console, we can execute SQL statements. Here we use the <code>CREATE DATABASE</code> command along with the database name and terminate our statement with a <code>;</code>. In response we get <code>CREATE DATABASE</code>, so we know that our statement has been executed successfully.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>From the psql console, connect to <code>database_two</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">\c database_two
+</code></pre><p>or</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">\connect database_two
+</code></pre>
+<p>With either command, the output is:</p>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">You are now connected to database "database_two" as user "user".
+database_two=#
+</code></pre>
+<p>To connect to a different database from within the psql console we can use the <code>\c</code> or <code>\connect</code> meta-commands. This disconnects us from the current database, connects us to the new one, and changes the psql console prompt accordingly.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>Display all of the databases that currently exist.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">\list
+</code></pre><p>We can use the <code>\list</code> meta-command to return a list of databases. The output should look something like this:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">List of databases
+      Name       |   Owner     | Encoding |   Collate   |    Ctype    |    Access privileges
+-----------------+-------------+----------+-------------+-------------+-------------------------
+   database_one  |   User      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+   database_two  |   User      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+   ls_burger     |   User      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+   postgres      |   postgres  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+   sql_book      |   User      | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+   template0     |   postgres  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/User            +
+                 |             |          |             |             | User=CTc/User
+   template1     |   postgres  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | User=CTc/User      +
+                 |             |          |             |             | =c/User
+(7 rows)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>From the psql console, delete <code>database_two</code>.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-sql" data-numbers="off"><code class="language-sql">\connect database_one
+</code></pre><pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">You are now connected to database "database_one" as user "user".
+</code></pre>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">DROP DATABASE database_two;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">DROP DATABASE
+</code></pre>
+<p>Since we're currently connected to <code>database_two</code>, we first need to disconnect from it and connect to another database. We can do that using the <code>\c</code> or <code>\connect</code> meta-commands. Once connected to a different database we can execute the <code>DROP DATABASE</code> SQL statement to drop <code>database_two</code>.</p>
+<p>If we had tried executing this same statement while connected to <code>database_two</code>, we would have received an error:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">DROP DATABASE database_two;
+</code></pre>
+<pre class="language-plaintext" data-disable-copy="true"><code class="language-plaintext">ERROR:  cannot drop the currently open database
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>From the Terminal, delete the <code>database_one</code> and <code>ls_burger</code> databases.</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><p>First of all we need to quit the psql console and return to the Terminal. We can do this using the <code>\q</code> meta-command:</p>
+<pre class="language-sql" data-numbers="off"><code class="language-sql">\q
+</code></pre>
+<p>Once in the Terminal we can use the PostgreSQL client application <code>dropdb</code>, and pass it the name of the database that we want to drop.</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ dropdb database_one
+$ dropdb ls_burger
+$
+</code></pre>
+<p>We don't receive any kind of specific response to say that our request has been completed, however, if you now try to connect to either of the databases that you dropped you should receive a response saying that the database does not exist:</p>
+<pre class="language-shell" data-numbers="off"><code class="language-shell">$ psql -d database_one
+psql: FATAL:  database "database_one" does not exist
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to SQL/5.html">Next:  Create and View Tables
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Launch School - Core Ruby Tools</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":87,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Launch School - Core Ruby Tools" name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="kOzyt4hjbVL4vybSz2zm8NL_x4rRSmvKVUT6H9Jqsbq8bInvh2u6FiBY_PFo8jLvIJ9yM2CLhYVTQzZfotNC5w" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/core_ruby_tools">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Introduction to Core Ruby Tools</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/introduction"><span>Introduction</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/your_ruby_installation"><span class="chapter_title">Your Ruby Installation</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyoncloud9"><span>Ruby on Cloud9</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonmacs"><span>Ruby on a Mac</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonlinux"><span>Ruby on Linux</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatrubyamirunning"><span>What Ruby Am I Running?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatgetsinstalledwithruby"><span>What Gets Installed With Ruby?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/gems"><span class="chapter_title">Gems</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/gems#whataregems"><span>What are Gems?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#gemsrubyandyourcomputer"><span>Gems, Ruby, and your Computer</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/ruby_version_managers"><span class="chapter_title">Ruby Version Managers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whatarervms"><span>What Are Ruby Version Managers?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whichrvm"><span>Which Ruby Version Manager Should I Use?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rvm"><span>RVM</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rbenv"><span>rbenv</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/bundler"><span class="chapter_title">Bundler</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#installingbundler"><span>Installing Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#gemfile"><span>Gemfile and Gemfile.lock</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#runningappswithbundler"><span>Running Apps With Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#wherearerubiesgemsapps"><span>Where Are My Rubies, Gems and Apps Now?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#bundleexec"><span>bundle exec</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#moreinfobundler"><span>More Info About Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/rake"><span class="chapter_title">Rake</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whatisrake"><span>What Is Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#howtouserake"><span>How Do You Use Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whyrake"><span>Why Do I Need Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#realworldexample"><span>A Real World Example</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#relationships"><span>Relationships</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#usefullinks"><span>Useful Links</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/core_ruby_tools/read/rake&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/core_ruby_tools/read/rake" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/core_ruby_tools">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Introduction to Core Ruby Tools</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/core_ruby_tools/read/introduction"><span>Introduction</span>
+</a></li>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/your_ruby_installation"><span class="chapter_title">Your Ruby Installation</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyoncloud9"><span>Ruby on Cloud9</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonmacs"><span>Ruby on a Mac</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#rubyonlinux"><span>Ruby on Linux</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatrubyamirunning"><span>What Ruby Am I Running?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#whatgetsinstalledwithruby"><span>What Gets Installed With Ruby?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/your_ruby_installation#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/gems"><span class="chapter_title">Gems</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/gems#whataregems"><span>What are Gems?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#gemsrubyandyourcomputer"><span>Gems, Ruby, and your Computer</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/gems#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/ruby_version_managers"><span class="chapter_title">Ruby Version Managers</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whatarervms"><span>What Are Ruby Version Managers?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#whichrvm"><span>Which Ruby Version Manager Should I Use?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rvm"><span>RVM</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#rbenv"><span>rbenv</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/ruby_version_managers#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/bundler"><span class="chapter_title">Bundler</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#installingbundler"><span>Installing Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#gemfile"><span>Gemfile and Gemfile.lock</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#runningappswithbundler"><span>Running Apps With Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#wherearerubiesgemsapps"><span>Where Are My Rubies, Gems and Apps Now?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#bundleexec"><span>bundle exec</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#moreinfobundler"><span>More Info About Bundler</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/bundler#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/rake"><span class="chapter_title">Rake</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whatisrake"><span>What Is Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#howtouserake"><span>How Do You Use Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whyrake"><span>Why Do I Need Rake?</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#realworldexample"><span>A Real World Example</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#whenthingsgowrong"><span>When Things Go Wrong</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/rake#summary"><span>Summary</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/core_ruby_tools/read/conclusion"><span class="chapter_title">Conclusion</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#relationships"><span>Relationships</span>
+</a></li>
+<li>
+<a href="/books/core_ruby_tools/read/conclusion#usefullinks"><span>Useful Links</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=&amp;url=https://launchschool.com/books/core_ruby_tools/read/rake&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/core_ruby_tools/read/rake" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Rake</h1>
+<p>In the previous chapters, we explored some Ruby tools and concentrated on how those tools fit into the Ruby toolbox: how they interact with Ruby, where they live on your local filesystem, and how to identify issues that arise when using them. In this chapter, we will examine another tool, Rake. This time, we will concentrate on what it does for you and why you need it.</p>
+<h2><a href="#whatisrake" name="whatisrake">What Is Rake?</a></h2>
+<p>Rake is a Rubygem that automates many common functions required to build, test, package, and install programs; it is part of every modern Ruby installation, so you don't need to install it yourself.</p>
+<p>Here are some common Rake tasks that you may encounter:</p>
+<ul>
+<li>Set up required environment by creating directories and files
+</li>
+<li>Set up and initialize databases
+</li>
+<li>Run tests
+</li>
+<li>Package your application and all of its files for distribution
+</li>
+<li>Install the application
+</li>
+<li>Perform common Git tasks
+</li>
+<li>Rebuild certain files and directories (assets) based on changes to other files and directories
+</li>
+</ul>
+<p>In short, you can write Rake tasks to automate anything you may want to do with your application during the development, testing, and release cycles.</p>
+<h2><a href="#howtouserake" name="howtouserake">How Do You Use Rake?</a></h2>
+<p>Rake uses a file named <code>Rakefile</code> that lives in your project directory; this file describes the tasks that Rake can perform for your project, and how to perform those tasks. For instance, here is a very simple <code>Rakefile</code>:</p>
+<pre class="language-ruby"><code class="language-ruby">desc 'Say hello'
+task :hello do
+  puts "Hello there. This is the `hello` task."
+end
+
+desc 'Say goodbye'
+task :bye do
+  puts 'Bye now!'
+end
+
+desc 'Do everything'
+task :default =&gt; [:hello, :bye]
+</code></pre>
+<p>This <code>Rakefile</code> contains three tasks: two that simply display a single message, and one task that has the other tasks as prerequisites or dependencies. The first two tasks are named <code>:hello</code> and <code>:bye</code>, while the final task is the <strong>default</strong> task; Rake runs the default task if you do not provide a specific task name when you invoke Rake.</p>
+<p>Each of the above tasks calls two Rake methods: <code>desc</code> and <code>task</code>. The <code>desc</code> method provides a short description that Rake displays when you run <code>rake -T</code> (see below), and the <code>task</code> method associates a name with either a block of Ruby code (lines 2-4 and 7-9) or a list of dependencies (line 12). Here, the <code>:default</code> task depends on the <code>:hello</code> and <code>:bye</code> tasks: when you run the <code>:default</code> task, Rake will run the <code>:hello</code> and <code>:bye</code> tasks first.</p>
+<p>Let's see this in action. The first thing you should do with any Rakefile is find out what tasks it can run. You do this with the <code>rake -T</code> command:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle exec rake -T
+rake bye      # Say goodbye
+rake default  # Do everything
+rake hello    # Say hello
+</code></pre>
+<p>This shows that there are three tasks defined by the <code>Rakefile</code>: <code>bye</code>, <code>default</code>, and <code>hello</code>. The output shows a short description of each task on the right: this information comes from the <code>desc</code> method calls in <code>Rakefile</code>.</p>
+<div class="alert-box info">
+<p>Note that we used <code>bundle exec rake -T</code>, not just <code>rake -T</code>. We discussed <code>bundle exec</code> in the previous chapter. Often, <code>rake -T</code> will work just fine, but many prefer to use <code>bundle exec</code> with <code>rake</code> when possible (i.e., when your project uses Bundler); if you don't, you may see unusual messages like this:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ rake -T
+rake aborted!
+Gem::LoadError: You have already activated rake 12.0.0, but your Gemfile requires rake 10.4.2. Prepending `bundle exec` to your command may solve this.
+</code></pre>
+<p>This shows that your <code>Gemfile</code> requires a version of rake that differs from the version you get when you type <code>rake</code> at the command line. <code>bundle exec rake</code> makes sure that you use the correct version of <code>rake</code> that your application depends on.</p>
+<p>If you see:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">Could not locate Gemfile or .bundle/ directory
+</code></pre>
+<p>when using <code>bundle exec rake</code>, this means that your project isn't using Bundler. Here, you should omit <code>bundle exec</code> and just run <code>rake</code> instead.</p>
+</div>
+<p>One very important thing to notice is that <code>Rakefile</code> is actually a Ruby program. You can put any Ruby code you want in a <code>Rakefile</code> and run it as part of a task. Commands like <code>desc</code> and <code>task</code> are just method calls to parts of Rake; these method calls comprise a Domain Specific Language (DSL) for writing automated Rake tasks.</p>
+<p>Once you know what Rake tasks you can run, you just have to run them:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle exec rake bye
+Bye now!
+
+$ bundle exec rake hello
+Hello there. This is the `hello` task.
+
+$ bundle exec rake default
+Hello there. This is the `hello` task.
+Bye now!
+
+$ bundle exec rake                     # we don't need to specify 'default'
+Hello there. This is the `hello` task.
+Bye now!
+</code></pre>
+<h2><a href="#whyrake" name="whyrake">Why Do I Need Rake?</a></h2>
+<p>One reason why you need Rake is that nearly every Ruby project you can find has a <code>Rakefile</code>, and the presence of that file means you need to use Rake if you want to work on that project. However, just because everybody does something doesn't mean you need to use it too. If you start a brand-new project, you can always say "I don't feel like using Rake, so I won't."</p>
+<p>While you can always opt-out of using Rake in your projects, there is little point to doing so. Every project that aims to produce a finished project that either you or other people intend to use in the future has repetitive tasks the developer needs. For instance, to release a new version of an existing program, you may want to:</p>
+<ul>
+<li>  Run all tests associated with the program.
+</li>
+<li>  Increment the version number.
+</li>
+<li>  Create your release notes.
+</li>
+<li>  Make a complete backup of your local repo.
+</li>
+</ul>
+<p>Each step is easy enough to do manually, but you want to make sure you execute them in the proper order (for instance, you want to set the new version number before you commit your changes). You also don't want to be at the mercy of arbitrary typos that may do the wrong thing. It's far better to have a way to perform these tasks automatically with just one command, which is where Rake becomes extremely useful.</p>
+<p>Your <code>Rakefile</code> likely has each of these as a separate task, as well as a single overall task (call it <code>release</code>, for instance) that steps through the tasks one at a time. The release task would stop only when it completes all the tasks or one task fails.</p>
+<h2><a href="#realworldexample" name="realworldexample">A Real World Example</a></h2>
+<p>Let's look at a real world <code>Rakefile</code>, the one used by the Pry Gem.</p>
+<div class="alert-box warning">
+<p>Note that Pry's Rakefile is a bit sensitive in terms of the environment, so, if you follow along, you may see different output than we show. Don't be alarmed or concerned about this right now.</p>
+</div>
+<p>If you want to follow along, go to the <a href="https://github.com/pry/pry">Pry repo</a> and clone it to your local filesystem:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ git clone https://github.com/pry/pry
+</code></pre>
+<p>See the <a href="https://launchschool.com/books/git/read/github#gitclone">Introduction to Git and GitHub book</a> for more detail about <code>git clone</code>.</p>
+<p>Make the cloned directory your current directory:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ cd pry
+</code></pre>
+<p>Before we look at the <code>Rakefile</code>, let's run Bundler to make sure we have everything installed that needs to be installed. Run the following command from the <code>pry</code> directory:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle install
+</code></pre>
+<p>This may take several minutes depending on how many and which Gems Bundler needs to install.</p>
+<p>Once Bundler has installed everything, you can ask <code>rake</code> to show you what tasks the <code>Rakefile</code> defines:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle exec rake -T
+rake clean                    # Remove any temporary products
+rake clobber                  # Remove any generated files
+rake default                  # Set up and run tests
+rake gems                     # build all platform gems at once
+rake profile                  # Profile pry's startup time
+rake pry                      # Run pry (you can pass arguments using _ in ...
+rake pushgems                 # build and push latest gems
+rake reinstall                # reinstall gem
+rake rmgems                   # remove all platform gems
+rake ruby:clobber_package     # Remove package products
+rake ruby:gem                 # Build the gem file pry-0.10.4.gem
+rake ruby:package             # Build all the packages
+rake ruby:repackage           # Force a rebuild of the package files
+rake test                     # Run tests
+rake version                  # Show pry version
+</code></pre>
+<p>This abridged listing eliminates several groups of commands for brevity.</p>
+<p>Let's say we want to run the tests that the developer uses to test Pry. As we scan the list of commands and their descriptions from above, we see that <code>rake default</code> sets up and runs the tests, while <code>rake test</code> just runs the tests. Given that this is the first time we're running the lists, let's run the default action first; there may be some setup that Rake needs to do:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle exec rake default
+  ...output from tests is here...
+Finished in 6.73 seconds (files took 0.61458 seconds to load)
+1166 examples, 0 failures
+</code></pre>
+<div class="alert-box warning">
+<p>Your results may be different at this point! You may even have seen some errors and the tests may not have run. As mentioned above, don't be concerned about this right now.</p>
+</div>
+<div class="alert-box info">
+<p>You can also run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle exec rake
+</code></pre>
+<p>Rake invokes the "default" task when no task is provided on the command line.</p>
+</div>
+<p>So, how did Rake know what to do when you ran <code>bundle exec rake default</code>? Let's look at Pry's <code>Rakefile</code> (again, what you see here may differ from what you see with your copy of Pry). If you scan through this file, you will soon find these two lines (or something very similar):</p>
+<pre class="language-ruby" data-numbers="off"><code class="language-ruby">desc "Set up and run tests"
+task :default =&gt; [:test]
+</code></pre>
+<p>As before, <code>desc</code> provides the description for the next <code>task</code> call in the file: the <code>:default</code> task. The array to the right of the <code>=&gt;</code> in the <code>task</code> call identifies a list of dependencies for the named task. Here, the <code>:default</code> task depends on the <code>:test</code> task, so Rake also runs the <code>:test</code> task.</p>
+<p>Scanning down a little further, we find something like this:</p>
+<pre class="language-ruby" data-numbers="off"><code class="language-ruby">desc "Run tests"
+task :test do
+  paths =
+    if explicit_list = ENV['run']
+      explicit_list.split(',')
+    else
+      Dir['spec/**/*_spec.rb'].shuffle!
+    end
+  run_specs paths
+end
+</code></pre>
+<p>This call to <code>task</code> includes a block of Ruby code; the block tells Rake how to run the tests for Pry. Specifically, it first determines the paths of the test files it needs to run (these names come from the <code>run</code> environment variable if present; otherwise, the task reads the names from the <code>spec</code> directory). Once Rake has the path names, it runs the tests with the <code>run_specs</code> method, which Rake provides.</p>
+<div class="alert-box info">
+<p>If you haven't encountered <strong>specs</strong> yet, think of them as equivalent to Minitest tests. There are a variety of different testing frameworks for Ruby, and they sometimes use differing terminology. The specs term comes from a testing framework named RSpec, a very popular tool among Rubyists.</p>
+</div>
+<p>Let's look at the <code>reinstall</code> task now. Before we try running it, find the <code>:reinstall</code> task in the <code>Rakefile</code>. It looks something like this:</p>
+<pre class="language-ruby"><code class="language-ruby">desc "reinstall gem"
+task :reinstall =&gt; :gems do
+  sh "gem uninstall pry" rescue nil
+  sh "gem install #{File.dirname(__FILE__)}/pkg/pry-#{Pry::VERSION}.gem"
+end
+</code></pre>
+<p>Here, we see another call to <code>desc</code> and <code>task</code>. The <code>:reinstall</code> task has a dependency named <code>:gems</code>. Note that we don't use array syntax here; that means that <code>:gems</code> is an array defined elsewhere in <code>Rakefile</code>:</p>
+<pre class="language-ruby" data-numbers="off"><code class="language-ruby">desc "build all platform gems at once"
+task :gems =&gt; [:clean, :rmgems, 'ruby:gem', 'jruby:gem']
+</code></pre>
+<p><code>:gems</code> depends on four other tasks, each of which will be run by Rake. We won't worry much about what they do. Briefly, they perform some cleanup and setup processing required by Rubygems.</p>
+<p>Once the <code>:gems</code> task finishes, Rake returns to the <code>:reinstall</code> task, and runs the block we passed to <code>task</code>. This block uninstalls the existing version of <code>pry</code>, then reinstalls it based on the current state of the local repo (your <code>pry</code> directory).</p>
+<p>If this sounds as though it might break something, don't worry. As it happens, this code installs the updated Pry package in the <code>pkg</code> subdirectory of the current directory. This won't interfere with other programs that use Pry, but you can still use and inspect what got installed in the <code>pkg</code> directory. So, feel free to go ahead and run:</p>
+<pre class="language-terminal" data-numbers="off"><code class="language-terminal">$ bundle exec rake reinstall
+$ ls -l pkg  # this will show you the newly "installed" package.
+</code></pre>
+<p>Again, don't be alarmed if this command fails on your system.</p>
+<h2><a href="#whenthingsgowrong" name="whenthingsgowrong">When Things Go Wrong</a></h2>
+<p>As a Rubygem, it is subject to the same problems as other Gems. It is also subject to problems that occur with Ruby version managers. Thus, you can use many of the commands discussed in previous chapters to help diagnose issues with Rake.</p>
+<p>The main issue you will have with <code>Rake</code> is when to use <code>bundle exec</code>: sometimes you need to use <code>bundle exec</code>, sometimes you don't, and sometimes you can't use it. Generally, if your project uses Bundler (i.e., you have a <code>Gemfile</code>), use <code>bundle exec</code>; if your project doesn't use Bundler, you can omit <code>bundle exec</code> and just use <code>rake</code>.</p>
+<h2><a href="#summary" name="summary">Summary</a></h2>
+<p>In this chapter, we've taken a brief look at Rake and shown you how to use it to automate tasks while working on a Ruby project.</p>
+</div>
+<div class="next_chapter">
+<a href="./LaunchBooks/Core Ruby Tools/6.html">Next:  Conclusion
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>Learn Ruby Online - getting setup and installing Ruby</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4397c8ee4a","applicationID":"3024352","transactionName":"dw1YQRYMXlkBFBpXCVsJRRoWBlNR","queueTime":2,"applicationTime":133,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4397c8ee4a",applicationID:"3024352"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport"/>
+<meta content="Installing Ruby, choosing a text editor, stylistic conventions, the command line and irb and running Ruby code. Free online course to learn Ruby - no registration required." name="description"/>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="ASp2ByxGjOKkUAj1_VhXlJ8cC5tY4-m5_ukjnbhCxjFzuH0lP8sfxXtRwUjT7f6JXC8wJJw6IGR3LCd7xKLOhA" name="csrf-token">
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/assets/application-958ee63fc3d7b77b57e2b9a26384b2c0bfae90b16b16ab02ea06adc403b32aea.css" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="//fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet"/>
+<script src="https://d24f1whwu8r3u4.cloudfront.net/assets/vendor/modernizr-ac2af8c263141f7f26a6aa40e1649abac00c427153f7ff3df531b497e20eaa3c.js"></script>
+<script data-turbolinks-track="reload" debug="false" src="https://d24f1whwu8r3u4.cloudfront.net/assets/application-797a58cc27679417c9511628bb420d55528c644fc7870cb99a301ab3ddedd504.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script data-turbolinks-track="reload" src="//use.typekit.net/ojn6sam.js"></script>
+<script>
+  try{Typekit.load({ async: true });}catch(e){}
+</script>
+<script data-turbolinks-track="reload" src="https://js.stripe.com/v2/"></script>
+<script>
+  Stripe.setPublishableKey("pk_live_hj1Wdd0CL2psFAzlEAhQF4aB");
+</script>
+<link data-turbolinks-track="reload" href="https://d24f1whwu8r3u4.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#F25858" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#45494d" name="msapplication-TileColor"/>
+<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-37357872-2', 'auto', {'name': 'secondtracker'});
+  ga('secondtracker.require', 'displayfeatures');
+  ga('secondtracker.require', 'linkid', 'linkid.js');
+  ga('secondtracker.send', 'pageview');
+</script>
+</meta></meta></head>
+<body class="read-page has-footer preload external books">
+<div class="contain-to-grid">
+<nav class="top-bar hide-for-large-up" data-options="is_hover: false; mobile_show_parent_link: false" data-topbar="" role="navigation">
+<ul class="title-area">
+<li class="name">
+<h1>
+<a href="/"><img height="25" src="https://d24f1whwu8r3u4.cloudfront.net/assets/launch-logo-dark-background-1ff11e650ee03d9472e82f97577ae5abcb137e2562f985c87b6f9b60ee0f3027.svg" width="120"/>
+</a></h1>
+</li>
+<li class="toggle-topbar menu-icon">
+<a href="#">
+<span>Menu</span>
+</a>
+</li>
+</ul>
+<section class="top-bar-section">
+<ul class="right">
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li>
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+</a><ul class="dropdown" style="margin-bottom: 0 !important">
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students</a>
+<ul class="dropdown" style="margin-bottom: 0 !important">
+<li>
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li>
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li>
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li>
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li>
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/love">Love</a></li>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up">Sign Up</a>
+</li>
+</ul>
+</section>
+</nav>
+</div>
+<div class="contain-to-grid">
+<div class="row">
+<div class="columns small-12">
+<header class="full-width-background" id="header" style="background: white;">
+<div class="row show-for-large-up">
+<div class="columns small-12 clearfix">
+<h1 id="logo">
+<a class="ir" href="/">LaunchSchool: An online school for Software Engineers</a>
+</h1>
+<nav class="nav left">
+<ul>
+<li class="has-dropdown">
+<a class="" href="/pedagogy">Pedagogy
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/pedagogy">Overview</a>
+</li>
+<li class="">
+<a class="" href="/mastery">Mastery-based Learning</a>
+</li>
+</ul>
+</li>
+<li><a class="" href="/results">Salaries</a></li>
+<li class="has-dropdown">
+<a class="" href="/employers">Employers
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/employers">Employers</a>
+</li>
+<li class="">
+<a class="" href="/employers/placement">Capstone Placement</a>
+</li>
+</ul>
+<li><a class="" href="/deferred">Deferred Payment</a></li>
+</li>
+<li class="has-dropdown">
+<a class="" href="/is_this_for_me">For Students
+<small><i class="fa fa-chevron-down"></i></small>
+</a><ul>
+<li class="">
+<a class="" href="/is_this_for_me">Is This For Me?</a>
+</li>
+<li class="">
+<a class="" href="/faq">Common Questions</a>
+</li>
+<li class="">
+<a class="" href="/student_experience">The Student Experience</a>
+</li>
+<li class="">
+<a class="" href="/courses">Core Curriculum</a>
+</li>
+<li class="">
+<a class="" href="/capstone">Capstone</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="" href="/love"><i aria-hidden="" class="fa fa-heart fa-lg"></i>
+</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li>
+<a class="" href="/sign_in">Sign In</a>
+</li>
+<li>
+<a class="" href="/sign_up" id="sign-up-button">Sign Up</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="columns small-12 clearfix">
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<div class="wrapper bookshelf">
+<div class="row">
+<div class="columns small-12">
+<div class="page-action-buttons clearfix">
+<div class="left">
+</div>
+<div class="right">
+<button class="hide-for-large-up" data-toggle-side-menu="" title="Show table of contents">
+<i class="fa fa-list-ul"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="table-of-contents side-menu hide">
+<h1>Table of Contents</h1>
+<button class="close"></button>
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/introduction#briefhistory"><span>A Brief History of Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#computerscienceandlayersofabstraction"><span>Computer Science and Layers of Abstraction</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/ruby/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/ruby/read/preparations#installingruby"><span>Installing Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#stylishruby"><span>Stylish Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#readingdocumentation"><span>Reading Documentation</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingcommandlineandirb"><span>Using the Command Line and irb</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#whatarerubygems"><span>What Are Ruby "Gems"?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#debuggingrubycodewithpry"><span>Debugging Ruby Code with Pry</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Intro to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/basics#literals"><span>Literals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#strings"><span>Strings</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#symbols"><span>Symbols</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#numbers"><span>Numbers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#nil"><span>nil</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#typeconversion"><span>Type Conversion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#basicdatastructures"><span>Basic Data Structures</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#expressionsandreturn"><span>Expressions and Return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#putsvsreturn"><span>puts vs return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/variables#whatisavariable"><span>What is a Variable?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#assigningvaluetovariables"><span>Assigning Value to Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#gettingdatafromauser"><span>Getting Data from a User</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#typesofvariables"><span>Types of Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/methods"><span class="chapter_title">Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/methods#whataremethodsandwhydoweneedthem"><span>What Are Methods and Why Do We Need Them?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#objmethodormethodobj"><span>obj.method or method(obj)</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#putsvsreturnthesequel"><span>puts vs return: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#chainingmethods"><span>Chaining Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#methodcallsasarguments"><span>Method Calls as Arguments</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#combiningexpressions"><span>Combining Expressions</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#ternaryoperator"><span>Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#casestatement"><span>Case Statement</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#trueandfalse"><span>True and False</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/loops_iterators"><span class="chapter_title">Loops &amp; Iterators</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/loops_iterators#simpleloop"><span>A Simple Loop</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#controllloop"><span>Controlling Loop Execution</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#whileloops"><span>While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#untilloops"><span>Until Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#dowhileloops"><span>Do/While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#forloops"><span>For Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#conditionalswithinloops"><span>Conditionals Within Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#iterators"><span>Iterators</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#iteratingoveranarray"><span>Iterating Over an Array</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#bang_suffix"><span>Methods With a !</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#mutatingthecallerthesequel"><span>Mutating the Caller: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#comparingarrays"><span>Comparing Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#to_s"><span>to_s</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#commonarraymethods"><span>Common Array Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#eachvsmap"><span>each vs map</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/hashes"><span class="chapter_title">Hashes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/hashes#whatisahash"><span>What is a Hash?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#iteratingoverhashes"><span>Iterating Over Hashes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesasoptionalparameters"><span>Hashes as Optional Parameters</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesvsarrays"><span>Hashes vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashkeys"><span>A Note on Hash Keys</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#commonhashmethods"><span>Common Hash Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashorder"><span>A Note on Hash Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#rubystandardclasses"><span>Ruby Standard Classes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#variables_as_pointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#blocksandprocs"><span>Blocks and Procs</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exceptionhandling"><span>Exception Handling</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#readingstacktraces"><span>Exceptions &amp; Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#methoddefinitionorder"><span>Method Definition Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/ruby/read/intro_exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/next_steps"><span class="chapter_title">Conclusion &amp; Next Steps</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/next_steps#congratulations"><span>Congratulations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/next_steps#oop"><span>Object Oriented Programming</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Learn+Ruby+Online+-+getting+setup+and+installing+Ruby&amp;url=https://launchschool.com/books/ruby/read/preparations&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/ruby/read/preparations" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</nav>
+<div class="close-side-menu hide"></div>
+<section class="content clearfix">
+<div class="row">
+<div class="columns small-12" id="flash-message">
+</div>
+</div>
+<div class="row">
+<div class="columns small-12">
+<div id="read-book">
+<div class="navigate-back">
+<a href="/books"><i class="fa fa-chevron-left"></i>
+Back to Open Book Shelf
+</a></div>
+<div class="row">
+<div class="columns large-3 show-for-large-up">
+<div class="table-of-contents">
+<ul class="chapters">
+<li>
+<span><a href="/books">Open Bookshelf</a></span>
+<span><a href="/books/ruby">Cover Page</a></span>
+</li>
+<li>
+<span>Preface</span>
+<ul class="topics">
+<li class="chapter_title">
+<a href="/books/ruby/read/credits"><span>Credits</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/copyright"><span>Copyright</span>
+</a></li>
+<li class="chapter_title">
+<a href="/books/ruby/read/no_download"><span>No Offline Access?</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Getting Started</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/introduction"><span class="chapter_title">Introduction</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/introduction#briefhistory"><span>A Brief History of Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#computerscienceandlayersofabstraction"><span>Computer Science and Layers of Abstraction</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#whothisbookisfor"><span>Who This Book is For</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/introduction#howtoreadthisbook"><span>How to Read This Book</span>
+</a></li>
+</ul>
+</div>
+<li class="open active chapter_title">
+<a class="chapter_title" href="/books/ruby/read/preparations"><span class="chapter_title">Preparations</span>
+</a></li>
+<div class="sub_topics" style="">
+<ul>
+<li>
+<a href="/books/ruby/read/preparations#installingruby"><span>Installing Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingacodeeditor"><span>Using a Code Editor</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#stylishruby"><span>Stylish Ruby</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#readingdocumentation"><span>Reading Documentation</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#usingcommandlineandirb"><span>Using the Command Line and irb</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#whatarerubygems"><span>What Are Ruby "Gems"?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#debuggingrubycodewithpry"><span>Debugging Ruby Code with Pry</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/preparations#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Intro to Programming</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/basics"><span class="chapter_title">The Basics</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/basics#literals"><span>Literals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#strings"><span>Strings</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#symbols"><span>Symbols</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#numbers"><span>Numbers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#nil"><span>nil</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#operations"><span>Operations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#typeconversion"><span>Type Conversion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#basicdatastructures"><span>Basic Data Structures</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#expressionsandreturn"><span>Expressions and Return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#putsvsreturn"><span>puts vs return</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/basics#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/variables"><span class="chapter_title">Variables</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/variables#whatisavariable"><span>What is a Variable?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#assigningvaluetovariables"><span>Assigning Value to Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#gettingdatafromauser"><span>Getting Data from a User</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#variablescope"><span>Variable Scope</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#typesofvariables"><span>Types of Variables</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/variables#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/methods"><span class="chapter_title">Methods</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/methods#whataremethodsandwhydoweneedthem"><span>What Are Methods and Why Do We Need Them?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#objmethodormethodobj"><span>obj.method or method(obj)</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#mutatingthecaller"><span>Mutating the Caller</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#putsvsreturnthesequel"><span>puts vs return: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#chainingmethods"><span>Chaining Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#methodcallsasarguments"><span>Method Calls as Arguments</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#callstack"><span>The Call Stack</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/methods#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/flow_control"><span class="chapter_title">Flow Control</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/flow_control#conditionals"><span>Conditionals</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#comparisons"><span>Comparisons</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#combiningexpressions"><span>Combining Expressions</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#ternaryoperator"><span>Ternary Operator</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#casestatement"><span>Case Statement</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#trueandfalse"><span>True and False</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/flow_control#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/loops_iterators"><span class="chapter_title">Loops &amp; Iterators</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/loops_iterators#simpleloop"><span>A Simple Loop</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#controllloop"><span>Controlling Loop Execution</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#whileloops"><span>While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#untilloops"><span>Until Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#dowhileloops"><span>Do/While Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#forloops"><span>For Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#conditionalswithinloops"><span>Conditionals Within Loops</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#iterators"><span>Iterators</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#recursion"><span>Recursion</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/loops_iterators#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/arrays"><span class="chapter_title">Arrays</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/arrays#whatisanarray"><span>What is an Array?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#modifyingarrays"><span>Modifying Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#iteratingoveranarray"><span>Iterating Over an Array</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#bang_suffix"><span>Methods With a !</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#mutatingthecallerthesequel"><span>Mutating the Caller: The Sequel</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#nestedarrays"><span>Nested Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#comparingarrays"><span>Comparing Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#to_s"><span>to_s</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#commonarraymethods"><span>Common Array Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#eachvsmap"><span>each vs map</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/arrays#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/hashes"><span class="chapter_title">Hashes</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/hashes#whatisahash"><span>What is a Hash?</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#iteratingoverhashes"><span>Iterating Over Hashes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesasoptionalparameters"><span>Hashes as Optional Parameters</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#hashesvsarrays"><span>Hashes vs. Arrays</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashkeys"><span>A Note on Hash Keys</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#commonhashmethods"><span>Common Hash Methods</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#anoteonhashorder"><span>A Note on Hash Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/hashes#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/more_stuff"><span class="chapter_title">More Stuff</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/more_stuff#regex"><span>Regex</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#rubystandardclasses"><span>Ruby Standard Classes</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#variables_as_pointers"><span>Variables as Pointers</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#blocksandprocs"><span>Blocks and Procs</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exceptionhandling"><span>Exception Handling</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#readingstacktraces"><span>Exceptions &amp; Stack Traces</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#methoddefinitionorder"><span>Method Definition Order</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#summary"><span>Summary</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/more_stuff#exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</div>
+<li class="chapter_title">
+<a href="/books/ruby/read/intro_exercises"><span>Exercises</span>
+</a></li>
+</ul>
+</li>
+<li>
+<span>Conclusion</span>
+<ul class="topics">
+<li class="chapter_title">
+<a class="chapter_title" href="/books/ruby/read/next_steps"><span class="chapter_title">Conclusion &amp; Next Steps</span>
+</a></li>
+<div class="sub_topics" style="display:none">
+<ul>
+<li>
+<a href="/books/ruby/read/next_steps#congratulations"><span>Congratulations</span>
+</a></li>
+<li>
+<a href="/books/ruby/read/next_steps#oop"><span>Object Oriented Programming</span>
+</a></li>
+</ul>
+</div>
+</ul>
+</li>
+<li>
+<span>Share on</span>
+<section id="share_on">
+<ul>
+<li class="twitter">
+<a href="https://twitter.com/intent/tweet?text=Learn+Ruby+Online+-+getting+setup+and+installing+Ruby&amp;url=https://launchschool.com/books/ruby/read/preparations&amp;via=launchschool">
+<i class="fa fa-twitter"></i>
+</a>
+</li>
+<li class="linkedin">
+<a href="https://www.linkedin.com/cws/share?url=https://launchschool.com/books/ruby/read/preparations" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+<i class="fa fa-linkedin"></i>
+</a>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+<div class="columns large-8 end">
+<div class="chapter-contents">
+<div class="tealeaf-markup"><h1>Preparations</h1>
+<h2><a href="#installingruby" name="installingruby">Installing Ruby</a></h2>
+<p>For the purposes of this book, you'll need to have Ruby and <a href="https://rubygems.org/pages/download">RubyGems</a> installed on your machine. We recommend that you use Ruby version 2.5.x, 2.6.x, or 2.7.x. We recommend Ruby 2.7.5 as the best choice. You may experience some issues with versions older than 2.5.0 or newer than 2.7.5, so install 2.7.5 if you can. If you cannot, a more recent version will probably give you the least trouble.</p>
+<p>If you are working on a Mac or Linux machine, you may have Ruby installed already. Go to your command line or terminal application and enter <code>ruby -v</code>. You should see a print out of the version of Ruby that is installed on your machine. Some system Ruby installations, especially on Mac, have limited permissions and will impede your ability to install gems, upgrade Ruby, and perform other development tasks. Therefore, even though your system comes with Ruby, you still need to install Ruby again. If you refer to the <a href="https://www.ruby-lang.org/en/installation/">official Ruby installation documentation</a>, you'll see that there are 4 choices:</p>
+<ul>
+<li>  rvm
+</li>
+<li>  rbenv
+</li>
+<li>  Homebrew (Mac only)
+</li>
+<li>  Build from source
+</li>
+</ul>
+<p>If you're technically inclined, you can try rvm or rbenv. These are Ruby version managers that allow you to run different versions of ruby side by side, and allow you to switch between them freely. Don't use rvm or rbenv if you aren't proficient from the command line and can't debug installation issues on your own. Building from source is also not a good idea for beginners. <strong>That leaves Mac users with one choice: <a href="https://www.ruby-lang.org/en/installation/#homebrew">install with Homebrew</a></strong>.</p>
+<p>If you are on a Windows machine, we recommend using <a href="http://rubyinstaller.org/">RubyInstaller</a> to install Ruby. We also recommend installing DevKit from the same site.</p>
+<p>RubyGems comes with Ruby 1.9.3 and higher, so once you have Ruby installed you can verify from terminal with <code>gem -v</code>. You should see a print out of the version of RubyGems you are using.</p>
+<p>Before you begin, make sure to verify that typing in <code>ruby -v</code> in your terminal returns version 1.9.3 or higher.</p>
+<h2><a href="#usingacodeeditor" name="usingacodeeditor">Using a Code Editor</a></h2>
+<p>You'll be using a code editor to write code. A code editor is used to create plain text documents with no styling or formatting. If you already have a favorite code editor (e.g., Vim, TextMate, Emacs, Notepad++, etc.) you can use it to work through this book. However, if you do not have a preferred code editor, we recommend using <a href="https://code.visualstudio.com/">Visual Studio Code</a> (also known as VSCode). It's free and "built on" open-source. It's a highly polished product that is both pleasant to look at and pleasant to use. Most surprisingly, perhaps, is that it comes from Microsoft. Its popularity is growing rapidly in the developer community. At the time of this writing, the plugin ecosystem isn't quite as vast and varied as those for Sublime Text and Atom (see below), but it's growing at a robust pace. If you don't have a preference, this is the option we recommend.</p>
+<p>Two other great editors that work very similarly to VSCode are <a href="https://atom.io">Atom</a> and <a href="http://www.sublimetext.com/">Sublime Text</a>. Atom is open source and completely free to use and modify, while Sublime Text is neither free nor open source (it will ask you, but not require you, to purchase a license). Both editors are powerful and fast and are in widespread use. They both are easy to learn and work well "out of the box". They also have a wealth of add-on packages available.</p>
+<p>All 3 of these editors come in Mac, Windows, and Linux versions.</p>
+<div class="alert-box warning">
+<p>Avoid using word processors or advanced text editors when writing code: their focus is writing, not coding, and they often inject invisible characters or whitespace into the document to help format and style it. While that can make your prose look great, it doesn't work well with code. Code written with a word processor may not run at all, even if you copy and paste the code into a code editor before saving it.</p>
+</div>
+<h2><a href="#stylishruby" name="stylishruby">Stylish Ruby</a></h2>
+<p>The Ruby language has specific stylistic conventions that make reading and writing Ruby code easier for everyone.  These are things you should adopt as quickly as possible, otherwise your code will stand out like a sore thumb.</p>
+<ol>
+<li>
+<p>Your text editor's tab function should be set to 2 spaces and indenting should be set to use spaces.</p>
+</li>
+<li>
+<p>When you see the <code>#</code> sign at the beginning of a line, that means anything after it, on the same line, is a comment. Comments are used by programmers to leave notes for other programmers or themselves at a later point in time.</p>
+</li>
+<li>
+<p>When you define or initialize a method, variable, or file, you should always use <code>snake_case</code> formatting. <code>snake_case</code> formatting is created using all lower case letters and separating words with the underscore character.</p>
+<pre class="language-none"><code class="language-none"># Naming a file
+this_is_a_snake_cased_file.rb
+
+# Assigning a variable
+forty_two = 42
+
+# Defining a method
+def this_is_a_great_method
+  # do stuff
+end
+</code></pre>
+</li>
+<li>
+<p>When you want to represent a value that will not change in your Ruby program, you define a constant variable, often referred to as a constant. In Ruby, constants are denoted with all uppercase letters.</p>
+<pre class="language-none"><code class="language-none"> # Constant declaration
+ FOUR = 'four'
+ FIVE = 5
+</code></pre>
+</li>
+<li>
+<p>When working with <code>do/end</code> blocks, prefer <code>{ }</code> when the entire code expression fits on one line.</p>
+<pre class="language-none"><code class="language-none">  # Multi-line
+  [1, 2, 3].each do |i|
+    # do stuff
+  end
+
+  # Does the same thing in single line
+  [1, 2, 3].each { |i| do_some_stuff }
+</code></pre>
+</li>
+<li>
+<p>The last style convention you'll need to learn at this point is how to declare a class name.  When naming your classes you will use <em>CamelCase</em> formatting (also called <em>PascalCase</em>).  <em>CamelCase</em> (note the capitalization) uses no spaces and capitalizes every word.</p>
+<pre class="language-none"><code class="language-none">  # Class naming
+  class MyFirstClass
+  end
+
+  class MySecondClass
+  end
+</code></pre>
+</li>
+</ol>
+<p>That about covers the most important style conventions to get started.  If you'd like some more information about Ruby styling, check out the <a href="https://rubystyle.guide/">Ruby style guide</a>.</p>
+<h2><a href="#readingdocumentation" name="readingdocumentation">Reading Documentation</a></h2>
+<p>As you begin your journey to becoming a programmer, one of the most important habits you'll need to develop is learning how to read <strong>documentation</strong>. Ruby, like all popular programming languages, comes with a rich set of standard libraries that you can use out of the box. However, you'll need to study the Ruby documentation - or Ruby docs - to gain familiarity with the different classes and methods available to you. Don't worry about the exact definition of <strong>classes</strong> or <strong>methods</strong> just yet, all that is coming up later in the book. These are terms best learned while working with Ruby. Be aware that some developers also refer to documentation as <strong>API</strong>. API is an acronym for application programming interface, and is a somewhat overloaded term that can refer to both how applications talk to each other, as well as documentation. Just remember, if someone says "Did you take a look at the Array API?", they're talking about the Ruby docs documentation for the <code>Array</code> class. But if someone says "What's the Twitter API?", they're talking about the programmatic interface to Twitter's services.</p>
+<p>In this section we're interested in understanding how to read Ruby documentation, so let's take a look at an example. The image below is a screenshot for the <code>String</code> class from the official Ruby documentation source, <a href="https://ruby-doc.org/core-2.6/String.html">www.ruby-doc.org</a></p>
+<p><img alt="Ruby Documentation Example" height="550" src="//d2aw5xe2jldque.cloudfront.net/books/ruby/images/ruby_doc.jpg" width="700"/></p>
+<p>There's a lot to look at, so we've circled the three main areas to pay attention to.</p>
+<h3>Class name or Module name</h3>
+<p>In the first circle at the top, we see the word "String". This is the <strong>Class</strong> or <strong>Module</strong> (again, don't worry about what that is just yet, we will eventually cover it). In some documentation, you'll see the class name being referred to with a <code>::</code> symbol, like this: <code>Encoding::Converter</code>. Here, the <code>::</code> symbol is used to define a <strong>namespace</strong>, which is just a way to group classes in Ruby and differentiate from other classes with the same name. For example <code>ActiveRecord::Base</code> is referring to the <code>Base</code> class in the <code>ActiveRecord</code> module, to differentiate from other classes also named <code>Base</code>.  However, when looking at the method list on the side bar, the <code>::</code> means something different: it means that the method after the <code>::</code> is a <strong>class method</strong> - we'll talk about this more later. For now, just realize that whether the top heading says <code>String</code> or <code>Encoding::Converter</code>, it's referring to the class or module name and the rest of the page will be documenting that class or module.</p>
+<h3>Methods</h3>
+<p>As a documentation convention, methods are listed out with either a <code>::</code> or a <code>#</code> to indicate two different kinds of publicly accessible methods. Methods denoted by <code>::</code> are considered <em>class methods</em>, while methods denoted by <code>#</code> are considered <em>instance methods</em>.</p>
+<p>Beyond documentation, don't get caught up with these symbols because they have completely different meanings when executed in Ruby code. For example, the <code>::</code> symbol is used as a namespace in actual Ruby code, while the <code>#</code> is used as a comment. <strong>Their use here in Ruby documentation is completely different from their use in actual code.</strong></p>
+<p>The meat of the ruby documentation for the <code>String</code> class describes String's Public Class Methods and Public Instance Methods. Clicking one of these methods will link to its section on the page showing its parameters, return values, and some example code that you can copy and paste.</p>
+<h3>Example: Instance Methods vs Class Methods</h3>
+<p>The big take away from this documentation is that the Public Instance Methods can be applied to any instance of the class (we'll talk about "instances" and "objects" in the OOP section of the book, for now just follow the examples). We can look at the string <code>"world wide web"</code> and directly apply <em>instance</em> methods to it. For example, from the method list sidebar, we see that there's a <code>#split</code> method for strings, which means that <code>split</code> is an instance method, and we can call that method on any string directly:</p>
+<pre class="language-ruby"><code class="language-ruby">irb :001 &gt; "world wide web".split
+ =&gt; ["world", "wide", "web"]
+</code></pre>
+<p>Further, we can see from the methods sidebar that there are two <em>class methods</em>: <code>::new</code> and <code>::try_convert</code>. Public Class Methods are called directly from the class.</p>
+<pre class="language-ruby"><code class="language-ruby">irb :001 &gt; b = String.new("blue")
+ =&gt; "blue"
+irb :002 &gt; String.try_convert("red")
+ =&gt; "red"
+</code></pre>
+<p>For now, these are the three most important things to remember when reading Ruby documentation: the class or module you're looking at, its available class methods, and its available instance methods - and how to use those methods. Knowing how to read a class's methods will help you play around with Ruby code and develop fluency.</p>
+<p>Let's now cover the rest of the sections on the documentation page.</p>
+<h3>Parent</h3>
+<p>In Ruby every class sub-classes from some "parent". In order to really understand the previous sentence, you need to know object oriented programming, but we don't want to talk about that yet. The thing to understand is that the class you're looking at also has access to methods - both instance and class - documented in the parent class.</p>
+<p>So in this example, the <code>String</code> class's parent is <code>Object</code>.</p>
+<p>This means that in addition to the methods described in this doc, the methods of <code>Object</code> are also available to strings. This section of the page will link to the parent's documentation and is a good followup read if you aren't familiar with the parent object or you aren't finding methods you'd expect to see.</p>
+<h3>Class/Module Index</h3>
+<p><img src="//d2aw5xe2jldque.cloudfront.net/books/ruby/images/ruby_doc_class-module-index.png"/></p>
+<p>All classes are part of a namespace in Ruby and this menu is a list of all the other classes and modules that are part of the same namespace as the current class. If you look in the list you can see the same String class that will link to the document. You might see some items in this list that also use the <code>::</code> symbol. In this case, it's using <code>::</code> to indicate a namespace, like <code>Math::DomainError</code>.</p>
+<h3>Included Modules</h3>
+<p><img src="//d2aw5xe2jldque.cloudfront.net/books/ruby/images/ruby_doc_included-modules.png"/></p>
+<p>Included modules indicate additional modules whose functionality is available to the <code>String</code> class. In the <code>String</code> example, the <code>Comparable</code> module is included. This means we can do something like this:</p>
+<pre class="language-ruby"><code class="language-ruby">irb 001 &gt; "cat".between?("ant", "zebra")
+ =&gt; true
+</code></pre>
+<p>The <code>between?</code> method is not listed on the doc for the <code>String</code> class. However, if we look under the linked <code>Comparable</code> module, we find the <code>between?</code> method listed.</p>
+<h3>Summary</h3>
+<p>In this section we looked at Ruby's documentation. When in doubt, review the Ruby docs at <a href="https://ruby-doc.org">www.ruby-doc.org</a> that match the version of Ruby you are working with, and learn to get familiar with reading Ruby documentation. It should become a normal part of your workflow.</p>
+<h2><a href="#usingcommandlineandirb" name="usingcommandlineandirb">Using the Command Line and irb</a></h2>
+<p>This chapter will only give you a basic list of commands that you will use to run and test Ruby code.  It is by no means an exhaustive list and is only the minimal amount needed.</p>
+<p>This chapter will also cover how to use Ruby's interactive coding environment - irb.  This is where you can test Ruby code snippets in the terminal.</p>
+<p>A note to Windows users: the command line commands we show below may not work in Windows' default command prompt. Most Windows developers will use a terminal emulator, or an alternative, like Powershell. We recommend that all Windows developers get familiar with a terminal emulator or with Powershell and issue the commands below there.</p>
+<h3><a href="#commandline" name="commandline">Command Line</a></h3>
+<p>This book assumes that you know how to find the command line on your computer and type in commands. When you see the <code>$</code> symbol, that represents the command line prompt. We'll also refer to the command line as the terminal. The prompt may look different on your computer, which is fine.  The prompt varies depending on the machine you are working on.</p>
+<p>To create a directory (or folder) called 'new_dir' type the following command:</p>
+<pre class="language-irb"><code class="language-irb">$ mkdir new_dir
+</code></pre>
+<p>To navigate into the folder you just created:</p>
+<pre class="language-irb"><code class="language-irb">$ cd new_dir
+</code></pre>
+<p>To create a file called 'new_file':</p>
+<pre class="language-irb"><code class="language-irb">$ touch new_file.rb
+</code></pre>
+<p>To delete the file you just created:</p>
+<pre class="language-irb"><code class="language-irb">$ rm new_file.rb
+</code></pre>
+<p>To navigate out of the current folder to the one above:</p>
+<pre class="language-irb"><code class="language-irb">$ cd ..
+</code></pre>
+<p>To delete the directory you just created:</p>
+<pre class="language-irb"><code class="language-irb">$ rmdir new_dir
+</code></pre>
+<p>Now, create the directory and file like you did above, again.</p>
+<p>To remove the directory and file at the same time, navigate to the directory above 'new_dir' and type the following command:</p>
+<pre class="language-irb"><code class="language-irb">$ rm -R new_dir
+</code></pre>
+<p>Be very careful with the <code>rm</code> command. It's very destructive and there's no way to recover from it. Use with caution. If in doubt, use your file navigation program (e.g. Explorer or Finder) and delete files and folders that way.</p>
+<p>These are all of the commands that we are going to cover in the book. We do assume that you know your way around the command line, can navigate to different files, and can use basic commands. If you want to gain more comfort at the command line, there are many online tutorials and books that go into far more depth. Our book, <a href="/books/command_line">Introduction to the Command Line</a>, is one such option we recommend for learning more about the command line.</p>
+<h3><a href="#irb" name="irb">irb</a></h3>
+<p>Ruby has a built-in interactive environment called "irb" that can be very helpful when writing Ruby code.  At the command line type:</p>
+<pre class="language-irb"><code class="language-irb">$ irb
+</code></pre>
+<p>This will produce a prompt that looks something like this:</p>
+<pre class="language-irb"><code class="language-irb">2.5.3p-247 :001 &gt;
+</code></pre>
+<p>The <code>2.5.3p-247</code> is telling us what version of Ruby we are running and the <code>:001</code> tells us what line we are on. However, throughout this book, we will refer to the irb prompt like this:</p>
+<pre class="language-irb"><code class="language-irb">irb :001 &gt;
+</code></pre>
+<p>You can type in a Ruby command after the prompt and see its output and what it returns. For example, if you type the following command and press return to run it:</p>
+<pre class="language-irb"><code class="language-irb">irb :001 &gt; puts 'hello world!'
+</code></pre>
+<p>The output will look something like this:</p>
+<pre class="language-irb"><code class="language-irb">irb :001 &gt; puts 'hello world!'
+hello world!
+ =&gt; nil
+irb :002 &gt;
+</code></pre>
+<p>The line <code>puts 'hello world!'</code> prints the phrase 'hello world!' to the screen and returns a <code>nil</code> object value.  We'll talk about method returns later.  All you need to know now is that you can test code in Ruby's interactive environment, irb, when you have some doubts about a specific piece of code. It's also a great place to practice!</p>
+<p>When you want to exit <code>irb</code> back to the command line, just type <code>exit</code>. Note that if you type <code>exit</code> from the command line, this will exit the <em>shell</em>, which means you have to start up your command line application again.</p>
+<h3><a href="#runningrubycode" name="runningrubycode">Running Ruby Code</a></h3>
+<p>When you have created a Ruby file, denoted by the <code>.rb</code> extension, you can run the code in that file by typing the <code>ruby</code> command followed by the file name in the command line.  The following line shows how to run the code from a file called <code>example.rb</code>.</p>
+<pre class="language-irb"><code class="language-irb">$ ruby example.rb
+</code></pre>
+<p>Pretty simple, eh?</p>
+<p>Assuming that the <code>example.rb</code> file contained only the line <code>puts 'hello world!'</code>, the following would print after running the file.</p>
+<pre class="language-irb"><code class="language-irb">$ ruby example.rb
+hello world!
+$
+</code></pre>
+<p>When you run a Ruby file from the command line, the code gets executed by what's called an <strong>interpreter</strong>. You don't need to know a whole lot about the interpreter except the fact that it takes Ruby code and turns it into code that your computer understands.</p>
+<p>The last tip is how to stop a running program. Sometimes, you'll have a long running Ruby program, or an error in the logic that results in an infinite loop. To exit out of the program execution loop, use <code>control-c</code>. This will send an abort signal to the running program.</p>
+<h3><a href="#remember" name="remember">Remember...</a></h3>
+<p>Make sure you understand the difference between these three things that we covered.</p>
+<ol>
+<li>Using commands to manage files and folders at the command line (or terminal).
+</li>
+<li>Running Ruby commands in irb.
+</li>
+<li>Running Ruby code from a <code>.rb</code> file at the command line.
+</li>
+</ol>
+<h2><a href="#whatarerubygems" name="whatarerubygems">What Are Ruby "Gems"?</a></h2>
+<p>Rubyists call it RubyGems (one word), or just "gems" for short. There are two main sides to this term. The first side refers to a collection of Ruby files, or Ruby library, that performs a certain task. The other side refers to the publishing system that is behind organizing, listing, and publishing those libraries, or gems.</p>
+<p>The publishing system behind RubyGems is designed to let you download, publish and use useful ruby libraries on your system. That system is powered by the website <a href="https://rubygems.org">rubygems.org</a>. The libraries that the system publishes are called "gems".</p>
+<p>RubyGems is integrated into Ruby 1.9 and newer by default to help Rubyists speed up development. The code in a gem is like pre-packaged bundles of code written by someone to solve a useful problem. This means you'll spend time on useful features instead of reinventing the wheel. Ruby gems have versions based on the <a href="http://semver.org/">Semantic Versioning</a> standard. A gem is said to have been "cut" when a new version becomes available. All the public installable gems are hosted at <a href="http://rubygems.org">http://rubygems.org</a>, though their code is hosted on a code repository, such as a GitHub repository.</p>
+<h3>How do I use it?</h3>
+<p>The <code>gem</code> command allows you to use RubyGems. When combined with the <code>install</code> command, one can download and install gems with their dependencies and any  relevant documentation. The complete command is like so:</p>
+<pre class="language-irb"><code class="language-irb">gem install &lt;gem name&gt;
+</code></pre>
+<p>where <code>&lt;gem name&gt;</code> is the actual name of the gem you want to install.</p>
+<p>Installing gems like this is fine for one-time usage but with time, you'll lose track of which gems belong to which project. As you learn more Ruby, you'll be introduced to the <code>Gemfile</code> which offers a simple solution for organizing gems and their dependencies in a central location.</p>
+<p>You can checkout RubyGems <a href="http://guides.rubygems.org/rubygems-basics/">site</a> for other useful commands.</p>
+<p>For now, just understand that throughout this book and your journey as a Ruby developer, you may be required to <code>gem install &lt;some_gem&gt;</code>. All it's doing is going out to rubygems.org and pulling down the appropriate gem for you to use on your local machine.</p>
+<h2><a href="#debuggingrubycodewithpry" name="debuggingrubycodewithpry">Debugging Ruby Code with Pry</a></h2>
+<p><a href="https://github.com/pry/pry">Pry</a> is a nifty library that doubles as an alternative to <code>irb</code> with a host of awesome features. In this section, we'll focus on its code debugging capabilities. To use <code>pry</code> we'll first have to install it:</p>
+<pre class="language-irb"><code class="language-irb">gem install pry
+</code></pre>
+<p>This gives you the <code>pry</code> command which when entered in your terminal will open a new session just like you would with <code>irb</code>.</p>
+<h3>Use pry for debugging</h3>
+<p>Next, when you want to use <code>pry</code> for debugging you'll have to <code>require "pry"</code> and insert a <code>binding.pry</code> in your file like so:</p>
+<pre class="language-ruby"><code class="language-ruby"># preparation.rb
+require "pry"
+
+a = [1, 2, 3]
+a &lt;&lt; 4
+binding.pry     # execution will pause here, allowing you to inspect all objects
+puts a
+</code></pre>
+<p>What this means is that when your program gets to where <code>binding.pry</code> has been declared, it'll open a new <code>pry</code> session instead of moving on to the next line in the code. This gives you the opportunity to play around with your variables and objects to see why things are not working. This is an extremely powerful debugging technique since it lets you pause execution to inspect the state of all variables and objects at that line of code. After you're done looking at your variables, you can continue the program execution with <code>Ctrl + D</code>.</p>
+<p>We've just scratched the surface of what you should know to debug simple Ruby code. We just want to introduce you to this debugging technique in Ruby because it's a better alternative to using <code>puts</code> for debugging and gives you a good idea of what's really happening within your code.</p>
+</div>
+<h2>
+<a name="exercises">Exercises</a>
+</h2>
+<ol>
+<li>
+<div class="tealeaf-markup"><p>Create a directory named <code>my_folder</code> and then navigate inside that directory. Create two files named <code>one.rb</code> and <code>two.rb</code> in the <code>my_folder</code> directory. Write a ruby program that outputs the line <code>this is file one</code> when you run the <code>one.rb</code> file.  Then write another program that outputs <code>this is file two</code> when you run the <code>two.rb</code> file. (Hint: <code>one.rb</code> should have this in it <code>puts "this is file one"</code>)</p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-irb"><code class="language-irb">$ mkdir my_folder
+$ cd my_folder
+my_folder $ touch one.rb
+my_folder $ touch two.rb
+my_folder $ ruby one.rb
+this is file one
+my_folder $ ruby two.rb
+this is file two
+</code></pre><p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-0"/>
+<map data-responsive="" id="register-0" name="register-0">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="tealeaf-markup"><p>When you are finished with the above and both programs are working correctly, navigate to the directory above the <code>my_folder</code> directory and delete all of the content you generated with one command.</p>
+<p><em><strong>Warning</strong>: The <code>rm</code> method is a <strong>DANGEROUS</strong> command. Once you run this command there is no undoing it. It is permanent. Make sure you are in the correct directory and you are referencing the correct target directory when you execute this command.</em></p>
+</div>
+<div class="solution">
+<div>
+<h4>Solution</h4>
+<div class="solution-content">
+<div class="tealeaf-markup"><pre class="language-irb"><code class="language-irb">my_folder $ cd ../
+$ rm -R my_folder
+</code></pre><p>Note, make sure to take care with the <code>rm</code> command. It can be very destructive and irreversibly delete folders and files.</p>
+<p><strong>Video Walkthrough</strong></p>
+<p><img alt="Please register to play this video" class="must_register_image" src="https://d24f1whwu8r3u4.cloudfront.net/assets/video_placeholders/radial-3c6a470992484f01c619b21118a4cc31e4390ff4a1faf27e7cb792dffa0a57e0.png" usemap="#register-1"/>
+<map data-responsive="" id="register-1" name="register-1">
+<area coords="257,215,539,275" href="/sign_up" shape="rect" title="register"/>
+</map></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="next_chapter">
+<a href="./LaunchBooks/Introduction to Programming with Ruby/2.html">Next:  The Basics
+<i class="fa fa-chevron-right"></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="footer">
+<div class="row">
+<div class="columns small-12">
+<footer>
+<nav class="nav clearfix full-width-background">
+<div class="hr"></div>
+<ul class="links">
+<li><a href="https://medium.com/launch-school" target="_blank">Medium Publication</a></li>
+<li><a href="/books" target="_blank">Open Bookshelf</a></li>
+<li><a href="https://podcast.launchschool.com" target="_blank">Our Podcast</a></li>
+</ul>
+<ul class="social-buttons right">
+<a href="https://www.facebook.com/launchschoolonline/"><li class="facebook">
+<i class="fa fa-facebook"></i>
+</li>
+</a><a href="https://twitter.com/launchschool"><li class="twitter">
+<i class="fa fa-twitter"></i>
+</li>
+</a></ul>
+<ul class="links right">
+<li><a href="mailto:hello@launchschool.com">hello@launchschool.com</a></li>
+</ul>
+<div class="copyright">
+© Copyright 2022 Launch School - All Rights Reserved.
+</div>
+</nav>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!-- * <![CDATA[ */ -->
+var google_conversion_id = 1017054330;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+<!-- * ]]> */ -->
+</script>
+<script src="https://www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017054330/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1">
+</img></div>
+</noscript>
+<!-- END - Google Code for Remarketing Tag -->
+<img alt="" height="1" id="adwords_track_code" src="" style="visibility:hidden;" width="1"/>
+</body>
+</html>
