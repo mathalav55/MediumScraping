@@ -33,6 +33,7 @@ def downloadBook(bookUrl,title):
   urllib.request.install_opener(opener)
   html_doc = urllib.request.urlopen(bookUrl).read()
   try :
+          print("Downloading " + title + '...')
           soup = BeautifulSoup(html_doc, 'html.parser')
           div = soup.find('div',{'class' : 'next_chapter'})
           nextPage = bookUrl
